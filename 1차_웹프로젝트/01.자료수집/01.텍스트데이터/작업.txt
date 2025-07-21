@@ -1,0 +1,61 @@
+1.Pumpkin
+Yayoi Kusama
+Date: 1983
+Style: Art Brut, Pop Art
+Genre: sculpture
+
+2.Dandelions
+Yayoi Kusama
+Date: 1985
+Style: Art Brut, Pop Art
+Genre: flower painting
+
+3.Ready to Blossom in the Morning
+Yayoi Kusama
+Date: 1989
+Style: Art Brut, Pop Art
+Genre: flower painting
+
+4.Mushrooms
+Yayoi Kusama
+Date: 1995
+Style: Art Brut, Pop Art
+Genre: figurative
+
+5.Dots
+Yayoi Kusama
+Date: 2004
+Style: Abstract Expressionism, Minimalism
+Genre: abstract
+
+6.Yellow Pumpkin
+Yayoi Kusama
+Date: 1992
+Style: Art Brut, Pop Art
+Genre: figurative
+
+7.Pumpkin
+Yayoi Kusama
+Date: 1990
+Style: Art Brut, Pop Art
+Genre: figurative
+
+8.Dress
+Yayoi Kusama
+Date: 1982
+Style: Art Brut, Pop Art
+Genre: figurative
+
+9.Shoes
+Yayoi Kusama
+Date: 1985
+Style: Art Brut, Pop Art
+Genre: figurative
+
+10.Butterfly
+Yayoi Kusama
+Date: 1988
+Style: Art Brut, Pop Art
+Genre: animal painting
+
+
