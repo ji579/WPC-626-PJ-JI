@@ -115,3 +115,4 @@ sign	Signed by the artist (bottom right)
 technique	Silkscreen
 remarks	1994
 Yayoi Kusama all prints #189
+
