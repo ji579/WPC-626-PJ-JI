@@ -1,0 +1,93 @@
+
+/* 마영오*/
+ 마(진) 영(위) 오(양쪽) 아래 
+
+     /* 가상요소 자신이 block이므로 최소한 
+    display를 inline-block로 해야 자신의 크기만큼
+    크기를 가지게 된다.*/
+
+****************************************************************
+<!--*** 젠코딩***
+div*2>ul.link-list>li*5>a[target=_blank] 
+
+****************************************************************
+반응형 _컬크로 계산하기
+
+.link-box{
+    /* 가로크기는 레이아웃은 아니지만
+    12그리드 크기를 기준해서 준다. */
+    width: calc(100%/12*10);
+}
+****************************************************************
+<선 가상요소 넣기>
+
+(1) 선 위치 조절방법 ---> 선이 글자랑 붙어나옴
+.sub-part-title::before{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    max-width: 865px;
+    height: 1px;
+    background-color: ccc;
+}
+
+(2) 선 위치 조절방법 
+.sub-part-title {
+  /* 박스설정*/
+  padding-bottom: 28px;
+  text-align: center;
+  /* 글자설정*/
+  font-size: 36px;
+}
+
+/* 구분선은 타이틀 박스의 가상요소로 구성 */
+.sub-part-title::before {
+  content: "";
+  display: block;
+  /* 마(진) 영(위) 오(양쪽) 아래 */
+  margin: 0 auto 28px;
+  max-width: 865px;
+  height: 1px;
+  background-color: #ccc;
+}
+****************************************************************
+
+<글 2문단으로 나누기>
+
+     /* 라벨디자인-버튼형 */
+      .btn-action {
+        /* 위 아래 마진 보더 등 적용위해 */
+        display: inline-block;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        background-color: #ccc;
+        /* 손가락모양 */
+        cursor: pointer;
+      }
+      /* 가상요소로 버튼글씨 넣기 */
+      .btn-action::before {
+        content: "클릭";
+      }
+      /* 체크박스 체크시 버튼형 라벨 변경하기 */
+      #chkbx:checked + .btn-action {
+        background-color: rgb(255, 176, 242);
+      }
+      #chkbx:checked + .btn-action::before {
+        content: "따딴";
+      }
+      /* 체크박스 숨기기 */
+      #chkbx {
+        display: none;
+      }
+ #chkbx:checked ~ .move-box #chi{
+    /* 투명도 op- opacity:0~1사이값(0투명-반투명-1불투명) */
+   left: 100%;
+    /* 트랜지션 trs : 3.9초 후 0.1초간 애니 */
+    transition: 10s ;}
+
+        #chi {
+        position: absolute;
+        left: 0%;
+        width: 2%;}
