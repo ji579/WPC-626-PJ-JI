@@ -1,4 +1,12 @@
 
+    /* 글자배치 세로방향 left-> right */
+    writing-mode: vertical-lr;
+    letter-spacing: 30px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px #00000070;
+
+
 /* 마영오*/
  마(진) 영(위) 오(양쪽) 아래 
 
