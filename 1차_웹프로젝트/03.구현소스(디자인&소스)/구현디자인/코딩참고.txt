@@ -1,4 +1,13 @@
 
+
+책넘기기효과
+1.
+https://web.dev/case-studies/20things-pageflip?hl=ko
+2.
+https://fliphtml5.com/learning-center/ko/how-to-create-an-interactive-pdf-magazine/
+3.
+https://www.php.cn/ko/faq/495739.html
+
     /* 글자배치 세로방향 left-> right */
     writing-mode: vertical-lr;
     letter-spacing: 30px;
