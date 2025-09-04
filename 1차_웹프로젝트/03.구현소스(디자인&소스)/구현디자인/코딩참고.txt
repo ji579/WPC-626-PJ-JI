@@ -1,4 +1,7 @@
-
+* 문단 깔끔하게 정렬하는 코드
+text-align: justify;
+*단어 깨져서 보이게
+word-break: break-all;
 
 책넘기기효과
 1.
