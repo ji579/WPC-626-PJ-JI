@@ -4,3 +4,42 @@
 /* 외부 CSS 불러오기 */
 @import url(./reset.css);
 @import url(./core.css);
+/* 12그리드 CSS */
+@import url(./grid_12_flex.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+/* 1. 인트로영역 */
+.intro-area{
+    height: 725px;
+    
+}
+
+/* 2. 상단영역 */
+.header-area{ 
+    height:125px;
+    
+}
+/* 3. 작가배너영역 */
+.banner-area{
+ height:600px;
+  aspect-ratio: 990 /420;
+ /* 임시이미지 */
+ background: url(../../구현디자인/배너/배너.png) no-repeat center top;
+}
+/* 4. 메인영역  */
+.main-area{
+ height: 2084px;   
+}
+/* 5. 컨택영역 */
+       .contact-area{
+           height: 408px;
+       }
+/* 6. 하단영역 */
+.footer-area{
+    height: 250px;
+}
