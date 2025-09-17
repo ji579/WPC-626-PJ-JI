@@ -16,47 +16,54 @@ body * {
 
 /* 2. 상단영역 */
 .top-area {
-    background-color: #5f2828;
-    
+    background: url(../images/background.gif) no-repeat center top / cover;
   height: 125px;
 width: 100%;
-
 }
+      .top-area .inbox{
+        position: fixed;
+         height: 125px;
+        margin-bottom: 40px;
+        background: #d04a4a;
+        padding: 24px 0 24px 0;
+        border-radius: 10px;
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.07);
+      }
+        .flex-bar {
+        display: flex;
+        align-items: center;
+      
+        border: 2px solid #eee;
+        border-radius: 8px;
+  
+      }
+      .box {
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 500;
+        border: 2px solid #bbb;
+      }
+  
 
-.top-area .inbox {
-  display: flex;
-  flex-direction: column;
-}
+     h1{  font-size: 60px;
+    }
 
-.intro-box {
-    position: relative;
-    width: 100%;
-}
+    .logo{
+      display: flex;
+      flex-direction: column;
+    }
 
-.intro ul {  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-gap: 67rem;
-    padding: 10px;}
-   
-.logo-box {
-  position: absolute;
-  width: 100%;
-  text-align: center;
- padding-top: 5px;
-}
-h1{
-    font-size: 60px;
-    
- 
-}
 /* 3. 작가배너영역 */
 .banner-area {
   position: relative;
   height: 600px;
   text-align: center;
+}
+
+.banner-area .inbox {
+ position: fixed;
 }
 .bg {
   aspect-ratio: 990 /420;
@@ -84,7 +91,55 @@ h1{
 /* 4. 메인영역  */
 .main-area {
   height: 2084px;
+  z-index: 1;
 }
+
+
+.main-info{
+  position: absolute;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  
+}
+.main-menu-box {
+     width: 346px;
+  height: 490px;
+ 
+
+
+}
+.main-info h2{
+font-size: 1.6vw;}
+
+
+
+
+.main-menu-box img{
+ aspect-ratio: 27/35;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 5. 컨택영역 */
 .contact-area {
   height: 408px;
@@ -92,4 +147,28 @@ h1{
 /* 6. 하단영역 */
 .bottom-area {
   height: 250px;
+  background: url(../images/background.gif);
+  /* overflow: hidden; */
+  color: #fff;
+}
+
+
+.bottom-info-right{
+  margin-right: 10px;
+   padding-top: 6vmin;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5vmin;
+}
+.bottom-info{
+  margin-left: 10px;
+  padding-top: 6vmin;
+  display: flex;
+  flex-direction: row;
+  gap: 5vmin;
+}
+
+
+.bottom-area img{
+  width: 28px;
 }
