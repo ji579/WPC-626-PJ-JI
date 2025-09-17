@@ -15,50 +15,81 @@ body * {
 /***************** 메인 CSS ********************/
 
 /* 2. 상단영역 */
-.top-area{ 
-    height:125px;
+.top-area {
+    background-color: #5f2828;
     
-}
-/* 3. 작가배너영역 */
-.banner-area{
-    position: relative;
- height:600px;
- text-align: center;
+  height: 125px;
+width: 100%;
 
+}
+
+.top-area .inbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-box {
+    position: relative;
+    width: 100%;
+}
+
+.intro ul {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+gap: 67rem;
+    padding: 10px;}
+   
+.logo-box {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+ padding-top: 5px;
+}
+h1{
+    font-size: 60px;
+    
  
 }
-.bg{ 
-    aspect-ratio: 990 /420;
-    position: absolute;
-    top: 65px;
-      left: 50%;
-    translate: -50% 0;
+/* 3. 작가배너영역 */
+.banner-area {
+  position: relative;
+  height: 600px;
+  text-align: center;
 }
-.yayoi{
-    position: absolute;
-    top: 25px;
-    width: 160px;
-    left: 50%;
-    translate: -50% 0;
-z-index: 1;
+.bg {
+  aspect-ratio: 990 /420;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  translate: -50% 0;
 }
- .scroll-inbox{
-     position: absolute;
-     top: 540px;
-     left: 50%;
-     translate: -50% 0;
-     z-index: 1;
- }
+.yayoi {
+  position: absolute;
+  top: 25px;
+  width: 160px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 1;
+}
+.scroll-inbox {
+  position: absolute;
+  top: 540px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 1;
+}
 
 /* 4. 메인영역  */
-.main-area{
- height: 2084px;   
+.main-area {
+  height: 2084px;
 }
 /* 5. 컨택영역 */
-       .contact-area{
-           height: 408px;
-       }
+.contact-area {
+  height: 408px;
+}
 /* 6. 하단영역 */
-.bottom-area{
-    height: 250px;
+.bottom-area {
+  height: 250px;
 }
