@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1차과제</title>
-        <!-- 메인 CSS -->
+        <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico">
+    <!-- 메인 CSS -->
      <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -31,7 +33,7 @@
          <div id="banner-area">
            <!-- 3-1. 배너영역 -->
          <section class="banner-area inbox">
-          <h2 class="temp-tit"> 작가배너영역</h2>
+          <h2 class="temp-tit blind"> 작가배너영역</h2>
           <img src="./images/info8.gif" alt="작가" class="yayoi">
           <img src="./images/배너.png" alt="배경" class="bg">
 
@@ -40,23 +42,23 @@
           <img src="./images/이동키아래.png" alt="스크롤방향키">
             </section>
          </div>
-
-        4. 메인영역
+ 
+       <!-- 4. 메인영역 -->
           <div id="main-area">
             <main class="main-area inbox">
             <h2 class="temp-tit">메인영역</h2>
 
   <article id="col1">
       <div>
-        <div class="main-menu">
+        <div class="main-box-col ">
           <ul>
             <!-- 1-1 -->
             <li>
             <a href="#">
             <img src="./images/메뉴박스1.png" alt="메뉴1"/>
             <hgroup class="main-info">
-            <h2>Profile</h2>
-            <h3>Read more</h3>
+            <h3>Profile</h3>
+            <h4>Read more</h4>
             </hgroup>
             </a>
           </li>
@@ -75,48 +77,53 @@
         <img src="./images/메인이미지1.png" alt="메인이미지" />
           <h1>草間彌生</h1>
       </div>
-       <div>
-      
-
-
-
-
+    
+    </article>
   <article id="col3">
-      <div>
-         <a href="#">
-        <img src="./images/메뉴박스2.png" alt="메뉴2" />
-      
-          <h2>Museum</h2>
-              <h3>Read more</h3>
-    </a>
+       <div>
+        <img src="./images/메뉴박스2.png" alt="메인이미지" />
+          <h1>草間彌生</h1>
       </div>
-
-</article>
+    
+    </article>
 
           </main> </div>
 
         <!-- 5. 컨택영역 -->
           <div id="contact-area ">
           <div class="contact-area inbox">
-            <h2 class="temp-tit"> 컨택영역</h2>
+            <h2 class="temp-tit blind"> 컨택영역</h2>
             <h2>Contact</h2>
-
-
-            <p>
+               <p>
               For requests and inquiries, please contact us below.
             </p>
-
+            <div class="contact-box">
+  <article class="name-box desc-box">  
+    <h4>Name :</h4>
+  </article>
+  <article class="email-box desc-box">  
+    <h4>Email :</h4>
+  </article>
+  <article class="details-box desc-box">
+  <h4>Inquiry details :</h4>
+  </article>
+  <article class="transmit-box desc-box">
+  <h4>Transmit</h4>
+  </article>
+            </div>
+        
             <p>The person in charge will contact you at a later date.<br>
 Currently, we do not accept orders from individuals.<br>
 If you have any questions about the sale or reservation 
 of publications, please<br> contact the bookstore or publisher 
 directly.</p>
 
-<img src="./images/호박대.png" alt="큰">
-<img src="./images/호박중.png" alt="중간">
-<img src="./images/호박소.png" alt="작은">
 
+<img src="./images/호박대.png" alt="큰" class="big">
+<img src="./images/호박중.png" alt="중간" class="middle">
+<img src="./images/호박소.png" alt="작은" class="small">
 
+          </div>
           </div>
 
         <!-- 6. 하단영역 -->
@@ -124,7 +131,7 @@ directly.</p>
             <footer class="bottom-area inbox">
            
               
-                <h2 class="temp-tit">하단영역</h2>
+                <h2 class="temp-tit blind">하단영역</h2>
   <div class="bottom-info-right">
                 <h3>Japanese Artist</h3>
                 <p> Yayoi Kusama </p>  

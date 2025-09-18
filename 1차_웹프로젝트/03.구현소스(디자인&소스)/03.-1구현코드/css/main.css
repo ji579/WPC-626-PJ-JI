@@ -23,17 +23,13 @@ body * {
 
 /* 양옆 선 만들기 */
 .top-area::after {
-  content: '';
-
+  content: "";
 }
 .top-area .inbox {
   position: fixed;
   height: 125px;
   margin-bottom: 40px;
-  background: #d04a4a;
   padding: 24px 0 24px 0;
-  border-radius: 10px;
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.07);
 }
 .flex-bar {
   margin: 0 10px;
@@ -41,8 +37,6 @@ body * {
   align-items: center;
   align-items: flex-start;
   flex-wrap: nowrap;
-  border: 2px solid #eee;
-  border-radius: 8px;
 }
 .box {
   color: #ffffff;
@@ -50,17 +44,20 @@ body * {
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  border: 2px solid #bbb;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 6rem;
 }
 
+h2 {
+  font-size: 6rem;
+}
 .logo {
   display: flex;
   flex-direction: column;
 }
+/* ////////////////////////////////////////////// */
 
 /* 3. 작가배너영역 */
 .banner-area {
@@ -94,26 +91,34 @@ h1 {
   translate: -50% 0;
   z-index: 1;
 }
-
+/* //////////////////////////////////////////////// */
 /* 4. 메인영역  */
 .main-area {
-  height: 2084px;
+  height: 2625px;
   z-index: 1;
+  text-align: center;
+}
+
+.col{
+  display: flex;
+  flex-direction: row;
+  width: calc(100%/3);
+  
 }
 
 .main-info {
-  position: absolute;
+  position: relative;
   text-align: center;
   display: flex;
   justify-content: center;
 
   flex-direction: column;
 }
-.main-menu-box {
-  width: 346px;
-  height: 490px;
+.main-menu {
+  width: 445px;
+  height: 632px;
 }
-.main-info h2 {
+.main-info h3 {
   font-size: 1.6vw;
 }
 
@@ -121,31 +126,97 @@ h1 {
   aspect-ratio: 27/35;
 }
 
+/* //////////////////////////////////////////////// */
 /* 5. 컨택영역 */
 .contact-area {
-  height: 408px;
+  box-sizing: border-box;
+  padding: 0 70px;
+  background: url(../images/하단.png) no-repeat center top / cover;
+  height: 515px;
 }
+.contact-area h2 {
+  margin-bottom: 10px;
+}
+
+.contact-box {
+  position: relative;
+
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.contact-area > p {
+  margin-left: 20px;
+}
+/* 컨택영역 박스공통 */
+.desc-box {
+  width: calc(100% / 2.5);
+  height: 30px;
+  margin-left: 20px;
+  display: inline-block;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.desc-box h4 {
+  margin: 5px;
+}
+
+.details-box {
+  height: 136px;
+}
+
+.transmit-box {
+  text-align: center;
+  background-color: #e6e6e6;
+}
+
+.big {
+  position: relative;
+  width: 410px;
+  top: -429px;
+  right: -743px;
+}
+
+.middle {
+  position: relative;
+  width: 154px;
+  top: -259px;
+  right: -651px;
+}
+
+.small {
+  width: 141px;
+  position: relative;
+  top: -271px;
+  right: 93px;
+}
+/* //////////////////////////////////////////// */
 /* 6. 하단영역 */
 .bottom-area {
-  height: 250px;
+  height: 310px;
   background: url(../images/background.gif);
   /* overflow: hidden; */
   color: #fff;
+  box-sizing: border-box;
+  padding: 0 40px 25px 40px;
 }
 
 .bottom-info-right {
-  margin-right: 10px;
   padding-top: 6vmin;
   display: flex;
   justify-content: flex-end;
   gap: 5vmin;
 }
 .bottom-info {
-  margin: 10px;
-  padding-top: 6vmin;
+  padding-top: 10vmin;
   display: flex;
   flex-direction: row;
-    justify-content: space-between;
+  justify-content: space-between;
   flex-wrap: nowrap;
   align-items: flex-end;
 }
