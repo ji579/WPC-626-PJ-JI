@@ -89,9 +89,10 @@ h2 {
 }
 .scroll-inbox {
   position: absolute;
-  top: 540px;
+  top: 666px;
   left: 50%;
   translate: -50% 0;
+  text-align: center;
   z-index: 1;
   
 }
