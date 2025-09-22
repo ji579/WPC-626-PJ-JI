@@ -44,6 +44,7 @@ body * {
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  padding: 10px 0;
 }
 
 h1 {
@@ -114,16 +115,20 @@ h2 {
     flex: 1;
 }
 
-.main-area article ul{
+.main-box article ul{
   display: flex;
   flex-direction: column;
   gap: 1vh;
   align-items: center;
 }
 
-/* 메뉴박스 */
+/* 프로필,작업,미술관 메뉴박스 */
 .main-info {
-  /* top: -404px; */
+  position: absolute; 
+  top: 42px;
+  left: 50%;
+  translate: -50% 0;
+
   text-align: center;
   display: flex;
   align-items: center;
@@ -132,28 +137,6 @@ h2 {
   gap: 488px;
 }
 
-.main-menu {
-  width: 445px;
-  height: 632px;
-}
-
-/* 
-.main-box >ul{
-
-} */
-
-.first-line{
-  position: relative;
-width: 446px;
-height: 632px;
-}
-
-
-.main-menu{
- width: 348px;
-    height: 450px;
-  background: url(../images/메뉴박스1.png) no-repeat center top / cover;}
-
 /*메뉴글씨사이즈 */
  .main-info h3 {
   position: relative;
@@ -161,7 +144,43 @@ height: 632px;
 h4{
   font-size: 1.6rem;
 }
-  
+
+/* 메인_메뉴이미지 */
+.contact img{
+  box-sizing: border-box;
+    padding: 88px 48px;
+    width: 100%;
+    height: 100%;
+  /* position: relative;
+    top: 14.6%;
+  width: 341px;
+  height: 441px; */
+}
+
+
+
+
+/* 메인공통부분 */
+.contact{
+  position: relative;
+  height: 632px;
+  text-align: center;
+}
+
+/* 메인이미지공통부분 */
+.img-box img{
+ width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 비디오공통부분 */
+#myvid{
+   width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
 
   /* 메인 중간줄  */
 .main-center {
@@ -178,6 +197,17 @@ h4{
     letter-spacing: 30px;
     padding-top: 30px;
     color: #ffffff;
+}
+
+/* 메인 마지막 가로줄 크기 다름 */
+.img-box-3 img{
+ width: 100%;
+    height: 561px;
+    object-fit: cover;
+}
+
+.video3{
+  height: 694px;
 }
 
 /* //////////////////////////////////////////////// */

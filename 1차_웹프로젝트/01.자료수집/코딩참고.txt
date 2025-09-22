@@ -43,6 +43,10 @@ https://www.php.cn/ko/faq/495739.html
     text-shadow: 2px 2px 2px #00000070;
 
 
+******영상 어둡게 만들기**********
+  /* 필터 명도값 조정하여 어두워보이게함 */
+    filter: brightness(.5);
+
 /* 마영오*/
  마(진) 영(위) 오(양쪽) 아래 
 
