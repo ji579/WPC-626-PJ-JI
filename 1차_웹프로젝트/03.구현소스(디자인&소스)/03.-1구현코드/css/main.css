@@ -17,7 +17,7 @@ body * {
 /* 2. 상단영역 */
 .top-area {
   background: url(../images/background.gif) no-repeat center top / cover;
-  height: 125px;
+  height: 155px;
   width: 100%;
 }
 
@@ -66,7 +66,7 @@ h2 {
 /* 3. 작가배너영역 */
 .banner-area {
   position: relative;
-  height: 600px;
+  height: 780px;
   text-align: center;
 }
 
@@ -74,23 +74,24 @@ h2 {
   position: fixed;
 }
 .bg {
-  aspect-ratio: 990 /420;
+  /* aspect-ratio: 1295 /548; */
   position: absolute;
   top: 65px;
   left: 50%;
+  width: 1295px;
   translate: -50% 0;
 }
 .yayoi {
   position: absolute;
   top: 25px;
-  width: 160px;
+  width: 210px;
   left: 50%;
   translate: -50% 0;
   z-index: 1;
 }
 .scroll-inbox {
   position: absolute;
-  top: 666px;
+      top: 825px;
   left: 50%;
   translate: -50% 0;
   text-align: center;
@@ -107,6 +108,24 @@ h2 {
   gap: 15px;
   flex-direction: row;
 }
+
+/* .circle {
+
+margin: 0 auto;
+left: 50%;
+  translate: -50% 0;
+  width: 100%;
+  height: 118px;
+   
+} */
+
+
+/* .main-area article::before {
+  content: "";
+width: 100%;
+height: 118px;
+  background: url(../images/연결.png) no-repeat center top / cover;
+} */
 
 .main-area article {
   display: flex;
@@ -171,6 +190,9 @@ h4{
  padding: 0;
  width: 100%;
  height: 100%;
+
+/* height: 632px;
+width: auto; */
   }
 }
 
@@ -180,12 +202,15 @@ h4{
   position: relative;
   height: 632px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 /* 메인이미지공통부분 */
 .img-box img{
+  height: 632px;
  width: 100%;
     height: 100%;
+    margin-bottom: 10px;
     object-fit: cover;
 }
 
@@ -201,6 +226,7 @@ h4{
 .main-center {
   position: relative;
   height: 470px;
+  margin-bottom: 10px;
   background: url(../images/메인이미지1.png) no-repeat center top / cover;
 }
 .main-center h1 {
