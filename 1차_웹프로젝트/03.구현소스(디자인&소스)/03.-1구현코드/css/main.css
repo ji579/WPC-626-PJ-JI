@@ -101,7 +101,8 @@ h2 {
 /* //////////////////////////////////////////////// */
 /* 4. 메인영역  */
 .main-area {
-  height: 2625px;
+  position: relative;
+  height: 2520px;
   z-index: 1;
   text-align: center;
   display: flex;
@@ -116,6 +117,14 @@ margin: 0 auto;
 background: url(../images/연결.png) no-repeat center top / cover;
   height: 118px;
 
+width: 1360px;;
+}
+.circle2 {
+position: absolute;
+margin: 0 auto;
+bottom: 0;
+background: url(../images/연결.png) no-repeat center top / cover;
+  height: 118px;
 width: 1360px;;
 }
 
@@ -330,7 +339,7 @@ width: auto; */
   gap: 5vmin;
 }
 .bottom-info {
-  padding-top: 10vmin;
+  padding-top: 6vmin;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
