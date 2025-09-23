@@ -20,9 +20,8 @@ body * {
   left: 0;
   width: 100%;
   height: 100vh;
-/* height: 935px; */
-z-index: -1;
-
+  /* height: 935px; */
+  z-index: -1;
 }
 
 /* 2. 상단영역 */
@@ -33,10 +32,6 @@ z-index: -1;
   width: 100%;
 }
 
-/* 양옆 선 만들기 */
-.top-area::after {
-  content: "";
-}
 .top-area .inbox {
   position: fixed;
   height: 125px;
@@ -45,7 +40,8 @@ z-index: -1;
 }
 
 /* 상단부분 글씨크기 */
-.top p, div{
+.top p,
+div {
   font-size: 1.4rem;
 }
 
@@ -71,8 +67,6 @@ h1 {
 
 h2 {
   font-size: 6rem;
-
-
 }
 
 .logo {
@@ -88,6 +82,19 @@ h2 {
   height: 780px;
   text-align: center;
 }
+
+/* 양옆 선 만들기 */
+.banner-area .inbox::after{
+  content: "";
+    position: absolute;
+    right: 20px;
+top: 0;
+    width: 2px;
+    height: 100%;
+    color: #000;
+}
+
+
 
 .banner-area .inbox {
   position: sticky;
@@ -111,12 +118,11 @@ h2 {
 }
 .scroll-inbox {
   position: absolute;
-      top: 825px;
+  top: 825px;
   left: 50%;
   translate: -50% 0;
   text-align: center;
   z-index: 1;
-  
 }
 /* //////////////////////////////////////////////// */
 /* 4. 메인영역  */
@@ -131,34 +137,30 @@ h2 {
   background-color: #fff;
 }
 
-
-
-
-
-
 #spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
-position: sticky;
-    max-width: 1360px;
-    top: 0;
-    margin: 0 auto;
-    background: url(../images/background.gif) no-repeat center top / cover;
-    z-index: 999;
-    height: 94px;
+  position: sticky;
+  max-width: 1360px;
+  top: 0;
+  margin: 0 auto;
+  background: url(../images/background.gif) no-repeat center top / cover;
+  z-index: 999;
+  height: 94px;
 }
 /* 인박스 높이값 초기화 */
 .spart-menu.inbox {
   height: auto;
 }
 .spart-menu.inbox h1 {
-font-size: 4rem;
+  font-size: 4rem;
 }
 .spart-menu ul {
   /* 플렉스박스 */
   display: flex;
-  /* padding: 12px 0; */
-  justify-content: center;
-    align-items: center;
+  height: 94px;
+  padding: 0 100px;
+  justify-content: space-between;
+  align-items: center;
   transition: 0.4s ease-out;
 }
 /* 도깨비메뉴 상위메뉴a */
@@ -172,36 +174,35 @@ font-size: 4rem;
 }
 
 .circle {
- position: sticky;
-    top: 20px;
-/* 밑으로 내리다 메뉴때 필요? */
-/* margin: 46px auto 0; */
-margin: 0 auto;
-background: url(../images/연결.png) no-repeat center top / cover;
+  position: sticky;
+  top: 20px;
+  /* 밑으로 내리다 메뉴때 필요? */
+  /* margin: 46px auto 0; */
+  margin: 0 auto;
+  background: url(../images/연결.png) no-repeat center top / cover;
   height: 118px;
-width: 1360px;
-z-index: 2;
-
+  width: 1360px;
+  z-index: 2;
 }
 .circle2 {
-position: absolute;
-margin: 0 auto;
-/* bottom: 0; */
-/* 컨택영역이랑 겹침 */
-bottom: -24px;
-background: url(../images/연결.png) no-repeat center top / cover;
+  position: absolute;
+  margin: 0 auto;
+  /* bottom: 0; */
+  /* 컨택영역이랑 겹침 */
+  bottom: -24px;
+  background: url(../images/연결.png) no-repeat center top / cover;
   height: 118px;
-width: 1360px;;
+  width: 1360px;
 }
 
 .main-area article {
   display: flex;
   flex-direction: column;
   /* width: calc(100% / 3); */
-    flex: 1;
+  flex: 1;
 }
 
-.main-box article ul{
+.main-box article ul {
   display: flex;
   flex-direction: column;
   gap: 1vh;
@@ -210,7 +211,7 @@ width: 1360px;;
 
 /* 프로필,작업,미술관 메뉴박스 */
 .main-info {
-  position: absolute; 
+  position: absolute;
   top: 42px;
   left: 50%;
   translate: -50% 0;
@@ -224,19 +225,20 @@ width: 1360px;;
 }
 
 /*메뉴글씨사이즈 */
- .main-info h3 {
+.main-info h3 {
   position: relative;
-  font-size: 3rem;}
-h4{
+  font-size: 3rem;
+}
+h4 {
   font-size: 1.6rem;
 }
 
 /* 메인_메뉴이미지 */
-.contact img{
+.contact img {
   box-sizing: border-box;
-    padding: 88px 48px;
-    width: 100%;
-    height: 100%;
+  padding: 88px 48px;
+  width: 100%;
+  height: 100%;
   /* position: relative;
     top: 14.6%;
   width: 341px;
@@ -244,8 +246,8 @@ h4{
 }
 
 /* 메인_메뉴이미지 호버시 이미지 확대 */
-.contact img:hover{
- /* padding: 0;
+.contact img:hover {
+  /* padding: 0;
  width: 100%;
  height: 100%;
  transition: 2s ; */
@@ -253,19 +255,18 @@ h4{
 }
 
 @keyframes menu-ani {
-  to{
- padding: 0;
- width: 100%;
- height: 100%;
+  to {
+    padding: 0;
+    width: 100%;
+    height: 100%;
 
-/* height: 632px;
+    /* height: 632px;
 width: auto; */
   }
 }
 
-
 /* 메인공통부분 */
-.contact{
+.contact {
   position: relative;
   height: 632px;
   text-align: center;
@@ -273,23 +274,21 @@ width: auto; */
 }
 
 /* 메인이미지공통부분 */
-.img-box img{
-
- width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
-    object-fit: cover;
+.img-box img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  object-fit: cover;
 }
 
 /* 비디오공통부분 */
-#myvid{
-   width: 100%;
-    height: 100%;
-    object-fit: cover;
-
+#myvid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-  /* 메인 중간줄  */
+/* 메인 중간줄  */
 .main-center {
   position: relative;
   height: 470px;
@@ -297,24 +296,24 @@ width: auto; */
   background: url(../images/메인이미지1.png) no-repeat center top / cover;
 }
 .main-center h1 {
-    position: absolute;
-    top: 9%;
-    left: 50%;
-    translate: -50% 0;
-    writing-mode: vertical-lr;
-    letter-spacing: 30px;
-    padding-top: 30px;
-    color: #ffffff;
+  position: absolute;
+  top: 9%;
+  left: 50%;
+  translate: -50% 0;
+  writing-mode: vertical-lr;
+  letter-spacing: 30px;
+  padding-top: 30px;
+  color: #ffffff;
 }
 
 /* 메인 마지막 가로줄 크기 다름 */
-.img-box-3 img{
- width: 100%;
-    height: 561px;
-    object-fit: cover;
+.img-box-3 img {
+  width: 100%;
+  height: 561px;
+  object-fit: cover;
 }
 
-.video3{
+.video3 {
   /* height: 694px; */
   /* 하단 동그라미가 컨택영역과 겹쳤을때 */
   height: 710px;
@@ -341,7 +340,7 @@ width: auto; */
   gap: 5px;
   flex-direction: column;
   margin-top: 15px;
-margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 .contact-area > p {
   margin-left: 20px;
@@ -374,22 +373,22 @@ margin-bottom: 15px;
 .big {
   position: relative;
   width: 410px;
- top: -461px;
+  top: -461px;
   right: -743px;
 }
 
 .middle {
   position: relative;
   width: 154px;
-top: -287px;
+  top: -287px;
   right: -651px;
 }
 
 .small {
   width: 141px;
   position: relative;
-      top: -291px;
-    right: -4px;
+  top: -291px;
+  right: -4px;
 }
 /* //////////////////////////////////////////// */
 /* 6. 하단영역 */
