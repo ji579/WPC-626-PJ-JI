@@ -66,9 +66,24 @@ body * {
     
 }
 .painting-part li {
+  /* 컨텐츠 세로 배치 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
     width: calc((100% - 4.5vh * 2) / 3);
+
+    /* 전체 화면구성 */
     aspect-ratio: 340 / 455;
     box-shadow: 0 0 10px #ccc;
     box-sizing: border-box;
     padding: 24px 20px;
     cursor: pointer;}
+
+    .cont-box img{
+      max-width: 340px;
+    }
+    .cont-box h3{
+     text-align: center;
+     font-size: 1.8rem;
+    }
