@@ -57,7 +57,6 @@ div {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 500;
   padding: 10px 0;
 }
 
@@ -153,7 +152,13 @@ top: 0;
 }
 .spart-menu.inbox h1 {
   font-size: 4rem;
+  color: #ffffff;
+
 }
+.spart-menu ul > li:hover > a {
+  color: #C52531;
+}
+
 .spart-menu ul {
   /* 플렉스박스 */
   display: flex;
@@ -163,7 +168,7 @@ top: 0;
   align-items: center;
   transition: 0.4s ease-out;
 }
-/* 도깨비메뉴 상위메뉴a */
+/* 스티키 메뉴이름 */
 .spart-menu ul > li > a {
   color: white;
   font-size: 1.8rem;
@@ -369,6 +374,11 @@ width: auto; */
   text-align: center;
   background-color: #e6e6e6;
 }
+
+.transmit-box:hover {
+  background-color: #B3B3B5;
+}
+
 
 .big {
   position: relative;

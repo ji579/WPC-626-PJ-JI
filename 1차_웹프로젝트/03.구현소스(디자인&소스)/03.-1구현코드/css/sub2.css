@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 제목파트 */
+.tit2 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+}
+
+.line2 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+}
+
+.line3 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  margin-bottom: 45px;
+  
+}
+
+
+/* ////////////////////////////////////////// */
+
+.painting-part ul.cont-box {
+    gap: 21.4vh 4.5vh;
+}
+.cont-box{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    
+}
+.painting-part li {
+    width: calc((100% - 4.5vh * 3) / 4);
+    aspect-ratio: 340 / 455;
+    box-shadow: 0 0 10px #ccc;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    cursor: pointer;}

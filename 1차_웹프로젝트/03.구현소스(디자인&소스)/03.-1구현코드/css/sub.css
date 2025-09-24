@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+.top{
+  max-height: 185px;
+}
+
+.tit{
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+     border-bottom: 2px solid #B3B3B5;
+     margin-bottom: 50px;
+
+}
+#main-area{ 
+position: relative;
+}
+
+.pro-box{
+      max-width: 1360px;
+  margin: 0 auto;
+}
+
+.pro-box>ul>li{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ 
+}
+.profile{
+  position: relative;
+  width: 885px;
+  left: 50%;
+  translate: -50% 0;
+  /* height: 477px;
+
+background: url(../images/뒷배경.png) no-repeat center top / cover;
+margin-bottom: 20px; */
+}
+
+/* 야요이 얼굴 */
+.yayoi{ 
+  position: absolute;
+    width: 503px;
+bottom: 80px;
+left: 53%;
+    translate: -49% 0;
+    opacity: 0;
+   
+  animation: pro-ani 2s linear forwards;
+}
+@keyframes pro-ani {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.pro-box>ul>li>p{
+  font-size: 1.6rem;
+}
+/* 2-2 프로필 책 글  */
+.book{
+  position: relative;
+  max-width: 1360px;
+
+
+}

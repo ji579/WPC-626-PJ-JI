@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 공통모듈 CSS - common.css */
+
+/* 웹폰트 CDN으로 불러오기
+CDN(Content Delivery Network)은 
+어떤 웹파일을 네트워크로 불러오는 것임! */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* 웹폰트 적용 코드 */
+/*   font-family: "Bagel Fat One", system-ui;
+ font-family: "Diphylleia", serif;
+  font-family: "Gowun Batang", serif; */
+
+/* 전체 글씨체 적용하기 */
+body {
+  /* 웹폰트체를 전체에 적용함! */
+  font-family: "Instrument Sans", sans-serif;
+}
+
+#spart-menu {
+  max-width: 1360px;
+  top: 0;
+  margin: 0 auto;
+  background: url(../images/background.gif) no-repeat center top / cover;
+  z-index: 999;
+  height: 94px;
+}
+/* 인박스 높이값 초기화 */
+.spart-menu.inbox {
+  height: auto;
+}
+.spart-menu.inbox h1 {
+  font-size: 4rem;
+  color: #ffffff;
+}
+.spart-menu ul {
+  /* 플렉스박스 */
+  display: flex;
+  height: 94px;
+  padding: 0 100px;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s ease-out;
+}
+/* 스티키 메뉴이름 */
+.spart-menu ul > li > a {
+  color: white;
+  font-size: 1.8rem;
+  display: block;
+  /* padding: 9px 24px; */
+  /* 줄바꿈방지 */
+  white-space: nowrap;
+}
+
+/* 호버시 색 변경 */
+.spart-menu ul > li:hover > a {
+  color: #c52531;
+}
+/* ////////////////////////////////////////////// */
+
+/* /////////////////////////////////////////////////// */
+/* 하단공통 */
+.bottom-flx h1 {
+  font-size: 6rem;
+}
+.bottom-flx p,
+.bottom-info-right h3,
+p {
+  font-size: 1.6rem;
+}
+
+.bottom-area {
+  height: 310px;
+  background: url(../images/background.gif);
+  /* overflow: hidden; */
+  color: #fff;
+  box-sizing: border-box;
+  padding: 0 40px 25px 40px;
+}
+
+.bottom-info-right {
+  padding-top: 6vmin;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5vmin;
+}
+.bottom-info {
+  padding-top: 6vmin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.bottom-area img {
+  width: 28px;
+}
