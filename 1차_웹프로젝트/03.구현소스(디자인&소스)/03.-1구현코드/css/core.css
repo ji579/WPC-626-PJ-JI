@@ -47,6 +47,11 @@ body{
     margin: 0 auto;    
 }
 
+.inabox{
+    position: relative;
+    margin: 0 auto; 
+}
+
 /* 그룹파트박스 */
 .group-part{
     /* 상하패딩 넣기 */

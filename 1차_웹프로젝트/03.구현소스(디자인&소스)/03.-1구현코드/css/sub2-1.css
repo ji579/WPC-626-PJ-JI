@@ -56,27 +56,6 @@ body * {
   padding-left: calc(100% / 13.5);
 }
 
-
-
-/*이동버튼*/
-.abtn {
-    position: absolute;
-   top: 50%;
-    transform: translateY(-50%);
-    /*Y축 중앙이동*/
-}
-
-
-/*왼쪽버튼*/
-.ab1 {
-    left: 50px;
-}
-
-/*오른쪽버튼*/
-.ab2 {
-    right: 50px;
-}
-
 /* ////////////////////////////////////////// */
 
 /* for문 전에 */
@@ -122,15 +101,16 @@ body * {
   display: flex;
   /* 랩핑박스 - 줄바꿈됨 */
   flex-wrap: wrap;
+  justify-content: center
   /* 사이간격: gap */
   /* gap: 위아래 양쪽 */
-  gap: 21.4vh 4.5vh;
+
 }
 
 .wrap li {
   /* 한줄에 3개 오는 설정값을 찾음 */
-  width: calc((100% - 4.5vh * 2) / 3);
-  aspect-ratio: 340 / 455;
+  width: calc((100% - 4.5vh*3) / 4);
+  aspect-ratio: 266 / 548;
   cursor: pointer;
   text-align: center;
 
@@ -142,13 +122,43 @@ body * {
 
   /* 패딩, 보더를 크기에 포함하기 : bxb */
   box-sizing: border-box;
-  gap: 32px;
+  gap: 20px;
  
+}
+
+/*이동버튼*/
+.abtn {
+    position: absolute;
+   top: 50%;
+    transform: translateY(-50%);
+    /*Y축 중앙이동*/
+}
+
+
+/*왼쪽버튼*/
+.ab1 {
+    left: 50px;
+}
+
+/*오른쪽버튼*/
+.ab2 {
+    right: 50px;
+}
+
+.wrap::after {
+ max-width: 1360px;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color:black;
+    position: absolute;
+    top: 75.4%;
+
 }
 
 /* 이미지태그를 배경처럼 넣기 */
 .wrap img {
-  max-width: 340px;
+  max-width: 230px;
   /* height: 100%; */
   object-fit: cover;
   /* object-fit속성
@@ -157,6 +167,13 @@ body * {
             비율 유지를 할 수 있게 해주는 속성
             그 값으로 cover를 사용함! */
 }
+
+.img-box{
+  
+ /* aspect-ratio: 263 /380; */
+}
 .wrap h3 {
+    padding-bottom: 99px;
   font-size: 1.8rem;
 }
+

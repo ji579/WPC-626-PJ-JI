@@ -82,17 +82,10 @@ h2 {
   text-align: center;
 }
 
-/* 양옆 선 만들기 */
-.banner-area .inbox::after{
-  content: "";
-    position: absolute;
-    right: 20px;
-top: 0;
-    width: 2px;
-    height: 100%;
-    color: #000;
-}
 
+
+
+/* 양옆 선 만들기 */
 
 
 .banner-area .inbox {
@@ -138,6 +131,7 @@ top: 0;
 
 #spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
+  /* display: none; */
   position: sticky;
   max-width: 1360px;
   top: 0;
