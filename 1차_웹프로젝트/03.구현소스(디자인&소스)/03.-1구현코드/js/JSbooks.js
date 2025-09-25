@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded",()=>{
     // for문으로 반복코드 생성하기
     // for(시;한;증){코드}
     // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
-    for(let i=1;i<=18;i++){
+    for(let i=1;i<=24;i++){
         hCode += `
             <li>
                 <img src="./images/paint${i}.jpg" alt="paint" class="img-box">
