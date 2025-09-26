@@ -3,6 +3,39 @@
 https://favicon.io/
 
 
+자바스크립트로 
+JS8-2.DOM_이벤트객체_ a 눌렀을때 위로 안올라가게 막는거 참고하기 67글
+  // 기본기능막기(a요소는 이동특성이 있음. 이것을 막음!)
+  // e.preventDefault();
+  return false;
+
+////////////////////
+css 09-2nth child 참고
+label태그?
+
+
+// 휠 이벤트 막기 테스트 
+휠로 내리면서 화면전환또는 옆에서 나오고 할때 필요
+
+//// 220줄
+window.addEventListener(
+  "wheel",
+  (e) => {
+    // 기본기능막기
+    e.preventDefault();
+
+    console.log("휠~~~~");
+    // 배경색 변경
+    myFn.qs("body").style.backgroundColor = "lightcoral";
+  },
+  { passive: false }
+);
+// 이벤트막기할 경우 window, body, document
+// 일 경우 막기를 할 수 없게 셋팅됨!
+// 이것을 쓰려면 이벤트 설정시 맨뒤에 {passive:false}
+// 설정을 추가한다!
+    //////////////////////////////////////////
+
 user-select: none;
     -webkit-user-drag: none;
 

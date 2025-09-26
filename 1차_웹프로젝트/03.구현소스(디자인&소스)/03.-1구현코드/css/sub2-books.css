@@ -94,7 +94,8 @@ body * {
 /* .booksbox {
   max-width: 1360px;
   margin: 0 auto;
-} */
+}
+   */
 .wrap {
   max-width: 1360px;
   margin: 0 auto;
@@ -172,10 +173,10 @@ body * {
             그 값으로 cover를 사용함! */
 }
 
-.img-box{
+/* .img-box{
   
- /* aspect-ratio: 263 /380; */
-}
+ aspect-ratio: 263 /380;
+} */
 .wrap h3 {
     padding-bottom: 99px;
   font-size: 1.8rem;

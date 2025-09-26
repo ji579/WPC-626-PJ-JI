@@ -16,6 +16,14 @@ body * {
   outline: 2px dashed #ccc;
 }
 
+.paging-list ul{
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 30px;
+  padding: 5vh 0;
+}
+
 /***************** 메인 CSS ********************/
 
 /* 제목파트 */

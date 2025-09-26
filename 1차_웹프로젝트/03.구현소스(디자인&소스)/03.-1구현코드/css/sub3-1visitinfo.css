@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 제목파트 */
+.tit3 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  /* ?? */
+  padding-left: calc(100% / 13.5);
+}
+
+.line2 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+ align-content: center;
+ 
+  /* ?? */
+  padding-left: calc(100% / 13.5);
+}
+
+.line2 img{
+  margin-left: 5px;
+}
+.line2 a{
+  margin-right: 5px;
+}
+
+.line3 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+   margin-bottom: 35px;
+}
+
+/* ////////////////////////////////////////// */
+.main-box
+{
+      position: relative;
+  max-width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+}
+.info-box { 
+  display: flex;
+  justify-content: space-evenly;
+
+}
+.left{
+  width: 50%;
+  text-align: left;
+   box-sizing: border-box;
+     padding-left: calc(100% / 13.5);
+}
+
+.btn{
+  display: flex;
+  gap: 14px;
+  margin-top: 13px;
+}
+
+
+
+
+.right{
+ 
+    
+    width: 50%;
+    
+    text-align: left; 
+    box-sizing: border-box;
+     padding-right: calc(100% / 13.5);
+}
+
+
+.txtcontent{
+  display: flex;
+  gap: 4vw;
+  margin-bottom: 40px;
+  /* column-count: 2; */
+}
+.txt-box{
+ /* column-count: 2; */
+
+   text-align: justify;
+     /* 영문에서 양쪽 정렬일 경우
+  단어단위로 줄바꿈이 되므로 중간에
+  구멍이 생김. 따라서 단어깨기설정필요! */
+  /* 단어깨기 : 모두깨기(break-all) */
+  word-break: break-all;
+   /* 다중열 구분선 값은 보더와 같음
+  -> 두종색! -> 두께 종류 색상 */
+
+}
+.info-box h3{
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.info-box p{
+  font-size: 1.8rem;
+  padding-top: 14px;
+  
+}
+.info-box span{
+  font-size: 1.6rem;
+color: #B3B3B5;
+}
+
+.txt-box::after{
+  position: absolute;
+  content: "";
+  border: 1px solid #B3B3B5;
+height: 92.5%;
+ left: 50%;
+ top: 0;
+  transform: translate(-50%, 0);
+
+
+}
+.time{
+  line-height: 38px;
+}
+
+.hour h3{
+    padding-top: 18px;
+}
+.closed h3{
+    padding-top: 18px;
+}
