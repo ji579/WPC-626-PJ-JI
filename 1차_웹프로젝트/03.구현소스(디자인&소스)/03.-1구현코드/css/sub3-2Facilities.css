@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 제목파트 */
+.tit3 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  /* ?? */
+  padding-left: calc(100% / 13.5);
+}
+
+.line2 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-content: center;
+
+  /* ?? */
+  padding-left: calc(100% / 13.5);
+}
+
+.line2 img {
+  margin-left: 5px;
+}
+.line2 a {
+  margin-right: 5px;
+}
+
+.line3 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+  margin-bottom: 35px;
+}
+
+/* ////////////////////////////////////////// */
+
+.main-area {
+  /* position: relative; */
+  max-width: 1360px;
+  margin: 0 auto;
+
+}
+
+/* .facilities {
+max-width: 424px;
+} */
+
+.floor{
+    display: flex;
+    flex-direction: column;
+}
+
+.floortxt{ 
+    width: 434px;
+    position: relative;
+    display: flex;
+    gap: 10px;
+ padding: 16px 10px;
+    border: 2px solid black;
+    height: 73px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+li img{
+    width: 32px;
+}
+
+div > h3{
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 16px;
+
+}
+
+h4{
+    font-size: 1.6rem;
+}
+
+.floorwrap{
+    max-width: 434px;
+}
+
+.floortxt::after{
+     content: "";
+     position: absolute;
+    background: url(../images/위로올리기.png) no-repeat center center / cover;
+   width: 28px;
+    height: 28px;
+  right: 10px;
+   top: 50%;
+   translate: 0 -50%;
+}
+
+.floorcont{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+        justify-content: center;
+}
+
+span{
+    text-align: left;
+    font-size: 1.4rem;
+color: #b3b3b5;
+}
+
+.mapimg{
+    width: 661px;
+    height: 439px;
+}

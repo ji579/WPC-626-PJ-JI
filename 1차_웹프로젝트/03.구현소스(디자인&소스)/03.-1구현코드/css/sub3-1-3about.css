@@ -17,7 +17,6 @@ body * {
 }
 
 /***************** 메인 CSS ********************/
-
 /* 제목파트 */
 .tit3 .inbox {
   max-width: 1360px;
@@ -63,112 +62,44 @@ body * {
   border-bottom: 2px solid #b3b3b5;
   margin-bottom: 35px;
 }
-
 /* ////////////////////////////////////////// */
 
-.main-area{
-  max-width: 1114px;
-  margin: 0 auto;
-}
-
-.main-box {
-  position: relative;
+.main-area {
+  /* position: relative; */
   max-width: 1360px;
   margin: 0 auto;
   text-align: center;
 }
 
-.map1{
-padding-bottom: 40px;
-    width: 1114px;
-    height: 356px;
-    margin: 0 auto;
- 
-  
+.cont-box {
+   max-width: 1114px;
+  /* text-align: center; */
+  margin: auto;
 }
 
-.left {
-  width: 50%;
-  text-align: left;
-  box-sizing: border-box;
-  /* padding-left: calc(100% / 13.5); */
+.img-box img {
+ width: 1114px;
+  height: 356px;
+  margin-bottom: 10px;
 }
 
-.btn {
+.img-box > div {
   display: flex;
-  gap: 14px;
-  margin-top: 13px;
+  align-items: flex-end;
+  flex-direction: column;
 }
 
-.right {
-  width: 50%;
-
-  text-align: left;
-  box-sizing: border-box;
-  /* padding-right: calc(100% / 13.5); */
-}
-
-.txtcontent {
-  display: flex;
-  gap: 4vw;
-  /* margin-bottom: 40px; */
-  /* column-count: 2; */
-}
-.txt-box {
-  /* column-count: 2; */
-
+.desc {
+  font-size: 1.8rem;
+  margin-top: 27px;
+  line-height: auto;
   text-align: justify;
   /* 영문에서 양쪽 정렬일 경우
   단어단위로 줄바꿈이 되므로 중간에
   구멍이 생김. 따라서 단어깨기설정필요! */
   /* 단어깨기 : 모두깨기(break-all) */
   word-break: break-all;
-  /* 다중열 구분선 값은 보더와 같음
-  -> 두종색! -> 두께 종류 색상 */
-}
-
-.txt1,
-.txt2 {
-  margin-bottom: 40px;
-}
-
-.info-box h3 {
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-.info-box p {
-  font-size: 1.8rem;
-  padding-top: 14px;
-}
-.info-box span {
-  font-size: 1.6rem;
-  color: #b3b3b5;
-}
-
-.info-box {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-/* .txt-box */
-.info-box::after {
-  position: absolute;
-  content: "";
-  border: 1px solid #b3b3b5;
-  height: 100%;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, 0);
-}
-.time {
-  line-height: 38px;
-}
-
-.hour h3 {
-  padding-top: 18px;
-}
-.closed h3 {
-  padding-top: 18px;
+  line-height: 1.8;
 }
 
 .up {
