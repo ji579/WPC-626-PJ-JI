@@ -17,7 +17,6 @@ body * {
 }
 
 /***************** 메인 CSS ********************/
-
 /* 제목파트 */
 .tit3 .inbox {
   max-width: 1360px;
@@ -63,82 +62,69 @@ body * {
   border-bottom: 2px solid #b3b3b5;
   margin-bottom: 35px;
 }
-
 /* ////////////////////////////////////////// */
 
 .main-area {
   /* position: relative; */
   max-width: 1360px;
-  margin: 0 auto 105px;
-
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* .facilities {
-max-width: 424px;
-} */
-
-.floor{
+ul{
+    margin-top: 30px;
+    margin-bottom: 50px;
     display: flex;
-    flex-direction: column;
-}
-
-.floortxt{ 
-    width: 434px;
-    position: relative;
-    display: flex;
-    gap: 10px;
- padding: 16px 10px;
-    border: 2px solid black;
-    height: 73px;
-    box-sizing: border-box;
-    align-items: center;
-}
-
-li img{
-    width: 32px;
-}
-
-div > h3{
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 16px;
+ 
+   justify-content: center;
 
 }
 
-h4{
-    font-size: 1.6rem;
+.wrap {
+  max-width: 1360px;
+  margin: 0 auto;
 }
 
-.floorwrap{
-    max-width: 434px;
+/* 내부 플렉스박스 */
+.wrap ul {
+  display: flex;
+  /* 랩핑박스 - 줄바꿈됨 */
+  flex-wrap: wrap;
+  /* 사이간격: gap */
+  /* gap: 위아래 양쪽 */
+  gap: 21.4vh 4.5vh;
 }
 
-.floortxt::after{
-     content: "";
-     position: absolute;
-    background: url(../images/위로올리기.png) no-repeat center center / cover;
-   width: 28px;
-    height: 28px;
-  right: 10px;
-   top: 50%;
-   translate: 0 -50%;
+.wrap li {
+  /* 한줄에 3개 오는 설정값을 찾음 */
+  width: calc((100% - 4.5vh * 2) / 3);
+  aspect-ratio: 340 / 455;
+  cursor: pointer;
+  text-align: center;
+
+  /* 이미지,글자 셋팅 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* 패딩, 보더를 크기에 포함하기 : bxb */
+  box-sizing: border-box;
+  gap: 32px;
+ 
 }
 
-.floorcont{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-        justify-content: center;
-        margin-bottom: 16px;
+/* 이미지태그를 배경처럼 넣기 */
+.wrap img {
+  max-width: 340px;
+  /* height: 100%; */
+  object-fit: cover;
+  /* object-fit속성
+            이미지를 해당박스에서 이미지처럼
+            넘치는 부분을 적당히 잘라서 안보이게하며
+            비율 유지를 할 수 있게 해주는 속성
+            그 값으로 cover를 사용함! */
 }
-
-span{
-    text-align: left;
-    font-size: 1.4rem;
-color: #b3b3b5;
-}
-
-.mapimg{
-    width: 661px;
-    height: 439px;
+.wrap h3 {
+  font-size: 1.8rem;
 }

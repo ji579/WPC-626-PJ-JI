@@ -17,7 +17,6 @@ body * {
 }
 
 /***************** 메인 CSS ********************/
-
 /* 제목파트 */
 .tit3 .inbox {
   max-width: 1360px;
@@ -63,82 +62,34 @@ body * {
   border-bottom: 2px solid #b3b3b5;
   margin-bottom: 35px;
 }
-
 /* ////////////////////////////////////////// */
 
 .main-area {
   /* position: relative; */
   max-width: 1360px;
-  margin: 0 auto 105px;
-
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* .facilities {
-max-width: 424px;
-} */
 
-.floor{
-    display: flex;
-    flex-direction: column;
+
+li {
+  display: flex;
+  flex-direction: column;
+align-items: center;
 }
 
-.floortxt{ 
-    width: 434px;
-    position: relative;
-    display: flex;
-    gap: 10px;
- padding: 16px 10px;
-    border: 2px solid black;
-    height: 73px;
-    box-sizing: border-box;
-    align-items: center;
+li img {
+  width: 886px;
+  height: 1013px;
+ padding-bottom: 45px;
+}
+b {
+ font-size: 1.8rem;
+ padding-bottom: 20px;
 }
 
-li img{
-    width: 32px;
-}
-
-div > h3{
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 16px;
-
-}
-
-h4{
+button{
+    margin-bottom: 118px;
     font-size: 1.6rem;
-}
-
-.floorwrap{
-    max-width: 434px;
-}
-
-.floortxt::after{
-     content: "";
-     position: absolute;
-    background: url(../images/위로올리기.png) no-repeat center center / cover;
-   width: 28px;
-    height: 28px;
-  right: 10px;
-   top: 50%;
-   translate: 0 -50%;
-}
-
-.floorcont{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-        justify-content: center;
-        margin-bottom: 16px;
-}
-
-span{
-    text-align: left;
-    font-size: 1.4rem;
-color: #b3b3b5;
-}
-
-.mapimg{
-    width: 661px;
-    height: 439px;
 }

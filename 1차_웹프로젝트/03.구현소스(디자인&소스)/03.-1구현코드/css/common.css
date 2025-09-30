@@ -12,6 +12,18 @@ CDN(Content Delivery Network)은
  font-family: "Diphylleia", serif;
   font-family: "Gowun Batang", serif; */
 
+
+
+/* 공통셋팅 */
+html{
+    /* 부드러운 스크롤 셋팅 */
+    scroll-behavior: smooth;  
+
+    /* 전체 글자크기 */
+    font-size: 10px;
+    /* rem단위 계산편의를 위함 */
+}
+
 /* 전체 글씨체 적용하기 */
 body {
   /* 웹폰트체를 전체에 적용함! */
