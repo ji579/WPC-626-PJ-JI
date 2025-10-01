@@ -138,7 +138,20 @@ span{
 color: #b3b3b5;
 }
 
-.mapimg{
+.mapWrap{
     width: 661px;
     height: 439px;
+    display: flex;
+    flex-direction: column;
+    gap: -50px;
+  
+}
+
+.mapWrap img{
+width: 100%;
+}
+
+
+  .mapWrap [class*=floor_].on img {
+    opacity: 1;
 }

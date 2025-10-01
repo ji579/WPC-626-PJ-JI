@@ -36,7 +36,7 @@ body * {
   gap: 18px;
   font-size: 1.6rem;
   /* ?? */
-  padding-left: calc(100% / 13.5);
+  padding-left: calc(100% / 12);
 }
 
 .line2 {
@@ -50,7 +50,7 @@ body * {
 .line3 {
   height: 30px;
   border-bottom: 2px solid #b3b3b5;
- align-content: center;
+  align-content: center;
   margin-bottom: 45px;
   /* ?? */
   padding-left: calc(100% / 13.5);
@@ -97,24 +97,25 @@ body * {
 }
    */
 .wrap {
-  max-width: 1360px;
+  max-width: 1114px;
   margin: 0 auto;
 }
 
 /* 내부 플렉스박스 */
-.wrap ul {
+.booksbox {
   display: flex;
+  /* width: calc((100% - -97.5vh * 3) / 4); */
   /* 랩핑박스 - 줄바꿈됨 */
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: space-around;
   /* 사이간격: gap */
   /* gap: 위아래 양쪽 */
-
+  overflow: hidden;
 }
 
-.wrap li {
+.wrap ul {
   /* 한줄에 3개 오는 설정값을 찾음 */
-  width: calc((100% - 4.5vh*3) / 4);
+  /* width: calc((100% - 4.5vh*3) / 4); */
   aspect-ratio: 266 / 548;
   cursor: pointer;
   text-align: center;
@@ -122,48 +123,57 @@ body * {
   /* 이미지,글자 셋팅 */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   align-items: center;
 
   /* 패딩, 보더를 크기에 포함하기 : bxb */
   box-sizing: border-box;
   gap: 20px;
- 
-}
-
-/*이동버튼*/
-.abtn {
-    position: absolute;
-   top: 50%;
-    transform: translateY(-50%);
-    /*Y축 중앙이동*/
 }
 
 
-/*왼쪽버튼*/
+/* .abtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+
 .ab1 {
-    left: 50px;
+  left: 50px;
 }
 
-/*오른쪽버튼*/
 .ab2 {
-    right: 50px;
+  right: 50px;
+} */
+
+.book {
+  width: 266px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  /* 책 그림자 */
+  overflow: hidden;
 }
-
-.wrap::after {
- max-width: 1360px;
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color:black;
-    position: absolute;
-    top: 75.4%;
-
+.list {
+  position: relative;
+  /* 부모자격 */
 }
-
+.list::after {
+  content: "";
+  position: absolute;
+  top: 380px;
+  /* width: 1140px; */
+  width: 200%;
+  height: 1.5px;
+  z-index: 999;
+  background-color: black;
+}
 /* 이미지태그를 배경처럼 넣기 */
 .wrap img {
   max-width: 230px;
+  border: 1px solid #d9d9d9;
   /* height: 100%; */
   object-fit: cover;
   /* object-fit속성
@@ -171,14 +181,52 @@ body * {
             넘치는 부분을 적당히 잘라서 안보이게하며
             비율 유지를 할 수 있게 해주는 속성
             그 값으로 cover를 사용함! */
+  box-shadow: -7px 5px 0px 0 #d9d9d9;
+  transform: translateY(5px);
+    transition: all 0.3s;
 }
 
-/* .img-box{
-  
- aspect-ratio: 263 /380;
-} */
+.book:hover {
+  transform: translateY(-20px);
+  overflow: visible;
+
+}
+.booktxt {
+  width: 266px;
+  height: 167px;
+}
 .wrap h3 {
-    padding-bottom: 99px;
+  padding: 0 35px;
   font-size: 1.8rem;
+  max-width: 198px;
+  text-align: left;
+  word-break: break-all;
 }
 
+   /* 버튼박스 */
+      .btns-box {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: flex;
+        gap: 5vw;
+      }
+
+      .dots {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    background-color: #bdbdbd;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active, .dot:hover{
+    background-color: #949494;}

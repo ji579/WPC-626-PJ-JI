@@ -75,7 +75,11 @@ window.addEventListener("DOMContentLoaded", () => {
     console.log("첫번호:", firstNum);
     console.log("한계번호:", lastNum);
 
-    // for문으로 반복코드 생성하기
+    
+  
+   
+   
+        // for문으로 반복코드 생성하기
     // for(시;한;증){코드}
     // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
     for (let i = firstNum; i <= lastNum; i++) {

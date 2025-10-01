@@ -120,7 +120,7 @@ h2 {
 /* 4. 메인영역  */
 .main-area {
   position: relative;
-  height: 2520px;
+  /* height: 2520px; */
   z-index: 1;
   text-align: center;
   display: flex;
@@ -192,16 +192,6 @@ h2 {
   width: 1360px;
   z-index: 2;
 }
-.circle2 {
-  position: absolute;
-  margin: 0 auto;
-  /* bottom: 0; */
-  /* 컨택영역이랑 겹침 */
-  bottom: -24px;
-  background: url(../images/연결.png) no-repeat center top / cover;
-  height: 118px;
-  width: 1360px;
-}
 
 .main-area article {
   display: flex;
@@ -240,6 +230,7 @@ h2 {
 h4 {
   font-size: 1.6rem;
 }
+
 
 /* 메인_메뉴이미지 */
 .contact img {
@@ -324,21 +315,36 @@ width: auto; */
 .video3 {
   /* height: 694px; */
   /* 하단 동그라미가 컨택영역과 겹쳤을때 */
-  height: 710px;
+ height: 760px;
 }
 
 /* //////////////////////////////////////////////// */
 /* 5. 컨택영역 */
 .contact-area {
+  position: relative;
+  /* 부모자격 */
   box-sizing: border-box;
   /* padding: 0 70px; */
-  padding: 25px 70px 10px;
+  padding: 0 70px 10px;
   background: url(../images/하단.png) no-repeat center top / cover;
-  height: 515px;
+  height: 788px;
   background-color: #fff;
+}
+
+.circle2 {
+position: relative;
+top: -39px;
+  translate: -70px;
+  margin: 0 auto;
+  /* bottom: 0; */
+  /* 컨택영역이랑 겹침 */
+  background: url(../images/연결.png) no-repeat center top / cover;
+  height: 118px;
+  width: 1360px;
 }
 .contact-area h2 {
   margin-bottom: 10px;
+  margin-top: -10px;
 }
 
 .contact-box {
@@ -356,7 +362,7 @@ width: auto; */
 /* 컨택영역 박스공통 */
 .desc-box {
   width: calc(100% / 2.1);
-  height: 30px;
+  height: 45px;
   margin-left: 20px;
   display: inline-block;
   border: 2px solid rgb(0, 0, 0);
@@ -406,7 +412,7 @@ width: auto; */
 /* //////////////////////////////////////////// */
 /* 6. 하단영역 */
 .bottom-area {
-  height: 310px;
+  /* height: 310px; */
   background: url(../images/background.gif);
   /* overflow: hidden; */
   color: #fff;

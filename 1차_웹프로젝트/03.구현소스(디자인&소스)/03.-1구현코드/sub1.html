@@ -85,7 +85,10 @@
       ></div>
 
       <!-- 책시작 -->
+    
+      <div class="swiper-wrapper">
       <div class="swiper-wrapper inbox">
+        
         <div class="swiper-slide">
           <!-- <div class="title" data-swiper-parallax="-300">Slide 1</div>
           <div class="subtitle" data-swiper-parallax="-200">Subtitle</div> -->
@@ -272,14 +275,14 @@
           </div>
         </div>
       </div>
-
+      <div class="swiper-pagination"></div>
       <!-- 메뉴 -->
       <div class="menu-button">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
-
+      </div>
       <!-- 메뉴끝 -->
     </div>
     <!-- 책슬라이드 끝 -->
@@ -291,7 +294,7 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
@@ -300,6 +303,17 @@
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      var swiper = new Swiper(".swiper-wrapper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
         },
         navigation: {
           nextEl: ".swiper-button-next",

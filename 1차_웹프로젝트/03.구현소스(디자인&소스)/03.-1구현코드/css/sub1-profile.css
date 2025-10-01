@@ -211,6 +211,10 @@ ul > li {
   text-align: center;
 }
 
+.swiper-pagination{
+  bottom: var(--swiper-pagination-bottom, 150px) !important;
+}
+
 /* 두번째 데모 메뉴누르기 */
 
   .menu-button {

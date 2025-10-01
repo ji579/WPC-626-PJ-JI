@@ -168,3 +168,21 @@ body * {
 .wrap h3 {
   font-size: 1.8rem;
 }
+
+      .dots {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    background-color: #bdbdbd;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active, .dot:hover{
+    background-color: #949494;}
