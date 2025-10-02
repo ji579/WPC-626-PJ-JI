@@ -70,88 +70,89 @@ body * {
   /* position: relative; */
   max-width: 1360px;
   margin: 0 auto 105px;
-
 }
 
 /* .facilities {
 max-width: 424px;
 } */
 
-.floor{
-    display: flex;
-    flex-direction: column;
+.floor {
+  display: flex;
+  flex-direction: column;
 }
 
-.floortxt{ 
-    width: 434px;
-    position: relative;
-    display: flex;
-    gap: 10px;
- padding: 16px 10px;
-    border: 2px solid black;
-    height: 73px;
-    box-sizing: border-box;
-    align-items: center;
+.floortxt {
+  width: 434px;
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 16px 10px;
+  border: 2px solid black;
+  height: 73px;
+  box-sizing: border-box;
+  align-items: center;
 }
 
-li img{
-    width: 32px;
+li img {
+  width: 32px;
 }
 
-div > h3{
-    font-size: 2rem;
-    text-align: left;
-    margin-bottom: 16px;
-
+div > h3 {
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 16px;
 }
 
-h4{
-    font-size: 1.6rem;
+h4 {
+  font-size: 1.6rem;
 }
 
-.floorwrap{
-    max-width: 434px;
+.floorwrap {
+  max-width: 434px;
 }
 
-.floortxt::after{
-     content: "";
-     position: absolute;
-    background: url(../images/위로올리기.png) no-repeat center center / cover;
-   width: 28px;
-    height: 28px;
+.floortxt::after {
+  content: "";
+  position: absolute;
+  background: url(../images/층버튼\ 미선택.png) no-repeat center center / cover;
+  width: 17px;
+  height: 17px;
   right: 10px;
-   top: 50%;
-   translate: 0 -50%;
+  top: 50%;
+  translate: 0 -50%;
 }
 
-.floorcont{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-        justify-content: center;
-        margin-bottom: 16px;
+.floorcont {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
 }
 
-span{
-    text-align: left;
-    font-size: 1.4rem;
-color: #b3b3b5;
+span {
+  text-align: left;
+  font-size: 1.4rem;
+  color: #b3b3b5;
 }
 
-.mapWrap{
-    width: 661px;
-    height: 439px;
-    display: flex;
-    flex-direction: column;
-    gap: -50px;
-  
+.mapwrap {
+  width: 661px;
+  height: 439px;
+  display: flex;
+  flex-direction: column;
+  gap: -50px;
+}
+.img {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mapwrap img {
+  width: 100%;
 }
 
-.mapWrap img{
-width: 100%;
-}
-
-
-  .mapWrap [class*=floor_].on img {
-    opacity: 1;
+.mapwrap [class*="floor_"].on img {
+  opacity: 1;
 }

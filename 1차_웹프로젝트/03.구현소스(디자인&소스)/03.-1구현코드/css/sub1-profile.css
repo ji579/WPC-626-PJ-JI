@@ -31,9 +31,8 @@ body * {
 }
 #main-area {
   position: relative;
-   margin-bottom: 134px;
+  margin-bottom: 134px;
 }
-
 
 .pro-box {
   max-width: 1360px;
@@ -114,6 +113,10 @@ body {
   /* padding: 40px 60px; */
 }
 
+#books-area {
+  height: 100%;
+  position: relative;
+}
 /* 라운드 책이미지 */
 .bg {
   position: absolute;
@@ -125,8 +128,91 @@ body {
   /* -webkit-background-size: cover;*/
   background-size: cover;
   background-position: center;
+  background: url(../images/책_좀더\ 라운드.png) no-repeat center / cover;
 }
 
+.rightmenu {
+  position: relative;
+}
+.btn-group {
+  position: absolute;
+  right: 3.3vw;
+  top: 5.6vh;
+  padding: 10px;
+  display: flex;
+  gap: 17px;
+  z-index: 999;
+}
+
+/* 버튼 디자인 */
+.btn-group button {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #808080;
+}
+
+/* 햄버거 버튼 셋팅 : 처음에 두번째 i태그인 x버튼 안보임 */
+.btn-ham i:nth-child(2) {
+  display: none;
+}
+
+/* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  x버튼보이기/햄버거숨기기 */
+
+#books-area.on .btn-ham i:nth-child(2) {
+  display: block;
+}
+#books-area.on .btn-ham i:nth-child(1) {
+  display: none;
+}
+
+.blindbox {
+  position: absolute;
+  right: 3.3vw;
+  top: calc(5.6vh + 56px);
+  height: 26vh;
+  background: red;
+  width: 22vh;
+  z-index: 2;
+}
+
+.searchbox {
+  height: 39px;
+  width: 100%;
+  border-radius: 10vw;
+  align-content: center;
+
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searicon{
+    display: flex;
+      align-content: center;
+
+  justify-content: space-between;
+  
+}
+
+
+.searchbox i {
+
+  margin-left: 10px;
+  font-size: 2.5rem;
+  color: white;
+}
+
+/* .searchbar {
+ 
+  width: 90%;
+  height: 100%;
+  border-radius: 10vw;
+  background: #808080;
+} */
+
+/* 
 .swiper-slide .title {
   font-size: 41px;
   font-weight: 300;
@@ -134,7 +220,7 @@ body {
 
 .swiper-slide .subtitle {
   font-size: 21px;
-}
+} */
 
 .swiper-slide .section {
   font-size: 1.8rem;
@@ -175,7 +261,7 @@ ul {
 
 .y {
   font-size: 5rem;
-   rotate: -15deg;
+  rotate: -15deg;
 }
 .k {
   font-size: 5rem;
@@ -183,7 +269,7 @@ ul {
 
 .i {
   rotate: 10deg;
-    padding-top: 17px;
+  padding-top: 17px;
 }
 
 .a {
@@ -191,14 +277,15 @@ ul {
   padding-top: 20px;
 }
 
-.u ,.o{
-    padding-top: 10px;
+.u,
+.o {
+  padding-top: 10px;
 }
 .rotate {
   rotate: -10deg;
 }
 
-.bottom{
+.bottom {
   padding-bottom: 30px;
 }
 
@@ -207,22 +294,10 @@ ul > li {
   font-weight: bold;
 }
 
-.last{
+.last {
   text-align: center;
 }
 
-.swiper-pagination{
+.swiper-pagination {
   bottom: var(--swiper-pagination-bottom, 150px) !important;
 }
-
-/* 두번째 데모 메뉴누르기 */
-
-  .menu-button {
-    position: absolute;
-    top: 56px;
-    right: 52px;
-    padding: 15px;
-    cursor: pointer;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    background-color: #2c8dfb;}
