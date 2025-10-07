@@ -175,42 +175,87 @@ body {
   height: 26vh;
   background: red;
   width: 22vh;
-  z-index: 2;
+  z-index: 1;   
+  
+  /* 트랜지션 */
+    transition:  0.5s ease-in-out;
 }
+
+
+
+  /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  메뉴박스인 .menu-box의 left값을 0으로 변경한다! */
+ .btn-group.on .blindbox {
+    z-index: 9;
+  } 
+
+
+
+
+
 
 .searchbox {
   height: 39px;
   width: 100%;
-  border-radius: 10vw;
+  border-radius: 0.5vw;
   align-content: center;
-
+  background: #b3b3b5;
   justify-content: space-between;
   align-items: center;
 }
 
-.searicon{
-    display: flex;
-      align-content: center;
-
+.searicon {
+  width: 20vh;
+  display: flex;
+  margin: 0 auto;
+  align-content: center;
   justify-content: space-between;
-  
 }
 
-
 .searchbox i {
-
-  margin-left: 10px;
+  display: flex;
+  z-index: 1;
   font-size: 2.5rem;
+  color: #808080;
+  align-items: center;
+}
+
+i > p {
+  font-family: sans-serif;
+}
+
+.searchbar {
+  top: 5px;
+  left: 3px;
+  width: 80%;
+  height: 29px;
+  border-radius: 10vw;
+  background: white;
+  position: absolute;
+}
+
+.listbox{
+  background: #b3b3b5;
+      border-radius: 0.5vw;
+}
+
+.list-tit {
+  width: 100%;
+  border-bottom: white solid 1px;
+  color: white;
+  line-height: 1.7;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  font-size: 1.6rem;
   color: white;
 }
 
-/* .searchbar {
- 
-  width: 90%;
-  height: 100%;
-  border-radius: 10vw;
-  background: #808080;
-} */
+
 
 /* 
 .swiper-slide .title {
@@ -289,7 +334,7 @@ ul {
   padding-bottom: 30px;
 }
 
-ul > li {
+.name > ul > li {
   font-size: 3.8rem;
   font-weight: bold;
 }
@@ -298,6 +343,7 @@ ul > li {
   text-align: center;
 }
 
+/* 하단 페이지  */
 .swiper-pagination {
   bottom: var(--swiper-pagination-bottom, 150px) !important;
 }

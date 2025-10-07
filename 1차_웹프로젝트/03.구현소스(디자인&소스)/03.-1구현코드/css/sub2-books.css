@@ -52,8 +52,7 @@ body * {
   border-bottom: 2px solid #b3b3b5;
   align-content: center;
   margin-bottom: 45px;
-  /* ?? */
-  padding-left: calc(100% / 13.5);
+ padding-left: calc(100% / 12);
 }
 
 /* ////////////////////////////////////////// */
