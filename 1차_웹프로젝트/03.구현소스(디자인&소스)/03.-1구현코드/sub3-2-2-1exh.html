@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Museum</title>
+    <title>Pastexhibition</title>
     <!-- 파비콘 넣기 -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
-    <link rel="stylesheet" href="./css/sub3-2-2exh.css" />
-      <script src="./js/JSbooks.js"></script>
+    <link rel="stylesheet" href="./css/sub3-2-2-1exh.css" />
+    <script src="./js/JSexhswiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
-   <!-- 1. 상단영역 -->
+    <!-- 1. 상단영역 -->
     <header class="top inbox">
       <div id="spart-menu">
         <nav class="spart-menu inbox">
@@ -41,43 +42,51 @@
       <div class="tit2 inbox">
         <section class="line1">
           <a href="sub3-1-1visitinfo.html">Visit</a>
-          <a href="#">Exhibition</a>
+          <a href="sub3-2-1exh.html">Exhibition</a>
         </section>
 
         <section class="line2">
-          <a href="#"
+          <a href="sub3-2-1exh.html"
             >Current Exhibition
             <img src="./images/다음위치.png" alt="동그라미" />
           </a>
-          <a href="#"
+          <a href="sub3-2-2-1exh.html"
             >Past Exhibition
             <img src="./images/다음위치.png" alt="동그라미" />
           </a>
         </section>
-
-
       </div>
     </header>
-
 
     <!-- 메인영역 -->
     <div id="main-area">
       <main class="main-area inbox">
-<div class="change">
-  <ul>
-    <li>
-      <img src="./images/가로미선택작.png" alt="가로">
-    </li>
-    <li>
-      <img src="./images/세로미선택작.png" alt="세로">
-    </li>
-  </ul>
-  </div>
+        <div class="change">
+          <ul>
+            <li>
+              <img src="./images/가로미선택작.png" alt="가로" />
+            </li>
+            <li>
+              <img src="./images/세로미선택작.png" alt="세로" />
+            </li>
+          </ul>
+        </div>
 
-<section class="wrap">
- <!-- <section class="booksbox">
+        <section class="wrap">
+    
+        <swiper-container
+          class="mySwiper"
+          pagination="true"
+          pagination-clickable="true"
+          slides-per-view="4"
+          space-between="30"
+          centered-slides="true"
+        >    
+        
+        <!-- <section class='exbsbox'></section> -->
+          <!-- <section class="booksbox">
 <div class="wrap"> -->
-   <!--  <ul class="list">
+          <!--  <ul class="list">
     <li class="book">
     </li>
     <li class="booktxt">
@@ -85,24 +94,10 @@
     </li>
   
   </ul> -->
-<!-- </div> -->
-
- </section>
-
-
-
-
-
-
-
-
-
-
-  
+          <!-- </div> -->
+        </swiper-container>
       </main>
-  </div>
-
-
+    </div>
 
     <!-- 하단영역 -->
     <div id="bottom-area">
