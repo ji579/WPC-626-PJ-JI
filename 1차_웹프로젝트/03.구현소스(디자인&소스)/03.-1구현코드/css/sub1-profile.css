@@ -173,26 +173,18 @@ body {
   right: 3.3vw;
   top: calc(5.6vh + 56px);
   height: 26vh;
-  background: red;
+
   width: 22vh;
-  z-index: 1;   
-  
+  z-index: 99;   
+  /* z-index: 1; */
+
   /* 트랜지션 */
-    transition:  0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-
-
-  /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
-  메뉴박스인 .menu-box의 left값을 0으로 변경한다! */
- .btn-group.on .blindbox {
-    z-index: 9;
-  } 
-
-
-
-
-
+/* #top-area.on .blindbox {
+  z-index: 999;
+} */
 
 .searchbox {
   height: 39px;
@@ -202,6 +194,7 @@ body {
   background: #b3b3b5;
   justify-content: space-between;
   align-items: center;
+  display: none;
 }
 
 .searicon {
@@ -234,9 +227,14 @@ i > p {
   position: absolute;
 }
 
-.listbox{
+.listbox {
+  /* position: absolute;
+    width: 100%;
+    top: 0; */
+  height: 175px;
   background: #b3b3b5;
-      border-radius: 0.5vw;
+  border-radius: 0.5vw;
+  display: none;
 }
 
 .list-tit {
@@ -254,8 +252,6 @@ i > p {
   font-size: 1.6rem;
   color: white;
 }
-
-
 
 /* 
 .swiper-slide .title {

@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // 반복적으로 생성하여 대상요소에 삽입해준다!
 
   // 1. 대상선정 : .wrap
-  const mySwiper = document.querySelector(".mySwiper");
+  const mySwiper = document.querySelector(".swiper-wrapper");
   console.log("대상:", mySwiper);
 
   const workTitle = [
@@ -60,8 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
   for (let i = 1; i <= 14; i++) {
     hCode += `
-        <swiper-slide> 
-        <div class="exb-box">
+        <div class="exb-box swiper-slide">
          <div class="exbtxt">
              <h3>${workTitle[i - 1]}</h3>
              <h2>${workDate[i - 1]}</h2>
@@ -69,8 +68,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 <img src="./images/exb${i + 1}.jpg" alt="paint">
             </div>
         </div>
-          
-    </swiper-slide>
         `;
   } /// for /////
 
@@ -78,6 +75,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 3. html코드 삽입하기
   mySwiper.innerHTML = hCode;
+
+
+
+   var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      centeredSlides: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+
+
 }); ///////// 로드함수 ///////////////////
 
 // const btnPrev = document.querySelector(".btn-prev");

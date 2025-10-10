@@ -4,6 +4,7 @@
 /* 외부 CSS 불러오기 */
 @import url(./reset.css);
 @import url(./core.css);
+@import url(./common.css);
 /* 12그리드 CSS */
 @import url(./grid_12_flex.css);
 

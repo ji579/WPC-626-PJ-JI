@@ -6,10 +6,17 @@
     <title>Pastexhibition</title>
     <!-- 파비콘 넣기 -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub3-2-2-1exh.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- 메인 JS -->
     <script src="./js/JSexhswiper.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
@@ -73,20 +80,12 @@
         </div>
 
         <section class="wrap">
-    
-        <swiper-container
-          class="mySwiper"
-          pagination="true"
-          pagination-clickable="true"
-          slides-per-view="4"
-          space-between="30"
-          centered-slides="true"
-        >    
-        
-        <!-- <section class='exbsbox'></section> -->
-          <!-- <section class="booksbox">
+          <div class="swiper mySwiper">
+            <section class="swiper-wrapper">
+              <!-- <section class='exbsbox'></section> -->
+              <!-- <section class="booksbox">
 <div class="wrap"> -->
-          <!--  <ul class="list">
+              <!--  <ul class="list">
     <li class="book">
     </li>
     <li class="booktxt">
@@ -94,8 +93,19 @@
     </li>
   
   </ul> -->
-          <!-- </div> -->
-        </swiper-container>
+              <!-- </div> -->
+            </section>
+            <div class="location">
+<p>2024</p>
+           <p>2017</p>
+        
+            </div>
+
+          </div>
+        </section>
+            <div class="swiper-pagination">
+          
+              </div>
       </main>
     </div>
 
