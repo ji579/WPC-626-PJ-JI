@@ -177,7 +177,7 @@ swiper-container {
   gap: 60px;
 }
 
-.mySwiper{
+.mySwiper {
   height: 100%;
 }
 
@@ -185,50 +185,58 @@ swiper-container {
   width: 5px;
   height: 20px;
   display: inline-block;
-border-radius: 20%;
-  background:  808080;
+  border-radius: 20%;
+  background: 808080;
 }
 
 .swiper-slide:nth-child(even) {
-    translate: 0 20%;
+  translate: 0 20%;
 }
 .swiper-slide:nth-child(odd) {
-    translate: 0 10%;
+  translate: 0 10%;
 }
-
 
 /* .swiper-pagination-bullet-active{
   background: red;
   opacity: 1;
 } */
 
+.swiper-wrapper{
+  position: relative;
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  background-color: #808080;
 
-/* .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction::before{
-content: '';
-width: 30%;
-height: 2px;
-background-color: #808080;
+  z-index: 1;
 
-z-index: 1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
 
-left: 50%;
-transform: translate(-50%, 0%);
-} */
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  left: 50%;
+  width: 50%;
+  display: flex;
+  translate: -50%;
+  margin: -8px;
+  gap: 20px;
+  /* box-sizing: border-box; */
+  justify-content: space-between;
+}
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    bottom: var(--swiper-pagination-bottom, 8px);
-    top: var(--swiper-pagination-top, auto);
-    left: 50%;
-    /* width: 100%; */
-    display: flex
-;
-    translate: -50%;
-    margin: -8px;
-    gap: 20px;
-    /* box-sizing: border-box; */
-    justify-content: space-around;}
-    
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
   background: rgb(0, 0, 0);
   opacity: 1;
 }

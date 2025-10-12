@@ -135,8 +135,9 @@ h2 {
   /* display: none; */
   position: fixed;
   top: -94px;
-  left: 0;
-  width: 100%;
+left: 50%;
+    translate: -50% 0;
+    width: 1360px;
   height: 94px;
   z-index: 999;
   transition: .4s ease-out;
