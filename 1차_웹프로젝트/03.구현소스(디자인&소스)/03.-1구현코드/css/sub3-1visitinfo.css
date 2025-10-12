@@ -78,7 +78,7 @@ body * {
   text-align: center;
 }
 
-.map1{
+.map1>iframe{
 padding-bottom: 40px;
     width: 1114px;
     height: 356px;

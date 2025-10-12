@@ -53,7 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
   for (let i = 1; i <= 24; i++) {
     hCode += `
-        <ul class= list>
+        <ul class="list">
             <li class="book">
                 <img src="./images/book${i}.jpg" alt="paint" class="img-box">
             </li>
@@ -61,6 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
              <h3>${workTitle[i - 1]}</h3>
             </li>
     </ul>
+
         `;
   } /// for /////
 
@@ -70,7 +71,22 @@ window.addEventListener("DOMContentLoaded", () => {
   wrap.innerHTML = hCode;
 }); ///////// 로드함수 ///////////////////
 
+      // 4. 모달 기능
+      function openModal() {
+        document.getElementById("modal").style.display = "block";
+      }
 
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      // 모달 배경 클릭시 닫기
+      window.addEventListener("click", (event) => {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
 
       // const btnPrev = document.querySelector(".btn-prev");
       // const btnNext = document.querySelector(".btn-next");

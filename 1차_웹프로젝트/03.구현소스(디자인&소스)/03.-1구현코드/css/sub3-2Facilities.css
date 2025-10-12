@@ -136,13 +136,30 @@ span {
   color: #b3b3b5;
 }
 
+
 .mapwrap {
+  position: relative;
+  width: 661px;
+  height: 439px;
+  /* position: relative --> absolute position 써야 겹쳐서 사진 배치 가능함 flex 쓰면 무조건 순서대로 가로 세로 배치
+  https://www.daleseo.com/css-position-absolute/ 이거 잘 설명되어 있으니까 한번 읽어봐 */
+}
+
+/* .mapwrap {
   width: 661px;
   height: 439px;
   display: flex;
-  flex-direction: column;
-  gap: -50px;
+  flex-direction: column;  --> 이건 세로로 사진들을 배치해버림 == 사진이 한 위치에 고정 불가 
+  gap: -50px;  --> 아마 이걸로 강제로 겹치려고 한거같은데 flex에서는 음수 못써, 무효됨
 }
+*/
+
+.mapwrap > div {
+  position: absolute;
+  inset: 0; /* .mapwrap > div에 있는걸 .mapwrap 크기에 딱 맞춰 배치 (부모 위 좌상단부터 우하단까지 덮는단 소리) */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
 .img {
   position: relative;
   display: flex;
@@ -155,4 +172,17 @@ span {
 
 .mapwrap [class*="floor_"].on img {
   opacity: 1;
+}
+/* 층별 위치감 일단 세로로만 차이둠 (피라미드 식으로 하고싶으면 x축도 추가해주면 됨 ex) transform: translate(-60px, -60px) */
+.mapwrap [data-floor="5F"] .img { transform: translateY(0px); }
+.mapwrap [data-floor="4F"] .img { transform: translateY(36px); }
+.mapwrap [data-floor="3F"] .img { transform: translateY(72px); }
+.mapwrap [data-floor="2F"] .img { transform: translateY(108px); }
+.mapwrap [data-floor="1F"] .img { transform: translateY(144px); }
+.mapwrap [data-floor="B1F"] .img { transform: translateY(180px); }
+
+
+.desc {
+  display: none; /* 처음엔 모든 층 설명 숨기기 */
+  margin-top: 10px;
 }

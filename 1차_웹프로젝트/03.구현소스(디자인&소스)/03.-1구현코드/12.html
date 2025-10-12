@@ -7,7 +7,7 @@
     <!-- 파비콘 넣기 -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
-    <link rel="stylesheet" href="./css/sub3-2Facilities.css" />
+    <link rel="stylesheet" href="./css/11.css" />
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
@@ -105,9 +105,9 @@
                 </ul>
 
                 <!-- 선택된 층 설명 영역(아코디언 패널) -->
-                <!-- <div class="desc-panel"> -->
+                <div class="desc-panel">
                   <!-- 각 층별 설명 블록: JS로 보여줄 것  -->
-                  <!-- <div class="desc" data-floor="5F">
+                  <div class="desc" data-floor="5F">
                     <p>여기는 Rooftop Gallery</p>
                   </div>
                   <div class="desc" data-floor="4F">
@@ -126,7 +126,7 @@
                     <p>여기는 Accessible toilet.</p>
                   </div>
                 </div> 
-              -->
+             
               </section>
 
               <!-- 오른쪽: 도면/이미지 (층별 탭 컨텐츠) -->
@@ -197,7 +197,7 @@
   // 요소
   const floorItems = document.querySelectorAll('.floortxt'); //각 층 버튼
   const maps       = document.querySelectorAll('.mapwrap > div'); //지도 이미지 묶음
-  const descAll    = document.querySelectorAll('.desc'); // 층 설명 
+  // const descAll    = document.querySelectorAll('.desc'); // 층 설명 
 
   let currentOpenFloor = null; //지금 열려있는 층을 기록해두기 위한 변수
 
@@ -210,7 +210,7 @@
 
   // 해당 층의 .desc 찾아서 li 밑에 표기
   function openDescUnder(li, floor) {
-    const desc = document.querySelector(`.desc[data-floor="${floor}"]`);
+    // const desc = document.querySelector(`.desc[data-floor="${floor}"]`);
      // 클릭한 층(floor)에 해당하는 .desc 요소를 가져옴
     if (!desc) return;// 누른 층 설명 없으면 걍 안하는건데 이건 오류 방지용
 

@@ -16,33 +16,33 @@
       }
       /* 라벨요소 */
       label {
-        display: inline-block;
+        display: flex;
         line-height: 1.5;
-      
+      cursor: pointer;
         margin: 10px;
       }
-      /* 라디오 버튼 체크시 라벨변경
-        체크된 라디오버튼의 다음 형제 라벨요소선택 */
-      input:checked + label {
-        color: #c52531;
-      }
 
-      ul.ball {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: flex;
-        position: absolute;
-      }
-      .ball li {
-        
-        width: 11px;
+/* 동그라미크기 설정 */
+      label::after{
+        content: '';
+     width: 11px;
         height: 11px;
         border-radius: 50%;
         border: 1px solid rgb(0, 0, 0);
-
-        margin: 5px;
+display: inline-block;
       }
+
+
+      /* 라디오 버튼 체크시 라벨변경
+        체크된 라디오버튼의 다음 형제 라벨요소선택 */
+      input:checked + label::after {
+        background: #c52531;
+      }
+      input:checked + label{
+       color: #c52531;
+      }
+
+
 
       /* 라디오버튼 체크시
         하단 형제요소인 ul>li 변경하기 */
@@ -99,10 +99,8 @@
       <label for="rdo3"> About </label>
  
 
-    <ul class="ball">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>   </div>
+<!-- <label>
+    </label> -->
+   </div>
   </body>
 </html>
