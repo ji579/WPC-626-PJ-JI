@@ -8,7 +8,7 @@
 //  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 window.addEventListener("DOMContentLoaded", () => {
-  console.log("로딩완료!");
+  // console.log("로딩완료!");
 
   // 0. 요구사항분석 ////
   // 이미지개수만큼 for문을 돌려서 html태그를
@@ -16,6 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 1. 대상선정 : .wrap
   const wrap = document.querySelector(".wrap");
+    const pagingList = document.querySelectorAll(".dot");
+
+  const UNIT_NUM = 8;
   console.log("대상:", wrap);
 
   const workTitle = [
@@ -45,17 +48,35 @@ window.addEventListener("DOMContentLoaded", () => {
     "『 Yayoi Kusama : Present Infinite 』",
   ];
 
+ MakeWorkList(1);
+
+  pagingList.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      // e.preventDefault();
+      const page = parseInt(el.dataset.val, 10);
+      if (Number.isNaN(page)) return;
+      MakeWorkList(page);
+    });
+  });
+
+ function MakeWorkList(pgNum) {
+    const total = workTitle.length;
+    const firstNum = (pgNum - 1) * UNIT_NUM + 1;
+    const lastNum  = Math.min(pgNum * UNIT_NUM, total);
+
+
   // 2. html코드 생성하기 ////
   let hCode = "<section class='booksbox'>";
 
   // for문으로 반복코드 생성하기
   // for(시;한;증){코드}
   // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
-  for (let i = 1; i <= 24; i++) {
+  // for (let i = 1; i <= 24; i++) {
+   for (let i = firstNum; i <= lastNum; i++) {
     hCode += `
         <ul class="list">
             <li class="book">
-                <img src="./images/book${i}.jpg" alt="paint" class="img-box">
+                <img src="./images/book${i}.jpg" alt="book${i}" class="img-box">
             </li>
             <li class="booktxt">
              <h3>${workTitle[i - 1]}</h3>
@@ -68,8 +89,14 @@ window.addEventListener("DOMContentLoaded", () => {
   hCode += "</section>";
 
   // 3. html코드 삽입하기
-  wrap.innerHTML = hCode;
+  wrap.innerHTML = hCode;}
 }); ///////// 로드함수 ///////////////////
+
+
+
+
+
+
 
       // 4. 모달 기능
       function openModal() {
@@ -88,40 +115,42 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // const btnPrev = document.querySelector(".btn-prev");
-      // const btnNext = document.querySelector(".btn-next");
+  
+
+      const btnPrev = document.querySelector(".btn-prev");
+      const btnNext = document.querySelector(".btn-next");
 
 
 
-      // document.querySelector(".btn-next").addEventListener("click", () => {
-      //   swiper.slideNext();
-      // });
+      document.querySelector(".btn-next").addEventListener("click", () => {
+        swiper.slideNext();
+      });
 
 
-      // document.querySelector(".btn-prev").addEventListener("click", () => {
-      //   swiper.slidePrev();
-      // });
+      document.querySelector(".btn-prev").addEventListener("click", () => {
+        swiper.slidePrev();
+      });
 
      
-      // swiper.on("slideChange", () => {
-      //   console.log("맨처음인가?", swiper.isBeginning);
-      //   console.log("맨끝인가?", swiper.isEnd);
+      swiper.on("slideChange", () => {
+        console.log("맨처음인가?", swiper.isBeginning);
+        console.log("맨끝인가?", swiper.isEnd);
 
       
-      //   if(swiper.isBeginning) {
-      //       btnPrev.style.opacity = "50%";
-      //   } 
+        if(swiper.isBeginning) {
+            btnPrev.style.opacity = "50%";
+        } 
 
-      //   else if(swiper.isEnd) {
-      //       btnNext.style.opacity = "50%";
-      //   } 
+        else if(swiper.isEnd) {
+            btnNext.style.opacity = "50%";
+        } 
 
   
-      //   else {
-      //      btnNext.style.display = "inline-block";
-      //      btnNext.style.opacity = "1";
-      //       btnPrev.style.display = "inline-block";
-      //       btnPrev.style.opacity = "1";
-      //   } 
-      // }); 
+        else {
+           btnNext.style.display = "inline-block";
+           btnNext.style.opacity = "1";
+            btnPrev.style.display = "inline-block";
+            btnPrev.style.opacity = "1";
+        } 
+      }); 
     
