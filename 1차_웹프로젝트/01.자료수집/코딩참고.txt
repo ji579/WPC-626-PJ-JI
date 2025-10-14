@@ -191,3 +191,129 @@ div*2>ul.link-list>li*5>a[target=_blank]
         position: absolute;
         left: 0%;
         width: 2%;}
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+const paint = [
+  {
+    title: 
+    "Dress","Mushrooms","Papillon(Ⅰ)","Butterfly","Shoes","Pumpkin",
+    "Fruit Basket(2)","Fruit Basket(4)","Dandelions","Pumpkin","Yellow Pumpkin","Shanghai Pumpkin",
+    "The Place For Life","All The Eternal Love"," EVERY DAY I PRAY FOR LOVE",
+    "The Endless Life of a Man","Pound of Repose","I pray for love every day ",
+    
+    img: [
+      "./images/paint1.jpg","./images/paint2.jpg","./images/paint3.jpg",
+    "./images/paint4.jpg","./images/paint5.jpg","./images/paint6.jpg",
+    "./images/paint7.jpg","./images/paint8.jpg","./images/paint9.jpg",
+    "./images/paint10.jpg","./images/paint11.jpg","./images/paint12.jpg",
+    "./images/paint13.jpg","./images/paint14.jpg","./images/paint15.jpg",
+    "./images/paint16.jpg","./images/paint17.jpg","./images/paint18.jpg",
+    ],
+
+    date:
+     "1982","1995","2000","1988","1985","1990",
+    "1999","1999","1985","1982","1992","2010",
+    "2013","2014"," 2019","2010","2014","2023"
+
+  technique:
+   "Screen print","Screen print","Screen print","Screen print","Screen print","Screen print"
+  ,"Screen print","Screen print","Screen print","Screen print","Screen print","Screen print"
+  ,"acrylic on canvas","Acrylic on canvas","acrylic on canvas","acrylic on canvas","acrylic on canvas","acrylic on canvas"
+
+   dimensions:
+    "53 x 45.6 cm","15.8 x 22.7 cm","38 × 45.5cm","47.8 x 59.9 cm","45.5 x 53.0 cm","62.7 x 54 cm",
+    "60 × 68 cm","60 × 68 cm","45.2 x 52.6 cm","65.5 x 51 cm","71 x 84 cm","76 x 56 cm",
+    "194 x 194 cm ","194 x 194 cm","100 x 100 cm","40.3 x 40.1 cm.","194 × 194 cm","53 × 65.2 cm"
+    
+
+  }]
+  ////////////////////////////////////////////////////////////////////////////
+
+
+  const books = [
+  {
+    title:  "『 Infinity Net: The Autobiography of Yayoi Kusama 』",
+    "『 Yayoi Kusama: Festival of Life 』",
+    "『 Yayoi Kusama: Revised & expanded edition 』",
+    "『 Yayoi Kusama: The Journal 』",
+    "『 Yayoi Kusama: Cosmic Nature 』",
+    "『 Yayoi Kusama: 1945 to Now 』",
+    "『 Yayoi Kusama: Infinity Mirrors 』",
+    "『 Yayoi Kusama: Every Day I Pray for Love 』",
+    "『 草間彌生全版画集 All prints of KUSAMA YAYOI 1979-2004  』",
+    "『 Louis Vuitton Yayoi Kusama 』",
+    "『 Yayoi Kusama: All About My Love 』",
+    "『 Kusama 』",
+    "『 Kusama 』",
+    "『  Yayoi Kusama 』",
+    "『 Yayoi Kusama Midori Yamamura 』",
+    "『 Love Forever: Yayoi Kusama, 1958-1968 』",
+    "『 草間彌生全版画: 1979-2011 JP Oversized 』",
+    "『 Yayoi Kusama: Give Me Love 』",
+    "『 Yayoi Kusama: A Retrospective  』",
+    "『 別冊Discover Japan 草間彌生を知りたい JP Oversized 』",
+    "『 家庭画報 2025年3月号 Print Magazine  』",
+    "『 YAYOI KUSAMA: IN INFINITY 』",
+    "『 Yayoi Kusama  』",
+    "『 Yayoi Kusama : Present Infinite 』",
+
+
+    img: ["./images/book1_1.jpg", "./images/book1_2.jpg", "./images/book1_3.jpg"],
+
+    author: "Yayoi Kusama","Yayoi Kusama, Jenni Sorkin","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+
+    publisher: "Tate Publishing","David Zwirner Books","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+
+    detail: 
+    
+    "“Infinity Net” is a memoir by Yayoi Kusama, one of the most important figures in the contemporary art world, exploring her unique and fascinating life and art.
+This autobiography details Kusama's journey from overcoming obsessive-compulsive disorder to breaking down cultural barriers through art and creating her own unique artistic world.
+The 2021 revised edition includes a new foreword by Francis Morris and a poem by Yayoi Kusama, allowing a deeper understanding of her work and thoughts.
+
+During her ten years in New York, Kusama transformed from a poor artist to a mainstay of the counterculture art scene.
+She solidified her position through her association with art world giants such as Georgia O'Keeffe, Donald Judd, and Andy Warhol.
+She speaks candidly about the obsessions that plagued her childhood and her entire life, and discusses her journey to explore her inner world through art.
+
+After returning to Japan, Kusama was admitted to a mental hospital and found artistic inspiration there.
+Over the past decade, he has established himself as an internationally recognized artist, having been featured in several major exhibitions.
+Translated into English by Ralph McCarthy, this autobiography explores Kusama’s ongoing artistic exploration and
+It powerfully tells the story of how, despite the hardships she endured, she forged her own path through art.
+
+"Infinity Net" explores the life and art of Yayoi Kusama, the challenges she faced and her achievements, in a profound and dreamlike way.
+It shows how her art shaped her.
+
+This autobiography leaves a powerful impression on readers through Kusama's boundless creativity and dreamlike intensity.",
+"2","3","4","5",
+"6","7","8","9",
+"10","11","12","13",
+"14","15","16","17",
+"18","19","20","21",
+"22","23","24"
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }]

@@ -64,7 +64,6 @@ window.addEventListener("DOMContentLoaded", () => {
          <div class="exbtxt">
              <h3>${workTitle[i - 1]}</h3>
              <h2>${workDate[i - 1]}</h2>
-       
                 <img src="./images/exb${i + 1}.jpg" alt="paint">
             </div>
         </div>

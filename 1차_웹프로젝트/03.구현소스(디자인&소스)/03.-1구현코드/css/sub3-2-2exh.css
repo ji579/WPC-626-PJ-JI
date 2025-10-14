@@ -109,10 +109,6 @@ body * {
   gap: 56px;
 }
 
-.list :hover {
-  filter: brightness(0.5);
-  z-index: 99999;
-}
 
 .exb {
   width: 250px;
@@ -121,6 +117,13 @@ body * {
   justify-content: center;
   align-items: end;
 }
+/* .list를 호버하면 .exb>img filter:brightness(0.5)적용
+ */
+.list:hover .exb>img{
+  filter: brightness(0.5);
+  z-index: 99999;
+}
+
 .list {
   position: relative;
   /* 부모자격 */
@@ -130,7 +133,7 @@ body * {
   position: absolute;
   top: 400px;
   /* width: 1140px; */
-  width: 200%;
+ width: 249%;
   height: 1.5px;
   z-index: 999;
   background-color: black;
@@ -168,7 +171,7 @@ body * {
   color: #808080;
 }
 
-.opacity {
+/* .opacity {
   width: 100%;
   height: 250px;
   position: fixed;
@@ -177,4 +180,20 @@ body * {
   background: #ffffff;
   opacity: 0.6;
   filter: blur(5px);
+} */
+main::after {
+  content: "";
+  width: 100%;
+  left: 0;
+  height: 250px;
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, #fff 85%);
+  opacity: 1;
+  transition: all 0.3s;
+  z-index: 9999;
+}
+main.end:after {
+  height: 2vw;
+  opacity: 0;
 }

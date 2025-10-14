@@ -48,12 +48,63 @@ body * {
   padding-left: calc(100% / 13.5);
 }
 
-.line2 img {
+/* .line2 img {
   margin-left: 5px;
 }
 .line2 a {
   margin-right: 5px;
-}
+} */
+       input[type="radio"] {
+        display: none;
+        /* input요소를 숨겨도 작동은됨! */
+      }
+  .check {
+        display: flex;
+        position: relative;
+      }
+      /* 라벨요소 */
+      label {
+         display: flex
+;
+ gap: 5px;
+line-height: 1.5;
+    cursor: pointer;
+    margin-right: 13px;
+      }
+
+/* 동그라미크기 설정 */
+      label::after{
+        content: '';
+     width: 11px;
+        height: 11px;
+        margin-top: 4px;
+        border-radius: 50%;
+        border: 1px solid rgb(0, 0, 0);
+display: inline-block;
+      }
+
+
+      /* 라디오 버튼 체크시 라벨변경
+        체크된 라디오버튼의 다음 형제 라벨요소선택 */
+      input:checked + label::after {
+        background: #c52531;
+      }
+      input:checked + label{
+       color: #c52531;
+      }
+
+
+
+      /* 라디오버튼 체크시
+        하단 형제요소인 ul>li 변경하기 */
+      /* 체크박스/라디오버튼 체크시
+        가상클래스는 :checked 
+        -> 틸드(~) 선택자는 형제요소들을 모두
+        찾아 해당 요소를 선택함!
+        */
+
+     
+
 
 .line3 {
   font-size: 3.6rem;

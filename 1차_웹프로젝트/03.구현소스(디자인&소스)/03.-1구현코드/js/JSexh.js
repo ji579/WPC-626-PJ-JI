@@ -80,7 +80,67 @@ window.addEventListener("DOMContentLoaded", () => {
   wrap.innerHTML = hCode;
 }); ///////// 로드함수 ///////////////////
 
+// const $menuBox = $(".menu-box");
 
+// 
+// 스크롤 하단 감지
+
+
+
+function detectBottom(el=window) {
+    $('main').addClass('scrEnd');
+
+    $(el).scroll(function(){
+        const scrollTop = $(el).scrollTop();
+        const innerHeight = $(el).innerHeight();
+        const scrHeight = (el == window) ? $('main') : $(el);
+        const scrollHeight = scrHeight.prop('scrollHeight');
+        console.log(scrollTop, innerHeight, scrollHeight);
+
+        if (scrollTop + innerHeight >= scrollHeight) {
+            $('main.scrEnd').addClass('end');
+            return true;
+        } else {
+            $('main.scrEnd').removeClass('end');
+            return false;
+        }
+    });
+}
+
+
+
+/*########## table scroll ##########*/
+// $(function() {
+//     $('.table-scroll table').wrap('<div class="scroll-container"></div>');
+
+//     if ($('.scroll-container').length > 0) {
+// 		tableScroll();
+// 	}
+// });
+
+// function tableScroll() {
+// 	let table = $('.scroll-container');
+
+// 	table.each(function () {
+// 		let $this = $(this),
+// 			ingClass = 'scroll-ing',
+// 			endClass = 'scroll-end';
+// 		$this.on('scroll', function (e) {
+// 			let wrap = $(this).closest('.table-scroll'),
+// 				currLeft = this.scrollLeft,
+// 				scrWidth = this.scrollWidth,
+// 				cliWidth = this.clientWidth;
+
+// 			if (currLeft === 0) {
+// 				wrap.removeClass(ingClass).removeClass(endClass);
+// 			} else if (currLeft !== 0 && currLeft + cliWidth < scrWidth) {
+// 				wrap.addClass(ingClass).removeClass(endClass);
+// 			} else {
+// 				wrap.addClass(endClass);
+// 			}
+// 		});
+// 	});
+// }
 
       // const btnPrev = document.querySelector(".btn-prev");
       // const btnNext = document.querySelector(".btn-next");

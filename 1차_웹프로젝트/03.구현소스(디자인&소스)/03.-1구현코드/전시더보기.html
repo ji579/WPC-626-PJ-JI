@@ -61,96 +61,23 @@
         border: #000000 solid 1px;
         width: 90%;
         max-width: 1114px;
-        height: 560px;
+        /* height: 560px; */
         position: relative;
         animation: slideIn 0.3s ease;
         /* overflow: auto; */
       }
-      .modal-content::before {
-        content: "";
-        width: 1px;
-        position: absolute;
-        height: 100%;
-        left: 50%;
-        top: 0;
-        background-color: #000000;
-        z-index: 999;
+      .modal-box {
+        width: 884px;
+        margin: 0 auto;
       }
-
-      .flex {
-        display: flex;
-      }
-
-      .modal-content > .flex {
-        position: relative;
-        height: 560px;
-        display: flex;
-        flex-direction: row;
-        z-index: 1;
-      }
-
-      section.modal-img {
-        width: 50%;
+      .modal-content {
         text-align: center;
-        align-content: center;
       }
 
-      /* .modal-content::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 30px solid #ffffff;
-  box-sizing: border-box;
-  z-index: 2;
-  pointer-events: none;
-} */
-
-      .modal-tit {
-        /* position: absolute; */
-        /* left: 50%; */
-        width: 50%;
-        height: 100%;
-
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        /* margin: 35px 0 25px 30px; */
+      section.modal-img > img {
+        aspect-ratio: 884 / 1012;
       }
 
-      .modal-tit > h3 {
-        font-size: 3.2rem;
-       height: 245px;
-        /* padding: 30px 0 75px; */
-        border-bottom: 1px solid;
-        box-sizing: border-box;
-        margin: 0;
-        align-content: center;
-      }
-
-      .txtbox {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        padding-bottom: 60px;
-        border-bottom: #000 solid 1px;
-        padding: 40px 125px 60px;
-      }
-      .box {
-        display: flex;
-      }
-
-      strong {
-     font-size: 1.8rem;
-    min-width: 110px;
-    text-align: left;
- margin-right: 90px;
-    align-content: center;
-      }
-.copyright {
-    text-align: right;
-    margin: 15px;
-    color: #808080;}
       .close {
         color: #aaa;
         float: right;
@@ -185,8 +112,7 @@
   </head>
 
   <body>
-   
-<!-- 모달시작 -->
+    <!-- 모달시작 -->
     <div class="section">
       <button class="modal-btn" onclick="openModal()">모달 열기</button>
     </div>
@@ -194,20 +120,57 @@
     <div id="modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
-        <div class="flex">
+
+        <div class="modal-box">
+          <strong>Reverberation from the Universe</strong>
           <section class="modal-img">
-            <img src="./images/paint1.jpg" alt="" />
+            <img src="./images/exb1.jpg" alt="" />
+            <p>
+              Pink Dots － Let Me Rest in a Tomb of Stars (detail) 1993–1994 ©
+              YAYOI KUSAMA
+            </p>
           </section>
 
           <!-- 오른쪽 글씨부분 -->
           <!-- <div class="modal-scroll"> -->
-          <section class="modal-tit">
+          <section class="modal-tit ">
             <h3>『 Pumpkin 』</h3>
             <!-- 두번째줄 -->
             <div class="txtbox">
               <div class="box box1">
-                <strong>Date. </strong>
-                <p class="date">1990</p>
+                <p>
+                  From a young age, Kusama has suffered from visual and auditory
+                  hallucinations. Her mental health condition has had a
+                  tremendous impact on the artist’s creative activities. In the
+                  1950s, driven by her own obsessions, Kusama created an
+                  enormous number of drawings, resulting in an opportunity to
+                  make her breakthrough as an artist. After relocating to the
+                  United States in 1957, the artist began to create a series of
+                  works that could be described as ritual of
+                  “self-obliteration,” where all existence is engulfed in
+                  infinitely repetitive patterns such as polka dots and nets
+                  while the self is immersed into a boundless world. These works
+                  express a desire for salvation from psychological disorders
+                  and simultaneously reflect her intention to liberate society
+                  from absurd oppression through happenings and other forms of
+                  expression. However, from the late 1970s to the 1980s, after
+                  returning to Japan due to mental and physical health
+                  conditions, Kusama created small-scale works such as collages
+                  and works on ‘shikishi’ paperboards in her room in a
+                  psychiatric hospital. Subsequently, her creations expanded to
+                  an environmental scale, such as multi-canvas paintings and
+                  gigantic inflatable works. Kusama’s concept of
+                  “self-obliteration” is no longer solely a matter of the
+                  artist’s inner psyche; rather, it invites us into this
+                  sensation as though we are caught in a solemn “reverberation
+                  from the universe.” This exhibition focuses on the theme of
+                  illness, which can be described as the driving force behind
+                  Kusama’s art, showcasing a diverse range of works and related
+                  materials from her early years to the present day. We invite
+                  you to witness these productions of Kusama’s abundant
+                  creativity that reverberate to the farthest reaches of the
+                  universe.
+                </p>
               </div>
               <div class="box box2">
                 <strong>Technique. </strong>
@@ -219,9 +182,7 @@
               </div>
             </div>
             <!-- txtbox 끝 -->
-             <div class="copyright">
-              ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED 
-             </div>
+            <div class="copyright">ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</div>
           </section>
         </div>
       </div>

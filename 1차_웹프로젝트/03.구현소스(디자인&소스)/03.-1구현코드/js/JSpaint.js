@@ -4,9 +4,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const UNIT_NUM = 6;
   const workTitle = [
-    "work1","work2","work3","work4","work5","work6",
-    "work7","work8","work9","work10","work11","work12",
-    "work13","work14","work15","work16","work17","work18"
+    "『 Dress 』","『 Mushrooms 』","『 Papillon(Ⅰ) 』","『 Butterfly 』","『 Shoes 』","『 Pumpkin 』",
+    "『 Fruit Basket(2) 』","『 Fruit Basket(4) 』","『 Dandelions 』","『 Pumpkin 』","『 Yellow Pumpkin 』","『 Shanghai Pumpkin 』",
+    "『 The Place For Life 』","『 All The Eternal Love 』"," 『 EVERY DAY I PRAY FOR LOVE 』","『 The Endless Life of a Man 』",
+    "『 Pound of Repose 』","『 I pray for love every day  』"
   ];
 
   MakeWorkList(1);
@@ -28,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let hCode = "<ul>";
     for (let i = firstNum; i <= lastNum; i++) {
       hCode += `
-        <li>
+        <li data-num="${i}">
           <img src="./images/paint${i}.jpg" alt="paint${i}">
           <h3>${workTitle[i - 1]}</h3>
         </li>
@@ -39,3 +40,159 @@ window.addEventListener("DOMContentLoaded", () => {
     wrap.innerHTML = hCode;
   }
 });
+
+
+// 작품정보객체
+
+[
+   {
+      idx:1,
+      title:'『 Dress 』',
+      date:'1982',
+      technique:'Screen print',
+      dimensions:'53 x 45. 6 cm',
+   },
+   {
+      idx:2,
+      title:'『 Mushrooms 』',
+      date:'1995',
+      technique:'Screen print',
+      dimensions:'15. 8 x 22. 7 cm',
+   },
+   {
+      idx:3,
+      title:'『 Papillon(Ⅰ) 』',
+      date:'2000',
+      technique:'Screen print',
+      dimensions:'38 × 45. 5cm',
+   },
+   {
+      idx:4,
+      title:'『 Butterfly 』',
+      date:'1988',
+      technique:'Screen print',
+      dimensions:'47. 8 x 59. 9 cm',
+   },
+   {
+      idx:5,
+      title:'『 Shoes 』',
+      date:'1985',
+      technique:'Screen print',
+      dimensions:'45. 5 x 53 cm',
+   },
+   {
+      idx:6,
+      title:'『 Pumpkin 』',
+      date:'1990',
+      technique:'Screen print',
+      dimensions:'62. 7 x 54 cm',
+   },
+   {
+      idx:7,
+      title:'『 Fruit Basket(2) 』',
+      date:'1999',
+      technique:'Screen print',
+      dimensions:'60 × 68 cm',
+   },
+   {
+      idx:8,
+      title:'『 Fruit Basket(4) 』',
+      date:'1999',
+      technique:'Screen print',
+      dimensions:'60 × 68 cm',
+   },
+   {
+      idx:9,
+      title:'『 Dandelions 』',
+      date:'1985',
+      technique:'Screen print',
+      dimensions:'45. 2 x 52. 6 cm',
+   },
+   {
+      idx:10,
+      title:'『 Pumpkin 』',
+      date:'1982',
+      technique:'Screen print',
+      dimensions:'65. 5 x 51 cm',
+   },
+   {
+      idx:11,
+      title:'『 Yellow Pumpkin 』',
+      date:'1992',
+      technique:'Screen print',
+      dimensions:'71 x 84 cm',
+   },
+   {
+      idx:12,
+      title:'『 Shanghai Pumpkin 』',
+      date:'2010',
+      technique:'Screen print',
+      dimensions:'76 x 56 cm',
+   },
+   {
+      idx:13,
+      title:'『 The Place For Life 』',
+      date:'2013',
+      technique:'Acrylic on canvas',
+      dimensions:'194 x 194 cm',
+   },
+   {
+      idx:14,
+      title:'『 All The Eternal Love 』',
+      date:'2014',
+      technique:'Acrylic on canvas',
+      dimensions:'194 x 194 cm',
+   },
+   {
+      idx:15,
+      title:'『 EVERY DAY I PRAY FOR LOVE 』',
+      date:'2019',
+      technique:'Acrylic on canvas',
+      dimensions:'100 x 100 cm',
+   },
+   {
+      idx:16,
+      title:'『 The Endless Life of a Man 』',
+      date:'2010',
+      technique:'Acrylic on canvas',
+      dimensions:'40. 3 x 40. 1 cm',
+   },
+   {
+      idx:17,
+      title:'『 Pound of Repose 』',
+      date:'2014',
+      technique:'Acrylic on canvas',
+      dimensions:'194 × 194 cm',
+   },
+   {
+      idx:18,
+      title:'『 I pray for love every day 』',
+      date:'2023',
+      technique:'Acrylic on canvas',
+      dimensions:'53 × 65. 2 cm',
+   },
+]
+
+// 객체구조
+// 1. idx: 고유번호
+// 2. title: 작품명
+// 3. date: 제작년도
+// 4. technique: 표현기법
+// 5. dimensions: 작품크기
+
+  // 4. 모달 기능
+      function openModal() {
+        document.getElementById("modal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      // 모달 배경 클릭시 닫기
+      window.addEventListener("click", (event) => {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });

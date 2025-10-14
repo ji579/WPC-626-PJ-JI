@@ -136,6 +136,20 @@ swiper-container {
   justify-content: center;
   object-fit: cover;
 }
+.exbtxt img:hover {
+  filter: brightness(0.5);
+}
+
+/* .exbtxt를 호버시 .exbtxt안에 있는 img filter:brightness(0.5)적용하기
+ */
+ /* .swiper-slide swiper-slide:hover .exbtxt>img{
+  
+  filter: brightness(0.5);
+  z-index: 9999999;
+} */
+
+
+
 
 .exbtxt {
   max-width: 280px;
@@ -224,16 +238,16 @@ swiper-container {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  bottom: var(--swiper-pagination-bottom, 8px);
-  top: var(--swiper-pagination-top, auto);
-  left: 50%;
-  width: 50%;
-  display: flex;
-  translate: -50%;
-  margin: -8px;
-  gap: 20px;
-  /* box-sizing: border-box; */
-  justify-content: space-between;
+ bottom: var(--swiper-pagination-bottom, 8px);
+    top: var(--swiper-pagination-top, auto);
+    /* left: 50%; */
+    width: 50%;
+    display: flex
+;
+    /* margin: -8px; */
+    gap: 20px;
+    /* box-sizing: border-box; */
+    justify-content: space-between;
 }
 
 .swiper-pagination-bullet-active {
