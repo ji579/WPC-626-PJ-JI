@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
     "『 Pound of Repose 』","『 I pray for love every day  』"
   ];
 
+// document.querySelector('.ab2').onclick = ()=>{};
+
   MakeWorkList(1);
 
   pagingList.forEach((el) => {
@@ -29,14 +31,22 @@ window.addEventListener("DOMContentLoaded", () => {
     let hCode = "<ul>";
     for (let i = firstNum; i <= lastNum; i++) {
       hCode += `
-        <li data-num="${i}">
+
+        
+
+        <li data-num="${i}">  
+         <button class="modal-btn" onclick="openModal()"> </button>
           <img src="./images/paint${i}.jpg" alt="paint${i}">
           <h3>${workTitle[i - 1]}</h3>
+         
         </li>
+
+      
+       
+      
       `;
     }
     hCode += "</ul>";
-
     wrap.innerHTML = hCode;
   }
 });
@@ -196,3 +206,63 @@ window.addEventListener("DOMContentLoaded", () => {
           closeModal();
         }
       });
+
+
+
+
+      // 연습
+      const flex = myFn.qs('flex');
+   console.log('대상', flex);
+   myFn.addEvt(window,'load',makeList)
+   // 4. 함수만들기 ////////////
+function makeList(){
+    // (1) 함수호출 확인
+    console.log('나야나!!!');
+
+    // (2) 코드만들기
+    let hCode = ''; // 변수 선언 및 초기화!
+
+    // 제이슨 객체 데이터 만큼 반복하여 코드 생성하기
+    // for(key in Object){코드}
+    for(let x in movieInfo){
+        // console.log('x는 무엇?',x);
+        // x변수에 담긴값은 객체의 속성(key)이다!
+
+        // 반복할 코드 대입연산자(+=)로 계속저장함!
+        hCode += `
+         <section class="modal-img">
+               <img src="./images/paint${i}.jpg" alt="paint${i}">
+          </section>
+
+     
+       
+          <section class="modal-tit">
+            <h3>${workTitle[i - 1]}</h3>
+         
+            <div class="txtbox">
+              <div class="box box1">
+                <strong> Date. </strong>
+                <p class="date">1990</p>
+              </div>
+              <div class="box box2">
+                <strong>Technique. </strong>
+                <p class="technique">Screen print</p>
+              </div>
+              <div class="box box3">
+                <strong>Dimensions. </strong>
+                <p class="dimensions">15. 8 x 22. 7 cm</p>
+              </div>
+            </div>
+          
+             <div class="copyright">
+              ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED 
+             </div>
+          </section>
+
+             `;
+    } //////// for in문 ///////////////
+    
+
+    // (3) 변경대상에 코드넣기
+    wrap.innerHTML = hCode;
+} /////// makeList 함수 ////////////////

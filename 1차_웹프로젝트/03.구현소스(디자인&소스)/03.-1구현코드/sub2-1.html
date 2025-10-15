@@ -8,7 +8,14 @@
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub2-books.css" />
+       <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <script src="./js/JSbooks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
@@ -52,24 +59,11 @@
       </div>
     </header>
 
+    <div class="book-part inabox">
+      <!-- 컨텐츠영역 -->
 
-
-
-<div class="book-part inabox">
-
-        <a href="#" class="abtn ab1">
-          <img src="images/left_btn.png" alt="왼쪽이동버튼" />
-        </a>
-        <a href="#" class="abtn ab2">
-          <img src="images/right_btn.png" alt="오른쪽이동버튼" />
-        </a>
-  
-
-
-    <!-- 컨텐츠영역 -->
-
-    <div class="wrap">
-      <!-- <section class="booksbox"> 
+      <div class="wrap">
+        <!-- <section class="booksbox"> 
 <ul class="list">
     <li class="book">
     </li>
@@ -80,81 +74,147 @@
   </ul>
 
   </section>  -->
-    </div>
+      </div>
 
-    <div class="section">
+      <!-- <div class="section">
       <button class="modal-btn" onclick="openModal()">모달 열기</button>
-    </div>
+    </div> -->
 
-
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="flex">
-          <section class="modal-img">
-       <img src="./images/book1.jpg" alt="">
-
-
-          </section>
-          <!-- 오른쪽 글씨부분 -->
-           <!-- <div class="modal-scroll"> -->
-          <section class="modal-tit">
-            <h3>『 Yayoi Kusama: Festival of Life 』</h3>
-            <!-- 두번째줄 -->
-            <div class="txtbox">
-              <div class="box box1">
-                <strong>Author. </strong>
-                <p>Yayoi Kusama, Jenni SorkinPublisher.</p>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <div class="flex">
+            <section class="modal-img">
+              <div
+                style="
+                  --swiper-navigation-color: #fff;
+                  --swiper-pagination-color: #fff;
+                "
+                class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="big">
+                      <img src="./images/book2.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="big">
+                      <img src="./images/book2-1.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="big">
+                      <img src="./images/book2-2.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="big">
+                      <img src="./images/book2-3.jpg" />
+                    </div>
+                  </div>
+                  <!-- <div class="swiper-slide">
+          <div class="big">
+            <img src="./images/book1.jpg" />
+          </div>
+        </div> -->
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
               </div>
-              <div class="box box-2">
-                <strong>Publisher. </strong>
-                <p>David Zwirner</p>
+              <div thumbsSlider="" class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="small">
+                      <img src="./images/book2.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="small">
+                      <img src="./images/book2-1.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="small">
+                      <img src="./images/book2-2.jpg" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="small">
+                      <img src="./images/book2-3.jpg" />
+                    </div>
+                  </div>
+                  <!-- <div class="swiper-slide">
+          <div class="small">
+            <img src="./images/book1.jpg" />
+          </div>
+        </div> -->
+                </div>
               </div>
-            </div>
-            <!-- txtbox 끝 -->
+            </section>
 
-            <div class="box3">
-              <strong>Detail </strong>
-              <p>
-                Yayoi Kusama's art is sensual, utopian, and original, and
-                despite its highly personal nature, is loved by diverse
-                audiences around the world. Throughout her career, Kusama has
-                broken down the traditional boundaries between work, artist, and
-                viewer. From paintings to performances, room-sized
-                installations, sculptural installations, literature, film,
-                fashion, design, and interventions within existing architectural
-                structures. Kusama's work ranges beyond major art movements of
-                the late 20th century, including Pop Art and Minimalism. Her
-                work radiates vitality and passion, and is autobiographical and
-                at times confessional. Kusama's work conveys the vitality of a
-                living artist through her work. "Yayoi Kusama: Festival of Life"
-                is an exhibition catalogue covering Kusama's exhibition held at
-                the Chelsea branch of David Zwirner Gallery in New York in late
-                2017. Includes her iconic “My Eternal Soul” series, new
-                large-scale floral sculptures, polka-dotted environments, and
-                two infinity mirrored rooms. The book offers fresh perspectives
-                on Kusama's work, including new scholarly research and posters
-                by Jenni Sorkin.
-              </p>
-            </div>
-          </section>
-          
+            <!-- 오른쪽 글씨부분 -->
+            <!-- <div class="modal-scroll"> -->
+            <section class="modal-tit">
+              <h3>『 Yayoi Kusama: Festival of Life 』</h3>
+              <!-- 두번째줄 -->
+              <div class="txtbox">
+                <div class="box box1">
+                  <strong>Author. </strong>
+                  <p>Yayoi Kusama, Jenni SorkinPublisher.</p>
+                </div>
+                <div class="box box-2">
+                  <strong>Publisher. </strong>
+                  <p>David Zwirner</p>
+                </div>
+              </div>
+              <!-- txtbox 끝 -->
+
+              <div class="box3">
+                <strong>Detail </strong>
+                <p>
+                  Yayoi Kusama's art is sensual, utopian, and original, and
+                  despite its highly personal nature, is loved by diverse
+                  audiences around the world. Throughout her career, Kusama has
+                  broken down the traditional boundaries between work, artist,
+                  and viewer. From paintings to performances, room-sized
+                  installations, sculptural installations, literature, film,
+                  fashion, design, and interventions within existing
+                  architectural structures. Kusama's work ranges beyond major
+                  art movements of the late 20th century, including Pop Art and
+                  Minimalism. Her work radiates vitality and passion, and is
+                  autobiographical and at times confessional. Kusama's work
+                  conveys the vitality of a living artist through her work.
+                  "Yayoi Kusama: Festival of Life" is an exhibition catalogue
+                  covering Kusama's exhibition held at the Chelsea branch of
+                  David Zwirner Gallery in New York in late 2017. Includes her
+                  iconic “My Eternal Soul” series, new large-scale floral
+                  sculptures, polka-dotted environments, and two infinity
+                  mirrored rooms. The book offers fresh perspectives on Kusama's
+                  work, including new scholarly research and posters by Jenni
+                  Sorkin.
+                </p>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <!-- 모달버튼끝 -->
+
+      <div class="abtn ab1">
+        <img src="images/left_btn.png" alt="왼쪽이동버튼" />
+      </div>
+      <div class="abtn ab2">
+        <img src="images/right_btn.png" alt="오른쪽이동버튼" />
+      </div>
+
+      <div class="paging-list">
+        <div class="dots">
+          <span class="dot" data-val="1"></span>
+          <span class="dot" data-val="2"></span>
+          <span class="dot" data-val="3"></span>
         </div>
       </div>
     </div>
-    <!-- 모달버튼끝 -->
-
-
-
- <div class="paging-list">
-        <div class="dots">
-            <span class="dot" data-val="1"></span>
-            <span class="dot" data-val="2"></span>
-            <span class="dot" data-val="3"></span>
-        </div>
-
-</div>
-</div>
     <!-- ///////////////////////////////////////////// -->
     <!-- 하단영역 -->
     <div id="bottom-area">

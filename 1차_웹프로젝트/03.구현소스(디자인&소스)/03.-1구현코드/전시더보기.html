@@ -2,19 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+
     <title>Swiper demo</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
 
     <!-- Demo styles -->
     <style>
+      @import url(./core.css);
+      @import url(./reset.css);
       body * {
         outline: 2px dashed #ccc;
       }
@@ -69,6 +67,11 @@
       .modal-box {
         width: 884px;
         margin: 0 auto;
+        justify-items: center;
+      }
+
+      .modal-box > strong {
+        font-size: 1.8rem;
       }
       .modal-content {
         text-align: center;
@@ -76,6 +79,11 @@
 
       section.modal-img > img {
         aspect-ratio: 884 / 1012;
+        width: 800px;
+      }
+      section.modal-img {
+        width: 800px;
+        text-align: right;
       }
 
       .close {
@@ -108,6 +116,43 @@
       .modal-btn:hover {
         background: #c0392b;
       }
+      .box {
+        width: 800px;
+      }
+      .box3 {
+      
+        text-align: right;
+      }
+      .box2 {
+        width: 750px;
+        text-align: right;
+      }
+      .imgbx1 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx2 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx1 > img {
+        height: 510px;
+      }
+      .imgbx2 > img {
+        height: 280px;
+      }
+      .imgbx3 > img {
+        height: 450px;
+      }
+
+      .sectionbx {
+        display: flex;
+      }
+      .section_title {
+        text-align: left;
+      }
     </style>
   </head>
 
@@ -126,67 +171,159 @@
           <section class="modal-img">
             <img src="./images/exb1.jpg" alt="" />
             <p>
-              Pink Dots － Let Me Rest in a Tomb of Stars (detail) 1993–1994 ©
-              YAYOI KUSAMA
+              Pink Dots － Let Me Rest in a Tomb of Stars (detail) 1993–1994<br />
+              © YAYOI KUSAMA
             </p>
           </section>
 
-       
           <!-- <div class="modal-scroll"> -->
-        
-         
-          
-           
-              <section class="box box1">
-                <p>
-                  From a young age, Kusama has suffered from visual and auditory
-                  hallucinations. Her mental health condition has had a
-                  tremendous impact on the artist’s creative activities. In the
-                  1950s, driven by her own obsessions, Kusama created an
-                  enormous number of drawings, resulting in an opportunity to
-                  make her breakthrough as an artist. After relocating to the
-                  United States in 1957, the artist began to create a series of
-                  works that could be described as ritual of
-                  “self-obliteration,” where all existence is engulfed in
-                  infinitely repetitive patterns such as polka dots and nets
-                  while the self is immersed into a boundless world. These works
-                  express a desire for salvation from psychological disorders
-                  and simultaneously reflect her intention to liberate society
-                  from absurd oppression through happenings and other forms of
-                  expression. However, from the late 1970s to the 1980s, after
-                  returning to Japan due to mental and physical health
-                  conditions, Kusama created small-scale works such as collages
-                  and works on ‘shikishi’ paperboards in her room in a
-                  psychiatric hospital. Subsequently, her creations expanded to
-                  an environmental scale, such as multi-canvas paintings and
-                  gigantic inflatable works. Kusama’s concept of
-                  “self-obliteration” is no longer solely a matter of the
-                  artist’s inner psyche; rather, it invites us into this
-                  sensation as though we are caught in a solemn “reverberation
-                  from the universe.” This exhibition focuses on the theme of
-                  illness, which can be described as the driving force behind
-                  Kusama’s art, showcasing a diverse range of works and related
-                  materials from her early years to the present day. We invite
-                  you to witness these productions of Kusama’s abundant
-                  creativity that reverberate to the farthest reaches of the
-                  universe.
-                </p>
-              </section>
 
-              <section class="box box2">
-                <p class="technique">Art Brut, Pop Art</p>
-              </section>
+          <section class="box box1">
+            <p>
+              From a young age, Kusama has suffered from visual and auditory
+              hallucinations. Her mental health condition has had a tremendous
+              impact on the artist’s creative activities. In the 1950s, driven
+              by her own obsessions, Kusama created an enormous number of
+              drawings, resulting in an opportunity to make her breakthrough as
+              an artist. After relocating to the United States in 1957, the
+              artist began to create a series of works that could be described
+              as ritual of “self-obliteration,” where all existence is engulfed
+              in infinitely repetitive patterns such as polka dots and nets
+              while the self is immersed into a boundless world. These works
+              express a desire for salvation from psychological disorders and
+              simultaneously reflect her intention to liberate society from
+              absurd oppression through happenings and other forms of
+              expression. However, from the late 1970s to the 1980s, after
+              returning to Japan due to mental and physical health conditions,
+              Kusama created small-scale works such as collages and works on
+              ‘shikishi’ paperboards in her room in a psychiatric hospital.
+              Subsequently, her creations expanded to an environmental scale,
+              such as multi-canvas paintings and gigantic inflatable works.
+              Kusama’s concept of “self-obliteration” is no longer solely a
+              matter of the artist’s inner psyche; rather, it invites us into
+              this sensation as though we are caught in a solemn “reverberation
+              from the universe.” This exhibition focuses on the theme of
+              illness, which can be described as the driving force behind
+              Kusama’s art, showcasing a diverse range of works and related
+              materials from her early years to the present day. We invite you
+              to witness these productions of Kusama’s abundant creativity that
+              reverberate to the farthest reaches of the universe.
+            </p>
+          </section>
 
-              <section class="box box3">
-                <p class="dimensions">figurative</p>
-              </section>
-
-              
+          <section class="box box2">
+            <div class="imgbx imgbx1">
+              <img src="./images/전시1.jpg" alt="" />
+              <img src="./images/전시2.jpg" alt="" />
             </div>
-            <!-- txtbox 끝 -->
-            <div class="copyright">ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</div>
-        
-        
+            <p>
+              L: Left: Yayoi-chan 2013 Right: TOKO-TON 2013 <br />
+              Installation view at Aviva Studios, Manchester, 2023 R: Ancient
+              Fire 1953 <br />
+              © YAYOI KUSAMA
+            </p>
+            <div class="imgbx imgbx2">
+              <img src="./images/전시3.jpg" alt="" />
+              <img src="./images/전시4.jpg" alt="" />
+            </div>
+            <p>
+              L: STAR FAIRY 2013<br />
+              R: The Obliteration Room 2002–present<br />
+              Collaboration between Yayoi Kusama and Queens land Art Gallery.<br />
+              Commissioned Queensland Art Gallery.<br />
+              Gift of the artist through the Queensland Art Gallery Foundation
+              2012. Collection: QAGOMA.<br />
+              © YAYOI KUSAMA. Photo: QAGOMA
+            </p>
+            <div class="imgbx imgbx3">
+              <img src="./images/전시5.jpg" alt="" />
+            </div>
+            <p>
+              Narcissus Garden 1966/2020 Installation view at YAYOI KUSAMA
+              MUSEUM, Tokyo 2020 <br />
+              © YAYOI KUSAMA
+            </p>
+          </section>
+
+          <section class="box box3">
+            <!-- 1. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Dates </strong>
+              </div>
+
+              <div class="section_content dates_box">
+                <p>Thursday, April 24 – Sunday, August 31, 2025</p>
+              </div>
+            </div>
+
+            <!-- 2. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Open </strong>
+              </div>
+              <div class="section_content">
+                <p>Thursdays to Sundays and National Holidays</p>
+              </div>
+            </div>
+
+            <!-- 3. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>closed </strong>
+              </div>
+              <div class="section_content">
+                <p>
+                  Mondays, Tuesdays and Wednesdays (except national holidays)
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Hours </strong>
+              </div>
+              <div class="section_content">
+                <p>11:00 - 17:30</p>
+              </div>
+            </div>
+
+            <!-- 5. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>AdmissionCharges(including tax) </strong>
+              </div>
+              <div class="section_content">
+                <p>Adults: JPY 1,100　Children aged 6 - 18: JPY 600</p>
+                <p>
+                  *Children under age 6 are free. *Group and disability <br />
+                  discounts are not available.
+                </p>
+              </div>
+            </div>
+
+            <!-- 6. -->
+            <div class="sectionbx">
+              <div class="section_title">Admission Times</div>
+              <div class="section_content">
+                <p>
+                  ① 11:00 - 12:30 (Enter by 11:30) <br />
+                  ②12:00 - 13:30 (Enter by 12:30) <br />
+                  ③ 13:00 - 14:30 (Enter by 13:30) <br />
+                  ④14:00 - 15:30 (Enter by 14:30) <br />
+                  ⑤ 15:00 - 16:30 (Enter by 15:30) <br />
+                  ⑥16:00 - 17:30 (Enter by 16:30) Yayoi Kusama Museum has no
+                  designated waiting area for visitors arriving before the
+                  admission time. Please refrain from coming to the museum
+                  before your admission time.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- txtbox 끝 -->
       </div>
     </div>
     <!-- 모달버튼끝 -->

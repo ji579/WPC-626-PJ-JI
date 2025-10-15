@@ -14,9 +14,38 @@ window.addEventListener("DOMContentLoaded", () => {
   // 이미지개수만큼 for문을 돌려서 html태그를
   // 반복적으로 생성하여 대상요소에 삽입해준다!
 
+
   // 1. 대상선정 : .wrap
-  const wrap = document.querySelector(".wrap");
+  const wrap = document.querySelector(".wrap"
+    
+  //   // 문제시 삭제
+  //   ,{
+ 
+  //      // 블릿 셋팅
+  //     pagination: {
+  //       el: ".pagingList",
+  //       /* 블릿클릭 작동여부 */
+  //       clickable: true,
+  //     },
+  //     // 양쪽이동버튼 셋팅
+  //     navigation: {
+  //       nextEl: ".abtn ab2",
+  //       prevEl: ".abtn ab1",
+  //     },
+  // } // 삭제하는 구간
+);
     const pagingList = document.querySelectorAll(".dot");
+
+
+
+  
+   
+ 
+
+  
+
+
+
 
   const UNIT_NUM = 8;
   console.log("대상:", wrap);
@@ -50,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
  MakeWorkList(1);
 
-  pagingList.forEach((el) => {
+pagingList.forEach((el) => {
     el.addEventListener("click", (e) => {
       // e.preventDefault();
       const page = parseInt(el.dataset.val, 10);
@@ -58,6 +87,8 @@ window.addEventListener("DOMContentLoaded", () => {
       MakeWorkList(page);
     });
   });
+
+
 
  function MakeWorkList(pgNum) {
     const total = workTitle.length;
@@ -74,13 +105,17 @@ window.addEventListener("DOMContentLoaded", () => {
   // for (let i = 1; i <= 24; i++) {
    for (let i = firstNum; i <= lastNum; i++) {
     hCode += `
-        <ul class="list">
+        <ul class="list" data-num="${i}">
+          <div class="section">
+      <button class="modal-btn" onclick="openModal()"></button>
+   
             <li class="book">
                 <img src="./images/book${i}.jpg" alt="book${i}" class="img-box">
             </li>
             <li class="booktxt">
              <h3>${workTitle[i - 1]}</h3>
-            </li>
+            </li> 
+            </div>
     </ul>
 
         `;
@@ -92,11 +127,24 @@ window.addEventListener("DOMContentLoaded", () => {
   wrap.innerHTML = hCode;}
 }); ///////// 로드함수 ///////////////////
 
+  
 
-
-
-
-
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
 
       // 4. 모달 기능
       function openModal() {
@@ -114,43 +162,89 @@ window.addEventListener("DOMContentLoaded", () => {
           closeModal();
         }
       });
+ 
+      // <![CDATA[  <-- For SVG support
+      if ("WebSocket" in window) {
+        (function () {
+          function refreshCSS() {
+            var sheets = [].slice.call(document.getElementsByTagName("link"));
+            var head = document.getElementsByTagName("head")[0];
+            for (var i = 0; i < sheets.length; ++i) {
+              var elem = sheets[i];
+              var parent = elem.parentElement || head;
+              parent.removeChild(elem);
+              var rel = elem.rel;
+              if (
+                (elem.href && typeof rel != "string") ||
+                rel.length == 0 ||
+                rel.toLowerCase() == "stylesheet"
+              ) {
+                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                elem.href =
+                  url +
+                  (url.indexOf("?") >= 0 ? "&" : "?") +
+                  "_cacheOverride=" +
+                  new Date().valueOf();
+              }
+              parent.appendChild(elem);
+            }
+          }
+          var protocol =
+            window.location.protocol === "http:" ? "ws://" : "wss://";
+          var address =
+            protocol + window.location.host + window.location.pathname + "/ws";
+          var socket = new WebSocket(address);
+          socket.onmessage = function (msg) {
+            if (msg.data == "reload") window.location.reload();
+            else if (msg.data == "refreshcss") refreshCSS();
+          };
+          if (
+            sessionStorage &&
+            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+          ) {
+            console.log("Live reload enabled.");
+            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+          }
+        })();
+      } else {
+        console.error(
+          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+        );
+      }
 
-  
-
-      const btnPrev = document.querySelector(".btn-prev");
-      const btnNext = document.querySelector(".btn-next");
-
-
-
-      document.querySelector(".btn-next").addEventListener("click", () => {
-        swiper.slideNext();
-      });
+      // document.querySelector(".ab2").onclike = () => {
+      //    console.log('오른쪽이야~!!!');
+        
+      // }; 
+        
+       
+   
 
 
-      document.querySelector(".btn-prev").addEventListener("click", () => {
-        swiper.slidePrev();
-      });
+      // document.querySelector(".ab1").addEventListener("click", () => {
+      //   swiper.slidePrev();
+      // });
 
      
-      swiper.on("slideChange", () => {
-        console.log("맨처음인가?", swiper.isBeginning);
-        console.log("맨끝인가?", swiper.isEnd);
+      // swiper.on("slideChange", () => {
+      //   console.log("맨처음인가?", swiper.isBeginning);
+      //   console.log("맨끝인가?", swiper.isEnd);
 
       
-        if(swiper.isBeginning) {
-            btnPrev.style.opacity = "50%";
-        } 
+      //   if(swiper.isBeginning) {
+      //       btnPrev.style.opacity = "50%";
+      //   } 
 
-        else if(swiper.isEnd) {
-            btnNext.style.opacity = "50%";
-        } 
+      //   else if(swiper.isEnd) {
+      //       btnNext.style.opacity = "50%";
+      //   } 
 
   
-        else {
-           btnNext.style.display = "inline-block";
-           btnNext.style.opacity = "1";
-            btnPrev.style.display = "inline-block";
-            btnPrev.style.opacity = "1";
-        } 
-      }); 
+      //   else {
+      //      btnNext.style.display = "inline-block";
+      //      btnNext.style.opacity = "1";
+      //       btnPrev.style.display = "inline-block";
+      //       btnPrev.style.opacity = "1";
+      //   } 
+      // }); 
     

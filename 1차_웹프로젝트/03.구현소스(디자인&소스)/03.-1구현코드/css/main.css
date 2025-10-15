@@ -328,11 +328,16 @@ width: auto; */
   box-sizing: border-box;
   /* padding: 0 70px; */
   padding: 0 70px 10px;
-  background: url(../images/하단.png) no-repeat center top / cover;
+  background: url(../images/bg_co.png) no-repeat center top / cover;
   height: 788px;
   background-color: #fff;
 }
 
+/* .bg{
+ width: 100%;
+ height: 100%;
+ top: 0;
+} */
 .circle2 {
 position: relative;
 top: -39px;
@@ -344,6 +349,9 @@ top: -39px;
   height: 118px;
   width: 1360px;
 }
+
+
+
 .contact-area h2 {
   margin-bottom: 10px;
   margin-top: -10px;
@@ -410,6 +418,7 @@ top: -39px;
   position: relative;
   top: -291px;
   right: -4px;
+
 }
 /* //////////////////////////////////////////// */
 /* 6. 하단영역 */

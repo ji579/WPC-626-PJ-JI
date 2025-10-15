@@ -1,4 +1,11 @@
 **
+
+블릿과 페이지 설정 
+04html학습 > 01, 가로방향무한이동
+04html학습 > unlimit_jquery.js
+
+
+
 상단 사이트 아이콘 사이즈변경사이트
 https://favicon.io/
 
