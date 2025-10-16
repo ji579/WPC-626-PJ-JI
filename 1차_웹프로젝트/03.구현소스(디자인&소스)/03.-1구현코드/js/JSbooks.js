@@ -79,15 +79,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
  MakeWorkList(1);
 
-pagingList.forEach((el) => {
+  pagingList.forEach((el) => {
     el.addEventListener("click", (e) => {
       // e.preventDefault();
       const page = parseInt(el.dataset.val, 10);
       if (Number.isNaN(page)) return;
       MakeWorkList(page);
+      el.style.backgroundColor = "#666666";
+      // 선택을 제외한 el은 style제거하기
+      for (let i = 0; i < pagingList.length; i++) {
+        if (pagingList[i] !== el) {
+          pagingList[i].style.backgroundColor = "";
+        }
+      }
+    
     });
   });
-
 
 
  function MakeWorkList(pgNum) {

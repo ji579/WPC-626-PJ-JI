@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-
-    <title>Swiper demo</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>더보기</title>
 
     <!-- Demo styles -->
     <style>
-      @import url(./core.css);
-      @import url(./reset.css);
+      
       body * {
         outline: 2px dashed #ccc;
       }
@@ -65,13 +60,25 @@
         /* overflow: auto; */
       }
       .modal-box {
-        width: 884px;
+        width: 950px;
         margin: 0 auto;
         justify-items: center;
+            line-height: 1.8;
+        background: white;
       }
-
-      .modal-box > strong {
+      .titbox {
+        padding: 30px 0 20px 0;
+      }
+      .title {
         font-size: 1.8rem;
+        width: 750px;
+        height: 33px;
+        align-content: center;
+        border-left: #000000 solid 1px;
+        text-align: left;
+      }
+      .title > strong {
+        margin-left: 25px;
       }
       .modal-content {
         text-align: center;
@@ -79,11 +86,18 @@
 
       section.modal-img > img {
         aspect-ratio: 884 / 1012;
-        width: 800px;
+        width: 750px;
       }
       section.modal-img {
-        width: 800px;
+        width: 750px;
         text-align: right;
+            padding-bottom: 40px;
+      }
+
+      .modal-img>p
+      {
+        margin: 0;
+        font-size: 1.4rem;
       }
 
       .close {
@@ -117,11 +131,24 @@
         background: #c0392b;
       }
       .box {
-        width: 800px;
+        width: 750px;
+       margin-bottom: 35px;
       }
+      .box1 {
+        border-left: #000000 solid 1px;
+      }
+      .box1 > p {
+        margin-left: 25px;
+          word-break: break-all;
+          text-align: justify;
+              font-size: 1.8rem;
+      }
+
+
       .box3 {
-      
+        width: 100%;
         text-align: right;
+        /* padding-bottom: 60px; */
       }
       .box2 {
         width: 750px;
@@ -146,13 +173,50 @@
       .imgbx3 > img {
         height: 450px;
       }
-
+.box2>p{
+       margin-bottom: 35px;
+         font-size: 1.4rem;
+}
       .sectionbx {
         display: flex;
+            /* margin-bottom: 15px; */
       }
       .section_title {
-        text-align: left;
+         
+    width: 90px;
+    margin-right: 10px;
+    text-align: right;
       }
+      .section_content{
+        width: 750px;
+        text-align: left;
+        border-left: #000000 solid 1px;
+      }
+
+       .section_content>p{
+      margin-left: 25px;
+       }
+      span {
+  font-size: 1.4rem;
+  color: #b3b3b5;
+}
+
+.section_content>span{
+  margin-left: 25px;
+}
+
+#topBtn{
+  margin: 40px;
+  position: relative;
+  width: 38px;
+  height: 38px;
+     z-index: 99; /* 다른 요소보다 위에 위치 */
+            border: none; /* 테두리 제거 */
+            outline: none; /* 아웃라인 제거 */
+            cursor: pointer;
+}
+
+
     </style>
   </head>
 
@@ -167,7 +231,11 @@
         <span class="close" onclick="closeModal()">&times;</span>
 
         <div class="modal-box">
-          <strong>Reverberation from the Universe</strong>
+          <section class="titbox">
+            <div class="title">
+              <strong>Reverberation from the Universe</strong>
+            </div>
+          </section>
           <section class="modal-img">
             <img src="./images/exb1.jpg" alt="" />
             <p>
@@ -245,7 +313,7 @@
             </p>
           </section>
 
-          <section class="box box3">
+          <section class="box3">
             <!-- 1. -->
             <div class="sectionbx">
               <div class="section_title">
@@ -270,7 +338,7 @@
             <!-- 3. -->
             <div class="sectionbx">
               <div class="section_title">
-                <strong>closed </strong>
+                <strong>Closed </strong>
               </div>
               <div class="section_content">
                 <p>
@@ -292,20 +360,23 @@
             <!-- 5. -->
             <div class="sectionbx">
               <div class="section_title">
-                <strong>AdmissionCharges(including tax) </strong>
+                <strong>Admission<br />Charges</strong><br />
+                  <span>(including<br /> tax) </span>
               </div>
               <div class="section_content">
                 <p>Adults: JPY 1,100　Children aged 6 - 18: JPY 600</p>
-                <p>
-                  *Children under age 6 are free. *Group and disability <br />
+                <span>
+                  *Children under age 6 are free.</span><br />
+                   <span> *Group and disability 
                   discounts are not available.
-                </p>
+                </span>
               </div>
             </div>
 
             <!-- 6. -->
             <div class="sectionbx">
-              <div class="section_title">Admission Times</div>
+              <div class="section_title">
+                <strong>Admission <br />Times</strong></div>
               <div class="section_content">
                 <p>
                   ① 11:00 - 12:30 (Enter by 11:30) <br />
@@ -313,42 +384,36 @@
                   ③ 13:00 - 14:30 (Enter by 13:30) <br />
                   ④14:00 - 15:30 (Enter by 14:30) <br />
                   ⑤ 15:00 - 16:30 (Enter by 15:30) <br />
-                  ⑥16:00 - 17:30 (Enter by 16:30) Yayoi Kusama Museum has no
+                  ⑥16:00 - 17:30 (Enter by 16:30)  <br />
+                  <span>Yayoi Kusama Museum has no
                   designated waiting area for visitors arriving before the
                   admission time. Please refrain from coming to the museum
-                  before your admission time.
+                  before your admission time.</span>
                 </p>
               </div>
             </div>
           </section>
-        </div>
 
+
+
+
+    <button onclick="topFunction()" id="topBtn" title="Go to top">
+         <img src="./images/위로올리기 .png" alt="위로올리기" class="arrow-up">
+    </button>
+
+
+
+        </div> <!-- modal-box 끝 -->
         <!-- txtbox 끝 -->
       </div>
     </div>
     <!-- 모달버튼끝 -->
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-      });
-      var swiper2 = new Swiper(".mySwiper2", {
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-          swiper: swiper,
-        },
-      });
+
+  
 
       // 4. 모달 기능
       function openModal() {
@@ -366,6 +431,27 @@
           closeModal();
         }
       });
+
+       // 버튼 요소를 가져옴
+ let topBtn = document.getElementById("topBtn");
+        console.log(topBtn);
+
+   
+
+ 
+
+        // 버튼을 클릭하면 페이지 맨 위로 스크롤
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        topBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+});
     </script>
   </body>
 </html>
