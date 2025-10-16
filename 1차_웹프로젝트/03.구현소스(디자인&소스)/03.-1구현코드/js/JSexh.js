@@ -178,4 +178,25 @@ function detectBottom(el=window) {
       //       btnPrev.style.opacity = "1";
       //   } 
       // }); 
-    
+  
+
+      const getBCR = (el) => el.getBoundingClientRect().top;
+
+      // 타겟박스
+      const target = document.querySelector('.bottom-area');
+      // 변경박스
+      const chgBox = document.querySelector('main');
+      // 윈도우 높이값 (기준값)
+      let winH = window.innerHeight;
+      
+      window.addEventListener('scroll', () => {
+        let scTop = window.scrollY;
+        let tgPos = getBCR(target);
+        console.log('스크롤이동중', scTop, tgPos);
+        if(tgPos < winH) {
+          chgBox.classList.add('end');
+        }
+        else {
+          chgBox.classList.remove('end');
+        }
+      });

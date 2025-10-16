@@ -14,38 +14,27 @@ window.addEventListener("DOMContentLoaded", () => {
   // 이미지개수만큼 for문을 돌려서 html태그를
   // 반복적으로 생성하여 대상요소에 삽입해준다!
 
-
   // 1. 대상선정 : .wrap
-  const wrap = document.querySelector(".wrap"
-    
-  //   // 문제시 삭제
-  //   ,{
- 
-  //      // 블릿 셋팅
-  //     pagination: {
-  //       el: ".pagingList",
-  //       /* 블릿클릭 작동여부 */
-  //       clickable: true,
-  //     },
-  //     // 양쪽이동버튼 셋팅
-  //     navigation: {
-  //       nextEl: ".abtn ab2",
-  //       prevEl: ".abtn ab1",
-  //     },
-  // } // 삭제하는 구간
-);
-    const pagingList = document.querySelectorAll(".dot");
+  const wrap = document.querySelector(
+    ".wrap"
 
+    //   // 문제시 삭제
+    //   ,{
 
-
-  
-   
- 
-
-  
-
-
-
+    //      // 블릿 셋팅
+    //     pagination: {
+    //       el: ".pagingList",
+    //       /* 블릿클릭 작동여부 */
+    //       clickable: true,
+    //     },
+    //     // 양쪽이동버튼 셋팅
+    //     navigation: {
+    //       nextEl: ".abtn ab2",
+    //       prevEl: ".abtn ab1",
+    //     },
+    // } // 삭제하는 구간
+  );
+  const pagingList = document.querySelectorAll(".dot");
 
   const UNIT_NUM = 8;
   console.log("대상:", wrap);
@@ -77,7 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
     "『 Yayoi Kusama : Present Infinite 』",
   ];
 
- MakeWorkList(1);
+  MakeWorkList(1);
 
   pagingList.forEach((el) => {
     el.addEventListener("click", (e) => {
@@ -92,29 +81,26 @@ window.addEventListener("DOMContentLoaded", () => {
           pagingList[i].style.backgroundColor = "";
         }
       }
-    
     });
   });
 
-
- function MakeWorkList(pgNum) {
+  function MakeWorkList(pgNum) {
     const total = workTitle.length;
     const firstNum = (pgNum - 1) * UNIT_NUM + 1;
-    const lastNum  = Math.min(pgNum * UNIT_NUM, total);
+    const lastNum = Math.min(pgNum * UNIT_NUM, total);
 
+    // 2. html코드 생성하기 ////
+    let hCode = "<section class='booksbox'>";
 
-  // 2. html코드 생성하기 ////
-  let hCode = "<section class='booksbox'>";
-
-  // for문으로 반복코드 생성하기
-  // for(시;한;증){코드}
-  // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
-  // for (let i = 1; i <= 24; i++) {
-   for (let i = firstNum; i <= lastNum; i++) {
-    hCode += `
+    // for문으로 반복코드 생성하기
+    // for(시;한;증){코드}
+    // 이미지가 1~50번까지 이므로 i는 1부터 50까지 반복
+    // for (let i = 1; i <= 24; i++) {
+    for (let i = firstNum; i <= lastNum; i++) {
+      hCode += `
         <ul class="list" data-num="${i}">
           <div class="section">
-      <button class="modal-btn" onclick="openModal()"></button>
+      <button class="modal-btn" onclick="openModal(event)"></button>
    
             <li class="book">
                 <img src="./images/book${i}.jpg" alt="book${i}" class="img-box">
@@ -126,132 +112,137 @@ window.addEventListener("DOMContentLoaded", () => {
     </ul>
 
         `;
-  } /// for /////
+    } /// for /////
 
-  hCode += "</section>";
+    hCode += "</section>";
 
-  // 3. html코드 삽입하기
-  wrap.innerHTML = hCode;}
+    // 3. html코드 삽입하기
+    wrap.innerHTML = hCode;
+  }
 }); ///////// 로드함수 ///////////////////
 
-  
+var swiper = new Swiper(".mySwiper", {
+  spaceBetween: 10,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".mySwiper2", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
 
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 10,
-        slidesPerView: 4,
-        freeMode: true,
-        watchSlidesProgress: true,
-      });
-      var swiper2 = new Swiper(".mySwiper2", {
-        spaceBetween: 10,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-          swiper: swiper,
-        },
-      });
+const modalContent = document.querySelector(".modal-content");
+const smallImg = modalContent.querySelectorAll(".small > img");
+const bigImg = modalContent.querySelectorAll(".big > img");
 
-      // 4. 모달 기능
-      function openModal() {
-        document.getElementById("modal").style.display = "block";
-      }
+// 4. 모달 기능
+function openModal(e) {
+  let idx = e.currentTarget.parentElement.parentElement.getAttribute("data-num");
+  swiper2.update();         // 크기/DOM 변경 반영
+  swiper2.slideTo(0, 0);    // 즉시 첫 슬라이드로 이동 (index, speed)
+  smallImg[0].src = `./images/book${idx}.jpg`;
+  smallImg[1].src = `./images/book${idx}-1.jpg`;
+  smallImg[2].src = `./images/book${idx}-2.jpg`;
+  smallImg[3].src = `./images/book${idx}-3.jpg`;
+  bigImg[0].src = `./images/book${idx}.jpg`;
+  bigImg[1].src = `./images/book${idx}-1.jpg`;
+  bigImg[2].src = `./images/book${idx}-2.jpg`;
+  bigImg[3].src = `./images/book${idx}-3.jpg`;
+  document.getElementById("modal").style.display = "block";
+}
 
-      function closeModal() {
-        document.getElementById("modal").style.display = "none";
-      }
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
-      // 모달 배경 클릭시 닫기
-      window.addEventListener("click", (event) => {
-        const modal = document.getElementById("modal");
-        if (event.target === modal) {
-          closeModal();
+// 모달 배경 클릭시 닫기
+window.addEventListener("click", (event) => {
+  const modal = document.getElementById("modal");
+  if (event.target === modal) {
+    closeModal();
+  }
+});
+
+// <![CDATA[  <-- For SVG support
+if ("WebSocket" in window) {
+  (function () {
+    function refreshCSS() {
+      var sheets = [].slice.call(document.getElementsByTagName("link"));
+      var head = document.getElementsByTagName("head")[0];
+      for (var i = 0; i < sheets.length; ++i) {
+        var elem = sheets[i];
+        var parent = elem.parentElement || head;
+        parent.removeChild(elem);
+        var rel = elem.rel;
+        if (
+          (elem.href && typeof rel != "string") ||
+          rel.length == 0 ||
+          rel.toLowerCase() == "stylesheet"
+        ) {
+          var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+          elem.href =
+            url +
+            (url.indexOf("?") >= 0 ? "&" : "?") +
+            "_cacheOverride=" +
+            new Date().valueOf();
         }
-      });
- 
-      // <![CDATA[  <-- For SVG support
-      if ("WebSocket" in window) {
-        (function () {
-          function refreshCSS() {
-            var sheets = [].slice.call(document.getElementsByTagName("link"));
-            var head = document.getElementsByTagName("head")[0];
-            for (var i = 0; i < sheets.length; ++i) {
-              var elem = sheets[i];
-              var parent = elem.parentElement || head;
-              parent.removeChild(elem);
-              var rel = elem.rel;
-              if (
-                (elem.href && typeof rel != "string") ||
-                rel.length == 0 ||
-                rel.toLowerCase() == "stylesheet"
-              ) {
-                var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
-                elem.href =
-                  url +
-                  (url.indexOf("?") >= 0 ? "&" : "?") +
-                  "_cacheOverride=" +
-                  new Date().valueOf();
-              }
-              parent.appendChild(elem);
-            }
-          }
-          var protocol =
-            window.location.protocol === "http:" ? "ws://" : "wss://";
-          var address =
-            protocol + window.location.host + window.location.pathname + "/ws";
-          var socket = new WebSocket(address);
-          socket.onmessage = function (msg) {
-            if (msg.data == "reload") window.location.reload();
-            else if (msg.data == "refreshcss") refreshCSS();
-          };
-          if (
-            sessionStorage &&
-            !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
-          ) {
-            console.log("Live reload enabled.");
-            sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
-          }
-        })();
-      } else {
-        console.error(
-          "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
-        );
+        parent.appendChild(elem);
       }
+    }
+    var protocol = window.location.protocol === "http:" ? "ws://" : "wss://";
+    var address =
+      protocol + window.location.host + window.location.pathname + "/ws";
+    var socket = new WebSocket(address);
+    socket.onmessage = function (msg) {
+      if (msg.data == "reload") window.location.reload();
+      else if (msg.data == "refreshcss") refreshCSS();
+    };
+    if (
+      sessionStorage &&
+      !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+    ) {
+      console.log("Live reload enabled.");
+      sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+    }
+  })();
+} else {
+  console.error(
+    "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+  );
+}
 
-      // document.querySelector(".ab2").onclike = () => {
-      //    console.log('오른쪽이야~!!!');
-        
-      // }; 
-        
-       
-   
+// document.querySelector(".ab2").onclike = () => {
+//    console.log('오른쪽이야~!!!');
 
+// };
 
-      // document.querySelector(".ab1").addEventListener("click", () => {
-      //   swiper.slidePrev();
-      // });
+// document.querySelector(".ab1").addEventListener("click", () => {
+//   swiper.slidePrev();
+// });
 
-     
-      // swiper.on("slideChange", () => {
-      //   console.log("맨처음인가?", swiper.isBeginning);
-      //   console.log("맨끝인가?", swiper.isEnd);
+// swiper.on("slideChange", () => {
+//   console.log("맨처음인가?", swiper.isBeginning);
+//   console.log("맨끝인가?", swiper.isEnd);
 
-      
-      //   if(swiper.isBeginning) {
-      //       btnPrev.style.opacity = "50%";
-      //   } 
+//   if(swiper.isBeginning) {
+//       btnPrev.style.opacity = "50%";
+//   }
 
-      //   else if(swiper.isEnd) {
-      //       btnNext.style.opacity = "50%";
-      //   } 
+//   else if(swiper.isEnd) {
+//       btnNext.style.opacity = "50%";
+//   }
 
-  
-      //   else {
-      //      btnNext.style.display = "inline-block";
-      //      btnNext.style.opacity = "1";
-      //       btnPrev.style.display = "inline-block";
-      //       btnPrev.style.opacity = "1";
-      //   } 
-      // }); 
-    
+//   else {
+//      btnNext.style.display = "inline-block";
+//      btnNext.style.opacity = "1";
+//       btnPrev.style.display = "inline-block";
+//       btnPrev.style.opacity = "1";
+//   }
+// });

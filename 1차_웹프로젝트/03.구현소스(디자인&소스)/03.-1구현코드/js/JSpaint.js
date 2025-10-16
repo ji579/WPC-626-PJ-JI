@@ -52,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
         
 
         <li data-num="${i}">  
-         <button class="modal-btn" onclick="openModal()"> </button>
+         <button class="modal-btn" onclick="openModal(event)"> </button>
           <img src="./images/paint${i}.jpg" alt="paint${i}">
           <h3>${workTitle[i - 1]}</h3>
          
@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // 작품정보객체
 
-[
+const workInfo = [
    {
       idx:1,
       title:'『 Dress 』',
@@ -210,8 +210,29 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
   // 4. 모달 기능
-      function openModal() {
-        document.getElementById("modal").style.display = "block";
+  const mWindow = document.getElementById("modal");
+      function openModal(e) {
+         let idx = e.currentTarget.parentElement.getAttribute('data-num');
+         console.log(idx);
+         // 배열.some((v)=>{if(조건){실행}})
+         // some은 배열을 순회하면서 조건에 맞으면 
+         // 실행문을 실행하고 return true를 쓰면 끝마친다!
+         workInfo.some(v=>{
+            if(v.idx == idx){
+               console.log(v.title);
+               mWindow.querySelector('h3').textContent = v.title;
+               mWindow.querySelector('.date').textContent = v.date;
+               mWindow.querySelector('.technique').textContent = v.technique;
+               mWindow.querySelector('.dimensions').textContent = v.dimensions;
+               return true;
+            }
+
+            console.log(v.title);
+
+
+         })
+        mWindow.style.display = "block";
+        mWindow.querySelector('.modal-img img').src = `./images/paint${idx}.jpg`;
       }
 
       function closeModal() {
