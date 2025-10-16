@@ -1,3 +1,73 @@
+
+ /* JS의 스와이퍼 인스턴스 객체 생성하기! */
+     var wrap = new Swiper(".wrap", {
+       MakeWorkList(1),
+      // 블릿 셋팅
+      pagination: {
+        el: ".paging-list",
+        /* 블릿클릭 작동여부 */
+        clickable: true,
+      },
+      // 양쪽이동버튼 셋팅
+      navigation: {
+        nextEl: ".abtn ab2",
+        prevEl: ".abtn ab1",
+      },
+ 
+    });
+
+작품정보객체
+
+[
+   {
+      idx:1,
+      title:'『 Yayoi Kusama: Festival of Life 』'
+      author:'1990',
+     publisher:'Art Brut, Pop Art',
+      detail:'Yayoi Kusama's art is sensual, utopian, and 
+original, and despite its highly personal nature, is loved
+ by diverse audiences around the world. Throughout 
+her career, Kusama has broken down the traditional
+ boundaries between work, artist, and viewer. From 
+p~~~ research and posters by Jenni Sorkin.',
+   },
+
+]
+
+객체구조
+1. idx: 고유번호
+2. title: 작품명
+3. author: 저자
+4. publisher: 출판사
+5. detail: 책내용
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 좋아하는 작가를 선정해서 작가를 소개하는 페이지
 '백세주' 홈페이지를 크로스오버하여 작가 홈페이지를 만들 계획
 -----------------------------------
