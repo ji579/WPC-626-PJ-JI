@@ -233,10 +233,12 @@ const workInfo = [
          })
         mWindow.style.display = "block";
         mWindow.querySelector('.modal-img img').src = `./images/paint${idx}.jpg`;
+             document.body.style.overflow = "hidden"; // 바디스크롤막기효과
       }
 
       function closeModal() {
         document.getElementById("modal").style.display = "none";
+          document.body.style.overflow = "auto"; // 바디스크롤막기해제
       }
 
       // 모달 배경 클릭시 닫기
