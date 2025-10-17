@@ -274,9 +274,8 @@ section.modal-img {
   box-sizing: border-box;
 }
 .mySwiper {
-  height: 50px;
+  height: auto;
   width: 558px;
-  padding: 20px 0 0 0;
 }
 
 .mySwiper .swiper-slide {
@@ -295,7 +294,7 @@ section.modal-img {
     } */
 
 .swiper-slide.swiper-slide-visible.swiper-slide-fully-visible {
-  width: 50px !important;
+  width: 100px !important;
 }
 
 .swiper-slide img {
@@ -314,8 +313,18 @@ section.modal-img {
   object-fit: contain;
 }
 
+  .small {
+    width: auto;
+    height: 50px;
+}
+
 .small > img {
-  height: 50px;
+ object-fit: contain;
+}
+
+.swiper-free-mode>.swiper-wrapper {
+      margin: 25px 0 0 0 ! important;
+    height: auto;
 }
 
 /* 4. 모달 스타일 */
