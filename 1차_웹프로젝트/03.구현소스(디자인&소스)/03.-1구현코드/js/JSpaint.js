@@ -12,33 +12,97 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // document.querySelector('.ab2').onclick = ()=>{};
 
-  MakeWorkList(1);
+  // 페이지 초기값
+let currentPage = 1;
 
-  pagingList.forEach((el) => {
-    el.addEventListener("click", (e) => {
-      // e.preventDefault();
+// DOM 요소 캐시
+const leftBtn = document.querySelector('.abtn.ab1');
+const rightBtn = document.querySelector('.abtn.ab2');
+const dotsContainer = document.querySelector('.paging-list .dots');
 
-      const page = parseInt(el.dataset.val, 10);
-      if (Number.isNaN(page)) return;
-      MakeWorkList(page);
+// totalPages 계산
+const totalPages = Math.max(1, Math.ceil(workTitle.length / UNIT_NUM));
 
+// 동적으로 dot이 필요하면 렌더링 (선택; 이미 HTML에 dot이 있으면 이 블록은 건너뛰어도 됩니다)
+function renderDotsIfNeeded() {
+  const existingDots = dotsContainer.querySelectorAll('.dot');
+  if (existingDots.length === totalPages) return; // 이미 맞음
 
+  dotsContainer.innerHTML = '';
+  for (let i = 1; i <= totalPages; i++) {
+    const span = document.createElement('span');
+    span.className = 'dot';
+    span.dataset.val = String(i);
+    dotsContainer.appendChild(span);
+  }
+}
 
-      for (let i = 0; i < pagingList.length; i++) {
-        if (pagingList[i] === el) {
-          pagingList[i].style.backgroundColor = "#666666";
-          break;
-        }
-      }
-     
-      for (let i = 0; i < pagingList.length; i++) {
-        if (pagingList[i] !== el) {
-          pagingList[i].style.backgroundColor = "";
-        } // 선택을 제외한 el은 style제거하기
-      }
-    
-    });
+// dot 스타일 업데이트 (활성화 표시)
+function updateDots(page) {
+  const dots = dotsContainer.querySelectorAll('.dot');
+  dots.forEach(dot => {
+    const val = Number(dot.dataset.val);
+    if (val === page) {
+      dot.style.backgroundColor = '#666666';
+      dot.classList.add('active');
+    } else {
+      dot.style.backgroundColor = '';
+      dot.classList.remove('active');
+    }
   });
+
+  // 좌/우 버튼 활성/비활성(선택) 처리: 끝이면 비활성화 시키기
+  if (leftBtn) leftBtn.classList.toggle('disabled', page <= 1, );
+  if (rightBtn) rightBtn.classList.toggle('disabled', page >= totalPages);
+}
+
+// 페이지 이동 함수 (MakeWorkList 호출 + 상태 업데이트)
+function goToPage(page) {
+  // 범위 검사
+  if (page < 1) page = 1;
+  if (page > totalPages) page = totalPages;
+
+  currentPage = page;
+  // 실제 리스트 렌더링
+  MakeWorkList(currentPage);
+
+  // dot 상태 업데이트
+  updateDots(currentPage);
+
+  // 모달/스크롤 초기화 등 추가 작업 필요하면 여기서 호출 가능
+  // e.g. reset scroll: const modalTit = mWindow.querySelector('.modal-tit'); if(modalTit) modalTit.scrollTop = 0;
+}
+
+// 왼쪽/오른쪽 버튼 이벤트 바인딩
+if (leftBtn) {
+  leftBtn.addEventListener('click', () => {
+    if (currentPage > 1) goToPage(currentPage - 1);
+  });
+}
+if (rightBtn) {
+  rightBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) goToPage(currentPage + 1);
+  });  
+  
+}
+
+// dots 클릭 바인딩 (delegation 또는 개별 바인딩)
+function bindDotClicks() {
+  // 이벤트 위임: dotsContainer에 클릭달기
+  dotsContainer.addEventListener('click', (e) => {
+    const dot = e.target.closest('.dot');
+    if (!dot) return;
+    const page = parseInt(dot.dataset.val, 10);
+    if (Number.isNaN(page)) return;
+    goToPage(page);
+  });
+}
+
+// 초기화 (페이지 수에 따라 dot 렌더링/바인딩 후 첫 렌더 호출)
+renderDotsIfNeeded();
+bindDotClicks();
+goToPage(1); // 초기 페이지 렌더링
+
 
   function MakeWorkList(pgNum) {
     const total = workTitle.length;

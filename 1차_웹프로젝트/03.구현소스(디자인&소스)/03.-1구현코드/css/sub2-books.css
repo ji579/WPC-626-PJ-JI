@@ -192,11 +192,11 @@ body * {
   height: 167px;
 }
 .wrap h3 {
-  padding: 0 35px;
-  font-size: 1.8rem;
-  max-width: 198px;
-  text-align: left;
-  word-break: break-all;
+     padding: 10px 35px 0;
+    font-size: 1.8rem;
+    max-width: 198px;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* 버튼박스 */
@@ -413,7 +413,16 @@ section.modal-img {
   padding: 60px 30px 45px;
   margin: 0;
 }
-
+section.modal-tit::before {
+    content: "";
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #fff;
+}
 section.modal-tit::after {
   content: "";
   display: block;
@@ -469,7 +478,7 @@ strong {
   font-weight: bold;
   cursor: pointer;
   position: absolute;
-  right: 15px;
+right: 20px;
   top: 0;
   z-index: 3;
 }
@@ -490,7 +499,21 @@ strong {
   /* transition: background 0.3s ease; */
   z-index: 999;
 }
+.disabled {
+  /* 투명도를 50%로 설정합니다. */
+  opacity: 0.5;
 
-/* .modal-btn:hover {
-  background: #c0392b;
-} */
+  /* 마우스 이벤트도 무시하게 하려면 (필요한 경우) */
+  /* pointer-events: none; */
+}
+
+.detail>p {
+    padding-bottom: 28px;
+}
+
+/* .detail>p 중 마지막에 오는 p태그는 padding-bottom 0로 변경
+ */
+
+.detail>p:last-child {
+    padding-bottom: 0;
+}
