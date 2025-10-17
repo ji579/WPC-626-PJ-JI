@@ -297,7 +297,12 @@ const bookInfo = [
      publisher:
      'Abe Publishing',
       detail:
-      'Y',
+            "Yayoi Kusama is from Japan and is a globally recognized contemporary artist.\n"
++ "She is known for her use of infinite repetitive dot patterns and bold colors, and her works are expressed in various forms, including paintings, sculptures, installation art, and performance art.\n"
++ "Kusama's art is deeply connected to her personal psychological experiences, especially the hallucinations she has experienced since childhood, which was also how she fought mental suffering.\n"
+
++ "Kusama continues to pursue self-reflection and exploration of the inner world through art, and through this process, she has established a unique and unrivaled position in the world of contemporary art.\n"
++ "Her work becomes a medium for the audience to reflect on themselves and guide them into a world of infinite imagination."
    },
     {
       index:10,
@@ -391,7 +396,12 @@ const bookInfo = [
      publisher:
      'Los Angeles County Museum of Art',
       detail:
-      'e',
+      "Yayoi Kusama is from Japan and is a globally recognized contemporary artist.\n"
++ "She is known for her use of infinite repetitive dot patterns and bold colors, and her works are expressed in various forms, including paintings, sculptures, installation art, and performance art.\n"
++ "Kusama's art is deeply connected to her personal psychological experiences, especially the hallucinations she has experienced since childhood, which was also how she fought mental suffering.\n"
+
++ "Kusama continues to pursue self-reflection and exploration of the inner world through art, and through this process, she has established a unique and unrivaled position in the world of contemporary art.\n"
++ "Her work becomes a medium for the audience to reflect on themselves and guide them into a world of infinite imagination."
    },
     {
       index:17,
@@ -459,7 +469,12 @@ const bookInfo = [
      publisher:
      'Elle Studio International',
       detail:
-      'dd',
+            "Yayoi Kusama is from Japan and is a globally recognized contemporary artist.\n"
++ "She is known for her use of infinite repetitive dot patterns and bold colors, and her works are expressed in various forms, including paintings, sculptures, installation art, and performance art.\n"
++ "Kusama's art is deeply connected to her personal psychological experiences, especially the hallucinations she has experienced since childhood, which was also how she fought mental suffering.\n"
+
++ "Kusama continues to pursue self-reflection and exploration of the inner world through art, and through this process, she has established a unique and unrivaled position in the world of contemporary art.\n"
++ "Her work becomes a medium for the audience to reflect on themselves and guide them into a world of infinite imagination.",
    },
     {
       index:22,
@@ -539,6 +554,7 @@ function openModal(e) {
   // 모달 내부에서 이미지 요소들 다시 선택 (초기화 시점의 노드와 달라질 수 있으니 매번)
   const smallImgs = mWindow.querySelectorAll('.small > img');
   const bigImgs = mWindow.querySelectorAll('.big > img');
+  
 
   // 이미지 수에 따라 안전하게 설정
   smallImgs.forEach((img, i) => {
@@ -559,20 +575,43 @@ function openModal(e) {
 
 
   // bookInfo에서 해당 항목 찾기 (타입 안전성을 위해 문자열로 비교)
-  const book = bookInfo.find(v => String(v.index) === String(idx));
-  if (book) {
-    const titleEl = mWindow.querySelector('.modal-tit h3');
-    const authorEl = mWindow.querySelector('.author');
-    const publisherEl = mWindow.querySelector('.publisher');
-    const detailEl = mWindow.querySelector('.detail');
+  // const book = bookInfo.find(v => String(v.index) === String(idx));
+  // if (book) {
+  //   const titleEl = mWindow.querySelector('.modal-tit h3');
+  //   const authorEl = mWindow.querySelector('.author');
+  //   const publisherEl = mWindow.querySelector('.publisher');
+  //   const detailEl = mWindow.querySelector('.detail');
 
-    if (titleEl) titleEl.textContent = book.title;
-    if (authorEl) authorEl.textContent = book.author;
-    if (publisherEl) publisherEl.textContent = book.publisher;
-    if (detailEl) detailEl.textContent = book.detail;
-  } else {
-    console.warn('bookInfo에서 해당 인덱스를 찾지 못했습니다:', idx);
+  //   if (titleEl) titleEl.textContent = book.title;
+  //   if (authorEl) authorEl.textContent = book.author;
+  //   if (publisherEl) publisherEl.textContent = book.publisher;
+  //   if (detailEl) detailEl.textContent = book.detail;
+  // } else {
+  //   console.warn('bookInfo에서 해당 인덱스를 찾지 못했습니다:', idx);
+  // }
+
+
+
+
+  const titleEl = mWindow.querySelector('.modal-tit h3');
+const authorEl = mWindow.querySelector('.author');
+const publisherEl = mWindow.querySelector('.publisher');
+const detailEl = mWindow.querySelector('.detail');
+
+const found = bookInfo.some(v => {
+  if (String(v.index) === String(idx)) {
+    if (titleEl) titleEl.textContent = v.title;
+    if (authorEl) authorEl.textContent = v.author;
+    if (publisherEl) publisherEl.textContent = v.publisher;
+    if (detailEl) detailEl.textContent = v.detail;
+    return true; // some은 true를 반환하면 순회를 멈춥니다.
   }
+  return false;
+});
+
+// if (!found) {
+//   console.warn('bookInfo에서 해당 인덱스를 찾지 못했습니다:', idx);
+// }
 const container = mWindow.querySelector('.detail'); // 모달의 detail 요소
 const text = book.detail || ""; // 예: "문장1\n문장2\n\n문단2..."
 container.innerHTML = ""; // 기존 내용 제거
@@ -610,6 +649,11 @@ document.querySelectorAll('.openModalBtn').forEach(btn => {
 
 
 
+// 스크롤 0으로 바꾸기
+// requestAnimationFrame(() => {
+//   const modalContentEl = mWindow.querySelector('.modal-content');
+//   if (modalContentEl) modalContentEl.scrollTop = 0;
+// });
 
 
 
