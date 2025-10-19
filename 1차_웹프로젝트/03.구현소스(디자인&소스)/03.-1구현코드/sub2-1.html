@@ -16,6 +16,7 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="module" src="./js/common.js"></script>
     <script src="./js/JSbooks.js" defer></script>
   </head>
   <body>
@@ -45,19 +46,25 @@
       <!--tit2 제목 -->
 
       <div class="tit2 inbox">
-        <section class="line1">
-          <a href="#">Paintings</a>
-          <a href="#">Books</a>
+      <section class="line1">
+          <a href="sub2.html">Paintings</a>
+        <a href="sub2-1.html">Books</a>
         </section>
 
-        <section class="line2">
-          <h2>Books</h2>
-        </section>
+<section class="line2">
+        <h2>Paintings</h2></section>
 
-        <section class="line3">
-          <p>Search</p>
+   <section class="line3">
+      <form class="search-form">
+        <input 
+            type="text" 
+            placeholder="Search" 
+            name="q" 
+            id="search-input"
+        />
+        <button type="submit">검색</button> 
+    </form>
         </section>
-      </div>
     </header>
 
     <div class="book-part inabox">

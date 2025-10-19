@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub3-2Facilities.css" />
+        <script type="module" src="./js/common.js"></script>
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
@@ -46,16 +47,22 @@
         </section>
 
         <section class="line2">
-          <a href="sub3-1-1visitinfo.html">Visit Information
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
-          <a href="sub3-1-2Facilities.html">Facilities
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
-
-          <a href="sub3-1-3about.html">About
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
+             <div class="check"> 
+    <input type="radio" id="rdo1" name="rdo" style="display: none;" />
+    <label for="rdo1" data-url="sub3-1-1visitinfo.html">
+        Visit Information 
+    </label>
+    
+    <input type="radio" id="rdo2" name="rdo" style="display: none;" />
+    <label for="rdo2" data-url="sub3-1-2Facilities.html">
+        Facilities 
+    </label>
+    
+    <input type="radio" id="rdo3" name="rdo" style="display: none;" />
+    <label for="rdo3" data-url="sub3-1-3about.html">
+        About 
+    </label>
+</div>
         </section>
 
 
@@ -154,7 +161,8 @@
             </div>
 
             <span>
-              -All floors are wheelchair accessible.<br />
+              -All floors are wheelchair accessible. </span><br />
+             <span>
               -Accessible toilet and baby changing station are located on the MB1 floor.
             </span>
           </div>
@@ -190,7 +198,52 @@
       </footer>
     </div>
 
-<script>
+  <script>
+// 모든 라벨 요소를 가져옵니다.
+    const linkLabels = document.querySelectorAll('.check label');
+    
+    /**
+     * 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다.
+     */
+    function handleLabelClick() {
+        // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+        const targetUrl = this.getAttribute('data-url');
+        
+        // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+        // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+        
+        if (targetUrl) {
+            // 페이지 이동을 실행합니다.
+            window.location.href = targetUrl;
+        }
+    }
+
+    /**
+     * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+     */
+    window.addEventListener('load', () => {
+        const currentPath = window.location.pathname.split('/').pop();
+        
+        linkLabels.forEach(label => {
+            // 1. 클릭 이벤트 리스너를 등록합니다.
+            label.addEventListener('click', handleLabelClick);
+            
+            // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+            const labelUrl = label.getAttribute('data-url');
+            
+            // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+            // (예: "sub3-1-1visitinfo.html")
+            if (labelUrl && labelUrl === currentPath) {
+                const inputId = label.getAttribute('for');
+                const input = document.getElementById(inputId);
+                
+                if (input) {
+                    input.checked = true;
+                }
+            }
+        });
+    });
+
   const DEFAULT_FLOOR = '5F';   // 기본 선택층
   const floorsOrder   = ['5F','4F','3F','2F','1F','B1F']; //여기서 순서를 정해놔야 뒤에서 위층 아래층 구분 가능
 
@@ -233,10 +286,13 @@
         m.style.pointerEvents = 'none'; // 이것도 같은 이야기인데 이건 아예 사진눌렀을때 이벤트 처리 안되게 처리 하는거임 그래도 사진 있으면 리소스 낭비라 히든 처리하는게 좋아
       } else if (i === index) { // 지금 층
         m.style.opacity = 1; // 또렷하게
+        m.style.filter = 'none';
+        m.style.zIndex = 1;   // z-index 적용
         m.style.visibility = 'visible'; // 사실상 visibility는 지워도 똑같이 작동하긴 할텐데 확실하게 명시해주는게 코딩할때 좋을거임
         m.style.pointerEvents = 'auto';
       } else { // 아래층
         m.style.opacity = 0.3; // 흐릿하게 투명도 조절
+        m.style.filter = 'blur(2px)';
         m.style.visibility = 'visible';
         m.style.pointerEvents = 'none';
       }

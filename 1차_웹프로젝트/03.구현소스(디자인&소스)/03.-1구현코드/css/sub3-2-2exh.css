@@ -27,6 +27,13 @@ body * {
   font-weight: bold;
 }
 
+.line1 a.active {
+    color: #c52531;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
 .line1 {
   display: flex;
   height: 30px;
@@ -34,17 +41,14 @@ body * {
   align-items: center;
   gap: 18px;
   font-size: 1.6rem;
-  /* ?? */
-  padding-left: calc(100% / 13.5);
+  padding-left: calc(100% /12);
 }
 
 .line2 {
   height: 30px;
   border-bottom: 2px solid #b3b3b5;
   align-content: center;
-
-  /* ?? */
-  padding-left: calc(100% / 13.5);
+  padding-left: calc(100% /12);
 }
 
 .line2 img {
@@ -196,4 +200,40 @@ main::after {
 main.end:after {
   height: 2vw;
   opacity: 0;
+}
+.ubtn {
+  margin: 38px 0;
+  text-align: center;
+}
+section#upBtn {
+    margin: 0 auto;
+    width: 38px;}
+.image-wrapper {
+    position: relative; /* 자식 이미지의 절대 위치 기준점 */
+    width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
+    height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+}
+
+/* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+}
+
+/* 4. 호버 이미지 숨기기 (기본 상태) */
+.hover-arrow {
+    opacity: 0; /* 평소에는 투명하게 숨김 */
+}
+
+/* 5. 호버 시 이미지 전환 */
+.image-wrapper:hover .default-arrow {
+    opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+}
+
+.image-wrapper:hover .hover-arrow {
+    opacity: 1; /* 호버 이미지를 보이게 함 */
 }

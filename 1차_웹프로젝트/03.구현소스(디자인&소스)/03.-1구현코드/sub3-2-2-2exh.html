@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub3-2-2exh.css" />
+        <script type="module" src="./js/common.js"></script>
       <script src="./js/JSexh.js" defer></script>
   </head>
   <body>
@@ -89,8 +90,8 @@
 
  </section>
 
-<div class="opacity">
-  </div>
+<!-- <div class="opacity">
+  </div> -->
 
 
 
@@ -101,6 +102,23 @@
 
   
       </main>
+      <div class="ubtn">
+<section class="up" id="upBtn" onclick="scrollToTop()">
+     <div class="image-wrapper">
+        <img 
+            src="./images/위로올리기 .png" 
+            alt="위로 올리기" 
+            class="default-arrow" 
+        />
+        <img 
+            src="./images/위로올리기_호버시.png" 
+            alt="위로 올리기 호버" 
+            class="hover-arrow" 
+        />
+    </div>
+      </section>
+      </div>
+
   </div>
 
 
@@ -132,5 +150,18 @@
         </section>
       </footer>
     </div>
+
+     <script>
+
+      function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 부드러운 스크롤 효과 적용
+        });
+    }
+      const upButton = document.getElementById('upBtn');
+      console.log(upButton);
+    </script>
+
   </body>
 </html>

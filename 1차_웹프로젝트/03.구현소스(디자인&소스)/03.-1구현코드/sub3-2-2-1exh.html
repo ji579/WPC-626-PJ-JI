@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./css/sub3-2-2-1exh.css" />
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="module" src="./js/common.js"></script>
     <!-- 메인 JS -->
     <script src="./js/JSexhswiper.js"></script>
   </head>
@@ -52,15 +53,19 @@
           <a href="sub3-2-1exh.html">Exhibition</a>
         </section>
 
-        <section class="line2">
-          <a href="sub3-2-1exh.html"
-            >Current Exhibition
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
-          <a href="sub3-2-2-1exh.html"
-            >Past Exhibition
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
+   <section class="line2">
+        <div class="check"> 
+    <input type="radio" id="rdo1" name="rdo" style="display: none;" />
+    <label for="rdo1" data-url="sub3-2-1exh.html">
+      Current Exhibition 
+    </label>
+    
+    <input type="radio" id="rdo2" name="rdo" style="display: none;" />
+    <label for="rdo2" data-url="sub3-2-2-1exh.html">
+     Past Exhibition
+    </label>
+
+</div>
         </section>
       </div>
     </header>
@@ -138,5 +143,6 @@
         </section>
       </footer>
     </div>
+    
   </body>
 </html>

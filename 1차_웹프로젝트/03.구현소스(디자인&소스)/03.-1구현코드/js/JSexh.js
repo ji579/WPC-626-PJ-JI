@@ -82,6 +82,34 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // const $menuBox = $(".menu-box");
 
+// 페이지 이동하며 글씨색변경
+document.addEventListener('DOMContentLoaded', function() {
+        // 1. 현재 페이지의 URL 경로를 가져옵니다.
+        // 예: http://127.0.0.1:5500/sub2.html 에서 'sub2.html'만 추출
+        const currentPath = window.location.pathname.split('/').pop();
+
+        // 2. <section class="line1"> 내의 모든 <a> 태그를 찾습니다.
+        const navLinks = document.querySelectorAll('.line1 a');
+
+        navLinks.forEach(link => {
+            // 3. 각 <a> 태그의 href 속성에서 파일명만 추출합니다.
+            const linkPath = link.getAttribute('href').split('/').pop();
+
+            // 4. 현재 URL 경로와 링크의 경로가 일치하는지 확인합니다.
+            // 대소문자 구분 없이 비교하거나, 필요에 따라 엄격하게 비교할 수 있습니다.
+            if (linkPath === currentPath) {
+                // 5. 일치하면 해당 <a> 태그에 'active' 클래스를 추가합니다.
+                link.classList.add('active');
+            } else {
+                // (선택 사항) 혹시 모를 경우를 대비하여 active 클래스를 제거합니다.
+                link.classList.remove('active');
+            }
+        });
+    });
+
+
+
+
 // 
 // 스크롤 하단 감지
 

@@ -10,6 +10,52 @@
 window.addEventListener("DOMContentLoaded", () => {
   console.log("로딩완료!");
 
+
+
+  // 모든 라벨 요소를 가져옵니다.
+    const linkLabels = document.querySelectorAll('.check label');
+    
+    /**
+     * 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다.
+     */
+    function handleLabelClick() {
+        // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+        const targetUrl = this.getAttribute('data-url');
+        
+        // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+        // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+        
+        if (targetUrl) {
+            // 페이지 이동을 실행합니다.
+            window.location.href = targetUrl;
+        }
+    }
+
+    /**
+     * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+     */
+    window.addEventListener('load', () => {
+        const currentPath = window.location.pathname.split('/').pop();
+        
+        linkLabels.forEach(label => {
+            // 1. 클릭 이벤트 리스너를 등록합니다.
+            label.addEventListener('click', handleLabelClick);
+            
+            // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+            const labelUrl = label.getAttribute('data-url');
+            
+            // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+            // (예: "sub3-1-1visitinfo.html")
+            if (labelUrl && labelUrl === currentPath) {
+                const inputId = label.getAttribute('for');
+                const input = document.getElementById(inputId);
+                
+                if (input) {
+                    input.checked = true;
+                }
+            }
+        });
+    });
   // 0. 요구사항분석 ////
   // 이미지개수만큼 for문을 돌려서 html태그를
   // 반복적으로 생성하여 대상요소에 삽입해준다!
@@ -89,6 +135,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 }); ///////// 로드함수 ///////////////////
+
 
 // const btnPrev = document.querySelector(".btn-prev");
 // const btnNext = document.querySelector(".btn-next");

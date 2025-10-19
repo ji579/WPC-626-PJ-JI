@@ -194,6 +194,8 @@ goToPage(1); // 초기 페이지 렌더링
   }
 }); ///////// 로드함수 ///////////////////
 
+
+
 var swiper = new Swiper(".mySwiper", {
   spaceBetween: 10,
   slidesPerView: 4,

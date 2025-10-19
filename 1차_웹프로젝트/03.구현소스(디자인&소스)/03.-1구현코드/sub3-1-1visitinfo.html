@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub3-1visitinfo.css" />
+        <script type="module" src="./js/common.js"></script>
   </head>
   <body>
     <!-- //////////////////////////////////////////////// -->
@@ -44,36 +45,22 @@
         </section>
 
         <section class="line2">
-          <div class="check"> <a href="sub3-1-1visitinfo.html">
-            <input type="radio" id="rdo1" name="rdo" />
-           
-              <label for="rdo1"> Visit Information </label></a
-            >
- <a href="sub3-1-2Facilities.html">
-            <input type="radio" id="rdo2" name="rdo" />
-           
-              <label for="rdo2"> Facilities </label></a
-            >
- <a href="sub3-1-3about.html">
-            <input type="radio" id="rdo3" name="rdo" />
-            <label for="rdo3"> About </label></a>
-
-            <!-- <label>
-    </label> -->
-          </div>
-          <!-- <a href="sub3-1-1visitinfo.html"
-            >Visit Information
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
-          <a href="sub3-1-2Facilities.html"
-            >Facilities
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a>
-
-          <a href="sub3-1-3about.html"
-            >About
-            <img src="./images/다음위치.png" alt="동그라미" />
-          </a> -->
+        <div class="check"> 
+    <input type="radio" id="rdo1" name="rdo" style="display: none;" />
+    <label for="rdo1" data-url="sub3-1-1visitinfo.html">
+        Visit Information 
+    </label>
+    
+    <input type="radio" id="rdo2" name="rdo" style="display: none;" />
+    <label for="rdo2" data-url="sub3-1-2Facilities.html">
+        Facilities 
+    </label>
+    
+    <input type="radio" id="rdo3" name="rdo" style="display: none;" />
+    <label for="rdo3" data-url="sub3-1-3about.html">
+        About 
+    </label>
+</div>
         </section>
 
         <section class="line3">
@@ -111,10 +98,10 @@
                 <div class="left">
                   <h3>Address</h3>
 
-                  <p>107 Bentencho Shinjuku-ku Tokyo 162-0851 Japan</p>
+                  <p id="addressText">107 Bentencho Shinjuku-ku Tokyo 162-0851 Japan</p>
                   <div class="btn">
                     <nav class="copy">
-                      <button>COPY</button>
+                      <button id="copyButton">COPY</button>
                     </nav>
 
                     <a href="https://maps.app.goo.gl/jC6WmnqdhA2oxHCR6">
@@ -247,9 +234,22 @@
         </section>
       </div>
 
-      <section class="up">
-        <img src="./images/위로올리기 .png" alt="위로올리기" />
-      </section>
+      <div class="ubtn">
+        <section class="up" id="upBtn" onclick="scrollToTop()">
+          <div class="image-wrapper">
+            <img
+              src="./images/위로올리기 .png"
+              alt="위로 올리기"
+              class="default-arrow"
+            />
+            <img
+              src="./images/위로올리기_호버시.png"
+              alt="위로 올리기 호버"
+              class="hover-arrow"
+            />
+          </div>
+        </section>
+      </div>
     </main>
     <!-- 하단영역 -->
     <div id="bottom-area">
@@ -278,5 +278,102 @@
         </section>
       </footer>
     </div>
+    <script>
+// 모든 라벨 요소를 가져옵니다.
+    const linkLabels = document.querySelectorAll('.check label');
+    
+    /**
+     * 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다.
+     */
+    function handleLabelClick() {
+        // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+        const targetUrl = this.getAttribute('data-url');
+        
+        // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+        // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+        
+        if (targetUrl) {
+            // 페이지 이동을 실행합니다.
+            window.location.href = targetUrl;
+        }
+    }
+
+    /**
+     * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+     */
+    window.addEventListener('load', () => {
+        const currentPath = window.location.pathname.split('/').pop();
+        
+        linkLabels.forEach(label => {
+            // 1. 클릭 이벤트 리스너를 등록합니다.
+            label.addEventListener('click', handleLabelClick);
+            
+            // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+            const labelUrl = label.getAttribute('data-url');
+            
+            // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+            // (예: "sub3-1-1visitinfo.html")
+            if (labelUrl && labelUrl === currentPath) {
+                const inputId = label.getAttribute('for');
+                const input = document.getElementById(inputId);
+                
+                if (input) {
+                    input.checked = true;
+                }
+            }
+        });
+    });
+
+    // copy 버튼 누르기
+    // 1. 필요한 요소들을 ID로 가져옵니다.
+    const addressTextElement = document.getElementById('addressText');
+    const copyButton = document.getElementById('copyButton');
+    
+    // 2. 복사 기능을 수행하는 비동기 함수를 정의합니다.
+    async function copyAddress() {
+        // 복사할 텍스트를 가져옵니다.
+        const textToCopy = addressTextElement.textContent;
+
+        try {
+            // navigator.clipboard.writeText()를 사용하여 텍스트를 클립보드에 복사합니다.
+            await navigator.clipboard.writeText(textToCopy);
+            
+            // 복사 성공 시 사용자에게 알림 (선택 사항)
+            console.log('주소가 클립보드에 성공적으로 복사되었습니다:', textToCopy);
+            
+            // 버튼 텍스트를 잠시 'COPIED!'로 변경하여 피드백 제공하고 배경색을 변경
+            //  (선택 사항)
+
+            copyButton.textContent = 'COPIED!';
+            copyButton.style.backgroundColor = '#808080';
+           
+
+            setTimeout(() => {
+                copyButton.textContent = 'COPY';
+                copyButton.style.backgroundColor = '';
+            }, 1500); // 1.5초 후 다시 'COPY'로 복구
+
+        } catch (err) {
+            // 복사 실패 시 (예: 브라우저 권한 문제)
+            console.error('클립보드 복사 실패:', err);
+            alert('주소 복사에 실패했습니다. 브라우저 설정을 확인해주세요.');
+        }
+    }
+
+    // 3. 버튼에 클릭 이벤트 리스너를 추가합니다.
+    if (copyButton) {
+        copyButton.addEventListener('click', copyAddress);
+    }
+
+// 위로 올리기
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // 부드러운 스크롤 효과 적용
+        });
+      }
+      const upButton = document.getElementById("upBtn");
+      console.log(upButton);
+    </script>
   </body>
 </html>

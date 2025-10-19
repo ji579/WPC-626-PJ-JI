@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습</title>
+
+    <!-- Demo styles -->
+    <style>
+      
+      body * {
+        outline: 2px dashed #ccc;
+      }
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 10px;
+      }
+      body {
+        background: #000;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #000;
+        color: #000;
+      }
+
+      /* 4. 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: fadeIn 0.3s ease;
+        overflow: auto;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 10% auto;
+
+        /* border-radius: 10px; */
+        border: #000000 solid 1px;
+        width: 90%;
+        max-width: 1114px;
+        /* height: 560px; */
+        /* position: relative; */
+      
+        animation: slideIn 0.3s ease;
+        /* overflow: auto; */
+      }
+      .modal-box {
+        width: 950px;
+        margin: 0 auto;
+        justify-items: center;
+            line-height: 1.8;
+        background: white;
+      }
+      .titbox {
+        padding: 30px 0 20px 0;
+      }
+      .title {
+        font-size: 1.8rem;
+        width: 750px;
+        height: 33px;
+        align-content: center;
+        border-left: #000000 solid 1px;
+        text-align: left;
+      }
+      .title > strong {
+        margin-left: 25px;}
+      
+       
+        .modal-content {
+        position: fixed; text-align: center;
+    /* width: 80%; */
+    height: 90%;
+        margin-top: 5vw;
+    background-color: white;
+    overflow: auto;
+    
+    /* 중요: 이 요소는 overflow가 없어야 휠 이벤트를 컨테이너가 독점 */
+    }
+
+      section.modal-img > img {
+        aspect-ratio: 884 / 1012;
+        width: 750px;
+      }
+      section.modal-img {
+        width: 750px;
+        text-align: right;
+            padding-bottom: 40px;
+      }
+
+      .modal-img>p
+      {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .modal-btn {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .modal-btn:hover {
+        background: #c0392b;
+      }
+      /* .box {
+        width: 750px;
+       margin-bottom: 35px;
+      } */
+    
+      .box1 > p {
+  width: 750px;
+    border-left: 1px solid;
+    box-sizing: border-box;
+    padding-left: 25px;
+    word-break: break-all;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+
+      .box3 {
+        width: 100%;
+        text-align: right;
+        /* padding-bottom: 60px; */
+      }
+      .box2 {
+        width: 750px;
+        text-align: right;
+      }
+      .imgbx1 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx2 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx1 > img {
+        height: 510px;
+      }
+      .imgbx2 > img {
+        height: 280px;
+      }
+      .imgbx3 > img {
+        height: 450px;
+      }
+.box2>p{
+       margin-bottom: 35px;
+         font-size: 1.4rem;
+           width: 750px;
+}
+      .sectionbx {
+        display: flex;
+            /* margin-bottom: 15px; */
+      }
+      .section_title {
+         
+    width: 90px;
+    margin-right: 10px;
+    text-align: right;
+      }
+      .section_content{
+        width: 750px;
+        text-align: left;
+        border-left: #000000 solid 1px;
+      }
+
+       .section_content>p{
+      margin-left: 25px;
+       }
+      span {
+  font-size: 1.4rem;
+  color: #b3b3b5;
+}
+
+.section_content>span{
+  margin-left: 25px;
+}
+
+#topBtn{
+  margin: 40px;
+  position: relative;
+  width: 38px;
+  height: 38px;
+     z-index: 99; /* 다른 요소보다 위에 위치 */
+            border: none; /* 테두리 제거 */
+            outline: none; /* 아웃라인 제거 */
+            cursor: pointer;
+}
+
+.modal.active {
+  position: fixed;
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        overflow: hidden;
+}
+
+
+
+.scroll-container {
+    height: 100%; 
+    overflow: hidden;}  
+    /* 휠 이벤트로만 스크롤되게 하기 위해 기본 스크롤 막음
+
+
+
+    /* 각 박스가 화면 전체를 차지하도록 설정 */
+  .box {  
+    height: 100%; 
+    /* width: 100%; */
+display: flex;
+flex-direction: column;
+    /* justify-content: center;
+    */
+}
+    /* transition은 부드러운 스크롤을 위해 필요하지 않습니다. scrollIntoView가 처리합니다. */
+
+
+    </style>
+  </head>
+
+  <body>
+    <!-- 모달시작 -->
+    <div class="section">
+      <button class="modal-btn" onclick="openModal()">모달 열기</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div class="modal-box">
+          
+          <section class="box box1">
+          <section class="titbox">
+            <div class="title">
+              <strong>Reverberation from the Universe</strong>
+            </div>
+          </section>
+          <section class="modal-img">
+            <img src="./images/exb1.jpg" alt="" />
+            <p>
+              Pink Dots － Let Me Rest in a Tomb of Stars (detail) 1993–1994<br />
+              © YAYOI KUSAMA
+            </p>
+          </section>
+
+          <!-- <div class="modal-scroll"> -->
+
+            <p>
+              From a young age, Kusama has suffered from visual and auditory
+              hallucinations. Her mental health condition has had a tremendous
+              impact on the artist’s creative activities. In the 1950s, driven
+              by her own obsessions, Kusama created an enormous number of
+              drawings, resulting in an opportunity to make her breakthrough as
+              an artist. After relocating to the United States in 1957, the
+              artist began to create a series of works that could be described
+              as ritual of “self-obliteration,” where all existence is engulfed
+              in infinitely repetitive patterns such as polka dots and nets
+              while the self is immersed into a boundless world. These works
+              express a desire for salvation from psychological disorders and
+              simultaneously reflect her intention to liberate society from
+              absurd oppression through happenings and other forms of
+              expression. However, from the late 1970s to the 1980s, after
+              returning to Japan due to mental and physical health conditions,
+              Kusama created small-scale works such as collages and works on
+              ‘shikishi’ paperboards in her room in a psychiatric hospital.
+              Subsequently, her creations expanded to an environmental scale,
+              such as multi-canvas paintings and gigantic inflatable works.
+              Kusama’s concept of “self-obliteration” is no longer solely a
+              matter of the artist’s inner psyche; rather, it invites us into
+              this sensation as though we are caught in a solemn “reverberation
+              from the universe.” This exhibition focuses on the theme of
+              illness, which can be described as the driving force behind
+              Kusama’s art, showcasing a diverse range of works and related
+              materials from her early years to the present day. We invite you
+              to witness these productions of Kusama’s abundant creativity that
+              reverberate to the farthest reaches of the universe.
+            </p>
+          </section>
+
+          <section class="box box2">
+            <div class="imgbx imgbx1">
+              <img src="./images/전시1.jpg" alt="" />
+              <img src="./images/전시2.jpg" alt="" />
+            </div>
+            <p>
+              L: Left: Yayoi-chan 2013 Right: TOKO-TON 2013 <br />
+              Installation view at Aviva Studios, Manchester, 2023 R: Ancient
+              Fire 1953 <br />
+              © YAYOI KUSAMA
+            </p>
+            <div class="imgbx imgbx2">
+              <img src="./images/전시3.jpg" alt="" />
+              <img src="./images/전시4.jpg" alt="" />
+            </div>
+            <p>
+              L: STAR FAIRY 2013<br />
+              R: The Obliteration Room 2002–present<br />
+              Collaboration between Yayoi Kusama and Queens land Art Gallery.<br />
+              Commissioned Queensland Art Gallery.<br />
+              Gift of the artist through the Queensland Art Gallery Foundation
+              2012. Collection: QAGOMA.<br />
+              © YAYOI KUSAMA. Photo: QAGOMA
+            </p>
+            <div class="imgbx imgbx3">
+              <img src="./images/전시5.jpg" alt="" />
+            </div>
+            <p>
+              Narcissus Garden 1966/2020 Installation view at YAYOI KUSAMA
+              MUSEUM, Tokyo 2020 <br />
+              © YAYOI KUSAMA
+            </p>
+          </section>
+
+          <section class="box box3">
+            <!-- 1. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Dates </strong>
+              </div>
+
+              <div class="section_content dates_box">
+                <p>Thursday, April 24 – Sunday, August 31, 2025</p>
+              </div>
+            </div>
+
+            <!-- 2. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Open </strong>
+              </div>
+              <div class="section_content">
+                <p>Thursdays to Sundays and National Holidays</p>
+              </div>
+            </div>
+
+            <!-- 3. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Closed </strong>
+              </div>
+              <div class="section_content">
+                <p>
+                  Mondays, Tuesdays and Wednesdays (except national holidays)
+                </p>
+              </div>
+            </div>
+
+            <!-- 4. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Hours </strong>
+              </div>
+              <div class="section_content">
+                <p>11:00 - 17:30</p>
+              </div>
+            </div>
+
+            <!-- 5. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Admission<br />Charges</strong><br />
+                  <span>(including<br /> tax) </span>
+              </div>
+              <div class="section_content">
+                <p>Adults: JPY 1,100　Children aged 6 - 18: JPY 600</p>
+                <span>
+                  *Children under age 6 are free.</span><br />
+                   <span> *Group and disability 
+                  discounts are not available.
+                </span>
+              </div>
+            </div>
+
+            <!-- 6. -->
+            <div class="sectionbx">
+              <div class="section_title">
+                <strong>Admission <br />Times</strong></div>
+              <div class="section_content">
+                <p>
+                  ① 11:00 - 12:30 (Enter by 11:30) <br />
+                  ②12:00 - 13:30 (Enter by 12:30) <br />
+                  ③ 13:00 - 14:30 (Enter by 13:30) <br />
+                  ④14:00 - 15:30 (Enter by 14:30) <br />
+                  ⑤ 15:00 - 16:30 (Enter by 15:30) <br />
+                  ⑥16:00 - 17:30 (Enter by 16:30)  <br />
+                  <span>Yayoi Kusama Museum has no
+                  designated waiting area for visitors arriving before the
+                  admission time. Please refrain from coming to the museum
+                  before your admission time.</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+
+
+
+    <button onclick="topFunction()" id="topBtn" title="Go to top">
+         <img src="./images/위로올리기 .png" alt="위로올리기" class="arrow-up">
+    </button>
+
+
+
+        </div> <!-- modal-box 끝 -->
+        <!-- txtbox 끝 -->
+      </div>
+    </div>
+    <!-- 모달버튼끝 -->
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+  // 스크롤 방지용 함수
+// 스크롤 이벤트 과부하 방지를 위한 Throttle 함수
+function throttle(func, delay) {
+    let timeout = null;
+    return function() {
+        // 이미 딜레이 중이면 무시
+        if (timeout === null) {
+            func.apply(this, arguments);
+            // 일정 딜레이 후 timeout 해제
+            timeout = setTimeout(() => {
+                timeout = null;
+            }, delay);
+        }
+    };
+}
+
+// ---------------------- 핵심 스크롤 로직 ----------------------
+
+const modal = document.getElementById('modal');
+const modalBox = document.querySelector('.modal-box');
+// .box1, .box2, .box3 요소를 모두 선택
+const boxes = document.querySelectorAll('.modal-box .box'); // .box 클래스를 가진 요소들
+
+let currentBoxIndex = 0; // 현재 활성화된 박스 인덱스 (0, 1, 2)
+const scrollDelay = 800; // 스크롤 후 다음 스크롤까지의 딜레이 (ms)
+
+/**
+ * 특정 인덱스(박스)로 스크롤합니다.
+ * @param {number} index - 스크롤할 박스의 인덱스 (0부터 시작)
+ */
+function scrollToBox(index) {
+    // 인덱스가 유효한 범위 내에 있는지 확인
+    if (index >= 0 && index < boxes.length) {
+        currentBoxIndex = index;
+        
+        // 해당 박스로 부드럽게 스크롤
+        boxes[currentBoxIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start' // 부모 요소 상단에 맞춥니다.
+        });
+    }
+}
+
+/**
+ * 휠 이벤트를 처리하고 다음/이전 박스로 스크롤합니다.
+ * @param {WheelEvent} event - 휠 이벤트 객체
+ */
+function handleWheel(event) {
+    // **기본 스크롤 동작 방지 (매우 중요!)**
+    event.preventDefault(); 
+    
+    // 휠 방향 감지: deltaY가 양수면 아래(다음), 음수면 위(이전)
+    const direction = event.deltaY > 0 ? 1 : -1;
+    
+    // 다음 스크롤 위치 계산
+    let nextIndex = currentBoxIndex + direction;
+    
+    scrollToBox(nextIndex);
+}
+
+// 휠 이벤트를 묶어주는 throttle 함수 적용
+const throttledWheelHandler = throttle(handleWheel, scrollDelay);
+
+// ---------------------- 모달 제어 함수 ----------------------
+
+function openModal() {
+    modal.classList.add('active'); // 모달을 보이게 함
+    
+    // **모달이 열릴 때 휠 이벤트 리스너 추가**
+    // scrollContainer 대신 HTML 구조에 맞게 modalBox에 리스너를 추가합니다.
+    modalBox.addEventListener('wheel', throttledWheelHandler, { passive: false });
+    
+    // 초기 위치를 box1 (index 0)으로 설정
+    scrollToBox(0); 
+    document.body.classList.add('modal-open');
+}
+
+function closeModal() {
+    modal.classList.remove('active'); // 모달 숨김
+    
+    // **모달이 닫힐 때 휠 이벤트 리스너 제거 (필수)**
+    modalBox.removeEventListener('wheel', throttledWheelHandler);
+    
+    // 닫을 때 인덱스 초기화 (선택 사항)
+    currentBoxIndex = 0; 
+    
+    // 기본적으로 모달 닫을 때 스크롤 위치도 맨 위로 (선택 사항)
+    scrollToBox(0);
+    document.body.classList.remove('modal-open');
+}
+
+// HTML에 <button onclick="openModal()">Open Modal</button>를 추가하여 테스트해보세요.
+       // 버튼 요소를 가져옴
+ let topBtn = document.getElementById("topBtn");
+        console.log(topBtn);
+
+   
+
+ 
+
+        // 버튼을 클릭하면 페이지 맨 위로 스크롤
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        topBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  })
+});
+    </script>
+  </body>
+</html>
