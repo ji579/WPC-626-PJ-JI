@@ -11,8 +11,23 @@ CDN(Content Delivery Network)은
 /*   font-family: "Bagel Fat One", system-ui;
  font-family: "Diphylleia", serif;
   font-family: "Gowun Batang", serif; */
+@font-face {
+    /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
+    font-family: 'MyCustomFont';
 
+    /* 폰트 파일의 경로와 형식 지정 */
+    src: url('../fonts/HCRBatang.ttf') format('truetype');
 
+    /* (선택 사항) 폰트의 굵기 지정 */
+    font-weight: normal;
+
+    /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
+    font-style: normal;
+}
+
+h1, h2{
+  font-family: 'MyCustomFont', sans-serif;
+}
 
 /* 공통셋팅 */
 html{
@@ -30,6 +45,9 @@ body {
   font-family: "Instrument Sans", sans-serif;
      font-size: 10px;
 }
+
+
+
 
 #spart-menu {
   max-width: 1360px;
@@ -53,7 +71,8 @@ body {
   /* 플렉스박스 */
   display: flex;
   height: 94px;
- padding: 0 34px;
+ /* padding: 0 34px; */
+ padding: 0 calc(100% / 12);
   justify-content: space-between;
   align-items: center;
   transition: 0.4s ease-out;
@@ -63,9 +82,15 @@ body {
   text-align: center;
 }
 .spart-menu ul li:nth-child(1),
-.spart-menu ul li:nth-child(3) {
-  display: flex;
-  justify-content: space-around
+.spart-menu ul li:nth-child(2) {
+
+  text-align: left;
+
+}
+.spart-menu ul li:nth-child(4),
+.spart-menu ul li:nth-child(5) {
+
+  text-align: right;
 
 }
 
@@ -77,12 +102,20 @@ body {
   /* padding: 9px 24px; */
   /* 줄바꿈방지 */
   white-space: nowrap;
+  background-color: transparent;
 }
 
 /* 호버시 색 변경 */
-.spart-menu ul > li:hover > a {
+.spart-menu ul > li > a:hover {
   color: #c52531;
+   background-color: transparent;
 }
+.spart-menu ul > li > a.active {
+  color: #c52531;
+ background-color: transparent;
+}
+
+
 /* ////////////////////////////////////////////// */
 
 

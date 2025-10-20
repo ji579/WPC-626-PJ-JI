@@ -163,16 +163,16 @@ left: 50%;
 .spart-menu ul > li:hover > a {
   color: #C52531;
 }
-
-.spart-menu ul {
   /* 플렉스박스 */
+/* .spart-menu ul {
+
   display: flex;
   height: 94px;
-  padding: 0 100px;
+  padding: 0 calc(100/12);
   justify-content: space-between;
   align-items: center;
   transition: 0.4s ease-out;
-}
+} */
 /* 스티키 메뉴이름 */
 .spart-menu ul > li > a {
   color: white;
@@ -297,14 +297,15 @@ width: auto; */
   background: url(../images/메인이미지1.png) no-repeat center top / cover;
 }
 .main-center h1 {
-  position: absolute;
-  top: 9%;
-  left: 50%;
-  translate: -50% 0;
-  writing-mode: vertical-lr;
-  letter-spacing: 30px;
-  padding-top: 30px;
-  color: #ffffff;
+position: absolute;
+    /* width: 80px; */
+    top: 33%;
+    left: 50%;
+    translate: -50% -26%;
+    writing-mode: vertical-lr;
+    letter-spacing: 0px;
+    /* padding-top: 30px; */
+    color: #ffffff;
 }
 
 /* 메인 마지막 가로줄 크기 다름 */
@@ -353,8 +354,7 @@ top: -39px;
 
 
 .contact-area h2 {
-  margin-bottom: 10px;
-  margin-top: -10px;
+    margin: 10px 0;
 }
 
 .contact-box {
@@ -380,7 +380,9 @@ top: -39px;
   background-color: #ffffff;
   z-index: 1;
 }
-
+.name-box,  .email-box {
+  align-content: center;
+}
 .desc-box h4 {
   margin: 5px;
 }
@@ -391,6 +393,8 @@ top: -39px;
 
 .transmit-box {
   text-align: center;
+      align-content: center;
+
   background-color: #e6e6e6;
 }
 

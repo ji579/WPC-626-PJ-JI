@@ -22,6 +22,9 @@ body * {
 .tit3 .inbox {
   max-width: 1360px;
 }
+
+
+
 /* 하위메뉴 호버시 */
 .line1 > a:hover {
   color: #c52531;

@@ -220,14 +220,14 @@ const bookInfo = [
     author: "Yayoi Kusama",
     publisher: "Tate Publishing",
     detail:
-      "“Infinity Net” is a memoir by Yayoi Kusama, one of the most important figures in the contemporary art world, exploring her unique and fascinating life and art. This autobiography details Kusama's journey from overcoming obsessive-compulsive disorder to breaking down cultural barriers through art and creating her own unique artistic world.The 2021 revised edition includes a new foreword by Francis Morris and a poem by Yayoi Kusama, allowing a deeper understanding of her work and thoughts.\n" +
-      "During her ten years in New York, Kusama transformed from a poor artist to a mainstay of the counterculture art scene.\n" +
-      "She solidified her position through her association with art world giants such as Georgia O'Keeffe, Donald Judd, and Andy Warhol.\n" +
-      "She speaks candidly about the obsessions that plagued her childhood and her entire life, and discusses her journey to explore her inner world through art.\n" +
-      "After returning to Japan, Kusama was admitted to a mental hospital and found artistic inspiration there.\n" +
-      "Over the past decade, he has established himself as an internationally recognized artist, having been featured in several major exhibitions.\n" +
-      "Translated into English by Ralph McCarthy, this autobiography explores Kusama’s ongoing artistic exploration and It powerfully tells the story of how, despite the hardships she endured, she forged her own path through art.\n\n" +
-      '"Infinity Net" explores the life and art of Yayoi Kusama, the challenges she faced and her achievements, in a profound and dreamlike way. It shows how her art shaped her. This autobiography leaves a powerful impression on readers through Kusama\'s boundless creativity and dreamlike intensity.',
+      `“Infinity Net” is a memoir by Yayoi Kusama, one of the most important figures in the contemporary art world, exploring her unique and fascinating life and art. This autobiography details Kusama's journey from overcoming obsessive-compulsive disorder to breaking down cultural barriers through art and creating her own unique artistic world.The 2021 revised edition includes a new foreword by Francis Morris and a poem by Yayoi Kusama, allowing a deeper understanding of her work and thoughts.
+      During her ten years in New York, Kusama transformed from a poor artist to a mainstay of the counterculture art scene.
+      She solidified her position through her association with art world giants such as Georgia O'Keeffe, Donald Judd, and Andy Warhol.
+      She speaks candidly about the obsessions that plagued her childhood and her entire life, and discusses her journey to explore her inner world through art.
+      After returning to Japan, Kusama was admitted to a mental hospital and found artistic inspiration there.
+      Over the past decade, he has established himself as an internationally recognized artist, having been featured in several major exhibitions.
+      Translated into English by Ralph McCarthy, this autobiography explores Kusama’s ongoing artistic exploration and It powerfully tells the story of how, despite the hardships she endured, she forged her own path through art.
+      "Infinity Net" explores the life and art of Yayoi Kusama, the challenges she faced and her achievements, in a profound and dreamlike way. It shows how her art shaped her. This autobiography leaves a powerful impression on readers through Kusama\'s boundless creativity and dreamlike intensity.`
   },
   {
     index: 2,
@@ -235,15 +235,15 @@ const bookInfo = [
     author: "Yayoi Kusama, Jenni Sorkin",
     publisher: "David Zwirner Books",
     detail:
-      "Yayoi Kusama's art is sensual, utopian, and original, and despite its highly personal nature, is loved by diverse audiences around the world.\n" +
-      "Throughout her career, Kusama has broken down the traditional boundaries between work, artist, and viewer.\n" +
-      "From paintings to performances, room-sized installations, sculptural installations, literature, film, fashion, design, and interventions within existing architectural structures.\n" +
-      "Kusama's work ranges beyond major art movements of the late 20th century, including Pop Art and Minimalism.\n" +
-      "Her work radiates vitality and passion, and is autobiographical and at times confessional.\n" +
-      "Kusama's work conveys the vitality of a living artist through her work.\n\n" +
-      '"Yayoi Kusama: Festival of Life" is an exhibition catalogue covering Kusama\'s exhibition held at the Chelsea branch of David Zwirner Gallery in New York in late 2017.\n' +
-      "Includes her iconic “My Eternal Soul” series, new large-scale floral sculptures, polka-dotted environments, and two infinity mirrored rooms.\n" +
-      "The book offers fresh perspectives on Kusama's work, including new scholarly research and posters by Jenni Sorkin.",
+      `Yayoi Kusama's art is sensual, utopian, and original, and despite its highly personal nature, is loved by diverse audiences around the world.
+      Throughout her career, Kusama has broken down the traditional boundaries between work, artist, and viewer.
+      From paintings to performances, room-sized installations, sculptural installations, literature, film, fashion, design, and interventions within existing architectural structures.
+      Kusama's work ranges beyond major art movements of the late 20th century, including Pop Art and Minimalism.
+      Her work radiates vitality and passion, and is autobiographical and at times confessional.
+      Kusama's work conveys the vitality of a living artist through her work.
+      "Yayoi Kusama: Festival of Life" is an exhibition catalogue covering Kusama\'s exhibition held at the Chelsea branch of David Zwirner Gallery in New York in late 2017.
+      Includes her iconic “My Eternal Soul” series, new large-scale floral sculptures, polka-dotted environments, and two infinity mirrored rooms.
+      The book offers fresh perspectives on Kusama's work, including new scholarly research and posters by Jenni Sorkin.`
   },
   {
     index: 3,
@@ -251,10 +251,11 @@ const bookInfo = [
     author: "Yayoi Kusama, Tatehata, Hoptman, Kultermann, Taft",
     publisher: "Phaidon Press",
     detail:
-      "Kusama has gained international acclaim for her groundbreaking work that explores themes such as infinity, self-image, sexuality, and compulsive repetition.\n" +
-      "Her work, which first gained attention in Manhattan's psychedelic and pop culture scenes in the 1960s, combined patterning to create often participatory installations and series of paintings.\n" +
-      "This book is an updated version of a monograph published in 2000 and explores Kusama's work in great detail.\n" +
-      "Enriched with in-depth essays by Catherine Taft and a new collection of the author's poetry, it delves deeper into her artistic world.",
+      `Kusama has gained international acclaim for her groundbreaking work that explores themes such as infinity, self-image, sexuality, and compulsive repetition.
+      Her work, which first gained attention in Manhattan's psychedelic and pop culture scenes in the 1960s, combined patterning to create often participatory installations and series of paintings.
+
+      This book is an updated version of a monograph published in 2000 and explores Kusama's work in great detail.
+      Enriched with in-depth essays by Catherine Taft and a new collection of the author's poetry, it delves deeper into her artistic world.`
   },
   {
     index: 4,
@@ -262,10 +263,9 @@ const bookInfo = [
     author: "The Artist Journals",
     publisher: "David Zwirner Book",
     detail:
-      "This journal captures the vibrant and dynamic art of Yayoi Kusama, providing an ideal canvas for creative thinking.\n" +
-      "Renowned Japanese artist Kusama's kaleidoscopic works have captivated millions of visitors to museums and galleries around the world.\n" +
-      "Her signature polka dots, organic forms and hypnotic optical effects navigate the boundaries between plane and depth, presence and absence, beauty and the sublime.\n" +
-      "This journal is Kusama's first as an artist and features her work on the cover and last page, providing the perfect inspiration for all your creative endeavors.",
+      `This journal captures the vibrant and dynamic art of Yayoi Kusama, providing an ideal canvas for creative thinking. Renowned Japanese artist Kusama's kaleidoscopic works have captivated millions of visitors to museums and galleries around the world. Her signature polka dots, organic forms and hypnotic optical effects navigate the boundaries between plane and depth, presence and absence, beauty and the sublime.
+      
+      This journal is Kusama's first as an artist and features her work on the cover and last page, providing the perfect inspiration for all your creative endeavors.`
   },
   {
     index: 5,
@@ -453,12 +453,11 @@ const bookInfo = [
     author: "Yayoi Kusama, Stephanie Rosenthal",
     publisher: "Prestel",
     detail:
-      "This book commemorates the first European retrospective of Yayoi Kusama and provides a comprehensive overview of the Japanese artist's influential work spanning over eight decades.\n" +
-      "Set against the backdrop of a groundbreaking retrospective at Gropius Bau, this publication delves deeply into Kusama’s life and art through original insights from experts.\n" +
-      "The book traces Kusama's creative development from her early paintings to her sculptures and installations.\n" +
-      "Featuring a wide range of images and materials, the book is accompanied by essays from authors with diverse academic backgrounds, and covers Kusama's accomplishments in fashion, film, art marketing, and publishing.\n" +
-      "Essays by various authors focus on Kusama's diverse engagement with the arts and genre-specific observations of her performance, installation, and painting series.\n" +
-      "This rich and comprehensive retrospective provides readers interested in Kusama with a deeper understanding of her creative journey and extensive career.",
+      `This book commemorates the first European retrospective of Yayoi Kusama and provides a comprehensive overview of the Japanese artist's influential work spanning over eight decades. Set against the backdrop of a groundbreaking retrospective at Gropius Bau, this publication delves deeply into Kusama’s life and art through original insights from experts.
+      The book traces Kusama's creative development from her early paintings to her sculptures and installations.
+      Featuring a wide range of images and materials, the book is accompanied by essays from authors with diverse academic backgrounds, and covers Kusama's accomplishments in fashion, film, art marketing, and publishing.
+      Essays by various authors focus on Kusama's diverse engagement with the arts and genre-specific observations of her performance, installation, and painting series.
+      This rich and comprehensive retrospective provides readers interested in Kusama with a deeper understanding of her creative journey and extensive career.`
   },
   {
     index: 20,
@@ -466,7 +465,7 @@ const bookInfo = [
     author: "Yayoi Kusama",
     publisher: "Discover Japan",
     detail:
-      "It features Yayoi Kusama, an avant-garde artist who captivates the world. I will report on the scenes of the “Western Tour Retrospective Exhibition,” which excited the people of London, New York, Paris and Spain, and the “Yayoi Kusama Forever Eternal Eternity,” which started this year, and look back on her dramatic half-life. “Yayoi Kusama” by Louis Vuitton “Collection” and introduced museums all over Japan where you can see Yayoi Kusama's works right now, and I listened carefully to Yayoi Kusama himself about his current production and feelings, which can be said to be the golden age. *It is the same magazine that was distributed under the name of “A Publishing Company” until January 2019.",
+      `It features Yayoi Kusama, an avant-garde artist who captivates the world. I will report on the scenes of the “Western Tour Retrospective Exhibition,” which excited the people of London, New York, Paris and Spain, and the “Yayoi Kusama Forever Eternal Eternity,” which started this year, and look back on her dramatic half-life. “Yayoi Kusama” by Louis Vuitton “Collection” and introduced museums all over Japan where you can see Yayoi Kusama's works right now, and I listened carefully to Yayoi Kusama himself about his current production and feelings, which can be said to be the golden age. *It is the same magazine that was distributed under the name of “A Publishing Company” until January 2019.`
   },
   {
     index: 21,
@@ -475,11 +474,11 @@ const bookInfo = [
     author: "Yayoi Kusama",
     publisher: "Elle Studio International",
     detail:
-      "Yayoi Kusama is from Japan and is a globally recognized contemporary artist.\n" +
-      "She is known for her use of infinite repetitive dot patterns and bold colors, and her works are expressed in various forms, including paintings, sculptures, installation art, and performance art.\n" +
-      "Kusama's art is deeply connected to her personal psychological experiences, especially the hallucinations she has experienced since childhood, which was also how she fought mental suffering.\n" +
-      "Kusama continues to pursue self-reflection and exploration of the inner world through art, and through this process, she has established a unique and unrivaled position in the world of contemporary art.\n" +
-      "Her work becomes a medium for the audience to reflect on themselves and guide them into a world of infinite imagination.",
+      `Yayoi Kusama is from Japan and is a globally recognized contemporary artist.
+      She is known for her use of infinite repetitive dot patterns and bold colors, and her works are expressed in various forms, including paintings, sculptures, installation art, and performance art.
+      Kusama's art is deeply connected to her personal psychological experiences, especially the hallucinations she has experienced since childhood, which was also how she fought mental suffering.
+      Kusama continues to pursue self-reflection and exploration of the inner world through art, and through this process, she has established a unique and unrivaled position in the world of contemporary art.
+      Her work becomes a medium for the audience to reflect on themselves and guide them into a world of infinite imagination.`,
   },
   {
     index: 22,
@@ -487,12 +486,10 @@ const bookInfo = [
     author: "1990",
     publisher: "Art Brut, Pop Art",
     detail:
-      "This book is a compilation of Yayoi Kusama's best-known and best-selling series, Infinity Mirror Rooms.\n" +
-      "We explore her influence on modern art history over the past 50 years.\n" +
-      "World-renowned Japanese artist Yayoi Kusama has worked in a variety of media, including painting, sculpture, and performance/installation art.\n" +
-      "Kusama's Infinity Mirror Room, which started in Phalli's Field! It is a landscape filled with multicolored lights and whimsical shapes.\n" +
-      "It keeps the audience in a space filled with mirrors.\n" +
-      "These mirrored spaces distort the room to project the illusion of the place, constantly reflecting it.\n",
+      `This book is a compilation of Yayoi Kusama's best-known and best-selling series, Infinity Mirror Rooms. We explore her influence on modern art history over the past 50 years.
+      World-renowned Japanese artist Yayoi Kusama has worked in a variety of media, including painting, sculpture, and performance/installation art.
+      Kusama's Infinity Mirror Room, which started in Phalli's Field! It is a landscape filled with multicolored lights and whimsical shapes.
+      It keeps the audience in a space filled with mirrors.These mirrored spaces distort the room to project the illusion of the place, constantly reflecting it.`
   },
   {
     index: 23,
@@ -500,8 +497,7 @@ const bookInfo = [
     author: "Yayoi Kusama",
     publisher: "D.A.P./Tate",
     detail:
-      "Like many another artist émigré, Kusama had a plan, and it began, as such schemes often do, with what she was able to carry on her back, and sell: a cache of small works on paper, luminous drawings in gouache, ink and pastel. A film of Kusama's New York years might find her peeling the sheets leaf by leaf from the luggage that accompanied her from Tokyo to Seattle to New York, offering them as calling cards and as barter. Early scenes might feature marathon sessions of solitary work as she painted her vast Infinity Nets, and nocturnal raids when she liberated discarded items from the street, and sat for hours with her neighbor Donald Judd stitching and stuffing cotton sacks to fashion the stiff phallic protuberances she would use to cover her Accumulation sculptures. Her prodigious energies would soon migrate to installations, happenings, body painting, film, fashion and 'sexual revolution'. She would protest the war in Vietnam with an 'Anatomic Explosion' on Wall Street. She would become a tabloid sensation.\n" +
-      "By the time she left New York and returned to Japan for good in 1973, Kusama was, by popular account, 'as famous as Andy Warhol'. But her appeal for the avant-garde had been exhausted, unlike his, by the machinery of self-promotion. Or so they say. Chroniclers of the scene deemed her return a retreat, whether under the banner of emotional breakdown or career meltdown. 'She wore herself out.' 'She overplayed her hand.' 'She sold out.' 'She lost her mind.' The explanations tend to arrive in the form of epithets. And then there is another theory. She was sick and tired of war, burnt out on Vietnam, disillusioned by the failure of the era's utopian project of pacifism and liberation. Her departure was an act of political protest as much as of emotional surrender.",
+      `Like many another artist émigré, Kusama had a plan, and it began, as such schemes often do, with what she was able to carry on her back, and sell: a cache of small works on paper, luminous drawings in gouache, ink and pastel. A film of Kusama's New York years might find her peeling the sheets leaf by leaf from the luggage that accompanied her from Tokyo to Seattle to New York, offering them as calling cards and as barter. Early scenes might feature marathon sessions of solitary work as she painted her vast Infinity Nets, and nocturnal raids when she liberated discarded items from the street, and sat for hours with her neighbor Donald Judd stitching and stuffing cotton sacks to fashion the stiff phallic protuberances she would use to cover her Accumulation sculptures. Her prodigious energies would soon migrate to installations, happenings, body painting, film, fashion and 'sexual revolution'. She would protest the war in Vietnam with an 'Anatomic Explosion' on Wall Street. She would become a tabloid sensation. By the time she left New York and returned to Japan for good in 1973, Kusama was, by popular account, 'as famous as Andy Warhol'. But her appeal for the avant-garde had been exhausted, unlike his, by the machinery of self-promotion. Or so they say. Chroniclers of the scene deemed her return a retreat, whether under the banner of emotional breakdown or career meltdown. 'She wore herself out.' 'She overplayed her hand.' 'She sold out.' 'She lost her mind.' The explanations tend to arrive in the form of epithets. And then there is another theory. She was sick and tired of war, burnt out on Vietnam, disillusioned by the failure of the era's utopian project of pacifism and liberation. Her departure was an act of political protest as much as of emotional surrender.`
   },
   {
     index: 24,
@@ -509,8 +505,8 @@ const bookInfo = [
     author: "Yayoi Kusama",
     publisher: "Skira",
     detail:
-      "Kusama Yayoi is a Japanese contemporary artist known for her repetitive dot patterns and hallucinatory imagery. She works across a variety of media, including painting, sculpture, installation, and performance, exploring themes of self-effacement and obsessive repetition. These themes are intertwined with her long-standing psychological struggles, which she reflects in her work.\n" +
-      "After moving to New York in the late 1950s and establishing her career, she established a distinctive style that garnered international recognition. Kusama continues to work prolifically today, creating powerful visual experiences through iconic works like polka dots and infinity mirrored rooms.",
+      `Kusama Yayoi is a Japanese contemporary artist known for her repetitive dot patterns and hallucinatory imagery. She works across a variety of media, including painting, sculpture, installation, and performance, exploring themes of self-effacement and obsessive repetition. These themes are intertwined with her long-standing psychological struggles, which she reflects in her work.
+      After moving to New York in the late 1950s and establishing her career, she established a distinctive style that garnered international recognition. Kusama continues to work prolifically today, creating powerful visual experiences through iconic works like polka dots and infinity mirrored rooms.`
   },
 ];
 
@@ -569,7 +565,13 @@ function openModal(e) {
     if (titleEl) titleEl.textContent = book.title;
     if (authorEl) authorEl.textContent = book.author;
     if (publisherEl) publisherEl.textContent = book.publisher;
-    if (detailEl) detailEl.textContent = book.detail;
+  if (detailEl) {
+        // 1. replace()를 사용하여 줄바꿈 문자를 <br/>로 변경
+        const formattedDetail = book.detail.replace(/\n/g, '<br/>');
+        
+        // 2. innerHTML에 할당하여 <br/>이 HTML 태그로 인식되도록 합니다.
+        detailEl.innerHTML = formattedDetail; 
+    }
   } else {
     console.warn('bookInfo에서 해당 인덱스를 찾지 못했습니다:', idx);
   }
@@ -603,27 +605,27 @@ function openModal(e) {
 
 
 
-  // 변경부분
-  const container = mWindow.querySelector(".detail"); // 모달의 detail 요소
-  const text = book.detail || ""; // 예: "문장1\n문장2\n\n문단2..."
-  container.innerHTML = ""; // 기존 내용 제거
+//   // 변경부분
+//   const container = mWindow.querySelector(".detail"); // 모달의 detail 요소
+//   const text = book.detail || ""; // 예: "문장1\n문장2\n\n문단2..."
+//   container.innerHTML = ""; // 기존 내용 제거
 
-  // 문단 단위로 나누기 (연속된 공백/줄바꿈 기준)
-  const paragraphs = text.split(/\n\s*\n/);
+//   // 문단 단위로 나누기 (연속된 공백/줄바꿈 기준)
+//   const paragraphs = text.split(/\n\s*\n/);
 
-  paragraphs.forEach((par) => {
-    const pEl = document.createElement("p");
+//   paragraphs.forEach((par) => {
+//     const pEl = document.createElement("p");
 
-    // 문단 내부에서 줄바꿈을 <br>로 처리하려면 라인마다 텍스트 노드 + <br> 추가
-    const lines = par.split("\n");
-    lines.forEach((line, i) => {
-      if (i > 0) pEl.appendChild(document.createElement("br"));
-      pEl.appendChild(document.createTextNode(line));
-    });
+//     // 문단 내부에서 줄바꿈을 <br>로 처리하려면 라인마다 텍스트 노드 + <br> 추가
+//     const lines = par.split("\n");
+//     lines.forEach((line, i) => {
+//       if (i > 0) pEl.appendChild(document.createElement("br"));
+//       pEl.appendChild(document.createTextNode(line));
+//     });
 
-    container.appendChild(pEl);
-  });
-/////////////////////////
+//     container.appendChild(pEl);
+//   });
+// /////////////////////////
 
 
 

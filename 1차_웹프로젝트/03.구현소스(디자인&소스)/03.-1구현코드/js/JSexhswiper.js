@@ -60,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // 이미지개수만큼 for문을 돌려서 html태그를
   // 반복적으로 생성하여 대상요소에 삽입해준다!
 
+
   // 1. 대상선정 : .wrap
   const mySwiper = document.querySelector(".swiper-wrapper");
   console.log("대상:", mySwiper);
@@ -109,7 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
         <div class="exb-box swiper-slide">
          <div class="exbtxt">
              <h3>${workTitle[i - 1]}</h3>
-             <h2>${workDate[i - 1]}</h2>
+             <h4>${workDate[i - 1]}</h4>
                 <img src="./images/exb${i + 1}.jpg" alt="paint">
             </div>
         </div>

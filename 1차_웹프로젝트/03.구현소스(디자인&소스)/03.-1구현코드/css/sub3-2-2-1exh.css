@@ -141,6 +141,40 @@ input:checked + label {
   justify-content: center;
 }
 
+.row , .col {
+  position: relative; /* 자식 이미지의 절대 위치 기준점 */
+  width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
+  height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+}
+
+/* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+.row img, .col img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+}
+
+/* 4. 호버 이미지 숨기기 (기본 상태) */
+.hover-row, .hover-col
+ {
+  opacity: 0; /* 평소에는 투명하게 숨김 */
+}
+
+/* 5. 호버 시 이미지 전환 */
+.row:hover .default-row,
+.col:hover .default-col {
+  opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+}
+
+.row:hover .hover-row,
+.col:hover .hover-col{
+  opacity: 1; /* 호버 이미지를 보이게 함 */
+}
+
+
 .wrap {
   /* max-width: 1114px;
   margin: 0 auto; */
@@ -227,7 +261,7 @@ swiper-container {
   display: -webkit-box;
   overflow: hidden;
 }
-.wrap h2 {
+.wrap h4 {
   font-size: 1.6rem;
 
   word-break: break-all;

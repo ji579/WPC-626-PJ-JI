@@ -68,7 +68,7 @@ window.addEventListener("DOMContentLoaded", () => {
             </li>
             <li class="exbtxt">
              <h3>${workTitle[i - 1]}</h3>
-             <h2>${workDate[i - 1]}</h2>
+             <h4>${workDate[i - 1]}</h4>
             </li>
     </ul>
         `;
