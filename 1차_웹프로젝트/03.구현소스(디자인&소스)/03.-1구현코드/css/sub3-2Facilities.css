@@ -29,9 +29,9 @@ body * {
 }
 
 .line1 a.active {
-    color: #c52531;
-    font-weight: bold;
-    background-color: transparent;
+  color: #c52531;
+  font-weight: bold;
+  background-color: transparent;
 }
 
 .line1 {
@@ -41,24 +41,24 @@ body * {
   align-items: center;
   gap: 18px;
   font-size: 1.6rem;
-  padding-left: calc(100% /12);
+  padding-left: calc(100% / 12);
 }
 
 .line2 {
   height: 30px;
   border-bottom: 2px solid #b3b3b5;
   align-content: center;
-  padding-left: calc(100% /12);
+  padding-left: calc(100% / 12);
 }
 
 .link-label {
-    cursor: pointer; /* 클릭 가능한 요소임을 표시 */
-    display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
+  cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+  display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
 }
 .link-label a {
-    text-decoration: none; /* a 태그의 밑줄 제거 */
-    color: inherit; /* 부모 요소의 글자색 상속 */
-    /* 원하는 스타일링 추가 */
+  text-decoration: none; /* a 태그의 밑줄 제거 */
+  color: inherit; /* 부모 요소의 글자색 상속 */
+  /* 원하는 스타일링 추가 */
 }
 .line2 img {
   margin-left: 5px;
@@ -68,7 +68,7 @@ body * {
 }
 /* input 요소를 숨겨도 작동은됨! */
 input[type="radio"] {
-  display: none; 
+  display: none;
 }
 
 .check {
@@ -78,19 +78,19 @@ input[type="radio"] {
 
 /* 라벨요소 */
 label {
-      font-size: 1.4rem;
+  font-size: 1.4rem;
   display: flex;
   gap: 5px;
   line-height: 1.5;
   cursor: pointer;
   margin-right: 13px;
   /* 텍스트와 가상요소 순서를 맞추기 위해 flex-direction: row-reverse 적용 권장 */
-  /* flex-direction: row-reverse; */ 
+  /* flex-direction: row-reverse; */
 }
 
 /* 동그라미 크기 설정 */
 label::after {
-  content: '';
+  content: "";
   width: 11px;
   height: 11px;
   margin-top: 4px;
@@ -139,6 +139,8 @@ max-width: 424px;
 .floor {
   display: flex;
   flex-direction: column;
+  color: #808080;
+  cursor: pointer;
 }
 
 .floortxt {
@@ -151,6 +153,7 @@ max-width: 424px;
   height: 73px;
   box-sizing: border-box;
   align-items: center;
+  color: #808080;
 }
 
 li img {
@@ -183,12 +186,22 @@ h4 {
   translate: 0 -50%;
 }
 
+.floor .floortxt.active {
+  color: black;
+  /* 글씨스타일 두껍게 */
+}
+
+/* 선택된 층의 ::after 스타일 */
+.floor .floortxt.active::after {
+  background-image: url("../images/층버튼.png");
+}
+
 .floorcont {
   display: flex;
   flex-direction: row;
-  gap: 10px;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 16px;
+  padding: 0 calc(100% / 12);
 }
 
 span {
@@ -197,7 +210,6 @@ span {
   color: #b3b3b5;
   padding-left: calc(100% / 12);
 }
-
 
 .mapwrap {
   position: relative;
@@ -236,15 +248,33 @@ span {
   opacity: 1;
 }
 /* 층별 위치감 일단 세로로만 차이둠 (피라미드 식으로 하고싶으면 x축도 추가해주면 됨 ex) transform: translate(-60px, -60px) */
-.mapwrap [data-floor="5F"] .img { transform: translateY(0px); }
-.mapwrap [data-floor="4F"] .img { transform: translateY(36px); }
-.mapwrap [data-floor="3F"] .img { transform: translateY(72px); }
-.mapwrap [data-floor="2F"] .img { transform: translateY(108px); }
-.mapwrap [data-floor="1F"] .img { transform: translateY(144px); }
-.mapwrap [data-floor="B1F"] .img { transform: translateY(180px); }
+.mapwrap [data-floor="5F"] .img {
+  transform: translateY(0px);
+}
+.mapwrap [data-floor="4F"] .img {
+  transform: translateY(36px);
+}
+.mapwrap [data-floor="3F"] .img {
+  transform: translateY(72px);
+}
+.mapwrap [data-floor="2F"] .img {
+  transform: translateY(108px);
+}
+.mapwrap [data-floor="1F"] .img {
+  transform: translateY(144px);
+}
+.mapwrap [data-floor="B1F"] .img {
+  transform: translateY(180px);
+}
 
-
+.mapwrap > div:not([style*="opacity: 1"]) img {
+  width: 97%;
+  /* 기본 이미지 (아래 깔리는 층) 크기를 80%로 축소 */
+  margin-left: auto;
+  margin-right: 0;
+}
 .desc {
   display: none; /* 처음엔 모든 층 설명 숨기기 */
   margin-top: 10px;
 }
+/* ////////////// */
