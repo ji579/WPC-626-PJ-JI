@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/* 도깨비 PJ 메인 페이지 미디어쿼리 - media_main.css */
+
+/* 1360px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1360px) {
+ 
+}
+/* 1360px 이하 미디어쿼리 종료 */
+
+/* 1200px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 9px;
+  }
+}
+/* 1200px 이하 미디어쿼리 종료 */
+
+/* 1024px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 8px;
+  }
+
+ 
+  
+ 
+}
+/* 1024px 이하 미디어쿼리 종료 */
+
+/* 800px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+
+.main-area {
+            display: block; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        display: grid;
+        /* 모든 아이템을 한 줄로 정렬 (100% 너비) */
+        grid-template-columns: 1fr;
+        gap: 20px; /* 아이템 간 간격 */
+        
+        /* main-area 내부의 article 요소들을 직접 Grid 아이템으로 만듦 */
+    }
+
+    /* 2. article 내부의 ul (first-line, second-line, third-line)의 기본 display 초기화 */
+    .main-area article ul {
+        display: block; /* Flex나 Grid를 해제하고 block으로 만듦 */
+    }
+    
+    /* 3. 모든 article 요소의 콘텐츠 순서 재배열을 위해 display: contents 설정 */
+    /* 이렇게 하면 article의 자식(li)들이 main-area의 직접적인 Grid 아이템처럼 작동하게 됩니다. */
+    #col1, #col2, #col3 {
+        display: contents;
+    }
+    
+    /* 4. 숨겨야 할 요소 (총 4개 이미지 박스) */
+    /* col1의 3, 4번째 이미지 */
+    #col1 .first-line > .img-box,
+    #col1 .first-line > .img-box-3,
+    /* col3의 3, 4번째 이미지 */
+    #col3 .third-line > .img-box,
+    #col3 .third-line > .img-box-3 {
+        display: none !important;
+    }
+
+    /* 5. 🌟 7개 주요 요소에 순서 (order) 부여 🌟 */
+
+    /* [요청 순서]
+       1. .col2 > .second-line > .main-center (h1 草間彌生) -> order: 1
+       2. .col1 > .first-line > 첫 번째 .contact (Profile) -> order: 2
+       3. .col1 > .first-line > 두 번째 .contact (video3.mp4) -> order: 3
+       4. .col2 > .second-line > 두 번째 .contact (Works) -> order: 4
+       5. .col2 > .second-line > .img-box (메인이미지4.png) -> order: 5
+       6. .col3 > .third-line > 첫 번째 .contact (Museum) -> order: 6
+       7. .col2 > .second-line > .video3 (video6.mp4) -> order: 7
+    */
+
+    /* 순서 1: h1 草間彌生 */
+    #col2 .second-line > .main-center:first-child {
+        order: 1;
+    }
+
+    /* 순서 2: Profile (첫 번째 줄 첫 번째 contact) */
+    #col1 .first-line > .contact:nth-child(1) {
+        order: 2;
+    }
+
+    /* 순서 3: video3.mp4 (첫 번째 줄 두 번째 contact) */
+    #col1 .first-line > .contact:nth-child(2) {
+        order: 3;
+    }
+    
+    /* 순서 4: Works (두 번째 줄 두 번째 contact) */
+    #col2 .second-line > .contact:nth-child(2) {
+        order: 4;
+    }
+
+    /* 순서 5: 메인이미지4.png (두 번째 줄 세 번째 img-box) */
+    #col2 .second-line > .img-box:nth-child(3) {
+        order: 5;
+    }
+
+    /* 순서 6: Museum (세 번째 줄 첫 번째 contact) */
+    #col3 .third-line > .contact:nth-child(1) {
+        order: 6;
+    }
+
+    /* 순서 7: video6.mp4 (두 번째 줄 네 번째 video3) */
+    #col2 .second-line > .video3:nth-child(4) {
+        order: 7;
+    }
+    
+    /* [참고] 숨기지 않은 나머지 요소(article 태그와 ul 태그 자체)는
+       기본 order 값(0)을 가지며, CSS 파일의 다른 규칙에 따라 표시될 수 있습니다. 
+       원하는 7개 요소만 표시되도록 하려면, 
+       나머지 요소들(.col1 > .first-line > .img-box, .col3 > .third-line > .contact:nth-child(2) 등)
+       도 명시적으로 display: none; 처리해야 합니다. 
+       위에서는 요청하신 4개의 이미지 박스만 숨겼습니다.
+    */
+    
+    /* 6. 숨기지 않은 나머지 영상 (3-2 영상)을 맨 마지막으로 보냄 */
+    #col3 .third-line > .contact:nth-child(2) {
+        order: 8;
+    }
+
+    /* 7. 영상 크기 조정 (선택 사항: 모바일에서 100% 너비로 맞춤) */
+    .main-area video {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* 8. main-info 글자 중앙 정렬 (선택 사항: 가독성 향상) */
+    .main-info {
+        text-align: center;
+    }
+
+
+
+
+
+
+
+ .big{
+  position: absolute;
+  top: 0;
+  right: 0;
+ }
+  
+}
+/* 800px 이하 미디어쿼리 종료 */

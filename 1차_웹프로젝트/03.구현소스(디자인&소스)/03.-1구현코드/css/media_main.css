@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* 도깨비 PJ 메인 페이지 미디어쿼리 - media_main.css */
+
+/* 1360px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1360px) {
+ 
+}
+/* 1360px 이하 미디어쿼리 종료 */
+
+/* 1200px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 9px;
+  }
+}
+/* 1200px 이하 미디어쿼리 종료 */
+
+/* 1024px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 8px;
+  }
+
+ 
+  
+ 
+}
+/* 1024px 이하 미디어쿼리 종료 */
+
+/* 800px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+
+.main-area {
+            display: block;
+        margin: 0 auto;
+    
+          
+          }
+
+
+/* .spart-menu ul li 1,2,4,5 번만 display:none */
+.spart-menu ul > li:nth-child(1),
+.spart-menu ul > li:nth-child(2),
+.spart-menu ul > li:nth-child(4),
+.spart-menu ul > li:nth-child(5) {
+  display: none;
+}
+
+.contact img {
+    box-sizing: border-box;
+    /* padding: 0.1vw 6vw; */
+    width: 85%;
+    height: 100%;
+  animation: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 컨택영역 */
+.contact-area {height: 1070px;}
+
+.desc-box {
+  width: auto;
+  margin: 0 20px;
+ }
+ .big{
+
+  position: absolute;
+  top: 17px;
+          left: 40%;
+        translate: -40% 0;
+ }
+ .small{
+  position: absolute;
+        top: -107px;
+        right: -62px;
+ }
+ .middle{
+  position: absolute;
+        top: 250px;
+        right: 60px;
+ }
+  
+}
+/* 800px 이하 미디어쿼리 종료 */

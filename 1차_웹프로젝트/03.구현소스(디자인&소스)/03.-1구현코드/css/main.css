@@ -238,7 +238,7 @@ h4 {
 /* 메인_메뉴이미지 */
 .contact img {
   box-sizing: border-box;
-  padding: 88px 48px;
+ padding: 5.1vw 2vw;
   width: 100%;
   height: 100%;
   /* position: relative;
@@ -403,7 +403,10 @@ top: -39px;
   background-color: #B3B3B5;
 }
 
+.pumpkin-box{
+  position: relative;
 
+}
 .big {
   position: relative;
   width: 410px;
