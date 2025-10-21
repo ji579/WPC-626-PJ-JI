@@ -141,12 +141,12 @@ p {
 }
 
 .bottom-area {
-  height: 310px;
+  /* height: 310px; */
   background: url(../images/background.gif);
   /* overflow: hidden; */
   color: #fff;
   box-sizing: border-box;
-  padding: 0 40px 25px 40px;
+     padding: 0 calc(100% / 12)  2.7vw;
 }
 
 .bottom-info-right {

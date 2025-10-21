@@ -4,6 +4,7 @@
 
 /* 1360px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1360px) {
+
  
 }
 /* 1360px 이하 미디어쿼리 종료 */
@@ -14,6 +15,39 @@
   html {
     font-size: 9px;
   }
+  .center-box {
+    /*상단메뉴*/
+    width: 1200px;
+  }
+
+.yayoi{
+  width: 16vw;
+}
+.bg{
+      top: 44px;
+    width: 1000px;
+    height: 43vw;
+}
+.scroll-inbox{
+  top: 92%;
+}
+
+
+  .desc-box {
+    width: 480px;
+  }
+  /* 컨택영역 */
+  .big {
+    right: -594px;
+  }
+  .middle {
+    right: -488px;
+  }
+  .small {
+    right: 57px;
+    top: -277px;
+    width: 132px;
+  }
 }
 /* 1200px 이하 미디어쿼리 종료 */
 
@@ -23,77 +57,118 @@
   html {
     font-size: 8px;
   }
+  .center-box {
+    /*상단메뉴*/
+    width: 1024px;
+  }
 
+
+ .circle {
+    background: url(../images/연결1024.png) no-repeat center top / cover;
+    height: 95px;
+        top: 30px;
+    width: 1024px;
+  }
+
+
+
+  /* 컨택영역 */
+  .contact-area {
+    height: 1045px;
+    padding: 95px calc(100% / 12) 1vw;
+  }
  
-  
+  .circle2 {
+    background: url(../images/연결1024.png) no-repeat center top / cover;
+    height: 95px;
+    width: 1024px;
+  }
+  .desc-box {
+    width: auto;
+    margin: 0 20px;
+  }
+  .big {
+    position: absolute;
+ top: 9px;
+        left: 48%;
+         translate: -50% 0;
+  }
+  .small {
+    position: absolute;
+   top: -145px;
+        right: -63px;
+  }
+  .middle {
+    position: absolute;
+    top: 250px;
+   left: 75%;
+   translate: -50% 0;
  
+  }
 }
 /* 1024px 이하 미디어쿼리 종료 */
 
 /* 800px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 800px) {
+  .main-area {
+    display: block;
+    margin: 0 auto;
+  }
 
-.main-area {
-            display: block;
-        margin: 0 auto;
-    
-          
-          }
-
-
-/* .spart-menu ul li 1,2,4,5 번만 display:none */
-.spart-menu ul > li:nth-child(1),
-.spart-menu ul > li:nth-child(2),
-.spart-menu ul > li:nth-child(4),
-.spart-menu ul > li:nth-child(5) {
-  display: none;
+  /* 배너영역*/
+  .yayoi {
+   width: 171px;}
+.bg{
+  width: 700px;
+   height: 57%;
+}
+.scroll-inbox{
+  top: 90%;
 }
 
-.contact img {
+  /* .spart-menu ul li 1,2,4,5 번만 display:none 
+스티키 메뉴*/
+  .spart-menu ul > li:nth-child(1),
+  .spart-menu ul > li:nth-child(2),
+  .spart-menu ul > li:nth-child(4),
+  .spart-menu ul > li:nth-child(5) {
+    display: none;
+  }
+
+  .contact img {
     box-sizing: border-box;
     /* padding: 0.1vw 6vw; */
     width: 85%;
     height: 100%;
-  animation: none;}
+    animation: none;
+  }
 
+  /* 컨택영역 */
+  .contact-area {
+    height: 1070px;
+    background: url(../images/bg_mb.png) no-repeat center top / cover;
+    background-color: #fff;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 컨택영역 */
-.contact-area {height: 1070px;}
-
-.desc-box {
-  width: auto;
-  margin: 0 20px;
- }
- .big{
-
-  position: absolute;
-  top: 17px;
-          left: 40%;
-        translate: -40% 0;
- }
- .small{
-  position: absolute;
-        top: -107px;
-        right: -62px;
- }
- .middle{
-  position: absolute;
-        top: 250px;
-        right: 60px;
- }
-  
+  .desc-box {
+    width: auto;
+    margin: 0 20px;
+  }
+  .big {
+    position: absolute;
+    top: 17px;
+         left: 44%;
+        translate: -50% 0;
+  }
+  .small {
+    position: absolute;
+    top: -107px;
+    right: -62px;
+  }
+  .middle {
+           position: absolute;
+        top: 263px;
+      left: 76%;
+  }
 }
 /* 800px 이하 미디어쿼리 종료 */
