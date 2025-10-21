@@ -271,3 +271,8 @@ section#upBtn {
 .image-wrapper:hover .hover-arrow {
   opacity: 1; /* 호버 이미지를 보이게 함 */
 }
+button{
+border-radius: 0.2vw;
+    background: white;
+    font-size: 1.6rem;
+}

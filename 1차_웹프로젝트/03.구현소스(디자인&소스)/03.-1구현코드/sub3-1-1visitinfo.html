@@ -101,7 +101,7 @@
                       <button id="copyButton">COPY</button>
                     </nav>
 
-                    <a href="https://maps.app.goo.gl/jC6WmnqdhA2oxHCR6">
+                    <a href="https://www.google.com/maps?ll=35.702106,139.712566&z=16&t=m&hl=en&gl=KR&mapclient=embed&cid=3362489232406186726">
                       <nav class="map">
                         <button>Google Map</button>
                       </nav></a
@@ -343,11 +343,13 @@
 
             copyButton.textContent = 'COPIED!';
             copyButton.style.backgroundColor = '#808080';
+            copyButton.style.color = 'white';
            
 
             setTimeout(() => {
                 copyButton.textContent = 'COPY';
                 copyButton.style.backgroundColor = '';
+                copyButton.style.color = 'black';
             }, 1500); // 1.5초 후 다시 'COPY'로 복구
 
         } catch (err) {

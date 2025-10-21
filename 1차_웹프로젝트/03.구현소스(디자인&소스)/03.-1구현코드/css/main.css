@@ -213,6 +213,7 @@ left: 50%;
 .main-info {
   position: absolute;
   top: 42px;
+  width: 100%;
   left: 50%;
   translate: -50% 0;
 

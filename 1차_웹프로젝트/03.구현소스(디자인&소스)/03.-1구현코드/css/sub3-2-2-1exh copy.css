@@ -28,10 +28,11 @@ body * {
 }
 
 .line1 a.active {
-  color: #c52531;
-  font-weight: bold;
-  background-color: transparent;
+    color: #c52531;
+    font-weight: bold;
+    background-color: transparent;
 }
+
 
 .line1 {
   display: flex;
@@ -50,13 +51,13 @@ body * {
   padding-left: calc(100% / 12);
 }
 .link-label {
-  cursor: pointer; /* 클릭 가능한 요소임을 표시 */
-  display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
+    cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+    display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
 }
 .link-label a {
-  text-decoration: none; /* a 태그의 밑줄 제거 */
-  color: inherit; /* 부모 요소의 글자색 상속 */
-  /* 원하는 스타일링 추가 */
+    text-decoration: none; /* a 태그의 밑줄 제거 */
+    color: inherit; /* 부모 요소의 글자색 상속 */
+    /* 원하는 스타일링 추가 */
 }
 .line2 img {
   margin-left: 5px;
@@ -66,7 +67,7 @@ body * {
 }
 /* input 요소를 숨겨도 작동은됨! */
 input[type="radio"] {
-  display: none;
+  display: none; 
 }
 
 .check {
@@ -76,19 +77,19 @@ input[type="radio"] {
 
 /* 라벨요소 */
 label {
-  font-size: 1.4rem;
+      font-size: 1.4rem;
   display: flex;
   gap: 5px;
   line-height: 1.5;
   cursor: pointer;
   margin-right: 13px;
   /* 텍스트와 가상요소 순서를 맞추기 위해 flex-direction: row-reverse 적용 권장 */
-  /* flex-direction: row-reverse; */
+  /* flex-direction: row-reverse; */ 
 }
 
 /* 동그라미 크기 설정 */
 label::after {
-  content: "";
+  content: '';
   width: 11px;
   height: 11px;
   margin-top: 4px;
@@ -113,6 +114,7 @@ input:checked + label {
         -> 틸드(~) 선택자는 형제요소들을 모두
         찾아 해당 요소를 선택함!
         */
+
 
 .line3 {
   font-size: 3.6rem;
@@ -139,16 +141,14 @@ input:checked + label {
   justify-content: center;
 }
 
-.row,
-.col {
+.row , .col {
   position: relative; /* 자식 이미지의 절대 위치 기준점 */
   width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
   height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
 }
 
 /* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
-.row img,
-.col img {
+.row img, .col img {
   position: absolute;
   top: 0;
   left: 0;
@@ -158,8 +158,8 @@ input:checked + label {
 }
 
 /* 4. 호버 이미지 숨기기 (기본 상태) */
-.hover-row,
-.hover-col {
+.hover-row, .hover-col
+ {
   opacity: 0; /* 평소에는 투명하게 숨김 */
 }
 
@@ -170,9 +170,10 @@ input:checked + label {
 }
 
 .row:hover .hover-row,
-.col:hover .hover-col {
+.col:hover .hover-col{
   opacity: 1; /* 호버 이미지를 보이게 함 */
 }
+
 
 .wrap {
   /* max-width: 1114px;
@@ -228,19 +229,11 @@ swiper-container {
 
 .exbtxt img {
   aspect-ratio: 280 / 413;
-  /* justify-content: center; */
+  justify-content: center;
   object-fit: cover;
 }
-.exb-box.swiper-slide:hover img {
+.exbtxt img:hover {
   filter: brightness(0.5);
-  /* 부드러운 전환을 위해 transition 속성을 포함하는 것이 좋습니다. */
-  transition: filter 0.3s ease;
-}
-
-/* 이미지의 기본 상태에는 transition을 설정하는 것이 좋습니다. */
-.exbtxt img {
-  /* 기존 스타일 유지... */
-  transition: filter 0.3s ease;
 }
 
 /* .exbtxt를 호버시 .exbtxt안에 있는 img filter:brightness(0.5)적용하기
@@ -281,147 +274,29 @@ swiper-container {
   justify-items: center;
   padding: 15px 15px 10px 15px;
   box-sizing: border-box;
-  /* display: flex;
-    flex-direction: column;  */
-  /* 제목, 날짜, 이미지를 수직으로 배치 */
-  /* justify-content: flex-start;  */
-  /* 내용을 상단부터 배치하도록 수정 (필요 시) */
-  /* align-items: center; */
 }
 
 /* .swiper::nth-child(n + 3) {
   translate: 0 50vw;
 } */
 
+.swiper-wrapper {
+  gap: 60px;
+}
+
 .mySwiper {
   height: 100%;
 }
-.swiper-pagination-bullet i{
-  display: none;
-}
-.swiper-pagination-bullet-active i{
-  display: block;
-}
-.swiper-pagination-bullet i::after  {
-content: '';
-    position: absolute;
-  top: -0.6vw;
-    left: 50%;
-    width: .46vw;
-    height: .26vw;
-    background: #1e1e1e;
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-    transform: translateX(-50%);
-}
+
 .swiper-pagination-bullet {
-  /* width: 5px;
-  height: 20px;
-  display: inline-block;
-  border-radius: 20%;
-  background: #808080;opacity: 1;
-
-      z-index: 99; */
-  position: relative;
-  width: 30px;
-  height: 15px;
-  opacity: 1;
-  background: none;
-  /* background: #808080; */
-}
-
-.swiper-pagination-bullet-active {
-  background: none;
-  opacity: 1;
-}
-
-.swiper-pagination-bullet::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 0.1vw;
-  height: 9px;
-  border-radius: 20%;
-  background: #808080;
-  opacity: 1;
-}
-.swiper-pagination-bullet-active::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 0.1vw;
-  height: 20px;
-  border-radius: 20%;
-  background: #000000;
-  opacity: 1;
-}
-.swiper-pagination-bullet-:active::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 10px;
-  height: 9px;
-
-  border-left: 0.1vw solid #6e6e6e;
-  border-right: 0.1vw solid #6e6e6e;
-}
-/* .swiper-pagination-bullet::before {
   width: 5px;
   height: 20px;
   display: inline-block;
   border-radius: 20%;
   background: #808080;
   opacity: 1;
-  
-} */
-
-.swiper-pagination-bullet-active .line {
-  display: block;
+      z-index: 99;
 }
-.swiper-pagination-bullet .line {
-  display: block;
-}
-
-/* .swiper-pagination-bullet-active .line 에 before 을 주고싶어 */
-.swiper-pagination-bullet-active .line::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 20px;
-  height: 15px;
-  border-left: 0.1vw solid #5e5e5e;
-  border-right: 0.1vw solid #5e5e5e;
-}
-
-.swiper-pagination-bullet-active .line::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 30px;
-  justify-self: center;
-
-  height: 10px;
-  border-left: 0.1vw solid #3e3e3e;
-  border-right: 0.1vw solid #3e3e3e;
-}
-
-/* .swiper-pagination-bullet .line {
- display: none; 
-} */
 
 .swiper-slide:nth-child(even) {
   translate: 0 20%;
@@ -437,36 +312,34 @@ content: '';
 
 
 
+
 .swiper-wrapper {
-  position: relative;
-  height: 100px;
-  /* gap: 60px;  */
+  position: relative;  gap: 60px; 
   /* margin: 20px 0; */
 }
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction::before {
-  content: "";
-  position: absolute;
-  width: 30%;
-  height: 2px;
-  background-color: #808080;
+    content: "";
+    position: absolute;
+    width: 30%;
+    height: 2px;
+    background-color: #808080;
 
-  z-index: 1;
+    z-index: 1;
 
-  left: 50%;
-  transform: translate(-50%, -50%); /* X축 (-50%)과 Y축 (-50%) 모두 중앙 정렬 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* X축 (-50%)과 Y축 (-50%) 모두 중앙 정렬 */
 }
 
+  
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-  position: relative;
-  z-index: 100;
-  align-self: center;
-  align-items: center; /* 버튼들을 세로 중앙에 배치 */
+  /* position: relative;   */
+    align-items: center; /* 버튼들을 세로 중앙에 배치 */
   bottom: var(--swiper-pagination-bottom, 8px);
   top: var(--swiper-pagination-top, auto);
   /* left: 50%; */
@@ -476,4 +349,9 @@ content: '';
   gap: 20px;
   /* box-sizing: border-box; */
   justify-content: space-between;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(0, 0, 0);
+  opacity: 1;
 }

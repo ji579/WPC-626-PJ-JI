@@ -152,6 +152,15 @@ b {
 }
 
 button{
+border-radius: 0.2vw;
+    background: white;
+    margin-bottom: 118px;
+    font-size: 1.6rem;
+}
+button:hover{
+border-radius: 0.2vw;
+    background: #808080;
+    color: white;
     margin-bottom: 118px;
     font-size: 1.6rem;
 }
