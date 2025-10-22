@@ -77,8 +77,12 @@ h2 {
 /* ////////////////////////////////////////////// */
 
 /* 3. 작가배너영역 */
-.banner-area {
+
+#banner-area {
   position: relative;
+
+}
+.banner-area {
   height: 780px;
   text-align: center;
 }
@@ -107,7 +111,7 @@ h2 {
 }
 .scroll-inbox {
   position: absolute;
-  top: 825px;
+  top: 85%;
   left: 50%;
   translate: -50% 0;
   text-align: center;
@@ -368,11 +372,11 @@ width: auto; */
 .desc-box {
   width: 575px;
 
- height: 4vw;
+ height: 40px;
   margin-left: 20px;
   display: inline-block;
-  border: 0.2vw solid rgb(0, 0, 0);
-  border-radius: .8vw;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
   background-color: #ffffff;
   z-index: 1;
 }
@@ -430,7 +434,7 @@ width: auto; */
   /* overflow: hidden; */
   color: #fff;
   box-sizing: border-box;
-  padding: 0 calc(100% / 12) 2.7vw;
+  
   /* padding: 0vw 2.778vw 1.736vw 2.778vw; */
   /* padding: 0 40px 25px 40px; */
 }

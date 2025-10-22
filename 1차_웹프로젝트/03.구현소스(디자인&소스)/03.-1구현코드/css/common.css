@@ -131,6 +131,8 @@ body {
 
 /* /////////////////////////////////////////////////// */
 /* 하단공통 */
+
+
 .bottom-flx h1 {
   font-size: 6rem;
 }
@@ -146,7 +148,9 @@ p {
   /* overflow: hidden; */
   color: #fff;
   box-sizing: border-box;
-     padding: 0 calc(100% / 12)  2.7vw;
+     /* padding: 0 calc(100% / 12)  2.7vw;
+      */
+          padding: 0 calc(100% / 12) 60px;
 }
 
 .bottom-info-right {
