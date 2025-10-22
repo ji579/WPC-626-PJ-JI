@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastexhibition</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub3-2-2-1exh.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script type="module" src="./js/common.js"></script>
+    <!-- 메인 JS -->
+    <script src="./js/JSexhswiper.js"></script>
+  </head>
+  <body>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+          <ul>
+              <li class="on">
+                <a href="sub1.html">Profile</a>
+              </li>
+              <li>
+                <a href="sub2.html">Works</a>
+              </li>
+              <li>
+                <a href="index.html">
+                <h1>草間彌生</h1></a>
+              </li>
+              <li>
+                <a href="sub3-1-1visitinfo.html">Museum</a>
+              </li>
+              <li>
+                <a href="index.html#contact-area">Contact
+                </a>
+
+              </li>
+            </ul>
+        </nav>
+      </div>
+
+      <!--제목 -->
+
+      <!--tit3 제목 -->
+
+      <div class="tit2 inbox">
+        <section class="line1">
+          <a href="sub3-1-1visitinfo.html">Visit</a>
+          <a href="sub3-2-1exh.html">Exhibition</a>
+        </section>
+
+   <section class="line2">
+        <div class="check"> 
+    <input type="radio" id="rdo1" name="rdo" style="display: none;" />
+    <label for="rdo1" data-url="sub3-2-1exh.html">
+      Current Exhibition 
+    </label>
+    
+    <input type="radio" id="rdo2" name="rdo" style="display: none;" />
+    <label for="rdo2" data-url="sub3-2-2-1exh.html">
+     Past Exhibition
+    </label>
+
+</div>
+        </section>
+      </div>
+    </header>
+
+    <!-- 메인영역 -->
+    <div id="main-area">
+      <main class="main-area inbox">
+        <div class="change">
+          <ul>
+            <li class="row">
+              <a href="sub3-2-2-1exh.html">
+              <img
+              src="./images/가로미선택작.png"
+              alt="가로"
+              class="default-row"
+            />
+            <img
+              src="./images/가로선택작.png"
+              alt="가로 호버"
+              class="hover-row"
+            /></a>
+            </li>
+            <li class="col">
+              <a href="sub3-2-2-2exh.html">
+                   <img
+              src="./images/세로미선택작.png"
+              alt="가로"
+              class="default-col"
+            />
+            <img
+              src="./images/세로선택작.png"
+              alt="가로 호버"
+              class="hover-col"
+            /></a>
+            </li>
+          </ul>
+        </div>
+
+        <section class="wrap">
+          <div class="swiper mySwiper">
+            <section class="swiper-wrapper">
+              <!-- <section class='exbsbox'></section> -->
+              <!-- <section class="booksbox">
+<div class="wrap"> -->
+              <!--  <ul class="list">
+    <li class="book">
+    </li>
+    <li class="booktxt">
+      <h3>제목</h3>
+    </li>
+  
+  </ul> -->
+              <!-- </div> -->
+            </section>
+            <div class="location">
+<p>2024</p>
+           <p>2017</p>
+        
+            </div>
+
+          </div>
+        </section>
+        <div class="swiper-wrapper">
+            <div class="swiper-pagination">
+          
+              </div>
+             </div>
+      </main>
+    </div>
+
+    <!-- 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <h2 class="temp-tit blind">하단영역</h2>
+        <div class="bottom-info-right">
+          <h3>Japanese Artist</h3>
+          <h3>Yayoi Kusama</h3>
+        </div>
+
+        <section class="bottom-flx">
+          <div class="bottom-info">
+            <ul>
+              <li>
+                <h1>草間彌生</h1>
+              </li>
+              <li>
+                <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+              </li>
+            </ul>
+
+            <a href="#" target="_blank" id="sns">
+              <img src="./images/ico-insta.svg" id="insta" />
+            </a>
+          </div>
+        </section>
+      </footer>
+    </div>
+    
+  </body>
+</html>
