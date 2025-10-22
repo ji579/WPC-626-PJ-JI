@@ -1,4 +1,4 @@
-nst exhibInfo = [
+export const exhibInfo = [
   {
     index: 2,
     title: "I WOULD OVERCOME DEATH AND GO ON LIVING",
