@@ -60,7 +60,8 @@
         /* 기존 스타일 유지 */
         max-width: 1114px;
         width: 90%; /* max-width와 함께 반응형을 위해 추가 */
-        height: 80%;
+        height: 950px;
+           /* height: 70%; */
         border: #000000 solid 1px;
 
         animation: slideIn 0.3s ease;
@@ -71,7 +72,7 @@
       }
 
       .modal-box {
-        width: 950px;
+       
         margin: 0 auto;
         justify-items: center;
         line-height: 1.8;
@@ -79,13 +80,16 @@
       }
 
       .modal-box > div {
+            width: 100%;
         height: 100%;
+        justify-items: anchor-center;
         overflow: auto;
       }
 
       /* ... (나머지 CSS는 그대로 유지) ... */
 
       .titbox {
+            width: 750px;
         padding: 30px 0 20px 0;
       }
       .title {
@@ -116,16 +120,15 @@
       }
 
       .close {
-        position: absolute;
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-
-        right: 0;
-        top: 0;
-        z-index: 3;
+      position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+   right: 25px;
+    top: 0;
+    z-index: 3;
       }
 
       .close:hover {
@@ -149,9 +152,11 @@
       .box {
         width: 750px;
         margin-bottom: 35px;
+        
       }
       .box1 {
         border-left: #000000 solid 1px;
+
       }
       .box1 > p {
         margin-left: 25px;
@@ -165,9 +170,13 @@
         /* text-align: right; */
         /* padding-bottom: 60px; */
       }
-      .box2 {
-        width: 750px;
-        text-align: right;
+    
+     .box2 {
+    padding-top: 50px;
+    /* padding-bottom: 30px; */
+    margin-bottom: 30px;
+    width: 750px;
+    text-align: right;
       }
       .imgbx1 {
         display: flex;
@@ -194,12 +203,17 @@
       }
       .sectionbx {
         display: flex;
+        position: relative;
         /* margin-bottom: 15px; */
       }
       .section_title {
-        width: 90px;
-        margin-right: 10px;
-        text-align: right;
+       position: absolute;
+    left: -100px;
+    /* translate: -90%; */
+    width: 90px;
+    /* margin-right: 10px; */
+    padding-top: 14px;
+    text-align: right;
       }
       .section_content {
         width: 750px;
@@ -222,17 +236,15 @@
       /* ⭐️ topBtn 위치 조정: 모달 콘텐츠를 기준으로 상대 위치 지정 */
 
       .ubtn {
-        margin: 38px 0;
-        text-align: center;
-      }
-      section#upBtn {
-        margin: 0 auto;
-        width: 38px;
-      }
-      .image-wrapper {
-        position: relative; /* 자식 이미지의 절대 위치 기준점 */
-        width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
-        height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+    margin: 38px 0;
+    z-index: 99;
+    position: absolute;
+    cursor: pointer;
+   left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 48px;
+    height: 48px;
       }
 
       /* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
@@ -265,7 +277,7 @@
       }
 
       .set-it2.on {
-        transform: translateY(6%); /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
+       transform: translateY(10%); /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
         opacity: 1;
       }
 
@@ -275,7 +287,7 @@
         transition: 1.2s ease-in-out;
       }
       .set-it3.on {
-        transform: translateY(15%);
+        transform: translateY(6%);
         opacity: 1;
       }
 
@@ -285,23 +297,23 @@
         transition: 1.2s ease-in-out;
       }
       .set-it4.on {
-        transform: translateY(5%);
+        transform: translateY(0%);
         opacity: 1;
       }
 
       .set-it4 {
         opacity: 0;
-        transform: translateY(5%);
+        transform: translateY(0%);
         transition: 1.2s ease-in-out;
       }
       .set-it5.on {
-        transform: translateY(-6%);
+        transform: translateY(15%);
         opacity: 1;
       }
 
       .set-it5 {
         opacity: 0;
-        transform: translateY(-6%);
+        transform: translateY(0%);
         transition: 1.2s ease-in-out;
       }
     </style>
@@ -316,6 +328,23 @@
     <div id="modal" class="modal">
       <div class="modal-content mySwiper">
         <span class="close" onclick="closeModal()">&times;</span>
+   <div class="ubtn">
+
+            <section class="up" id="upBtn" onclick="scrollToTop()">
+              <div class="image-wrapper">
+                <img
+                  src="./images/위로올리기 .png"
+                  alt="위로 올리기"
+                  class="default-arrow"
+                />
+                <img
+                  src="./images/위로올리기_호버시.png"
+                  alt="위로 올리기 호버"
+                  class="hover-arrow"
+                />
+              </div>
+            </section>
+          </div>
 
         <div class="modal-box swiper-wrapper">
           <div class="scroll-act sa1 set-it1 swiper-slide">
@@ -493,25 +522,13 @@
                   </p>
                 </div>
               </div>
+
+            
+
             </section>
           </div>
 
-          <div class="ubtn">
-            <section class="up" id="upBtn" onclick="scrollToTop()">
-              <div class="image-wrapper">
-                <img
-                  src="./images/위로올리기 .png"
-                  alt="위로 올리기"
-                  class="default-arrow"
-                />
-                <img
-                  src="./images/위로올리기_호버시.png"
-                  alt="위로 올리기 호버"
-                  class="hover-arrow"
-                />
-              </div>
-            </section>
-          </div>
+         
         </div>
         <!-- modal-box 끝 -->
         <!-- txtbox 끝 -->
@@ -523,24 +540,24 @@
 
     <!-- Initialize Swiper -->
     <script type="module">
-      const exhibInfo = [
-        {
-          index: 2,
-          title: "I WOULD OVERCOME DEATH AND GO ON LIVING",
-          imgtxt1: `L: Lingering Dream 1949
-© YAYOI KUSAMA
-R: Kusama with her soft sculpture works at the solo exhibition Yayoi Kusama: Obsessional Art: A Requiem for Death and Life, Painting, Sculpture and Objects 1976
-Photo:Shigeo Anzaï
-©Estate of Shigeo Anzaï, Courtesy of Zeit-Foto`,
-          imgtxt2: `L: Flame of Life- Dedicated to Tu-Fu Private Collection 1988
-R: Song of a Manhattan Suicide Addict 2010
-© YAYOI KUSAMA`,
-          imgtxt3: "",
-          exbtxt: `Yayoi Kusama has constantly faced the critical realities of life and death as pressing issues. Her experience of the Pacific War in a complex family environment, along with her overcoming of suicidal impulses triggered by trauma and neurosis through her creative practices, has influenced her perception of these issues. This exhibition unveils Kusama’s evolving outlook on life and death, alongside the corresponding shifts in her artistic presentation, through a series of diverse works—from her 1940s and 1950s paintings, which bear the imprint of war, to her very latest pieces.
+//       const exhibInfo = [
+//         {
+//           index: 2,
+//           title: "I WOULD OVERCOME DEATH AND GO ON LIVING",
+//           imgtxt1: `L: Lingering Dream 1949
+// © YAYOI KUSAMA
+// R: Kusama with her soft sculpture works at the solo exhibition Yayoi Kusama: Obsessional Art: A Requiem for Death and Life, Painting, Sculpture and Objects 1976
+// Photo:Shigeo Anzaï
+// ©Estate of Shigeo Anzaï, Courtesy of Zeit-Foto`,
+//           imgtxt2: `L: Flame of Life- Dedicated to Tu-Fu Private Collection 1988
+// R: Song of a Manhattan Suicide Addict 2010
+// © YAYOI KUSAMA`,
+//           imgtxt3: "",
+//           exbtxt: `Yayoi Kusama has constantly faced the critical realities of life and death as pressing issues. Her experience of the Pacific War in a complex family environment, along with her overcoming of suicidal impulses triggered by trauma and neurosis through her creative practices, has influenced her perception of these issues. This exhibition unveils Kusama’s evolving outlook on life and death, alongside the corresponding shifts in her artistic presentation, through a series of diverse works—from her 1940s and 1950s paintings, which bear the imprint of war, to her very latest pieces.
 
-After relocating to the United States in 1957, Kusama gained a reputation for her net paintings and sculptures that embody ‘self-obliteration’: the feeling of losing the boundary between the self and the other through the obsessive repetition of motifs originating from her hallucinations. In her anti-war happenings in the late 1960s, she painted dots onto the human body using the same concept of ‘self-obliteration’ while also highlighting the beauty of life and the human body. During the 1970s and 80s, following the loss of her father and her lover, as well as her return to Japan due to health issues, Kusama produced numerous dark-toned collages and three-dimensional works centered on the theme of death, as well as poetry and novels imbued with a sense of mortality. As she continued creating fantastical works exploring death and the afterlife, her works from the late 1980s began to explore themes of transmigration and cyclical returns to eternity through ‘self-obliteration’. Kusama’s works, which increasingly incorporated more colors, reveal how her creative process evolved from a means of coping with death to becoming synonymous with her very existence. In her painting series from 2000 onwards, Kusama has been relentlessly depicting the beauty of life and the joy of living on canvases overflowing with vibrant colors, driven by the ever-looming presence of her own death.`,
-        },
-      ];
+// After relocating to the United States in 1957, Kusama gained a reputation for her net paintings and sculptures that embody ‘self-obliteration’: the feeling of losing the boundary between the self and the other through the obsessive repetition of motifs originating from her hallucinations. In her anti-war happenings in the late 1960s, she painted dots onto the human body using the same concept of ‘self-obliteration’ while also highlighting the beauty of life and the human body. During the 1970s and 80s, following the loss of her father and her lover, as well as her return to Japan due to health issues, Kusama produced numerous dark-toned collages and three-dimensional works centered on the theme of death, as well as poetry and novels imbued with a sense of mortality. As she continued creating fantastical works exploring death and the afterlife, her works from the late 1980s began to explore themes of transmigration and cyclical returns to eternity through ‘self-obliteration’. Kusama’s works, which increasingly incorporated more colors, reveal how her creative process evolved from a means of coping with death to becoming synonymous with her very existence. In her painting series from 2000 onwards, Kusama has been relentlessly depicting the beauty of life and the joy of living on canvases overflowing with vibrant colors, driven by the ever-looming presence of her own death.`,
+//         },
+//       ];
       // ---------------------- 요소 및 상태 변수 ----------------------
 
       const modal = document.getElementById("modal");
@@ -574,6 +591,15 @@ After relocating to the United States in 1957, Kusama gained a reputation for he
           box.classList.remove("on");
         });
         boxes[swiper.realIndex].classList.add("on");
+
+        // ⭐️ 2. .ubtn 표시/숨김 로직 추가
+  const lastIndex = swiper.slides.length - 1;
+  if (swiper.realIndex === lastIndex) {
+    upButton.style.display = "block"; // 마지막 슬라이드면 보이게
+  } else {
+     upButton.style.display = "none"; // 아니면 숨기게
+  }
+
       });
 
       // ---------------------- 핵심 스크롤 로직 ----------------------
@@ -655,15 +681,18 @@ After relocating to the United States in 1957, Kusama gained a reputation for he
         // modalContent.addEventListener("wheel", throttledWheelHandler, {
         //   passive: false,
         // });
+        upButton.style.display = "none";
 
         // 스와이퍼 방식 이동
         swiper.slideTo(0);
 
+        
+
         // 4. 모달 열 때 첫 번째 박스로 이동 및 on 클래스 적용
         // scrollToBox(0);
 
-        document.querySelector('.title').innerText = exhibInfo[0].title;
-        document.querySelector('.exbtxt').innerText = exhibInfo[0].exbtxt;
+        // document.querySelector('.title').innerText = exhibInfo[0].title;
+        // document.querySelector('.exbtxt').innerText = exhibInfo[0].exbtxt;
       }
 
       function closeModal() {
@@ -697,6 +726,13 @@ After relocating to the United States in 1957, Kusama gained a reputation for he
       // HTML의 onclick 속성 사용을 위해 전역으로 노출합니다.
       window.openModal = openModal;
       window.closeModal = closeModal;
+      function scrollToTop() {
+  // Swiper의 slideTo(0)을 호출하여 첫 번째 슬라이드로 이동합니다.
+  swiper.slideTo(0, 500); // 500ms 애니메이션 속도를 추가하여 부드럽게 이동
+  // 필요하다면 추가적으로 버튼 숨김/보임 로직도 여기에 넣을 수 있습니다.
+  // upButton.style.display = 'none'; // 예시
+}
+window.scrollToTop = scrollToTop; // HTML onclick에서 접근할 수 있도록 전역으로 노출합니다.
     </script>
   </body>
 </html>
