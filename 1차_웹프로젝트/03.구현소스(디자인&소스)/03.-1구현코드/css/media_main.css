@@ -15,6 +15,10 @@
   html {
     font-size: 9px;
   }
+
+    .inbox {
+   width :1200px;
+  }
   .center-box {
     /*상단메뉴*/
     width: 1200px;
@@ -29,14 +33,22 @@
     height: 43vw;
 }
 .scroll-inbox{
-  top: 92%;
+  top: 80%;
 }
 
 
-  .desc-box {
-    width: 480px;
-  }
+
   /* 컨택영역 */
+    .desc-box {
+    width: 480px;
+    border: 0.2vw solid rgb(0, 0, 0);
+    height: 4vw;
+        border-radius: .8vw;
+  }
+  .details-box {
+    height: 136px;
+ 
+  }
   .big {
     right: -594px;
   }
@@ -48,6 +60,11 @@
     top: -277px;
     width: 132px;
   }
+  .bottom-area {
+     
+    max-width: 1200px;
+    padding: 0 calc(100% / 12) 2.7vw;
+  }
 }
 /* 1200px 이하 미디어쿼리 종료 */
 
@@ -57,6 +74,11 @@
   html {
     font-size: 8px;
   }
+
+    .inbox {
+    max-width: 1024px;
+  }
+
   .center-box {
     /*상단메뉴*/
     width: 1024px;
@@ -110,6 +132,9 @@
 
 /* 800px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 800px) {
+  .inbox {
+    max-width: 800px;
+  }
   .main-area {
     display: block;
     margin: 0 auto;
@@ -117,13 +142,15 @@
 
   /* 배너영역*/
   .yayoi {
+    top: 10%;
    width: 171px;}
 .bg{
+  top: 13%;
   width: 700px;
    height: 57%;
 }
 .scroll-inbox{
-  top: 90%;
+  top: 85%;
 }
 
   /* .spart-menu ul li 1,2,4,5 번만 display:none 
@@ -145,7 +172,7 @@
 
   /* 컨택영역 */
   .contact-area {
-    height: 1070px;
+    width: 1070px;
     background: url(../images/bg_mb.png) no-repeat center top / cover;
     background-color: #fff;
   }
