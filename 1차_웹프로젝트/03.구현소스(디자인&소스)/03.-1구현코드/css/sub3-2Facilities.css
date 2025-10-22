@@ -215,6 +215,8 @@ span {
   position: relative;
   width: 661px;
   height: 439px;
+  translate: 0 18%;
+  transition: translate 0.4s ease;
   /* position: relative --> absolute position 써야 겹쳐서 사진 배치 가능함 flex 쓰면 무조건 순서대로 가로 세로 배치
   https://www.daleseo.com/css-position-absolute/ 이거 잘 설명되어 있으니까 한번 읽어봐 */
 }
