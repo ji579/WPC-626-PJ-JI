@@ -352,10 +352,12 @@
       <!-- 책슬라이드 끝 -->
 
       =
+<div class="swiper-pagination-left"></div>
+<div class="swiper-pagination-right"></div>
 
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+      <!-- <div class="swiper-pagination"></div> -->
     </div>
     <!-- 책영역끝 -->
 
@@ -368,6 +370,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
+
       var swiper1 = new Swiper(".mySwiper", {
         speed: 600,
         parallax: true,
@@ -380,6 +383,7 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
       /************************************************ 
     3. 햄버거 버튼 클릭시 상단영역에 클래스넣기
 ************************************************/
@@ -435,6 +439,7 @@
 
 // 초기 표시 (첫 슬라이드)
 swiper.emit("slideChange");
+
     </script>
 
     <!-- 하단영역 -->

@@ -495,21 +495,21 @@ window.addEventListener("DOMContentLoaded", () => {
           ) {
             e.preventDefault();
 
-            modalSwiper.slideNext(300);
+            modalSwiper.slideNext(0);
 
             setTimeout(() => {
               el.scrollTop = 0;
-            }, 300);
+            }, 0);
           }
         } else if (d < 0) {
           if (el.scrollTop <= 0) {
             e.preventDefault();
 
-            modalSwiper.slidePrev(300);
+            modalSwiper.slidePrev(0);
 
             setTimeout(() => {
               el.scrollTop = 0;
-            }, 300);
+            }, 0);
           }
         }
       },
@@ -553,7 +553,7 @@ window.addEventListener("DOMContentLoaded", () => {
   };
 
   window.scrollToTop = function () {
-    modalSwiper.slideTo(0, 500);
+    modalSwiper.slideTo(0, 0);
   };
 
   window.addEventListener("click", (event) => {
