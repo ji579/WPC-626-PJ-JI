@@ -4,8 +4,138 @@
 
 /* 1360px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1360px) {
+  /* 모바일용  */
+  .menu-box {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    /* left: 100%; */
+    width: 100vw;
+  
+    height: 100vh;
+    background-color: #fff;
+    padding-right: 0;
+    transition: left 0.5s ease-in-out;
+  }
 
- 
+  /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  메뉴박스인 .menu-box의 left값을 0으로 변경한다! */
+  #top-area.on .menu-box {
+    left: 0;
+  }
+
+  /* 메뉴그룹 변경 */
+  .menu-group {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 5vw; */
+    margin-top: 25px;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    /* padding: 10vh 5vw; */
+  }
+
+  /* .gnb-list > ul{
+  margin: 0
+}; */
+
+  /* 탑메뉴 변경 */
+  /* .top-menu ul {
+    width: 85vw;
+    line-height: 4;
+    margin-top: 5vh;
+    border-bottom: 5px solid #e5e5e5;
+  } */
+  /* GNB 메뉴 변경 */
+  .gnb-menu ul {
+    margin-top: 5vh;
+    flex-direction: column;
+    font-size: 2.5vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* GNB메뉴 가로크기 변경 */
+  nav.gnb-menu {
+    width: 100%;
+  }
+  .sub {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+  /* GNB 메뉴 아이콘 크기위치변경 */
+  .gnb-menu i {
+    float: right;
+    rotate: -90deg;
+    scale: 2;
+    translate: 0 150%;
+  }
+  .sub2 {
+  position: absolute;
+        width: 33%;
+        text-align: left;
+        right: 0;
+  }
+
+  .gnb-menu ul {
+    align-items: flex-start;
+  }
+  .gnb-list > li {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    /* padding: 1.6rem 0;
+
+    margin-bottom: 3.2rem; */
+            padding: 3.2rem;
+      
+  }
+  .gnb-list > li > a {
+    color: #000 !important;
+    width: 33%;
+    /* width: 100%; */
+
+    text-align: left;
+
+    font-size: 2.5vh !important;
+  }
+  .two-line > li > a {
+    color: #000 !important;
+  }
+  .sub-menu > li > a {
+    color: #000 !important;
+  }
+
+  /* 서브메뉴 화면 채우기 설정변경 */
+  .sub-menu {
+    position: fixed;
+    top: 0;
+    /* left: 100%; */
+    /* 왼쪽 바깥에 나가있음! */
+    z-index: 1;
+    /* width: 100vw; */
+    height: 100vh;
+    width: 50%;
+    background-color: #8c4b4b;
+    max-height: none;
+  }
+
+  /* 서브메뉴에 클래스 on을 주면 left값을 0으로 변경 */
+  .sub-menu.on {
+    left: 0;
+  }
+
+  /* GNB메뉴 기존 높이값 해제 */
+  .gnb-menu ul {
+    height: auto;
+  }
+  /* GNB메뉴 li 기존 가로값 해제 */
+  .sub-list li {
+    width: auto;
+  }
 }
 /* 1360px 이하 미디어쿼리 종료 */
 
@@ -16,38 +146,35 @@
     font-size: 9px;
   }
 
-    .inbox {
-   width :1200px;
+  .inbox {
+    width: 1200px;
   }
   .center-box {
     /*상단메뉴*/
     width: 1200px;
   }
 
-.yayoi{
-  width: 16vw;
-}
-.bg{
-      top: 44px;
+  .yayoi {
+    width: 16vw;
+  }
+  .bg {
+    top: 44px;
     width: 1000px;
     height: 43vw;
-}
-.scroll-inbox{
-  top: 80%;
-}
-
-
+  }
+  .scroll-inbox {
+    top: 80%;
+  }
 
   /* 컨택영역 */
-    .desc-box {
+  .desc-box {
     width: 480px;
     border: 0.2vw solid rgb(0, 0, 0);
     height: 4vw;
-        border-radius: .8vw;
+    border-radius: 0.8vw;
   }
   .details-box {
     height: 136px;
- 
   }
   .big {
     right: -594px;
@@ -61,7 +188,6 @@
     width: 132px;
   }
   .bottom-area {
-     
     max-width: 1200px;
     padding: 0 calc(100% / 12) 2.7vw;
   }
@@ -75,7 +201,7 @@
     font-size: 8px;
   }
 
-    .inbox {
+  .inbox {
     max-width: 1024px;
   }
 
@@ -84,22 +210,19 @@
     width: 1024px;
   }
 
-
- .circle {
+  .circle {
     background: url(../images/연결1024.png) no-repeat center top / cover;
     height: 95px;
-        top: 30px;
+    top: 30px;
     width: 1024px;
   }
-
-
 
   /* 컨택영역 */
   .contact-area {
     height: 1045px;
     padding: 95px calc(100% / 12) 1vw;
   }
- 
+
   .circle2 {
     background: url(../images/연결1024.png) no-repeat center top / cover;
     height: 95px;
@@ -111,21 +234,20 @@
   }
   .big {
     position: absolute;
- top: 9px;
-        left: 48%;
-         translate: -50% 0;
+    top: 9px;
+    left: 48%;
+    translate: -50% 0;
   }
   .small {
     position: absolute;
-   top: -145px;
-        right: -63px;
+    top: -145px;
+    right: -63px;
   }
   .middle {
     position: absolute;
     top: 250px;
-   left: 75%;
-   translate: -50% 0;
- 
+    left: 75%;
+    translate: -50% 0;
   }
 }
 /* 1024px 이하 미디어쿼리 종료 */
@@ -145,52 +267,41 @@
   #maincontent {
     width: 100%;
   }
-.contact , .img-box img
-{   aspect-ratio: 1 / 1;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        background: white;
+  .contact,
+  .img-box img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    background: white;
   }
-.main-center
-{   aspect-ratio: 1 / 1;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        /* background: white; */
+  .main-center {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* background: white; */
   }
-#myvid{
-  
-        aspect-ratio: 1 / 1;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-       
-}
-
-
-
-
-
-
-
-
-
-
-
+  #myvid {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
   /* 배너영역*/
   .yayoi {
     top: 10%;
-   width: 171px;}
-.bg{
-  top: 13%;
-  width: 700px;
-   height: 57%;
-}
-.scroll-inbox{
-  top: 85%;
-}
+    width: 171px;
+  }
+  .bg {
+    top: 13%;
+    width: 700px;
+    height: 57%;
+  }
+  .scroll-inbox {
+    top: 85%;
+  }
 
   /* .spart-menu ul li 1,2,4,5 번만 display:none 
 스티키 메뉴*/
@@ -201,7 +312,7 @@
     display: none;
   }
 
-  .menubtn-group{
+  .menubtn-group {
     display: flex;
     position: absolute;
   }
@@ -228,8 +339,8 @@
   .big {
     position: absolute;
     top: 17px;
-         left: 44%;
-        translate: -50% 0;
+    left: 44%;
+    translate: -50% 0;
   }
   .small {
     position: absolute;
@@ -237,9 +348,9 @@
     right: -62px;
   }
   .middle {
-           position: absolute;
-        top: 263px;
-      left: 76%;
+    position: absolute;
+    top: 263px;
+    left: 76%;
   }
 }
 /* 800px 이하 미디어쿼리 종료 */

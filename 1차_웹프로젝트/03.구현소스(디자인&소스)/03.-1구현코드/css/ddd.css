@@ -1,0 +1,114 @@
+@media screen and (max-width: 1360px) {
+
+ /* 모바일용  */
+.menu-box {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        /* left: 100%; */
+        /* width: 100vw; */
+        width: 80%;
+        height: 100vh;
+        background-color: #fff;
+        padding-right: 0;
+        transition: left 0.5s 
+ease-in-out;
+    }
+
+  /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  메뉴박스인 .menu-box의 left값을 0으로 변경한다! */
+  #top-area.on .menu-box {
+    left: 0;
+  }
+
+  /* 메뉴그룹 변경 */
+  .menu-group {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5vw;
+    margin-top: 25px;
+    background-color: white;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 10vh 5vw;
+  }
+
+  /* 탑메뉴 변경 */
+  /* .top-menu ul {
+    width: 85vw;
+    line-height: 4;
+    margin-top: 5vh;
+    border-bottom: 5px solid #e5e5e5;
+  } */
+  /* GNB 메뉴 변경 */
+  .gnb-menu ul {
+    margin-top: 5vh;
+    flex-direction: column;
+    font-size: 2.5vh;
+  }
+
+  /* GNB메뉴 가로크기 변경 */
+  nav.gnb-menu {
+    width: 100%;
+  }
+.sub{
+  display: flex;
+}
+  /* GNB 메뉴 아이콘 크기위치변경 */
+  .gnb-menu i {
+    float: right;
+    rotate: -90deg;
+    scale: 2;
+    translate: 0 150%;
+  }
+.title-bar {
+    font-size: 3.6rem;
+    margin-bottom: 2.4rem;
+  }
+  .title-bar h1 {
+    color: #000 !important;
+  }
+
+  .gnb-list > li > a {
+    color: #000 !important;
+  }
+  .two-line > li > a {
+    color: #000 !important;
+  }
+  .sub-menu > li > a {
+    color: #000 !important;
+  }
+
+  /* 서브메뉴 화면 채우기 설정변경 */
+  .sub-menu {
+    position: fixed;
+    top: 0;
+    /* left: 100%; */
+    /* 왼쪽 바깥에 나가있음! */
+    z-index: 1;
+    /* width: 100vw; */
+    height: 100vh;
+    width: 50%;
+    background-color: #8c4b4b;
+    max-height: none;
+  }
+
+  /* 서브메뉴에 클래스 on을 주면 left값을 0으로 변경 */
+  .sub-menu.on {
+    left: 0;
+  }
+
+  /* GNB메뉴 기존 높이값 해제 */
+  .gnb-menu ul {
+    height: auto;
+  }
+  /* GNB메뉴 li 기존 가로값 해제 */
+  .sub-list li {
+    width: auto;
+  }
+
+
+}
+/* 1360px 이하 미디어쿼리 종료 */

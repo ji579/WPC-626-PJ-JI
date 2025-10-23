@@ -617,13 +617,13 @@ function closeModal() {
   document.body.style.overflow = "auto"; // 바디스크롤막기해제
 }
 
-// 모달 배경 클릭시 닫기
-window.addEventListener("click", (event) => {
-  const modal = document.getElementById("modal");
-  if (event.target === modal) {
-    closeModal();
-  }
-});
+// // 모달 배경 클릭시 닫기
+// window.addEventListener("click", (event) => {
+//   const modal = document.getElementById("modal");
+//   if (event.target === modal) {
+//     closeModal();
+//   }
+// });
 
 // <![CDATA[  <-- For SVG support
 if ("WebSocket" in window) {
