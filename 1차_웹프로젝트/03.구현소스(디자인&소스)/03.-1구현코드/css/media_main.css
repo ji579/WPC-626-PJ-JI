@@ -135,11 +135,30 @@
   .inbox {
     max-width: 800px;
   }
+
+  /* 메인영역 */
   .main-area {
     display: block;
     margin: 0 auto;
   }
 
+  #maincontent {
+    width: 100%;
+  }
+.contact , .img-box img
+{   aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        background: white;
+  }
+.main-center
+{   aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        /* background: white; */
+  }
 #myvid{
   
         aspect-ratio: 1 / 1;
@@ -180,6 +199,11 @@
   .spart-menu ul > li:nth-child(4),
   .spart-menu ul > li:nth-child(5) {
     display: none;
+  }
+
+  .menubtn-group{
+    display: flex;
+    position: absolute;
   }
 
   .contact img {

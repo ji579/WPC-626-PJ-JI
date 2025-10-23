@@ -57,6 +57,35 @@ body {
   z-index: 999;
   height: 94px;
 }
+
+.menubtn-group{
+  /* display: none; */
+  position: absolute;
+  top: 50%;
+    translate: 0 -50%;
+    right: 3vw;
+    gap: 20px;
+  
+}
+.menubtn-group>button{
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+.menubtn-ham i:nth-child(2) {
+  display: none;
+}
+
+/* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  x버튼보이기/햄버거숨기기 */
+#spart-menu2 .on .menubtn-ham i:nth-child(2) {
+  display: block;
+}
+#spart-menu2 .on .menubtn-ham i:nth-child(1) {
+  display: none;
+}
 /* 인박스 높이값 초기화 */
 .spart-menu.inbox {
   height: auto;
@@ -114,6 +143,11 @@ body {
   color: #c52531;
  background-color: transparent;
 }
+
+
+
+
+
 
 
 /* ////////////////////////////////////////////// */

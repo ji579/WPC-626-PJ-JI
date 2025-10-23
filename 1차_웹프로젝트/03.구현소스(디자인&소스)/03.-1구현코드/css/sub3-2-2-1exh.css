@@ -251,7 +251,7 @@ swiper-container {
   z-index: 9999999;
 } */
 
-.exbtxt {
+.mySwiper .swiper-wrapper .swiper-slide .exbtxt {
   max-width: 280px;
   display: flex;
   text-align: left;
@@ -419,22 +419,21 @@ content: '';
   border-right: 0.1vw solid #3e3e3e;
 }
 
-/* .swiper-pagination-bullet .line {
- display: none; 
-} */
-
-.swiper-slide:nth-child(even) {
+/* Past Exhibition 목록 (가로 스와이퍼)의 슬라이드에만 적용 */
+.mySwiper .swiper-wrapper .swiper-slide:nth-child(even) {
   translate: 0 20%;
 }
-.swiper-slide:nth-child(odd) {
+.mySwiper .swiper-wrapper .swiper-slide:nth-child(odd) {
   translate: 0 10%;
 }
 
-/* .swiper-pagination-bullet-active{
-  background: red;
-  opacity: 1;
-} */
+/* 추가적으로, 모달 내부의 .swiper-slide에도 영향을 미치는 경우를 완전히 방지하기 위해, 
+   모달 슬라이드에 대해 해당 속성을 초기화하는 코드를 추가할 수 있습니다. */
 
+.modalSwiper .swiper-wrapper .swiper-slide {
+    /* 모달 내부 슬라이드에는 translate를 초기화하여 정상 위치에 배치 */
+    translate: 0 0 !important; 
+}
 
 
 .swiper-wrapper {
@@ -561,13 +560,14 @@ content: '';
       .title {
         font-size: 1.8rem;
         width: 750px;
-        height: 33px;
+        /* height: 33px; */
         align-content: center;
         border-left: #000000 solid 1px;
         text-align: left;
       }
       .title > strong {
         margin-left: 25px;
+      display: block;
       }
 
       section.modal-img > img {
@@ -602,7 +602,11 @@ content: '';
       }
 
       .box {
-        width: 750px;
+        position: absolute;
+    width: 750px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
         margin-bottom: 35px;
         
       }
@@ -630,6 +634,13 @@ content: '';
     width: 750px;
     text-align: right;
       }
+      .box3{
+               position: absolute;
+   
+    left: 50%;
+    top: 45%;
+    translate: -50% -50%;
+      }
       .imgbx1 {
         display: flex;
         width: 750px;
@@ -641,13 +652,16 @@ content: '';
         justify-content: space-between;
       }
       .imgbx1 > img {
-        height: 510px;
+            width: 50%;
+        /* height: 510px; */
       }
       .imgbx2 > img {
-        height: 280px;
+        /* height: 280px; */
+            width: 50%;
       }
       .imgbx3 > img {
-        height: 450px;
+            width: 50%;
+        /* height: 450px; */
       }
       .box2 > p {
         margin-bottom: 35px;
@@ -664,7 +678,8 @@ content: '';
     /* translate: -90%; */
     width: 90px;
     /* margin-right: 10px; */
-    padding-top: 14px;
+    /* padding-top: 14px; */
+    font-size: 1.6rem;
     text-align: right;
       }
       .section_content {
@@ -729,37 +744,39 @@ content: '';
       }
 
       .set-it2.on {
-       transform: translateY(10%); /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
+       /* transform: translateY(10%);  */
+       /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
         opacity: 1;
       }
 
       .set-it2 {
         opacity: 0;
-        transform: translateY(6%); /* 👈 초기 위치 설정 */
+        /* transform: translateY(6%); */
+         /* 👈 초기 위치 설정 */
         transition: 1.2s ease-in-out;
       }
       .set-it3.on {
-        transform: translateY(6%);
+        /* transform: translateY(6%); */
         opacity: 1;
       }
 
       .set-it3 {
         opacity: 0;
-        transform: translateY(15%);
+        /* transform: translateY(15%); */
         transition: 1.2s ease-in-out;
       }
       .set-it4.on {
-        transform: translateY(0%);
+        /* transform: translateY(0%); */
         opacity: 1;
       }
 
       .set-it4 {
         opacity: 0;
-        transform: translateY(0%);
+        /* transform: translateY(0%); */
         transition: 1.2s ease-in-out;
       }
       .set-it5.on {
-        transform: translateY(15%);
+        /* transform: translateY(15%); */
         opacity: 1;
       }
 

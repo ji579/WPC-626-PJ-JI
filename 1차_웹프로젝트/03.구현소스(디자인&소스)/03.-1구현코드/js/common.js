@@ -1,5 +1,23 @@
 // 상단 페이지 이동하며 글씨색변경
 document.addEventListener('DOMContentLoaded', function() {
+
+  /************************************************ 
+    2. 햄버거 버튼 클릭시 상단영역에 클래스넣기
+************************************************/
+  // (1) 이벤트 대상 : .btn-ham
+  const $btnHam = $(".menubtn-ham");
+  // (2) 변경 대상 : #top-area
+  const $topArea = $("#spart-menu2");
+
+  // (3) 이벤트 대상 클릭시
+  // 변경대상에 클래스 토글로 on넣기
+  $btnHam.on("click", () => {
+    $topArea.toggleClass("on");
+  }); /// click ///
+
+
+
+
     const EXCLUDE_TEXT = "草間彌生"; 
 
     // 1. 현재 페이지의 URL 정보 가져오기
@@ -152,95 +170,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// // 상단 페이지 이동하며 글씨색변경
-// document.addEventListener('DOMContentLoaded', function() {
-//     // 활성화에서 제외할 링크의 텍스트를 상수로 정의합니다.
-//     const EXCLUDE_TEXT = "草間彌生"; 
-
-//     // 1. 현재 페이지의 URL 정보 가져오기
-//     let currentPath = window.location.pathname.split('/').pop();
-//     const currentHash = window.location.hash; // #contact-area 와 같은 해시값도 가져옵니다.
-
-//     // 루트 경로 (파일명이 없는 경우) 처리: 'index.html'로 통일
-//     if (currentPath === '' || currentPath === 'index.html') {
-//         currentPath = 'index.html';
-//     }
-
-//     // 2. 모든 <a> 태그를 찾습니다.
-//     // .line1이 HTML에 없거나 필요 없다면, '.spart-menu a'만 사용해도 됩니다.
-//     const navLinks = document.querySelectorAll('.line1 a, .spart-menu a'); 
-//     // *주의: .spart-menu ul > li > a 대신 .spart-menu a로 단순화했습니다.
-
-//     navLinks.forEach(link => {
-//         const linkHref = link.getAttribute('href');
-//         const linkText = link.textContent.trim(); // <a> 태그 안의 텍스트를 가져옵니다.
-
-//         // 🚨 0. 제외 대상 링크는 active 클래스 로직을 건너_고 active를 제거합니다.
-//         if (linkText === EXCLUDE_TEXT) {
-//             link.classList.remove('active');
-//             return; 
-//         }
-
-//         // 5. 초기화 (혹시 모를 경우를 대비)
-//         link.classList.remove('active');
-
-//         if (!linkHref) return; // href 속성이 없으면 건너뜁니다.
-        
-//         // 3. 각 <a> 태그의 href 속성에서 파일명만 추출하고 해시를 제거합니다.
-//         const linkPath = linkHref.split('/').pop().split('#')[0];
-
-//         // 4-1. 일반 파일 경로가 일치하는 경우
-//         if (linkPath === currentPath && linkHref.indexOf('#') === -1) {
-//             link.classList.add('active');
-//             return; // 찾았으니 다음 검사로 넘어가지 않음
-//         }
-        
-//         // 4-2. 해시(#) 링크가 일치하는 경우 (예: Contact)
-//         // 현재 파일명이 일치하고, 링크의 href 끝부분이 현재 해시와 일치하는지 확인
-//         if (linkPath === currentPath && linkHref.endsWith(currentHash) && currentHash !== '') {
-//             link.classList.add('active');
-//             return;
-//         }
-
-//         // 4-3. 해시만 있는 링크 처리 (예: href="#contact-area")
-//         if (linkHref.startsWith('#') && linkHref === currentHash) {
-//             link.classList.add('active');
-//         }
-//     });
-// });
-
-
-
-
-
-
-
-
-//草間彌生 제외전
-// // 상단 페이지 이동하며 글씨색변경
-// document.addEventListener('DOMContentLoaded', function() {
-//         // 1. 현재 페이지의 URL 경로를 가져옵니다.
-//         // 예: http://127.0.0.1:5500/sub2.html 에서 'sub2.html'만 추출
-//         const currentPath = window.location.pathname.split('/').pop();
-
-//         // 2. <section class="line1"> 내의 모든 <a> 태그를 찾습니다.
-//         const navLinks = document.querySelectorAll('.line1 a, .spart-menu ul > li > a');
-
-//         navLinks.forEach(link => {
-//             // 3. 각 <a> 태그의 href 속성에서 파일명만 추출합니다.
-//             const linkPath = link.getAttribute('href').split('/').pop();
-
-//             // 4. 현재 URL 경로와 링크의 경로가 일치하는지 확인합니다.
-//             // 대소문자 구분 없이 비교하거나, 필요에 따라 엄격하게 비교할 수 있습니다.
-//             if (linkPath === currentPath) {
-//                 // 5. 일치하면 해당 <a> 태그에 'active' 클래스를 추가합니다.
-//                 link.classList.add('active');
-//             } else {
-//                 // (선택 사항) 혹시 모를 경우를 대비하여 active 클래스를 제거합니다.
-//                 link.classList.remove('active');
-//             }
-//         });
-//     });
 
 
 

@@ -6,9 +6,14 @@
     <title>1차과제</title>
     <!-- 파비콘 넣기 -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 폰트어썸 CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/main.css" />
-     <!-- 미디어쿼리는 반드시 일반css아래 위치함! -->
+    <!-- 미디어쿼리는 반드시 일반css아래 위치함! -->
     <link rel="stylesheet" href="./css/media_main.css" />
     <!-- 메인 JS -->
     <script src="./js/main.js" defer></script>
@@ -52,7 +57,7 @@
       <!-- 스티키서브메뉴 -->
       <div id="spart-menu">
         <nav class="spart-menu inbox">
-          <div class="center-box">
+          <div id="spart-menu2" class="center-box">
             <ul>
               <li class="on">
                 <a href="sub1.html">Profile</a>
@@ -61,18 +66,91 @@
                 <a href="sub2.html">Works</a>
               </li>
               <li>
-                <a href="index.html">
-                <h1>草間彌生</h1></a>
+                <a href="index.html"> <h1>草間彌生</h1></a>
               </li>
               <li>
                 <a href="sub3-1-1visitinfo.html">Museum</a>
               </li>
               <li>
-                <a href="#contact-area">Contact
-                </a>
-
+                <a href="#contact-area">Contact </a>
               </li>
             </ul>
+
+
+            <!-- 모바일용 -->
+            <!-- 1-2. 메뉴박스 -->
+            <section class="menu-box">
+              <!-- 메뉴박스하위 메뉴그룹박스 -->
+              <div class="menu-group">
+                <!-- 1-2-2. GNB메뉴 -->
+                <nav class="gnb-menu">
+                  <div class="title-bar"><h1>草間彌生</h1></div>
+
+                  <ul class="gnb-list">
+                    <!-- /* 1 */ -->
+                    <li><a href="index.html">Home</a></li>
+                    <!-- /* 2 */ -->
+                    <li><a href="sub1.html">>Profile</a></li>
+                    <!-- /* 3 */ -->
+                    <li class="sub">
+                      <a href="sub2.html">Works</a>
+                      <!-- 서브메뉴박스 -->
+                      <div class="sub-menu">
+                        <div><a href="sub2.html">Paintings</a></div>
+                        <div><a href="sub2-1.html">Books</a></div>
+                      </div>
+                    </li>
+                    <!-- /* 4 */ -->
+                    <li class="sub">
+                      <a href="sub3-1-1visitinfo.html">Museum</a>
+                      <!-- 서브메뉴박스 -->
+                      <div class="sub-menu">
+                        <div>
+                          <a href="sub3-1-1visitinfo.html">Visit</a
+                          ><i class="fa-solid fa-chevron-down"></i>
+                          <aside class="sub-list">
+                            <ul class="two-line">
+                              <li><a href="#"> Visit Information </a></li>
+                              <li><a href="#">Facilities </a></li>
+                              <li><a href="#">About </a></li>
+                            </ul>
+                          </aside>
+                        </div>
+                        <div>
+                          <a href="sub3-2-1exh.html">Exhibition</a
+                          ><i class="fa-solid fa-chevron-down"></i>
+                          <aside class="sub-list">
+                            <ul class="two-line">
+                              <li><a href="#"> Current Exhibition </a></li>
+                              <li><a href="#"> Past Exhibition</a></li>
+                            </ul>
+                          </aside>
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- /* 5 */ -->
+                    <li><a href="#contact-area">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </section>
+            <!-- 모바일용 끝-->
+
+            <!-- #btn-group -->
+            <div class="menubtn-group">
+              <!-- 검색버튼 -->
+
+              <button class="menubtn-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <!-- 햄버거/닫기버튼 -->
+              <button class="menubtn-ham">
+                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <!-- #btn-group -->
           </div>
         </nav>
 
@@ -80,7 +158,7 @@
       </div>
       <div class="main-area circle"></div>
 
-      <main class="main-area inbox">
+      <main id="maincontent" class="main-area inbox">
         <h2 class="temp-tit blind">메인영역</h2>
 
         <!-- 왼쪽 줄 -->
@@ -229,40 +307,42 @@
             publications, please<br />
             contact the bookstore or publisher directly.
           </p>
-<div class="pumpkin-box">
-          <img src="./images/호박대.png" alt="큰" class="big" />
-          <img src="./images/호박중.png" alt="중간" class="middle" />
-          <img src="./images/호박소.png" alt="작은" class="small" />
-        </div>
-       <!-- <img src="./images/bg_co.png" alt="하단" class="bg" /> -->
+          <div class="pumpkin-box">
+            <img src="./images/호박대.png" alt="큰" class="big" />
+            <img src="./images/호박중.png" alt="중간" class="middle" />
+            <img src="./images/호박소.png" alt="작은" class="small" />
+          </div>
+          <!-- <img src="./images/bg_co.png" alt="하단" class="bg" /> -->
         </div>
       </div>
     </div>
     <!-- 6. 하단영역 -->
     <div id="bottom-area">
       <footer class="bottom-area inbox">
-        <h2 class="temp-tit blind">하단영역</h2>
-        <div class="bottom-info-right">
-          <h3>Japanese Artist</h3>
-          <p>Yayoi Kusama</p>
-        </div>
-
-        <section class="bottom-flx">
-          <div class="bottom-info">
-            <ul>
-              <li>
-                <h1>草間彌生</h1>
-              </li>
-              <li>
-                <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
-              </li>
-            </ul>
-
-            <a href="#" target="_blank" id="sns">
-              <img src="./images/ico-insta.svg" id="insta" />
-            </a>
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
           </div>
-        </section>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
       </footer>
     </div>
   </body>

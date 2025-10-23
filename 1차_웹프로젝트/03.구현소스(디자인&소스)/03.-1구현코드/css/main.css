@@ -439,6 +439,9 @@ width: auto; */
   /* padding: 0 40px 25px 40px; */
 }
 
+/* .bottompd{
+    padding: 0vw 2.778vw 1.736vw 2.778vw;
+} */
 .bottom-info-right {
   padding-top: 6vmin;
   display: flex;

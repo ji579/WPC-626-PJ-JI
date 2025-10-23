@@ -1,4 +1,4 @@
-export const exhibInfo = [
+const exhibInfo = [
   {
     index: 1,
     title: "Reverberation from the Universe",
@@ -46,7 +46,8 @@ export const exhibInfo = [
   },
   {
     index: 3,
-    title: "Yayoi Kusama: Portraying the Figurative",
+    title: `Yayoi Kusama: 
+    Portraying the Figurative`,
     imgtxt1: `I WHO CRY IN THE FLOWERING SEASON
     2015
     © YAYOI KUSAMA`,
@@ -139,7 +140,8 @@ Installation view at Matsumoto City Museum of Art, Nagano 2018
   },
   {
     index: 8,
-    title: "Midway Between Mystery and Symbol: Yayoi Kusama's Monochrome",
+    title: `Midway Between Mystery and Symbol: 
+    Yayoi Kusama's Monochrome`,
     imgtxt1: `STAIRWAY TO HEAVEN 2019 © YAYOI KUSAMA`,
     imgtxt2: `L: Desire of Death 1975-1976
 R: A DREAM I DREAMED YESTERDAY 2006
@@ -217,7 +219,8 @@ With such a diverse lineup of works, the exhibition invites visitors to the worl
   },
   {
     index: 12,
-    title: "HERE, ANOTHER NIGHT COMES FROM TRILLIONS OF LIGHT YEARS AWAY: Eternal Infinity",
+    title: `HERE, ANOTHER NIGHT COMES FROM TRILLIONS OF LIGHT YEARS AWAY: 
+    Eternal Infinity`,
     imgtxt1: `Infinity Nets (2) [detail] 1958 © YAYOI KUSAMA`,
     imgtxt2: ` L: LOVE ARRIVES AT THE EARTH CARRYING WITH IT A TALE OF THE COSMOS 2009
 R: PUMPKIN 2015
@@ -231,7 +234,8 @@ On this occasion, Yayoi Kusama Museum presents an exhibition consisting of early
   },
   {
     index: 13,
-    title: "I Want You to Look at My Prospects for the Future: Plants and I",
+    title: `I Want You to Look at My Prospects for the Future: 
+    Plants and I`,
     imgtxt1: `ALONE, BURIED IN A FLOWER GARDEN 2014 © YAYOI KUSAMA`,
     imgtxt2: ` L: Lingering Dream 1949
 R: Self-portrait 1972
@@ -272,3 +276,4 @@ R: Starry Pumpkin 2017
     exbtxt: `The inaugural exhibition at the Yayoi Kusama Museum centers on her newest painting series My Eternal Soul. Other new works by Yayoi Kusama are also on display. In addition to the sixteen works from My Eternal Soul, the series entitled Love Forever is presented, a collection of black and white drawings that formed the precursor to Kusama’s latest series. Furthermore, an installation piece Kusama has created especially for the museum's opening is showcased, along with a new pumpkin.`,
   },
 ];
+export default exhibInfo;
