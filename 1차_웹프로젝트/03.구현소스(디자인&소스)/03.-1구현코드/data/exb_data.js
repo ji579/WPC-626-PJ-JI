@@ -241,7 +241,7 @@ On this occasion, Yayoi Kusama Museum presents an exhibition consisting of early
 R: Self-portrait 1972
 
 © YAYOI KUSAMA`,
-    imgtxt3: ` `,
+    imgtxt3: ``,
     imgtxt4: ``,
                  date: `Thursday, October 4, 2018 - Thursday, February 28, 2019`,
     exbtxt: `Yayoi Kusama was born to a well-established conservative family that owned a seed nursery business. She spent her childhood surrounded by her family’s seed harvesting grounds. As a little girl, she often went out into the flower fields with her sketchbooks, developing her passion for drawing. For the artist, plants have been both beloved subjects and frightening figures, instilling fear through hallucinations and reflecting her state of mind.

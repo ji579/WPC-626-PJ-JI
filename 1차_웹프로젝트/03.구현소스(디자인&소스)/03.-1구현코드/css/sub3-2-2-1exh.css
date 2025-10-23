@@ -528,7 +528,7 @@ content: '';
            /* height: 70%; */
         border: #000000 solid 1px;
 
-        animation: slideIn 0.3s ease;
+         /* animation: slideIn 0.3s ease;*/
         /* overflow-y: auto; */ /* 👈 모달 내부에서만 스크롤되도록 허용 */
         text-align: center;
         overflow: hidden;

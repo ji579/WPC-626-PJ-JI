@@ -200,7 +200,19 @@ function loadExhibitionData(exhibitIndex = 0) {
     img.src = imgSrc;
 
     img.onerror = handleError;
+    
   });
+  const img3 = new Image();
+const img4 = new Image();
+
+img3.onerror = img4.onerror = () => {
+  failCount++;
+  if (failCount >= 1 && imgbx2Container)
+    imgbx2Container.style.display = "none";
+};
+
+img3.src = `./images/exb${exhibitNum}-3.jpg`;
+img4.src = `./images/exb${exhibitNum}-4.jpg`;
 }
 
 // =======================================================
@@ -495,21 +507,21 @@ window.addEventListener("DOMContentLoaded", () => {
           ) {
             e.preventDefault();
 
-            modalSwiper.slideNext(0);
+            modalSwiper.slideNext(300);
 
             setTimeout(() => {
               el.scrollTop = 0;
-            }, 0);
+            }, 300);
           }
         } else if (d < 0) {
           if (el.scrollTop <= 0) {
             e.preventDefault();
 
-            modalSwiper.slidePrev(0);
+            modalSwiper.slidePrev(300);
 
             setTimeout(() => {
               el.scrollTop = 0;
-            }, 0);
+            }, 300);
           }
         }
       },
@@ -520,25 +532,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // ---------------------- 모달 제어 함수 (전역 노출) ----------------------
 
-  window.openModalWithIndex = function (exhibitDataIndex) {
-    modal.style.display = "block";
+ window.openModalWithIndex = function (exhibitDataIndex) {
+  modal.style.display = "block";
+  document.body.classList.add("modal-open");
 
-    document.body.classList.add("modal-open");
+  boxes.forEach((box) => {
+    box.scrollTop = 0;
+    box.classList.remove("on");
+  });
 
-    // ⭐️ 새로운 전시 데이터 및 이미지 로드
+  loadExhibitionData(exhibitDataIndex);
 
-    loadExhibitionData(exhibitDataIndex);
+  if (modalSwiper) modalSwiper.slideTo(0, 0);
 
-    modalSwiper.slideTo(0, 0);
+  if (boxes.length > 0) boxes[0].classList.add("on");
 
-    boxes.forEach((box) => box.classList.remove("on"));
-
-    if (boxes.length > 0) {
-      boxes[0].classList.add("on");
-    }
-
-    upButton.style.display = "none";
-  };
+  upButton.style.display = "none";
+};
 
   window.closeModal = function () {
     modal.style.display = "none";
@@ -556,9 +566,5 @@ window.addEventListener("DOMContentLoaded", () => {
     modalSwiper.slideTo(0, 0);
   };
 
-  window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      window.closeModal();
-    }
-  });
+
 });
