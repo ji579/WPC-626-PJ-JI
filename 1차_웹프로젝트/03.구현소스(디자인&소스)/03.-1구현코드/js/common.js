@@ -5,15 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     2. 햄버거 버튼 클릭시 상단영역에 클래스넣기
 ************************************************/
   // (1) 이벤트 대상 : .btn-ham
-  const $btnHam = $(".menubtn-ham");
-  // (2) 변경 대상 : #top-area
-  const $topArea = $("#spart-menu2");
+//   const $btnHam = $(".menubtn-ham");
+//   // (2) 변경 대상 : #top-area
+//   const $topArea = $("#spart-menu2");
 
-  // (3) 이벤트 대상 클릭시
-  // 변경대상에 클래스 토글로 on넣기
-  $btnHam.on("click", () => {
-    $topArea.toggleClass("on");
-  }); /// click ///
+//   // (3) 이벤트 대상 클릭시
+//   // 변경대상에 클래스 토글로 on넣기
+//   $btnHam.on("click", () => {
+//     $topArea.toggleClass("on");
+//   }); /// click ///
 
 
 
@@ -125,16 +125,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // ----------------------------------------------------
-        // ⭐️ E. Past Exhibition 그룹 처리 (line2 - Past Exhibition 라벨) ⭐️
+         // ⭐️ E. Past Exhibition 그룹 처리 (line2 - Past Exhibition 라벨) ⭐️
         // sub3-2-2-1exh.html, sub3-2-2-2exh.html 페이지에서 라벨 활성화
         // ----------------------------------------------------
-        const isPastExhLabel = (item.tagName === 'LABEL' && linkPath === 'sub3-2-2-1exh.html');
+        const isPastExhLabel = (item.tagName === 'LABEL');
         const isCurrentPageInPastExhGroup = PAST_EXHIBITION_PAGES.includes(currentPath);
 
         if (isPastExhLabel && isCurrentPageInPastExhGroup) {
             item.classList.add('active');
         }
-
 
         // ----------------------------------------------------
         // ⭐️ 개별 메뉴 및 뷰 모드 활성화 로직 (파일명 일치) ⭐️
