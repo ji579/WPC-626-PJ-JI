@@ -331,3 +331,17 @@ section#upBtn {
 .image-wrapper:hover .hover-arrow {
     opacity: 1; /* 호버 이미지를 보이게 함 */
 }
+      /* 이거 추가한거 */ 
+.page-row .hover-row {
+  opacity: 1;
+}
+.page-row .default-row {
+  opacity: 0;
+}
+
+.page-col .hover-col {
+  opacity: 1;
+}
+.page-col .default-col {
+  opacity: 0;
+}

@@ -785,3 +785,17 @@ content: '';
         transform: translateY(0%);
         transition: 1.2s ease-in-out;
       }
+      /* 이거 추가한거 */ 
+.page-row .hover-row {
+  opacity: 1;
+}
+.page-row .default-row {
+  opacity: 0;
+}
+
+.page-col .hover-col {
+  opacity: 1;
+}
+.page-col .default-col {
+  opacity: 0;
+}

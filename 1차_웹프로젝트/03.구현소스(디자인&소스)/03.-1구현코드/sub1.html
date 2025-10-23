@@ -393,14 +393,16 @@
       // 변경대상에 클래스 토글로 on넣기
       $btnHam.on("click", () => {
         $topArea.toggleClass("on");
-
+  $('.searchbox').hide();   // searchbox 숨기기
         $('.listbox').toggle();
 
         // 메뉴박스 z-index:1처리
       }); /// click ///
 
       $('.btn-search').click(()=>{
+          $('.listbox').hide(); 
         $('.searchbox').show();
+
       })
       $('.fa-solid.fa-xmark').click(()=>{
         $('.searchbox').hide();

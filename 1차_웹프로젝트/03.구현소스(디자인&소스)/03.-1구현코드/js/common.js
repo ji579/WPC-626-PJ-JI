@@ -169,7 +169,16 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+        // Contact 등 해시(#) 링크 클릭 시 글씨 변경되도록 처리
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function() {
+            // 모든 a에서 active 제거
+            document.querySelectorAll('.line1 a, .spart-menu a').forEach(a => a.classList.remove('active'));
 
+            // 클릭한 a에 active 부여
+            this.classList.add('active');
+        });
+        });
 
 
 
