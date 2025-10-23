@@ -391,22 +391,50 @@
       // const $listBox = $(".listbox");
       // (3) 이벤트 대상 클릭시
       // 변경대상에 클래스 토글로 on넣기
-      $btnHam.on("click", () => {
-        $topArea.toggleClass("on");
-  $('.searchbox').hide();   // searchbox 숨기기
-        $('.listbox').toggle();
-
-        // 메뉴박스 z-index:1처리
-      }); /// click ///
-
       $('.btn-search').click(()=>{
-          $('.listbox').hide(); 
-        $('.searchbox').show();
+        $('.listbox').hide();     // listbox 숨기기
+        $('.searchbox').show();   // searchbox 보이기
+      });
 
-      })
+      $('.btn-ham').click(()=>{
+        $('.searchbox').hide();   // searchbox 숨기기
+        $('.listbox').toggle();   // listbox 보이기
+      });
+
       $('.fa-solid.fa-xmark').click(()=>{
         $('.searchbox').hide();
       })
+
+      const totalSlides = 8; // 전체 페이지 수 
+      const swiper = new Swiper(".mySwiper", {
+        speed: 600,
+        parallax: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          slideChange: function () {
+            const currentLeftPage = swiper.activeIndex * 2 + 1;
+            const currentRightPage = currentLeftPage + 1;
+
+            // 왼쪽 페이지 번호
+            document.querySelector(".swiper-pagination-left").textContent =
+              `${currentLeftPage}/${totalSlides}`;
+
+            // 오른쪽 페이지 번호 (마지막 페이지 처리)
+            if (currentRightPage <= totalSlides) {
+              document.querySelector(".swiper-pagination-right").textContent =
+                `${currentRightPage}/${totalSlides}`;
+            } else {
+              document.querySelector(".swiper-pagination-right").textContent = "";
+            }
+          },
+        },
+      });
+
+// 초기 표시 (첫 슬라이드)
+swiper.emit("slideChange");
     </script>
 
     <!-- 하단영역 -->

@@ -364,3 +364,22 @@ i > p {
       left: var(--swiper-navigation-sides-offset, 60px)!important;
     right: auto;
     }
+
+    
+    .swiper-pagination-left {
+  position: absolute;
+  bottom: 80px;
+  left: 25%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.swiper-pagination-right {
+  position: absolute;
+  bottom: 80px;
+  right: 25%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  z-index: 10;
+}

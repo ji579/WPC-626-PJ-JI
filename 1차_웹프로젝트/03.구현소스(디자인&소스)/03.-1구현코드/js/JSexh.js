@@ -228,3 +228,12 @@ function detectBottom(el=window) {
           chgBox.classList.remove('end');
         }
       });
+document.addEventListener('click', (e) => {
+  const label = e.target.closest('label[data-url]');
+  if (label) {
+    const url = label.getAttribute('data-url');
+    if (url) {
+      window.location.href = url;
+    }
+  }
+});

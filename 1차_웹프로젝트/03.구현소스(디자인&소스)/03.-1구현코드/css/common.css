@@ -91,9 +91,9 @@ body {
   height: auto;
 }
 
-
 .spart-menu.inbox h1 {
   font-size: 4rem;
+  font-weight: 400;
   color: #ffffff;
 }
 .spart-menu ul {

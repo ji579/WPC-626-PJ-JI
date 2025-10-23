@@ -78,7 +78,7 @@
   position: absolute;
         width: 33%;
         text-align: left;
-        right: 0;
+        right: 10vh;
   }
 
   .gnb-menu ul {
@@ -97,7 +97,7 @@
     color: #000 !important;
     width: 33%;
     /* width: 100%; */
-
+        margin: 0 10vh;
     text-align: left;
 
     font-size: 2.5vh !important;

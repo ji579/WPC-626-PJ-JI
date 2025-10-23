@@ -231,7 +231,7 @@ input:checked + label {
   top: 400px;
   /* width: 1140px; */
  width: 249%;
-  height: 1.5px;
+  height: .5px;
   z-index: 999;
   background-color: black;
 }
@@ -344,4 +344,10 @@ section#upBtn {
 }
 .page-col .default-col {
   opacity: 0;
+}
+
+body.page-col .line1 a[href="sub3-2-1exh.html"],
+body.page-row .line1 a[href="sub3-2-1exh.html"] {
+  color: #c52531;
+  font-weight: bold;
 }

@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
          // ⭐️ E. Past Exhibition 그룹 처리 (line2 - Past Exhibition 라벨) ⭐️
         // sub3-2-2-1exh.html, sub3-2-2-2exh.html 페이지에서 라벨 활성화
         // ----------------------------------------------------
-        const isPastExhLabel = (item.tagName === 'LABEL');
+        const isPastExhLabel = (item.tagName === 'LABEL'  );
         const isCurrentPageInPastExhGroup = PAST_EXHIBITION_PAGES.includes(currentPath);
 
         if (isPastExhLabel && isCurrentPageInPastExhGroup) {
