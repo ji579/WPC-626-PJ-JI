@@ -27,3 +27,16 @@ window.addEventListener('scroll',()=>{
     }
 
 }); /////// scroll ////////////
+
+// console.log("메인JS로딩완료!");
+
+document.querySelectorAll('#spart-menu a').forEach(anchor => {
+    anchor.addEventListener('click', function() {
+        console.log("메뉴클릭!", this);
+        // 모든 a에서 active 제거
+        document.querySelectorAll('#spart-menu a').forEach(a => a.classList.remove('active'));
+
+        // 클릭한 a에 active 부여
+        this.classList.add('active');
+    });
+});

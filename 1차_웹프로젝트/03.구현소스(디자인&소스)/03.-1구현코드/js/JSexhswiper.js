@@ -27,10 +27,10 @@ function loadExhibitionData(exhibitIndex = 0) {
 
   const titleEl = document.querySelector(".sa1 .title strong");
 
-  if(titleEl) {
-        const formattedTitle = data.title.replace(/\n/g, "<br/>");
-        titleEl.innerHTML = formattedTitle;
-    }
+  if (titleEl) {
+    const formattedTitle = data.title.replace(/\n/g, "<br/>");
+    titleEl.innerHTML = formattedTitle;
+  }
 
   // 이미지 캡션 (imgtxt1 ~ imgtxt3)
 
@@ -89,14 +89,14 @@ function loadExhibitionData(exhibitIndex = 0) {
   const exbtxtElement = document.querySelector(".sa2 .exbtxt");
 
   if (exbtxtElement) {
-        // 1. replace()를 사용하여 줄바꿈 문자를 <br/>로 변경
-        // 주의: 이 방식은 단일 줄바꿈(`\n`)만 <br/>로 바꾸므로, 
-        // 문단 구분이 아닌 줄바꿈 처리용으로 적합합니다. 
-        const formattedExbtxt = data.exbtxt.replace(/\n/g, "<br/>");
+    // 1. replace()를 사용하여 줄바꿈 문자를 <br/>로 변경
+    // 주의: 이 방식은 단일 줄바꿈(`\n`)만 <br/>로 바꾸므로,
+    // 문단 구분이 아닌 줄바꿈 처리용으로 적합합니다.
+    const formattedExbtxt = data.exbtxt.replace(/\n/g, "<br/>");
 
-        // 2. innerHTML에 할당하여 <br/>이 HTML 태그로 인식되도록 합니다.
-        exbtxtElement.innerHTML = formattedExbtxt;
-    }
+    // 2. innerHTML에 할당하여 <br/>이 HTML 태그로 인식되도록 합니다.
+    exbtxtElement.innerHTML = formattedExbtxt;
+  }
 
   // 전시 날짜
 
@@ -200,19 +200,18 @@ function loadExhibitionData(exhibitIndex = 0) {
     img.src = imgSrc;
 
     img.onerror = handleError;
-    
   });
   const img3 = new Image();
-const img4 = new Image();
+  const img4 = new Image();
 
-img3.onerror = img4.onerror = () => {
-  failCount++;
-  if (failCount >= 1 && imgbx2Container)
-    imgbx2Container.style.display = "none";
-};
+  img3.onerror = img4.onerror = () => {
+    failCount++;
+    if (failCount >= 1 && imgbx2Container)
+      imgbx2Container.style.display = "none";
+  };
 
-img3.src = `./images/exb${exhibitNum}-3.jpg`;
-img4.src = `./images/exb${exhibitNum}-4.jpg`;
+  img3.src = `./images/exb${exhibitNum}-3.jpg`;
+  img4.src = `./images/exb${exhibitNum}-4.jpg`;
 }
 
 // =======================================================
@@ -234,7 +233,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function handleLabelClick() {
     const targetUrl = this.getAttribute("data-url");
-
     if (targetUrl) {
       window.location.href = targetUrl;
     }
@@ -532,23 +530,23 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // ---------------------- 모달 제어 함수 (전역 노출) ----------------------
 
- window.openModalWithIndex = function (exhibitDataIndex) {
-  modal.style.display = "block";
-  document.body.classList.add("modal-open");
+  window.openModalWithIndex = function (exhibitDataIndex) {
+    modal.style.display = "block";
+    document.body.classList.add("modal-open");
 
-  boxes.forEach((box) => {
-    box.scrollTop = 0;
-    box.classList.remove("on");
-  });
+    boxes.forEach((box) => {
+      box.scrollTop = 0;
+      box.classList.remove("on");
+    });
 
-  loadExhibitionData(exhibitDataIndex);
+    loadExhibitionData(exhibitDataIndex);
 
-  if (modalSwiper) modalSwiper.slideTo(0, 0);
+    if (modalSwiper) modalSwiper.slideTo(0, 0);
 
-  if (boxes.length > 0) boxes[0].classList.add("on");
+    if (boxes.length > 0) boxes[0].classList.add("on");
 
-  upButton.style.display = "none";
-};
+    upButton.style.display = "none";
+  };
 
   window.closeModal = function () {
     modal.style.display = "none";
@@ -566,5 +564,29 @@ window.addEventListener("DOMContentLoaded", () => {
     modalSwiper.slideTo(0, 0);
   };
 
+  // 미리 셋팅값 나오게하여 슬라이드 현상 없앰!
+  (() => {
+    document.body.classList.add("modal-open");
 
-});
+    modal.style.display = "block";
+    modal.style.opacity = 0;
+
+    boxes.forEach((box) => {
+      box.scrollTop = 0;
+      box.classList.remove("on");
+    });
+
+    loadExhibitionData(1);
+
+    if (modalSwiper) modalSwiper.slideTo(0, 0);
+
+    if (boxes.length > 0) boxes[0].classList.add("on");
+
+    upButton.style.display = "none";
+
+    setTimeout(() => {
+      modal.style.display = "none";
+      modal.style.opacity = 1;
+    }, 100);
+  })();
+}); /////////// DOMContentLoaded ////////////

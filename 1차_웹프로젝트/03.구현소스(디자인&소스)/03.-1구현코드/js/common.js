@@ -15,6 +15,37 @@ document.addEventListener('DOMContentLoaded', function() {
 //     $topArea.toggleClass("on");
 //   }); /// click ///
 
+  /************************************************ 
+    2. 햄버거 버튼 클릭시 상단영역에 클래스넣기
+************************************************/
+  // (1) 이벤트 대상 : .menubtn-ham
+  const btnHam = document.querySelector('.menubtn-ham');
+  // (2) 변경 대상 : #spart-menu2 (메뉴박스의 부모)
+  const spartMenu2 = document.getElementById('spart-menu2');
+
+  // (3) 이벤트 대상 클릭시 변경대상에 클래스 토글로 on넣기
+  if (btnHam && spartMenu2) {
+    btnHam.addEventListener('click', function() {
+      spartMenu2.classList.toggle('on');
+      
+      // 햄버거 아이콘 토글 (CSS가 작동 안할 경우 대비)
+      const hamburgerIcon = this.querySelector('i:nth-child(1)');
+      const closeIcon = this.querySelector('i:nth-child(2)');
+      
+      if (hamburgerIcon && closeIcon) {
+        hamburgerIcon.style.display = spartMenu2.classList.contains('on') ? 'none' : 'block';
+        closeIcon.style.display = spartMenu2.classList.contains('on') ? 'block' : 'none';
+      }
+      
+      console.log('🍔 햄버거 메뉴 토글! on 상태:', spartMenu2.classList.contains('on'));
+      console.log('📍 spartMenu2 클래스:', spartMenu2.className);
+    });
+  } else {
+    console.warn('⚠️ 햄버거 버튼 또는 메뉴를 찾을 수 없습니다!');
+    console.log('btnHam:', btnHam);
+    console.log('spartMenu2:', spartMenu2);
+  }
+
 
 
 
@@ -167,9 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
             item.closest('li')?.classList.add('on');
         }
     });
-});
-        // Contact 등 해시(#) 링크 클릭 시 글씨 변경되도록 처리
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    // Contact 등 해시(#) 링크 클릭 시 글씨 변경되도록 처리
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function() {
             // 모든 a에서 active 제거
             document.querySelectorAll('.line1 a, .spart-menu a').forEach(a => a.classList.remove('active'));
@@ -177,67 +208,131 @@ document.addEventListener('DOMContentLoaded', function() {
             // 클릭한 a에 active 부여
             this.classList.add('active');
         });
+    });
+
+    // ////////////////////////////////////////////////
+    // ⭐️ 모바일용 메뉴 열기/닫기 (디버깅 버전) ⭐️
+    // ////////////////////////////////////////////////
+
+    console.log('🔍 모바일 메뉴 스크립트 시작');
+
+    // 모든 chevron 아이콘 선택
+    const chevronIcons = document.querySelectorAll('.fa-chevron-down');
+    console.log('📍 찾은 chevron 아이콘 개수:', chevronIcons.length);
+
+    if (chevronIcons.length === 0) {
+        console.warn('⚠️ chevron 아이콘을 찾을 수 없습니다! HTML 구조를 확인하세요.');
+    }
+
+    chevronIcons.forEach((icon, index) => {
+        console.log(`📌 아이콘 ${index + 1} 이벤트 리스너 등록 중...`);
+        
+        icon.addEventListener('click', function(e) {
+            console.log('🖱️ 아이콘 클릭됨!', index + 1);
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const parentDiv = this.parentElement;
+            console.log('부모 요소:', parentDiv);
+            
+            const subList = parentDiv.querySelector('.sub-list');
+            console.log('찾은 sub-list:', subList);
+            
+            if (subList) {
+                subList.classList.toggle('active');
+                this.classList.toggle('active');
+                
+                // 4번째 li 높이 조정
+                adjustFourthLiHeight();
+                
+                console.log('✅ 토글 완료! active 상태:', subList.classList.contains('active'));
+            } else {
+                console.warn('⚠️ sub-list를 찾을 수 없습니다!');
+            }
         });
+    });
 
+    // 메뉴 텍스트 클릭 시에도 토글되도록
+    const visitMenu = document.querySelector('.visitmenu');
+    const exhibitionMenu = document.querySelector('.exhibitionmenu');
 
+    console.log('📍 visitMenu:', visitMenu);
+    console.log('📍 exhibitionMenu:', exhibitionMenu);
 
+    if (visitMenu) {
+        visitMenu.addEventListener('click', function(e) {
+            console.log('🖱️ Visit 메뉴 클릭됨!');
+            e.preventDefault();
+            const parentDiv = this.parentElement;
+            const subList = parentDiv.querySelector('.sub-list');
+            const icon = parentDiv.querySelector('.fa-chevron-down');
+            
+            if (subList) {
+                subList.classList.toggle('active');
+                icon.classList.toggle('active');
+                
+                // 4번째 li 높이 조정
+                adjustFourthLiHeight();
+                
+                console.log('✅ Visit 메뉴 토글 완료!');
+            }
+        });
+    }
 
+    if (exhibitionMenu) {
+        exhibitionMenu.addEventListener('click', function(e) {
+            console.log('🖱️ Exhibition 메뉴 클릭됨!');
+            e.preventDefault();
+            const parentDiv = this.parentElement;
+            const subList = parentDiv.querySelector('.sub-list');
+            const icon = parentDiv.querySelector('.fa-chevron-down');
+            
+            if (subList) {
+                subList.classList.toggle('active');
+                icon.classList.toggle('active');
+                
+                // 4번째 li 높이 조정
+                adjustFourthLiHeight();
+                
+                console.log('✅ Exhibition 메뉴 토글 완료!');
+            }
+        });
+    }
 
+    // ////////////////////////////////////////////////
+    // 4번째 li 높이 자동 조정 함수
+    // ////////////////////////////////////////////////
+    function adjustFourthLiHeight() {
+        const fourthLi = document.querySelector('.gnb-list > li:nth-child(4)');
+        
+        if (!fourthLi) return;
+        
+        // 모든 active 상태인 sub-list의 높이 계산
+        const activeSubLists = fourthLi.querySelectorAll('.sub-list.active');
+        let totalSubListHeight = 0;
+        
+        activeSubLists.forEach(subList => {
+            totalSubListHeight += subList.scrollHeight;
+        });
+        
+        // 기본 패딩 값 (CSS의 padding 값과 동일하게)
+        const basePadding = 'calc(2.5vh * 2 + 3.2rem)';
+        
+        if (totalSubListHeight > 0) {
+            // sub-list가 열려있으면 높이를 추가
+            fourthLi.style.paddingBottom = `calc(${basePadding} + ${totalSubListHeight}px)`;
+        } else {
+            // 모든 sub-list가 닫혀있으면 기본 패딩으로
+            fourthLi.style.paddingBottom = basePadding;
+        }
+        
+        console.log('📏 4번째 li 높이 조정됨:', fourthLi.style.paddingBottom);
+    }
 
+    console.log('✅ 모바일 메뉴 스크립트 초기화 완료');
 
+    // ////////////////////////////////////////////////
+    // 모바일 메뉴 코드 끝
+    // ////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // 도깨비 PJ 공통 JS - common.js /////////
-
-// // 배너 슬라이드 함수 불러오기
-// // default로 내보냈으므로 아무이름으로 받아도됨!
-
-// // 같은 이름의 변수의 충돌을 막기위해 지역변수화를 해준다!
-// // 방법은 (()=>{나의코드})() 익명함수를 바로 실행하는 지역코드로 감싸준다!
-// // 나의코드는 지역화가 되고 익명함수는 바로 실행된다!
-// // -> (익명함수)() 이렇게 쓰면 익명함수가 바로 실행됨!
-
-// /// 지역화 코드 시작 //////////////
-// (() => {
-//   // 1. 상단, 하단 공통 모듈 html넣기
-
-
-//   // 하단영역 #bottom-area
-//   const $bottomArea = $("#bottom-area");
-
-//   // 드라마 파트메뉴 #spart-menu
-//   const $spartMenu = $("#spart-menu");
-
-//   // (2) 대상에 load() 메서드로 html넣기
-//   // load(파일경로, 로딩후실행함수)
-//   // (2-1) 상단부 html넣기
-
-
-//   // (2-2) 하단부 html넣기
-//   $bottomArea.load("./inc/footer.html");
-
-
-
-//   // (2-4) 드라마 파트메뉴 html넣기
-//   $spartMenu.load("./inc/spartmenu.html");
-// })();
-// /// 지역화 코드 종료 //////////////
-
-// /// 2. 상단파트에서 실행할 함수 /////////////
-
+}); // DOMContentLoaded 종료
