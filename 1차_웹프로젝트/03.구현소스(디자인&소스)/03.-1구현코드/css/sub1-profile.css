@@ -116,7 +116,8 @@ body {
 #books-area {
   /* height: 89%; */
   position: relative;
-  margin-bottom: 60px;
+overflow: hidden;
+    margin-bottom: 150px;
 }
 /* 라운드 책이미지 */
 .bg {
