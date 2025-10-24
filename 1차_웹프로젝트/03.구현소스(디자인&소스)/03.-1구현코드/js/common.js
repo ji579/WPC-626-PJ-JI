@@ -4,40 +4,33 @@ document.addEventListener('DOMContentLoaded', function() {
   /************************************************ 
     2. 햄버거 버튼 클릭시 상단영역에 클래스넣기
 ************************************************/
-  // (1) 이벤트 대상 : .btn-ham
-//   const $btnHam = $(".menubtn-ham");
-//   // (2) 변경 대상 : #top-area
-//   const $topArea = $("#spart-menu2");
-
-//   // (3) 이벤트 대상 클릭시
-//   // 변경대상에 클래스 토글로 on넣기
-//   $btnHam.on("click", () => {
-//     $topArea.toggleClass("on");
-//   }); /// click ///
-
-  /************************************************ 
-    2. 햄버거 버튼 클릭시 상단영역에 클래스넣기
-************************************************/
   // (1) 이벤트 대상 : .menubtn-ham
   const btnHam = document.querySelector('.menubtn-ham');
   // (2) 변경 대상 : #spart-menu2 (메뉴박스의 부모)
   const spartMenu2 = document.getElementById('spart-menu2');
 
-  // (3) 이벤트 대상 클릭시 변경대상에 클래스 토글로 on넣기
+  // (3) 이벤트 대상 클릭시 변경대상에 클래스 토글로 menu-open 넣기
   if (btnHam && spartMenu2) {
     btnHam.addEventListener('click', function() {
-      spartMenu2.classList.toggle('on');
+      spartMenu2.classList.toggle('menu-open'); // 'on' 대신 'menu-open' 사용
       
+    // // 메뉴가 열릴 때 body 스크롤 막기
+      if (spartMenu2.classList.contains('menu-open')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+
       // 햄버거 아이콘 토글 (CSS가 작동 안할 경우 대비)
       const hamburgerIcon = this.querySelector('i:nth-child(1)');
       const closeIcon = this.querySelector('i:nth-child(2)');
       
       if (hamburgerIcon && closeIcon) {
-        hamburgerIcon.style.display = spartMenu2.classList.contains('on') ? 'none' : 'block';
-        closeIcon.style.display = spartMenu2.classList.contains('on') ? 'block' : 'none';
+        hamburgerIcon.style.display = spartMenu2.classList.contains('menu-open') ? 'none' : 'block';
+        closeIcon.style.display = spartMenu2.classList.contains('menu-open') ? 'block' : 'none';
       }
       
-      console.log('🍔 햄버거 메뉴 토글! on 상태:', spartMenu2.classList.contains('on'));
+      console.log('🍔 햄버거 메뉴 토글! menu-open 상태:', spartMenu2.classList.contains('menu-open'));
       console.log('📍 spartMenu2 클래스:', spartMenu2.className);
     });
   } else {
@@ -224,81 +217,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('⚠️ chevron 아이콘을 찾을 수 없습니다! HTML 구조를 확인하세요.');
     }
 
-    chevronIcons.forEach((icon, index) => {
-        console.log(`📌 아이콘 ${index + 1} 이벤트 리스너 등록 중...`);
-        
-        icon.addEventListener('click', function(e) {
-            console.log('🖱️ 아이콘 클릭됨!', index + 1);
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const parentDiv = this.parentElement;
-            console.log('부모 요소:', parentDiv);
-            
-            const subList = parentDiv.querySelector('.sub-list');
-            console.log('찾은 sub-list:', subList);
-            
-            if (subList) {
-                subList.classList.toggle('active');
-                this.classList.toggle('active');
-                
-                // 4번째 li 높이 조정
-                adjustFourthLiHeight();
-                
-                console.log('✅ 토글 완료! active 상태:', subList.classList.contains('active'));
-            } else {
-                console.warn('⚠️ sub-list를 찾을 수 없습니다!');
-            }
-        });
-    });
-
-    // 메뉴 텍스트 클릭 시에도 토글되도록
-    const visitMenu = document.querySelector('.visitmenu');
-    const exhibitionMenu = document.querySelector('.exhibitionmenu');
-
-    console.log('📍 visitMenu:', visitMenu);
-    console.log('📍 exhibitionMenu:', exhibitionMenu);
-
-    if (visitMenu) {
-        visitMenu.addEventListener('click', function(e) {
-            console.log('🖱️ Visit 메뉴 클릭됨!');
-            e.preventDefault();
-            const parentDiv = this.parentElement;
-            const subList = parentDiv.querySelector('.sub-list');
-            const icon = parentDiv.querySelector('.fa-chevron-down');
-            
-            if (subList) {
-                subList.classList.toggle('active');
-                icon.classList.toggle('active');
-                
-                // 4번째 li 높이 조정
-                adjustFourthLiHeight();
-                
-                console.log('✅ Visit 메뉴 토글 완료!');
-            }
-        });
-    }
-
-    if (exhibitionMenu) {
-        exhibitionMenu.addEventListener('click', function(e) {
-            console.log('🖱️ Exhibition 메뉴 클릭됨!');
-            e.preventDefault();
-            const parentDiv = this.parentElement;
-            const subList = parentDiv.querySelector('.sub-list');
-            const icon = parentDiv.querySelector('.fa-chevron-down');
-            
-            if (subList) {
-                subList.classList.toggle('active');
-                icon.classList.toggle('active');
-                
-                // 4번째 li 높이 조정
-                adjustFourthLiHeight();
-                
-                console.log('✅ Exhibition 메뉴 토글 완료!');
-            }
-        });
-    }
-
     // ////////////////////////////////////////////////
     // 4번째 li 높이 자동 조정 함수
     // ////////////////////////////////////////////////
@@ -327,6 +245,79 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         console.log('📏 4번째 li 높이 조정됨:', fourthLi.style.paddingBottom);
+    }
+
+    // ////////////////////////////////////////////////
+    // ⭐️ 모바일 메뉴를 배타적으로 토글하는 함수 ⭐️
+    // ////////////////////////////////////////////////
+    function toggleMobileMenu(targetDiv) {
+        const allDivs = document.querySelectorAll('.gnb-list > li > div');
+        const targetSubList = targetDiv.querySelector('.sub-list');
+        const targetIcon = targetDiv.querySelector('.fa-chevron-down');
+        
+        // 모든 메뉴를 순회하면서
+        allDivs.forEach(div => {
+            const subList = div.querySelector('.sub-list');
+            const icon = div.querySelector('.fa-chevron-down');
+            
+            // 현재 클릭한 메뉴가 아닌 다른 메뉴들은 모두 닫기
+            if (div !== targetDiv && subList) {
+                subList.classList.remove('active');
+                if (icon) icon.classList.remove('active');
+            }
+        });
+        
+        // 클릭한 메뉴는 토글
+        if (targetSubList) {
+            targetSubList.classList.toggle('active');
+            if (targetIcon) targetIcon.classList.toggle('active');
+            
+            // 4번째 li 높이 조정
+            adjustFourthLiHeight();
+            
+            console.log('✅ 메뉴 토글 완료! active 상태:', targetSubList.classList.contains('active'));
+        }
+    }
+
+    // chevron 아이콘 클릭 이벤트
+    chevronIcons.forEach((icon, index) => {
+        console.log(`📌 아이콘 ${index + 1} 이벤트 리스너 등록 중...`);
+        
+        icon.addEventListener('click', function(e) {
+            console.log('🖱️ 아이콘 클릭됨!', index + 1);
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const parentDiv = this.parentElement;
+            toggleMobileMenu(parentDiv);
+        });
+    });
+
+    // 메뉴 텍스트 클릭 시에도 토글되도록
+    const visitMenu = document.querySelector('.visitmenu');
+    const exhibitionMenu = document.querySelector('.exhibitionmenu');
+
+    console.log('📍 visitMenu:', visitMenu);
+    console.log('📍 exhibitionMenu:', exhibitionMenu);
+
+    // Visit 메뉴 클릭 이벤트
+    if (visitMenu) {
+        visitMenu.addEventListener('click', function(e) {
+            console.log('🖱️ Visit 메뉴 클릭됨!');
+            e.preventDefault();
+            const parentDiv = this.parentElement;
+            toggleMobileMenu(parentDiv);
+        });
+    }
+
+    // Exhibition 메뉴 클릭 이벤트
+    if (exhibitionMenu) {
+        exhibitionMenu.addEventListener('click', function(e) {
+            console.log('🖱️ Exhibition 메뉴 클릭됨!');
+            e.preventDefault();
+            const parentDiv = this.parentElement;
+            toggleMobileMenu(parentDiv);
+        });
     }
 
     console.log('✅ 모바일 메뉴 스크립트 초기화 완료');

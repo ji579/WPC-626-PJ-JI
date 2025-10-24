@@ -47,8 +47,37 @@ body {
 }
 
 
+/* 기본적으로 메뉴박스는 화면 밖에 숨김 */
+.menu-box {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 100%; /* 오른쪽 밖에 숨김 */
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding-right: 0;
+  transition: left 0.5s ease-in-out;
+}
 
+#spart-menu2.menu-open .menu-box {
+left: 50%;
+    translate: -50% 0;
+}
 
+/* 햄버거 아이콘 - 기본적으로 X 버튼 숨김 */
+.menubtn-ham i:nth-child(2) {
+  display: none;
+}
+
+/* menu-open 클래스가 있을 때 X 버튼 보이기, 햄버거 숨기기 */
+#spart-menu2.menu-open .menubtn-ham i:nth-child(1) {
+  display: none; /* 햄버거 숨김 */
+}
+
+#spart-menu2.menu-open .menubtn-ham i:nth-child(2) {
+  display: block; /* X 버튼 보임 */
+}
 #spart-menu {
   max-width: 1360px;
   top: 0;
@@ -59,11 +88,11 @@ body {
 }
 
 .menubtn-group{
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 50%;
     translate: 0 -50%;
-    right: 3vw;
+    right: calc(100% / 12);
     gap: 20px;
   
 }
@@ -77,6 +106,8 @@ body {
 .menubtn-ham i:nth-child(2) {
   display: none;
 }
+/* 모바일용 메뉴 숨겨두기 */
+    .menu-box { display: none; }
 
 /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
   x버튼보이기/햄버거숨기기 */
