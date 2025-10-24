@@ -330,7 +330,7 @@ width: auto; */
   /* 부모자격 */
   box-sizing: border-box;
   /* padding: 0 70px; */
-  padding: 118px calc(100% / 12) 1vw;
+  /* padding: 118px calc(100% / 12) 1vw; */
   /* padding: 0 7vw 1vw; */
   background: url(../images/bg_co.png) no-repeat center top / cover;
   height: 788px;

@@ -196,6 +196,9 @@ left: 50%;
 
 /* /////////////////////////////////////////////////// */
 /* 하단공통 */
+.paddingbox{
+  padding: 118px calc(100% / 12) 1vw;
+}
 
 
 .bottom-flx h1 {
@@ -215,9 +218,11 @@ p {
   box-sizing: border-box;
      /* padding: 0 calc(100% / 12)  2.7vw;
       */
-          padding: 0 calc(100% / 12) 60px;
+          /* padding: 0 calc(100% / 12) 60px; */
 }
-
+.bottompd {
+  padding: 0 calc(100% / 12) 60px;
+}
 .bottom-info-right {
   padding-top: 6vmin;
   display: flex;
