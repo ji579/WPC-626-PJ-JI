@@ -137,16 +137,26 @@ input:checked + label {
 }
 
 .cont-box {
-   max-width: 1114px;
+   /* max-width: 1114px; */
   /* text-align: center; */
   margin: auto;
 }
 
+.cont-box ul {
+    padding: 0 calc(100% / 12);
+}
+      /* <!-- 이미지를 center top/ cover로 적용   --> */
 .img-box img {
- width: 1114px;
+ width: 100%;
   height: 356px;
   margin-bottom: 10px;
+
 }
+@media screen and (max-width: 1200px) {
+ .img-box img { object-fit: cover; object-position: center top;}
+}
+
+
 
 .img-box > div {
   display: flex;

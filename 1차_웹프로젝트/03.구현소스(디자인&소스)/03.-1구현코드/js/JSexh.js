@@ -115,99 +115,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-function detectBottom(el=window) {
-    $('main').addClass('scrEnd');
-
-    $(el).scroll(function(){
-        const scrollTop = $(el).scrollTop();
-        const innerHeight = $(el).innerHeight();
-        const scrHeight = (el == window) ? $('main') : $(el);
-        const scrollHeight = scrHeight.prop('scrollHeight');
-        console.log(scrollTop, innerHeight, scrollHeight);
-
-        if (scrollTop + innerHeight >= scrollHeight) {
-            $('main.scrEnd').addClass('end');
-            return true;
-        } else {
-            $('main.scrEnd').removeClass('end');
-            return false;
-        }
-    });
-}
-
-
-
-/*########## table scroll ##########*/
-// $(function() {
-//     $('.table-scroll table').wrap('<div class="scroll-container"></div>');
-
-//     if ($('.scroll-container').length > 0) {
-// 		tableScroll();
-// 	}
-// });
-
-// function tableScroll() {
-// 	let table = $('.scroll-container');
-
-// 	table.each(function () {
-// 		let $this = $(this),
-// 			ingClass = 'scroll-ing',
-// 			endClass = 'scroll-end';
-// 		$this.on('scroll', function (e) {
-// 			let wrap = $(this).closest('.table-scroll'),
-// 				currLeft = this.scrollLeft,
-// 				scrWidth = this.scrollWidth,
-// 				cliWidth = this.clientWidth;
-
-// 			if (currLeft === 0) {
-// 				wrap.removeClass(ingClass).removeClass(endClass);
-// 			} else if (currLeft !== 0 && currLeft + cliWidth < scrWidth) {
-// 				wrap.addClass(ingClass).removeClass(endClass);
-// 			} else {
-// 				wrap.addClass(endClass);
-// 			}
-// 		});
-// 	});
+// function detectBottom(el=window) {
+//     $('main').addClass('scrEnd');
+// 
+//     $(el).scroll(function(){
+//         const scrollTop = $(el).scrollTop();
+//         const innerHeight = $(el).innerHeight();
+//         const scrHeight = (el == window) ? $('main') : $(el);
+//         const scrollHeight = scrHeight.prop('scrollHeight');
+//         console.log(scrollTop, innerHeight, scrollHeight);
+// 
+//         if (scrollTop + innerHeight >= scrollHeight) {
+//             $('main.scrEnd').addClass('end');
+//             return true;
+//         } else {
+//             $('main.scrEnd').removeClass('end');
+//             return false;
+//         }
+//     });
 // }
-
-      // const btnPrev = document.querySelector(".btn-prev");
-      // const btnNext = document.querySelector(".btn-next");
-
-
-
-      // document.querySelector(".btn-next").addEventListener("click", () => {
-      //   swiper.slideNext();
-      // });
-
-
-      // document.querySelector(".btn-prev").addEventListener("click", () => {
-      //   swiper.slidePrev();
-      // });
-
-     
-      // swiper.on("slideChange", () => {
-      //   console.log("맨처음인가?", swiper.isBeginning);
-      //   console.log("맨끝인가?", swiper.isEnd);
-
-      
-      //   if(swiper.isBeginning) {
-      //       btnPrev.style.opacity = "50%";
-      //   } 
-
-      //   else if(swiper.isEnd) {
-      //       btnNext.style.opacity = "50%";
-      //   } 
-
-  
-      //   else {
-      //      btnNext.style.display = "inline-block";
-      //      btnNext.style.opacity = "1";
-      //       btnPrev.style.display = "inline-block";
-      //       btnPrev.style.opacity = "1";
-      //   } 
-      // }); 
-  
-
+// 
       const getBCR = (el) => el.getBoundingClientRect().top;
 
       // 타겟박스
@@ -228,6 +155,8 @@ function detectBottom(el=window) {
           chgBox.classList.remove('end');
         }
       });
+
+      
 document.addEventListener('click', (e) => {
   const label = e.target.closest('label[data-url]');
   if (label) {

@@ -75,12 +75,14 @@ body * {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+   
   /*Y축 중앙이동*/
 }
 
 /*왼쪽버튼*/
 .ab1 {
   left: 50px;
+  
 }
 
 /*오른쪽버튼*/

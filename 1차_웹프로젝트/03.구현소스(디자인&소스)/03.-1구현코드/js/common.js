@@ -202,6 +202,49 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+    // ************************************************************
+    // ⭐️⭐️ [추가된 로직 시작] Contact 영역을 벗어나면 active 제거 ⭐️⭐️
+    // ************************************************************
+    const contactLink = document.querySelector('a[href="#contact-area"]');
+    // Contact 영역의 ID가 'contact-area'라고 가정합니다.
+    const contactSection = document.getElementById('contact-area'); 
+
+    if (contactLink && contactSection) {
+        // 1. Intersection Observer 설정
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                // entry.isIntersecting: 타겟 요소가 뷰포트 내에 보이는지 여부
+                
+                if (entry.isIntersecting) {
+                    // Contact 영역이 뷰포트에 진입 (활성화 로직 - 페이지 로드 시 해시가 있는 경우)
+                    // 현재 해시가 Contact이고, active가 없다면 추가
+                    if (window.location.hash === '#contact-area' && !contactLink.classList.contains('active')) {
+                        contactLink.classList.add('active');
+                        contactLink.closest('li')?.classList.add('on');
+                    }
+                } else {
+                    // Contact 영역이 뷰포트 밖으로 나갔을 때
+                    
+                    // 현재 해시가 #contact-area가 아닌 경우 (다른 곳 클릭)
+                    // 또는 스크롤을 Contact 영역 위로 올렸을 경우 (entry.boundingClientRect.top > 0)
+                    if (window.location.hash !== '#contact-area' || entry.boundingClientRect.top > 0) {
+                        if (contactLink.classList.contains('active')) {
+                            contactLink.classList.remove('active');
+                            contactLink.closest('li')?.classList.remove('on');
+                        }
+                    }
+                }
+            });
+        }, {
+            // threshold: 0을 사용하여 요소가 뷰포트에서 완전히 사라지거나 나타날 때를 감지
+            threshold: 0
+        });
+
+        // 2. Observer 시작
+        observer.observe(contactSection);
+    }
+    // ************************************************************
+    
 
     // ////////////////////////////////////////////////
     // ⭐️ 모바일용 메뉴 열기/닫기 (디버깅 버전) ⭐️
@@ -305,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
         visitMenu.addEventListener('click', function(e) {
             console.log('🖱️ Visit 메뉴 클릭됨!');
             e.preventDefault();
+              e.stopPropagation(); 
             const parentDiv = this.parentElement;
             toggleMobileMenu(parentDiv);
         });
@@ -315,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
         exhibitionMenu.addEventListener('click', function(e) {
             console.log('🖱️ Exhibition 메뉴 클릭됨!');
             e.preventDefault();
+              e.stopPropagation(); 
             const parentDiv = this.parentElement;
             toggleMobileMenu(parentDiv);
         });

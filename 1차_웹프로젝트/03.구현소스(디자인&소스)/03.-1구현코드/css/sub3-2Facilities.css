@@ -172,7 +172,7 @@ h4 {
 }
 
 .floorwrap {
-  max-width: 434px;
+  width: 434px;
 }
 
 .floortxt::after {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1차과제</title>
+    <title>Yayoi Kusama Official Website</title>
     <!-- 파비콘 넣기 -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <!-- 폰트어썸 CDN CSS -->
@@ -22,7 +22,7 @@
   <body>
     <header class="top">
       <div id="top-area">
-        <header class="top-area inbox">
+        <div class="top-area inbox">
           <div class="flex-bar">
             <div style="flex: 1; display: flex; justify-content: flex-start">
               <div class="box box1">Japanese Artist</div>
@@ -35,8 +35,7 @@
               <div class="box box3">Yayoi Kusama</div>
             </div>
           </div>
-        </header>
-      </div>
+        </div> </div>
       <!-- //////////////////////////////////////////////// -->
       <!-- 3. 작가배너영역 -->
       <div id="banner-area">
@@ -161,6 +160,70 @@
       <main id="maincontent" class="main-area inbox">
         <h2 class="temp-tit blind">메인영역</h2>
 
+        <!-- 모바일용 -->
+<ul class="mobile-main-list">
+        <li class="main-center">
+            <h1>草間彌生</h1>
+        </li>
+
+        <li class="contact">
+            <a href="sub1.html">
+                <img src="./images/메뉴박스1.png" alt="메뉴1" />
+                <hgroup class="main-info">
+                    <h3>Profile</h3>
+                    <h4>Read more</h4>
+                </hgroup>
+            </a>
+        </li>
+
+        <li class="contact">
+            <video
+                src="./images/video3.mp4"
+                id="myvid"
+                autoplay
+                muted
+                loop
+                playsinline
+            ></video>
+        </li>
+
+        <li class="contact">
+            <a href="sub2.html">
+                <img src="./images/메뉴박스3.png" alt="메뉴2" />
+                <hgroup class="main-info">
+                    <h3>Works</h3>
+                    <h4>Read more</h4>
+                </hgroup>
+            </a>
+        </li>
+
+        <li class="img-box">
+            <img src="./images/메인이미지4.png" alt="중앙이미지2" />
+        </li>
+
+        <li class="contact">
+            <a href="sub3-1-1visitinfo.html">
+                <img src="./images/메뉴박스2.png" alt="메뉴3" />
+                <hgroup class="main-info">
+                    <h3>Museum</h3>
+                    <h4>Read more</h4>
+                </hgroup>
+            </a>
+        </li>
+
+        <li class="contact">
+            <video
+                src="./images/video1.mp4"
+                id="myvid"
+                autoplay
+                muted
+                loop
+                playsinline
+            ></video>
+        </li>
+</ul>
+
+<!-- DT용 -->
         <!-- 왼쪽 줄 -->
         <article id="col1">
           <div class="main-box">
@@ -315,7 +378,8 @@
           </div>
           <!-- <img src="./images/bg_co.png" alt="하단" class="bg" /> -->
         </div>
-      </div> </div>
+      </div> 
+    </div>
     </div>
     <!-- 6. 하단영역 -->
     <div id="bottom-area">

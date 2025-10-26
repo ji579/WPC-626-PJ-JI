@@ -10,8 +10,6 @@ window.addEventListener("DOMContentLoaded", () => {
     "『 Pound of Repose 』","『 I pray for love every day  』"
   ];
 
-// document.querySelector('.ab2').onclick = ()=>{};
-
   // 페이지 초기값
 let currentPage = 1;
 
@@ -68,9 +66,6 @@ function goToPage(page) {
 
   // dot 상태 업데이트
   updateDots(currentPage);
-
-  // 모달/스크롤 초기화 등 추가 작업 필요하면 여기서 호출 가능
-  // e.g. reset scroll: const modalTit = mWindow.querySelector('.modal-tit'); if(modalTit) modalTit.scrollTop = 0;
 }
 
 // 왼쪽/오른쪽 버튼 이벤트 바인딩
@@ -85,7 +80,6 @@ if (rightBtn) {
   });  
   
 }
-
 // dots 클릭 바인딩 (delegation 또는 개별 바인딩)
 function bindDotClicks() {
   // 이벤트 위임: dotsContainer에 클릭달기
