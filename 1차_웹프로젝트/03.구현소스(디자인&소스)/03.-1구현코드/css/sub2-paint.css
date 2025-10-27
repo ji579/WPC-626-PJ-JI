@@ -190,7 +190,7 @@ body * {
   margin: 0 19px;
 }
 
-.active,
+.dot.active,
 .dot:hover {
   background-color: #666666;
 }
