@@ -351,3 +351,289 @@ body.page-row .line1 a[href="sub3-2-1exh.html"] {
   color: #c52531;
   font-weight: bold;
 }
+      /* 4. 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      /* ⭐️ .modal-content 수정: 화면 중앙에 완전히 고정 */
+      .modal-content {
+        background-color: white;
+        position: fixed; /* 👈 위치 고정 */
+
+        /* 중앙 정렬 추가 */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 👈 정확한 중앙 정렬 */
+
+        /* 기존 스타일 유지 */
+        max-width: 1114px;
+        width: 90%; /* max-width와 함께 반응형을 위해 추가 */
+        height: 950px;
+           /* height: 70%; */
+        border: #000000 solid 1px;
+
+         /* animation: slideIn 0.3s ease;*/
+        /* overflow-y: auto; */ /* 👈 모달 내부에서만 스크롤되도록 허용 */
+        text-align: center;
+        overflow: hidden;
+        overscroll-behavior: auto;
+      }
+
+      .modal-box {
+       
+        margin: 0 auto;
+        justify-items: center;
+        line-height: 1.8;
+        background: white;
+      }
+
+      .modal-box > div {
+            width: 100%;
+        height: 100%;
+        justify-items: anchor-center;
+        overflow: auto;
+      }
+
+      /* ... (나머지 CSS는 그대로 유지) ... */
+
+      .titbox {
+            width: 750px;
+        padding: 30px 0 20px 0;
+      }
+      .title {
+        font-size: 1.8rem;
+        width: 750px;
+        /* height: 33px; */
+        align-content: center;
+        border-left: #000000 solid 1px;
+        text-align: left;
+      }
+      .title > strong {
+        margin-left: 25px;
+      display: block;
+      }
+
+      section.modal-img > img {
+        aspect-ratio: 884 / 1012;
+        width: 750px;
+      }
+      section.modal-img {
+        width: 750px;
+        text-align: right;
+        padding-bottom: 40px;
+      }
+
+      .modal-img > p {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      .close {
+      position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+   right: 25px;
+    top: 0;
+    z-index: 3;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .box {
+        position: absolute;
+    width: 750px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+        margin-bottom: 35px;
+        
+      }
+      .box1 {
+        border-left: #000000 solid 1px;
+
+      }
+      .box1 > p {
+        margin-left: 25px;
+        word-break: break-all;
+        text-align: justify;
+        font-size: 1.8rem;
+      }
+
+      .set-it5 {
+        width: 100%;
+        /* text-align: right; */
+        /* padding-bottom: 60px; */
+      }
+    
+     .box2 {
+    padding-top: 50px;
+    /* padding-bottom: 30px; */
+    margin-bottom: 30px;
+    width: 750px;
+    text-align: right;
+      }
+      .box3{
+               position: absolute;
+   
+    left: 50%;
+    top: 45%;
+    translate: -50% -50%;
+      }
+      .imgbx1 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx2 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx1 > img {
+            width: 50%;
+        /* height: 510px; */
+      }
+      .imgbx2 > img {
+        /* height: 280px; */
+            width: 50%;
+      }
+      .imgbx3 > img {
+            width: 50%;
+        /* height: 450px; */
+      }
+      .box2 > p {
+        margin-bottom: 35px;
+        font-size: 1.4rem;
+      }
+      .sectionbx {
+        display: flex;
+        position: relative;
+        /* margin-bottom: 15px; */
+      }
+      .section_title {
+       position: absolute;
+    left: -100px;
+    /* translate: -90%; */
+    width: 90px;
+    /* margin-right: 10px; */
+    /* padding-top: 14px; */
+    font-size: 1.6rem;
+    text-align: right;
+      }
+      .section_content {
+        width: 750px;
+        text-align: left;
+        border-left: #000000 solid 1px;
+      }
+
+      .section_content > p {
+        margin-left: 25px;
+      }
+      span {
+        font-size: 1.4rem;
+        color: #b3b3b5;
+      }
+
+      .section_content > span {
+        margin-left: 25px;
+      }
+
+      /* ⭐️ topBtn 위치 조정: 모달 콘텐츠를 기준으로 상대 위치 지정 */
+
+      .ubtn {
+    margin: 38px 0;
+    z-index: 99;
+    position: absolute;
+    cursor: pointer;
+   left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+      }
+
+      /* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+      .image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+      }
+
+      /* 4. 호버 이미지 숨기기 (기본 상태) */
+      .hover-arrow {
+        opacity: 0; /* 평소에는 투명하게 숨김 */
+      }
+
+      /* 5. 호버 시 이미지 전환 */
+      .image-wrapper:hover .default-arrow {
+        opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+      }
+
+      .image-wrapper:hover .hover-arrow {
+        opacity: 1; /* 호버 이미지를 보이게 함 */
+      }
+
+      .set-it1 {
+        opacity: 1; /* 초기값은 보이게 설정 */
+        transition: 1.2s ease-in-out;
+      }
+
+      .set-it2.on {
+       /* transform: translateY(10%);  */
+       /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
+        opacity: 1;
+      }
+
+      .set-it2 {
+        opacity: 0;
+        /* transform: translateY(6%); */
+         /* 👈 초기 위치 설정 */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it3.on {
+        /* transform: translateY(6%); */
+        opacity: 1;
+      }
+
+      .set-it3 {
+        opacity: 0;
+        /* transform: translateY(15%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it4.on {
+        /* transform: translateY(0%); */
+        opacity: 1;
+      }
+
+      .set-it4 {
+        opacity: 0;
+        /* transform: translateY(0%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it5.on {
+        /* transform: translateY(15%); */
+        opacity: 1;
+      }
+
+      .set-it5 {
+        opacity: 0;
+        transform: translateY(0%);
+        transition: 1.2s ease-in-out;
+      }
