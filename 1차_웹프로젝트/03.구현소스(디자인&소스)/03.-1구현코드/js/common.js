@@ -43,19 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     const EXCLUDE_TEXT = "草間彌生"; 
-
     // 1. 현재 페이지의 URL 정보 가져오기
     let currentPath = window.location.pathname.split('/').pop();
     const currentHash = window.location.hash;
-
-    // 루트 경로 (파일명이 없는 경우) 처리: 'index.html'로 통일
-    // if (currentPath === '' || currentPath === 'index.html') {
-    //     currentPath = 'index.html';
-    // }
-
     // 2. 모든 활성화 대상 요소를 찾습니다.
     const navLinks = document.querySelectorAll('.line1 a, .spart-menu a, .line2 label, .change a'); 
-
     // **********************************************
     // ⭐️ 메뉴 그룹 경로 정의 ⭐️
     const WORKS_PAGES = ['sub2.html', 'sub2-1.html'];
@@ -73,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
         'sub3-2-2-2exh.html'
     ];
     // **********************************************
-
     navLinks.forEach(item => {
         let linkHref = null;
         let linkPath = null;
@@ -99,13 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             return; // 그 외의 태그는 무시
         }
-
         // 2. 초기화 (혹시 모를 경우를 대비)
         targetElement.classList.remove('active');
         if (item.closest('li')) {
-            item.closest('li').classList.remove('on');
-        }
-        
+            item.closest('li').classList.remove('on'); }
         if (!linkHref) return;
         
         // ----------------------------------------------------

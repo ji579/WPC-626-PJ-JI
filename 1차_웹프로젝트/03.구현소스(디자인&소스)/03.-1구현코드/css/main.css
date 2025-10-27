@@ -104,7 +104,7 @@ h2 {
 
 }
 .banner-area {
-  height: 780px;
+  height: 100vh;
   text-align: center;
 }
 
@@ -113,31 +113,7 @@ h2 {
 .banner-area .inbox {
   position: sticky;
 }
-.bg {
-  /* aspect-ratio: 1295 /548; */
-  position: absolute;
-  top: 65px;
-  left: 50%;
-  width: 1295px;
-  height: auto;
-  translate: -50% 0;
-}
-.yayoi {
-  position: absolute;
-  top: 10vh;
-  width: 210px;
-  left: 50%;
-  translate: -50% 0;
-  z-index: 1;
-}
-.scroll-inbox {
-  position: absolute;
-  top: 85%;
-  left: 50%;
-  translate: -50% 0;
-  text-align: center;
-  z-index: 1;
-}
+
 /* //////////////////////////////////////////////// */
 /* 4. 메인영역  */
 .main-area {
@@ -150,7 +126,31 @@ h2 {
   flex-direction: row;
   background-color: #fff;
 }
-
+.bg {
+    /* aspect-ratio: 1295 / 548; */
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    width: 1295px;
+    height: 752px;
+    translate: -50% 0;
+}
+.yayoi {
+    position: absolute;
+    top: 14%;
+    width: 259px;
+    left: 50%;
+    translate: -50% 0;
+    z-index: 1;
+}
+.scroll-inbox {
+    position: absolute;
+    top: 81%;
+    left: 50%;
+    translate: -50% 0;
+    text-align: center;
+    z-index: 1;
+}
 #spart-menu {
   /* 스티키 포지션 - 상단스크롤 걸림! */
   /* display: none; */

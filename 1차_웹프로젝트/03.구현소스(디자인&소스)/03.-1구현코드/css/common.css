@@ -24,7 +24,9 @@ CDN(Content Delivery Network)은
     /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
     font-style: normal;
 }
-
+body * {
+  outline: none !important;
+}
 h1, h2{
   font-family: 'MyCustomFont', sans-serif;
 }
