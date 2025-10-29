@@ -295,11 +295,11 @@ main.end:after {
   height: 2vw;
   opacity: 0;
 }
-.ubtn {
+.ubbtn {
   margin: 38px 0;
   text-align: center;
 }
-section#upBtn {
+section#uppBtn {
     margin: 0 auto;
     width: 38px;}
 .image-wrapper {

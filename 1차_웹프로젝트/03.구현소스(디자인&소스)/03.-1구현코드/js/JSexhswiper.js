@@ -552,6 +552,9 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
 
     document.body.classList.remove("modal-open");
+    document.body.style.overflow = "";
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
     currentBoxIndex = 0;
 
@@ -587,6 +590,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       modal.style.display = "none";
       modal.style.opacity = 1;
-    }, 100);
+    // ✅ 모달 닫을 때처럼 스크롤 가능하게 복원
+    document.body.classList.remove("modal-open");
+    document.body.style.overflow = "";
+  }, 100);
   })();
 }); /////////// DOMContentLoaded ////////////

@@ -70,12 +70,14 @@ function goToPage(page) {
 
 // 왼쪽/오른쪽 버튼 이벤트 바인딩
 if (leftBtn) {
-  leftBtn.addEventListener('click', () => {
+  leftBtn.addEventListener('click', (e) => {
+   e.preventDefault();
     if (currentPage > 1) goToPage(currentPage - 1);
   });
 }
 if (rightBtn) {
-  rightBtn.addEventListener('click', () => {
+  rightBtn.addEventListener('click', (e) => {
+   e.preventDefault();
     if (currentPage < totalPages) goToPage(currentPage + 1);
   });  
   
