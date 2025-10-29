@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* 공통모듈 CSS - common.css */
+
+/* 웹폰트 CDN으로 불러오기
+CDN(Content Delivery Network)은 
+어떤 웹파일을 네트워크로 불러오는 것임! */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* 웹폰트 적용 코드 */
+/*   font-family: "Bagel Fat One", system-ui;
+ font-family: "Diphylleia", serif;
+  font-family: "Gowun Batang", serif; */
+@font-face {
+    /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
+    font-family: 'MyCustomFont';
+
+    /* 폰트 파일의 경로와 형식 지정 */
+    src: url('../fonts/HCRBatang.ttf') format('truetype');
+
+    /* (선택 사항) 폰트의 굵기 지정 */
+    font-weight: normal;
+
+    /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
+    font-style: normal;
+}
+
+
+h1, h2{
+  font-family: 'MyCustomFont', sans-serif;
+}
+
+/* 공통셋팅 */
+html{
+    /* 부드러운 스크롤 셋팅 */
+    scroll-behavior: smooth;  
+
+    /* 전체 글자크기 */
+    font-size: 10px;
+    /* rem단위 계산편의를 위함 */
+}
+
+/* 전체 글씨체 적용하기 */
+body {
+  /* 웹폰트체를 전체에 적용함! */
+  font-family: "Instrument Sans", sans-serif;
+     font-size: 10px;
+}
+

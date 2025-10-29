@@ -1,0 +1,129 @@
+/* 외부 CSS 불러오기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+/* 12그리드 CSS */
+@import url(./grid_12_flex.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 상단영역 */
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 190px;
+  background: #006633;
+  transition: translate 0.3s ease; /* 부드럽게 숨김 효과 */
+  border-bottom: 2px solid #000000;
+}
+/* 스크롤시 상단 높이값 줄이기*/
+.top.scrolled {
+  height: 84px;
+  border-bottom: 0px;
+}
+
+.inbox {
+  width: 100%;
+  padding: 0 calc(100% / 12) 0;
+}
+
+.toppad {
+  width: 100%;
+  height: 84px;
+  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.topleft {
+  width: 50%;
+  flex-wrap: wrap;
+}
+.topright {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 10px;
+}
+a {
+  font-size: 1.9rem;
+  color: #f0ae1f;
+}
+
+/* 상단로고 */
+.main-logo {
+  position: fixed;
+  top: 54px;
+  left: 50%;
+  translate: -50% 0;
+  transition: height 0.3s ease;
+  /*margin-top: 18px;*/
+}
+.top.scrolled .main-logo {
+  top: 18px;
+}
+.main-logo img {
+  height: 115px;
+}
+
+.top.scrolled .site-header-logo img {
+  height: 50px;
+  transition: 0.3s ease;
+}
+/* 메인영역 */
+
+/* 2-1배너영역 */
+section.banner-part {
+  width: inherit;
+  padding-top: 190px;
+}
+.banner-box {
+  background-size: cover;
+}
+.banner-explain {
+  width: 1000px;
+  height: 20vh;
+  /* padding: 20px 0; */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  word-break: break-all;
+  place-content: center;
+  justify-self: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.banner-explain > h3 {
+  font-size: 2rem;
+}
+.strong {
+  font-size: 2.2rem;
+}
+.banner-explain > h4 {
+  font-size: 1.6rem;
+}
+
+/* 2-2 메뉴 영역 */
+.menu-box{
+    display: flex;
+}
