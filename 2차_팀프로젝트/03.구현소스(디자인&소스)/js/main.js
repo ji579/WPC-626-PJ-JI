@@ -1,29 +1,35 @@
- window.addEventListener("load", () => {
-            // 변경대상: 상단영역 .top
-            const header = document.querySelector(".top");
+window.addEventListener("load", () => {
+  const header = document.querySelector(".top");
+  const menuPart = document.querySelector(".menu-part");
 
-            // 이전 스크롤 위치값 저장변수
-            let prevScroll = 0;
+  const headerHeight = header.offsetHeight; // ✅ 헤더 높이 구하기
+  const menuTop = menuPart.offsetTop - headerHeight; // ✅ 헤더 높이만큼 보정
 
-            // 스크롤 이벤트 설정하기
-            window.addEventListener('scroll', () => {
-                // 스크롤 위치값 구하기
-                let curScroll = window.scrollY;
+  let prevScroll = 0;
+  let locked = false;
 
-                // (1) 아랫방향: 이전 스크롤위치값 < 현재 스크롤위치값
-                if(prevScroll < curScroll && curScroll > 50) {
-                    console.log('스크롤 내려간다~~!');
-                    // 스크롤 내려가면 헤더 높이 줄이고 로고 작게
-                    header.classList.add('scrolled');
-                } 
-                // (2) 윗방향: 이전 스크롤위치값 > 현재 스크롤위치값
-                else if(prevScroll > curScroll && curScroll < 50) {
-                    console.log('스크롤 올라간다~~!');
-                    // 스크롤 올라가면 헤더 원래대로
-                    header.classList.remove('scrolled');
-                }
+  window.addEventListener("scroll", () => {
+    let curScroll = window.scrollY;
 
-                // 중요!!! 마지막에 이전스크롤위치를 저장!
-                prevScroll = curScroll;
-            });
-        });
+    // ✅ menu-part “시작점”에서 잠깐 걸리게
+    if (!locked && curScroll >= menuTop && curScroll <= menuTop + 10) {
+      locked = true;
+      // 화면을 menu-part의 시작 부분에 정확히 고정
+      window.scrollTo({ top: menuTop, behavior: "smooth" });
+
+      // 잠깐(0.8초) 뒤 스크롤 다시 허용
+      setTimeout(() => {
+        locked = false;
+      }, 5000);
+    }
+
+    // ✅ 기존 헤더 스크롤 반응 유지
+    if (prevScroll < curScroll && curScroll > 50) {
+      header.classList.add("scrolled");
+    } else if (prevScroll > curScroll && curScroll < 50) {
+      header.classList.remove("scrolled");
+    }
+
+    prevScroll = curScroll;
+  });
+});

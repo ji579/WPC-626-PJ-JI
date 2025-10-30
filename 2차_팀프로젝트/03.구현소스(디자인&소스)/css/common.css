@@ -38,6 +38,8 @@ html{
     /* 전체 글자크기 */
     font-size: 10px;
     /* rem단위 계산편의를 위함 */
+    width: 100%;
+    height: 100%;
 }
 
 /* 전체 글씨체 적용하기 */
@@ -47,3 +49,8 @@ body {
      font-size: 10px;
 }
 
+.inbox{
+  width: 100%;
+    box-sizing: border-box;
+    padding: 0 calc(100% / 12) 0;
+}

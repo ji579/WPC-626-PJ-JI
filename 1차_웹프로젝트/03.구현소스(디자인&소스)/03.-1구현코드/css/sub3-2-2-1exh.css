@@ -780,7 +780,7 @@ content: '';
       }
 
       .set-it5 {
-        opacity: 0;
+        /* opacity: 0; */
         transform: translateY(0%);
         transition: 1.2s ease-in-out;
       }

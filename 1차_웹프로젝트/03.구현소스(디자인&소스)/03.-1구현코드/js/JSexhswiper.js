@@ -120,6 +120,9 @@ function loadExhibitionData(exhibitIndex = 0) {
     document.querySelector(".sa4 .imgbx3 img"), // i=5 (exbX-5.jpg)
   ];
 
+  // 이미지가 없을경우 숨길박스
+  const hiddenBox = document.querySelector(".hidden-box");
+
   // .imgbx2 컨테이너를 미리 찾습니다. (i=3, i=4의 부모 컨테이너)
 
   const imgbx2Container = document.querySelector(".sa4 .imgbx2");
@@ -161,6 +164,7 @@ function loadExhibitionData(exhibitIndex = 0) {
 
         if ((i === 3 || i === 4) && imgbx2Container) {
           imgbx2Container.style.display = "none";
+          hiddenBox.parentElement.style.display = "none";
         }
       }
 
@@ -433,7 +437,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const modalBoxDiv = document.querySelectorAll(".modal-box > .swiper-slide");
 
-  const boxes = document.querySelectorAll(".modal-box .scroll-act");
+  let boxes = document.querySelectorAll(".modal-box .scroll-act");
 
   const upButton = document.getElementById("upBtn");
 
@@ -458,7 +462,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
         boxes[this.realIndex].classList.add("on");
 
-        const lastIndex = this.slides.length - 1;
+        let lastIndex = this.slides.length - 1;
+        if (document.querySelector(".sa4 .imgbx2").style.display == "none")
+          lastIndex--;
+        console.log(
+          "개수:",
+          lastIndex,
+          document.querySelector(".sa4 .imgbx2").style.display
+        );
 
         if (this.realIndex === lastIndex) {
           upButton.style.display = "block";
@@ -534,6 +545,17 @@ window.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "block";
     document.body.classList.add("modal-open");
 
+    // 보이는 박스만 다시 수집하기
+    // display:none 아닌 요소만 필터링
+    let visibleBoxes = Array.from(boxes).filter((el) => {
+      console.log(window.getComputedStyle(el).display==="none");
+      return window.getComputedStyle(el).display !== "none";
+    });
+
+    // 기존 변수에 재할당
+    boxes = visibleBoxes;
+    console.log("필터결과1:", boxes);
+
     boxes.forEach((box) => {
       box.scrollTop = 0;
       box.classList.remove("on");
@@ -554,9 +576,9 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("modal-open");
     document.body.style.overflow = "";
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-    currentBoxIndex = 0;
+    // currentBoxIndex = 0;
 
     upButton.style.display = "none";
 
@@ -573,6 +595,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     modal.style.display = "block";
     modal.style.opacity = 0;
+    // 보이는 박스만 다시 수집하기
+    // display:none 아닌 요소만 필터링
+    let visibleBoxes = Array.from(boxes).filter((el) => {
+      return window.getComputedStyle(el).display !== "none";
+    });
+
+    // 기존 변수에 재할당
+    boxes = visibleBoxes;
+    console.log("필터결과2:", boxes);
 
     boxes.forEach((box) => {
       box.scrollTop = 0;
@@ -590,9 +621,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       modal.style.display = "none";
       modal.style.opacity = 1;
-    // ✅ 모달 닫을 때처럼 스크롤 가능하게 복원
-    document.body.classList.remove("modal-open");
-    document.body.style.overflow = "";
-  }, 100);
+      // ✅ 모달 닫을 때처럼 스크롤 가능하게 복원
+      document.body.classList.remove("modal-open");
+      document.body.style.overflow = "";
+    }, 100);
   })();
 }); /////////// DOMContentLoaded ////////////
