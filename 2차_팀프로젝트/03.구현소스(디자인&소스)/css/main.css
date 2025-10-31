@@ -68,13 +68,42 @@ li {
   margin: 0 10px;
 }
 a {
+    position: relative;
   font-size: 1.9rem;
   color: #f0ae1f;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.en {
- border: #f0ae1f solid 1px;
-    border-radius: 12px;
+.kr,.en{
+  margin-left: 5px;
 }
+
+.topleft a:hover,
+.topright a:hover{
+color: #b67c0b;
+}
+.topleft a:after,
+.topright a:after {content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* 텍스트 바로 아래 */
+  width: 0;
+  height: 2px;
+  background-color: #b67c0b;
+  transition: width 0.3s ease;
+}
+
+.topleft a:hover::after,
+.topright a:hover::after { width: 100%; /* 선이 왼쪽→오른쪽으로 그려짐 */
+}
+
+
+
+
+
+
+
+
 /* 상단로고 */
 .main-logo {
   position: fixed;

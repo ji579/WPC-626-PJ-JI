@@ -50,7 +50,7 @@ if (snapCount > 10) {
   clearInterval(snapInterval);
   isSnapping = false;
         }
-      }, 15);
+      }, 10);
     }
 
     // 위로 스크롤하면 즉시 해제
