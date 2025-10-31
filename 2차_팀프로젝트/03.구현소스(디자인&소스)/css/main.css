@@ -65,13 +65,16 @@ body * {
   padding: 0;
 }
 li {
-  margin: 10px;
+  margin: 0 10px;
 }
 a {
   font-size: 1.9rem;
   color: #f0ae1f;
 }
-
+.en {
+ border: #f0ae1f solid 1px;
+    border-radius: 12px;
+}
 /* 상단로고 */
 .main-logo {
   position: fixed;
