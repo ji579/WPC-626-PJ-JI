@@ -13,70 +13,24 @@
     />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/main.css" />
+   <!-- 제이쿼리 라이브러리 불러오기 
+     제이쿼리를 사용하는 JS파일 위에 불러와야한다! -->
+    <script src="./js/jquery-3.6.3.min.js"></script>
+
+    <!-- 외부JS 제이쿼리버전 - defer필수! -->
+    <script src="./js/main1_jquery.js" defer></script>
 
     <!-- <script type="module" src="./js/common.js"></script> -->
+       <!-- 공통 JS :import 문법을 사용하려면
+     반드시 type="module"로 써야한다.-->
+    <script type="module" src="./js/common.js"></script>
     <!-- 메인 JS -->
     <script src="./js/main.js" defer></script>
   </head>
   <body>
     <header class="top">
       <div id="top-area">
-        <div class="top-area inbox">
-          <h2 class="temp-tit blind">상단영역</h2>
-          <div class="toppad">
-            <!-- 왼쪽 상단 -->
-            <div class="topleft">
-              <nav>
-                <ul class="menu">
-                  <li>
-                    <a href="#">ARCHIVE</a>
-                  </li>
-                  <li>
-                    <a href="#">SHOP</a>
-                  </li>
-                  <li>
-                    <a href="#">STORE</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!-- 왼쪽 상단 끝-->
-
-            <!-- 오른쪽 상단 -->
-            <div class="topright">
-              <nav>
-                <ul class="menu lang">
-                  <li class="kr"><a href="#">KR</a></li>
-                  <li class="en"><a href="#">EN</a></li>
-                </ul>
-              </nav>
-              <nav>
-                <ul class="menu">
-                  <li>
-                    <a href="#">CONTACT</a>
-                  </li>
-                  <li>
-                    <a href="#">CART</a>
-                  </li>
-                  <li>
-                    <a href="#">LOGIN</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!-- 오른쪽상단 끝 -->
-            <div class="main-logo">
-              <div class="site-header-container-inner">
-                <a href="" class="site-header-logo">
-                  <img src="./images/logo.png" alt="" />
-                </a>
-              </div>
-            </div>
-            <!-- 메인로고 끝 -->
-          </div>
-          <!-- toppad끝 -->
-        </div>
-        <!-- topinbox 끝 -->
+     
       </div>
     </header>
     <!-- //////////////////////////////////////////////// -->
@@ -177,59 +131,6 @@
     </main>
     <!-- //////////////////////////////////////////////// -->
     <!-- 6. 하단영역 -->
-    <footer id="bottom-area">
-      <div class="bottom-area inbox">
-        <h2 class="temp-tit blind">하단영역</h2>
-        <!-- 하단 내용박스 -->
-        <div class="bottom-info">
-          <!-- 1번째 줄 -->
-          <ul class="bottom-info-first">
-            <li class="bottomlogo"><img src="./images/logo.png" alt="" /></li>
-            <li>AGREEMENT</li>
-            <li class="before">PRIVACY POLICY</li>
-          </ul>
-
-          <!-- 2번째 줄 -->
-          <div class="bottom-info-second">
-            <ul class="customer">
-              <li class="bottomtit">Customer Center.</li>
-              <li class="txt">
-                유선문의 070-4445-0707<br />
-                월-금 11:00-17:00 (BREAK TIME 12:00-14:00)<br />
-                브랜드 문의 mail@saytouche.kr<br />
-                CS 문의 cs@saytouche.kr
-              </li>
-
-              <li><button>실시간 상담하기</button></li>
-            </ul>
-            <ul class="store">
-              <li class="bottomtit">Store.</li>
-              <li class="txt">
-                서울 용산구 녹사평대로 32길 53<br />
-                53, NOKSAPYEONG-DAERO 32-GIL, YONGSAN-GU, SEOUL
-              </li>
-
-              <li><button>스토어방문하기</button></li>
-            </ul>
-          </div>
-          <!--2번째줄 끝 -->
-
-          <!-- 3번째 줄 -->
-          <div class="bottom-info-third">
-            <div class="sns">
-              <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-youtube"></i></div>
-            <div>
-              (주)투셰 <br />
-              서울 용산구 이태원동 회나무로 68 3층 <br />
-              대표이사: 임재린<br />
-              사업자 등록번호: 304-87-02196 <br />
-              통신판매업신고: 2022-서울용산-0178. 070-4445-0707
-            </div>
-          </div>
-          <!-- 3번째 줄 끝-->
-        </div>
-      </div>
-    </footer>
+     <div id="bottom-area"></div>
   </body>
 </html>

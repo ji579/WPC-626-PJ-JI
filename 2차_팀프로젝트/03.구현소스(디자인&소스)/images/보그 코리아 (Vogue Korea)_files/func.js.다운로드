@@ -1,0 +1,474 @@
+jQuery(document).ready(function(){
+	
+	// PPL 랜덤 노출
+	rand_cnt = rand(0, ($(".section_spot").length - 1));
+	$("#section_spot_"+rand_cnt).css("visibility", "visible");
+	for(i=0; i<$(".section_spot").length; i++) {
+		if(rand_cnt != i) {
+			$("#section_spot_"+i).css("display", "none");
+		}
+	}
+
+	// Adver 랜덤 노출
+	rand_cnt = rand(0, ($(".today_slot_1").length) - 1);
+	$("#today_slot_1_"+rand_cnt).css("visibility", "visible");
+	for(i=0; i<$(".today_slot_1").length; i++) {
+		if(rand_cnt != i) {
+			$("#today_slot_1_"+i).css("display", "none");
+		}
+	}
+
+	rand_cnt = rand(0, ($(".today_slot_2").length) - 1);
+	$("#today_slot_2_"+rand_cnt).css("visibility", "visible");
+	for(i=0; i<$(".today_slot_2").length; i++) {
+		if(rand_cnt != i) {
+			$("#today_slot_2_"+i).css("display", "none");
+		}
+	}
+
+	// 태그 리스트 랜덤 노출
+	rand_cnt = rand(0, ($(".section_hot").length) - 1);
+	$("#section_hot_"+rand_cnt).css("display", "block");
+
+	rand_cnt = rand(1, ($(".hk_list").length));
+	$("#hk_list_"+rand_cnt).css("display", "block");
+	$("#hk_list_"+rand_cnt).addClass("hk_list_view");
+
+
+	// info_area display none 처리
+	if( jQuery(".info_area").children().length < 1 ) {
+		jQuery(".info_area").css("display","none");
+	}
+
+	//글쓴이 값 없을 경우 영역 display:none 처리
+	if( jQuery(".post_info .author").children().length < 1 ) {
+//		jQuery(".post_info .author").css("display","none");
+	}
+
+	// 24.05.27 추천영역 레이아웃 A/B 테스트
+	/*
+	rCnt = dsm_getCookie( 'dsmgn_rType2' );
+	if(rCnt == null) {
+		rCnt = rand(0, 1);
+		dsm_setCookie( 'dsmgn_rType2', 14, rCnt );
+	}
+	if(rCnt == 0) {
+		document.querySelector(".recommand_list").classList.add("list_v2");
+	}
+	*/
+
+	// Youtube, Vimeo DIV로 감싸기
+	var ifr = $(".post_content iframe");
+	for(var i=0; i<ifr.length; i++) {
+		var ifr_src = $(ifr[i]).attr("src");
+		if( typeof ifr_src !== 'undefined') {
+			var serachString = "youtube";
+			var result = ifr_src.indexOf(serachString) !== -1;
+			if(result) {
+				$(ifr[i]).wrap("<div class='ifr_youtube'></div>");
+				continue;
+			}
+
+			serachString = "vimeo";
+			result = ifr_src.indexOf(serachString) !== -1;
+			if(result) {
+				$(ifr[i]).wrap("<div class='ifr_vimeo'></div>");
+				continue;
+			}
+		} // end IF
+
+		var ifr_src = $(ifr[i]).attr("data-src");
+		if( typeof ifr_src !== 'undefined') {
+			var serachString = "youtube";
+			var result = ifr_src.indexOf(serachString) !== -1;
+			if(result) {
+				//console.log(ifr_src);
+				//$(ifr[i]).attr("src",ifr_src);
+				$(ifr[i]).wrap("<div class='ifr_youtube'></div>");
+				continue;
+			}
+		}
+
+	} // end For
+
+	// Cache 에서 
+	if($(".info_area").children().length == 1) {
+		if($(".info_area").children("dl").length == 0) {
+			if($(".tag_list").children().length == 0) {
+				$(".info_area").css("display","none");
+			}
+		}
+	}
+
+
+	// SNS공유
+	jQuery(document).on('click', '.share_list_pc>li>a, .pop_content li a', function(event){
+		event.preventDefault();
+		//url = window.document.location.href;
+		if(typeof postID !== null && postID != "") {
+			url = window.location.origin + "/?p=" + postID;
+		} else {
+			url = document.querySelector("meta[property='og:url']").getAttribute("content");
+		}
+
+		switch($(this).attr('href')) {
+
+			case 'twitter':
+			var sendText = document.querySelector('meta[property="og:title"]').content;
+			window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + url);
+			break;
+
+			case 'facebook':
+			window.open("http://www.facebook.com/sharer/sharer.php?u=" + url);
+			break;
+
+			case 'url':
+			var textarea = document.createElement("textarea");
+			document.body.appendChild(textarea);
+			textarea.value = url;
+			textarea.select();
+			document.execCommand("copy");
+			document.body.removeChild(textarea);
+			alert('복사되었습니다.');
+			break;
+
+		}
+	});
+
+
+	share_url = '';
+	share_title = '';
+	if(document.querySelector("meta[property='og:url']") !== null) {
+		utm_source_str = "utm_source=share&utm_medium=recommend";
+		utm_source_str = "";
+		if(typeof postID !== null && postID != "") {
+			share_url = window.location.origin + "/?p=" + postID;
+		} else {
+			share_url = document.querySelector("meta[property='og:url']").getAttribute("content");
+			share_url = share_url;
+		}
+	}
+
+	if(document.querySelector("meta[property='og:title']") !== null) {	
+		//p_title = document.querySelector("meta[property='og:title']").getAttribute("content");	
+		share_title = document.title;
+	}
+
+	// URL Copy
+	if(document.querySelector('#share-copy-btn') !== null) {
+		var share_copy_btn = document.querySelectorAll('#share-copy-btn');
+		[].forEach.call(share_copy_btn,function(col){ 
+			col.addEventListener("click",clickCopyBtn,false); 
+		}); 
+	}
+
+	// Share API
+	if(document.querySelector('#share-api-btn') !== null) {
+		var share_btn = document.querySelectorAll('#share-api-btn');
+		[].forEach.call(share_btn,function(col){ 
+			col.addEventListener("click",clickShareBtn,false); 
+		}); 
+	}
+	
+	// insta 에서 퍼가기로 퍼왔을 경우에만 script 로딩
+	if (jQuery('.contt').length > 0 && jQuery('.contt').html().indexOf('<blockquote class="instagram-media"'))
+	{
+		jQuery.getScript('//www.instagram.com/embed.js');
+	}
+
+
+
+
+	/*기사 빠르게 보기 챕터 q-sticky*/
+	if( (document.querySelector(".quick-wrap") != null) && fn_is_mobile() =="mobile" ) {
+		// 랜덤으로 보이기
+		
+		let view_f = rand(0, 1);
+		//console.log(view_f);
+		//view_f = 0; // 테스트용 
+		if(view_f == 0) {
+			gTag_event_send("view", "contt_quick", "contt_quick", "");
+			document.querySelector(".quick-wrap").style.display = "block";
+
+			var h2_group = document.querySelectorAll(".contt > h2");
+			for (var h2_idx = 0; h2_idx < h2_group.length; h2_idx++) {
+				h2_group[h2_idx].setAttribute('id', 'h2-'+(h2_idx+1));
+			}
+
+			// 빠르게 보기 메뉴 상단 고정
+			var quick_action_f = true;
+			window.addEventListener('scroll', function(){
+				var scrollTopP = window.pageYOffset;
+				var el_pos_top = document.querySelector(".quick-wrap-start").offsetTop;
+				var news_group_pos_top = document.querySelector(".contt").offsetTop + document.querySelector(".contt").offsetHeight;
+			
+				if(scrollTopP > el_pos_top) {
+
+					if(scrollTopP > news_group_pos_top ) { //기사 내용 후
+						if(quick_action_f) {
+							gsap.to('.quick-wrap',{duration:0.3, y:-50, onComplete:function(){
+								quick_action_f = false;
+							}});
+						}
+					} else { //기사 내용 내부
+						if(!quick_action_f) {
+							gsap.to('.quick-wrap',{duration:0.3, y:0, onComplete:function(){
+								quick_action_f = true;
+							}});
+						}
+						document.querySelector(".quick-wrap-start").style.height = "30px";
+						document.querySelector(".quick-wrap").classList.add("q-sticky");
+					}
+
+				} else { //스티키 전
+					document.querySelector(".quick-wrap-start").style.height = "0px";
+					document.querySelector(".quick-wrap").classList.remove("q-sticky");
+				}
+			})
+		} else {
+			gTag_event_send("view", "contt_quick_disable", "contt_quick_disable", "");
+		}
+	} /*기사 빠르게 보기 챕터 q-sticky*/
+
+
+
+
+	// 화면에 들어 왔을때 GA 트리거 함수
+	obsList_object = {
+		'section_spot': 'imp_main_ppl',
+		'main_today_highlight': 'imp_main_today_highlight',
+		'main_today_list': 'imp_main_today',
+		'section_best': 'imp_main_best',
+		'section_must': 'imp_main_must',
+		'section_hot': 'imp_main_tag',
+		'section_origin_main': 'imp_main_PeopleNow',
+		'main_fashion_highlight': 'imp_main_fashion_highlight',
+		'main_fashion_list': 'imp_main_fashion_category',
+		'section_lifestyle': 'imp_main_lifestyle',
+		'main_beauty_highlight': 'imp_main_beauty_highlight',
+		'main_beauty_list': 'imp_main_beauty',
+		'section_culture': 'imp_main_culture',
+		'section_latest': 'imp_main_latest',
+		'list_v3': 'imp_view_recent', // 기사페이지, 최신기사
+		'relate_content': 'imp_view_relate_content',
+		'recommand_wrap': 'imp_view_recommend',
+		'popular_group': 'imp_view_best',
+		'hk_list_view': 'imp_view_tag',
+		'section_origin_view': 'imp_view_PeopleNow',
+		'beauty_group': 'imp_view_recent_beauty',
+		'shopping_item': 'imp_view_shopping_item',
+	};
+	obsList = Object.keys(obsList_object);
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				// 요소가 Viewport 안에 들어왔을 때 1번만 실행할 코드
+				const e_classList = Array.from(entry.target.classList);
+				const duplicates = obsList.filter((value) => e_classList.includes(value));
+				observer.unobserve(entry.target); // 옵저버 해제
+				//console.log("GA Send = " + obsList_object[duplicates[0]]);
+				gTag_event_send("impression_element", obsList_object[duplicates[0]], '', 0);
+			}
+		});
+	});
+	for(var ob_i = 0; ob_i<obsList.length; ob_i++) {
+		obsObjs = document.querySelectorAll('.'+obsList[ob_i]);
+		if(obsObjs.length > 0 ) {
+			obsObjs.forEach((obsObj) => {
+				observer.observe(obsObj);
+			});
+		}
+	}
+	// 화면에 들어 왔을때 GA 트리거 함수 _ End
+
+
+}); //document ready
+
+
+
+/*기사 빠르게 보기 SCRIPT */
+function toggleQuickTitle() {
+	var quickTitle = document.getElementById("quicktitle");
+	var quickList = document.getElementById("quickList");
+
+	// 클래스명 변경
+	if (quickTitle.classList.contains("off")) {
+		quickTitle.classList.remove("off");
+		quickTitle.classList.add("on");
+	} else {
+		quickTitle.classList.remove("on");
+		quickTitle.classList.add("off");
+	}
+
+	// quickList 영역 보이기/숨기기
+	quickList.style.display = (quickList.style.display === "block") ? "none" : "block";
+}
+
+/*기사 빠르게 보기 SCRIPT */
+function scrollToHeading(headingId) {
+	toggleQuickTitle();
+
+	var heading = document.getElementById(headingId);
+
+	document.querySelector("#act_header").classList.add("hold-move");
+
+	// 기존 스크롤 위치에서 h2 태그의 위치까지 이동하되, 상단에서 70px의 여백을 두도록 수정
+	var yOffset = -70; 
+	var y = heading.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+	window.scrollTo({top: y, behavior: 'auto'});
+
+	setTimeout(function(){
+		document.querySelector("#act_header").classList.remove("hold-move");
+	},500);
+
+
+	//document.querySelector("#"+headingId).scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
+	gTag_event_send("click", "contt_quick", "contt_quick_" + headingId, '');
+}
+
+
+function rand(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function fn_is_mobile(){
+	if(navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)){
+		return 'mobile';
+	}else{
+		return 'pc';
+	}
+}
+
+
+
+function clickCopyBtn(e) {
+	jQuery(e.currentTarget).children('span').text('복사됨');
+	jQuery(e.currentTarget).children('i').removeClass('ic_copy');
+	jQuery(e.currentTarget).children('i').addClass('ic_copied');
+
+	//jQuery(e.currentTarget).children('div').prepend('<span><img src="https://img.allurekorea.com/allure/img/share-copied.png" width="36" height="36" alt=""/></span>');
+	jQuery(e.currentTarget).addClass("active", {duration:1000});
+
+	/*
+	const t = document.createElement("textarea");
+	document.body.appendChild(t);
+	t.value = share_url;
+	t.select();
+	document.execCommand('copy');
+	document.body.removeChild(t);
+	*/
+
+	if(navigator.clipboard !== undefined) {
+		navigator.clipboard.writeText(share_url).then(() => {
+			//클립보드 성공시
+		}).catch(() => {});
+	} else {
+		//클립보드 실패시
+		const t = document.createElement("textarea");
+		document.body.appendChild(t);
+		t.value = share_url;
+		t.select();
+		document.execCommand('copy');
+		document.body.removeChild(t);
+	}
+
+
+
+	/*
+	tracking_str = 'click_copy';
+	gTag_event_send('share_click', tracking_str, share_title, 0);
+
+	tracking_str = 'click_copy';
+	if(jQuery(e.currentTarget).parent(".share-top").length > 0) {
+		tracking_str += '_up';
+	} else {
+		tracking_str += '_down';
+	}
+	gTag_event_send('share_click', tracking_str, share_title);
+	*/
+}
+
+
+function clickShareBtn(e) {
+
+/*
+	if(jQuery(e.currentTarget).parent(".share-top").length > 0) {
+		tracking_str += '_up';
+	} else {
+		tracking_str += '_down';
+	}
+*/
+
+	if (navigator.share) { 
+		navigator.share({
+			title: share_title,
+			url: share_url
+		}).then(() => {
+			//console.log('Thanks for sharing!');
+		})
+		.catch(console.error);
+	} else {
+		var div_int = 0;
+		/*
+		if(tracking_str == 'share_click_up') {
+			//jQuery(".post_footer_sns").eq(0).css({"display":"block", "padding-top":"20px"});
+			div_int = 0;
+		} else {
+			//jQuery(".post_footer_sns").eq(1).css("display","block");
+			div_int = 1;
+		}
+		*/
+
+		jQuery('.share-copy-btn').eq(div_int).children('div').text('COPIED');
+		jQuery('.share-copy-btn').eq(div_int).children('div').prepend('<span><img src="https://img.allurekorea.com/allure/img/share-copied.png" width="36" height="36" alt=""/></span>');
+		jQuery('.share-copy-btn').eq(div_int).addClass("active", {duration:500});
+
+		jQuery( '.single-post .share-alert' ).eq(div_int).fadeIn(300, function showNext() {
+			jQuery( this ).delay(2800).fadeOut( 500 );
+		});
+
+		//클립보드 실패시
+		const t = document.createElement("textarea");
+		document.body.appendChild(t);
+		t.value = share_url;
+		t.select();
+		document.execCommand('copy');
+		document.body.removeChild(t);
+	}
+	tracking_str = 'share_click';
+	gTag_event_send('share_click', tracking_str, share_title, 0);
+	/*
+	gTag_event_send('share_click', tracking_str, share_title);
+	*/
+}
+
+
+function dsm_setCookie( cookie_name, date, c_value ) {
+	var exdate = new Date();
+	var add_min = 60 * 24 * date;
+	exdate.setMinutes(exdate.getMinutes() + add_min);
+	var path = '; path=/';
+	var domain = '; domain=.vogue.co.kr';
+
+	var cookie_value = escape(c_value) + ('; expires=' + exdate.toUTCString())+path+domain;
+	document.cookie = cookie_name + '=' + cookie_value;
+}
+
+function dsm_getCookie( cookie_name ) {
+	var value = document.cookie.match('(^|;) ?' + cookie_name + '=([^;]*)(;|$)');
+	return value? value[2] : null;
+}
+
+function closeNotice() {
+	const nowTxt = document.querySelector("#notice-2024-btn").innerText;
+	if(nowTxt == '닫기') {
+		document.querySelector(".notice-txt").style.display = "none";
+		document.querySelector("#notice-2024-btn").innerText = "열기";
+	} else if (nowTxt == '열기') {
+		document.querySelector(".notice-txt").style.display = "block";
+		document.querySelector("#notice-2024-btn").innerText = "닫기";
+	}
+}

@@ -74,22 +74,41 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
+.sub::before {
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    width: 5px;
+    height: 5px;
+    background :#f0ae1f;
+    left: 50%;
+    top: -5px;
+    translate: -50% 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sub:hover::before {
+    opacity: 1;
+}
+
 .kr,.en{
   margin-left: 5px;
 }
 
-.topleft a:hover,
-.topright a:hover{
+.kr a:hover,
+.en a:hover{
 color: #b67c0b;
 }
-.topleft a:after,
-.topright a:after {content: "";
+.kr a:after,
+.ent a:after {content: "";
   position: absolute;
   left: 0;
   bottom: -3px; /* 텍스트 바로 아래 */
   width: 0;
   height: 2px;
-  background-color: #b67c0b;
+  background-color: #f0ae1f;
   transition: width 0.3s ease;
 }
 
@@ -124,6 +143,8 @@ color: #b67c0b;
   height: 50px;
   transition: 0.3s ease;
 }
+
+
 /* 메인영역 */
 
 /* 2-1배너영역 */
@@ -329,7 +350,7 @@ h5 {
 }
 
 /* 하단 */
-footer {
+#bottom-area {
   width: 100%;
   background: #005a2a;
   padding: 60px 0;
