@@ -56,3 +56,109 @@ body {
         max-width: 1600px;
     margin: 0 auto;
 }
+
+
+
+/* 하단영역 */
+#bottom-area {
+  width: 100%;
+  background: #005a2a;
+  padding: 60px 0;
+}
+/* .bottom-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+} */
+.bottom-info li {
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.bottom-info-first > li,
+.customer > .bottomtit,
+.store > .bottomtit {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.bottom-info-first {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 30px;
+  font-size: 1.6rem;
+}
+
+/* 첫번째 줄 */
+.bottomlogo img {
+  height: 50px;
+}
+
+/* 두번째 줄 */
+.bottom-info-second {
+  display: flex;
+  gap: 50px;
+  margin-left: calc(191.56px + 30px);
+  margin-bottom: 40px;
+}
+
+/* 3번째 줄 */
+.bottom-info-third {
+  text-align: right;
+  color: #b3b3b3;
+  font-size: 1.4rem;
+}
+.store,
+.customer {
+  width: 385px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.before{
+  position: relative;
+}
+.before::before{
+  content: '';
+  position: absolute;
+      top: -5px;
+  left: -15px;
+  width: 1px;
+  height: 30px;
+  background-color: #b3b3b3;
+  z-index: 1;
+ 
+}
+button {
+  width: 100%;
+  height: 35px;
+  background: transparent;
+  color: #b3b3b3;
+  border: #b3b3b3 1px solid;
+  font-size: 1.5rem;
+  margin: 0;
+  transition: 0.3s ease;
+}
+button:hover {
+  color: #ffffff;
+  background: #000000;
+}
+.txt {
+  font-size: 1.4rem;
+  color: #b3b3b3;
+  min-height: 100px;
+  margin: 0;
+}
+
+.sns{
+  display: flex;
+  justify-content: flex-end;
+    gap: 10px;
+margin-bottom: 10px;
+}
+.sns img{
+  height: 20px;
+}
