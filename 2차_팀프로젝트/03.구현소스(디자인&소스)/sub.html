@@ -13,6 +13,15 @@
     />
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="./css/sub.css" />
+    
+    <!-- 미디어쿼리는 반드시 일반css아래 위치함! -->
+    <link rel="stylesheet" href="./css/media_main.css" />
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
    <!-- 제이쿼리 라이브러리 불러오기 
      제이쿼리를 사용하는 JS파일 위에 불러와야한다! -->
     <script src="./js/jquery-3.6.3.min.js"></script>
@@ -24,7 +33,8 @@
        <!-- 공통 JS :import 문법을 사용하려면
      반드시 type="module"로 써야한다.-->
     <script type="module" src="./js/common.js"></script>
-
+ <!-- 메인 JS -->
+    <script src="./js/sub.js" defer></script>
   </head>
   <body>
     <header class="top">
@@ -49,14 +59,47 @@
             </h3>
            
           </div>
-        <section class="banner-part">
-          <h2 class="temp-tit blind">2-1. 배너영역</h2>
-          <!-- 배너박스 -->
-          <div class="banner-box">
-            <img src="./images/main_banner_pc_251024_1.jpg" alt="세이투세" class="bg" />
-          </div>
-         
-        </section>
+      <section class="banner-part">
+    <h2 class="temp-tit blind">2-1. 배너영역</h2>
+    <!-- 배너 스와이퍼 -->
+    <div class="banner-swiper-container">
+        <div class="swiper bannerSwiper">
+            <div class="swiper-wrapper">
+                <!-- 슬라이드 1 -->
+                <div class="swiper-slide">
+                    <div class="banner-box">
+                        <img src="./images/main_banner_pc_251024_1.jpg" alt="세이투세 배너 1" class="bg" />
+                    </div>
+                </div>
+                <!-- 슬라이드 2 -->
+                <div class="swiper-slide">
+                    <div class="banner-box">
+                        <img src="./images/main_banner_pc_251024_2.jpg" alt="세이투세 배너 2" class="bg" />
+                    </div>
+                </div>
+                <!-- 슬라이드 3 -->
+                <div class="swiper-slide">
+                    <div class="banner-box">
+                        <img src="./images/main_banner_pc_251024_3.jpg" alt="세이투세 배너 3" class="bg" />
+                    </div>
+                </div>
+                <!-- 슬라이드 4 -->
+                <div class="swiper-slide">
+                    <div class="banner-box">
+                        <img src="./images/main_banner_pc_251024_4.jpg" alt="세이투세 배너 4" class="bg" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 이전/다음 버튼 -->
+            <!-- <div class="swiper-button-prev banner-prev"></div>
+            <div class="swiper-button-next banner-next"></div> -->
+            
+            <!-- 페이지네이션 -->
+            <div class="swiper-pagination banner-pagination"></div>
+        </div>
+    </div>
+</section>
         <!-- 2-1 배너 파트 끝-->
       </div>
 
@@ -72,13 +115,13 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 1-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#01</h4>
                     </div>
                     <!-- 1-2이미지 -->
                      <div class="img">
-                      <img src="./images/1.png" alt="">
+                      <img src="./images/all1.jpg" alt="">
                      </div>
                      <!-- 1-3 타이틀 -->
                       <div class="title">
@@ -86,7 +129,7 @@
                       </div>
                       <!-- 1-4 화살표 -->
                       <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -96,21 +139,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 2-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#02</h4>
                     </div>
                     <!-- 2-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/edition1.jpg" alt="">
                      </div>
                      <!-- 2-3 타이틀 -->
                       <div class="title">
                         <h4>커스텀제품</h4>
                       </div>
                       <!-- 2-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                        <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -121,13 +164,13 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 3-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#03</h4>
                     </div>
                     <!-- 3-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/textiles4.jpg" alt="">
                      </div>
                      <!-- 3-3 타이틀 -->
                       <div class="title">
@@ -135,7 +178,7 @@
                       </div>
                       <!-- 3-4 화살표 -->
                       <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -146,21 +189,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 4-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#04</h4>
                     </div>
                     <!-- 4-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/home1.jpg" alt="">
                      </div>
                      <!-- 4-3 타이틀 -->
                       <div class="title">
                         <h4>홈데코</h4>
                       </div>
                       <!-- 4-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                       <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -171,21 +214,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 5-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#05</h4>
                     </div>
                     <!-- 5-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/mirror2.jpg" alt="">
                      </div>
                      <!-- 5-3 타이틀 -->
                       <div class="title">
                         <h4>거울</h4>
                       </div>
                       <!-- 5-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                        <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -196,21 +239,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 6-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#06</h4>
                     </div>
                     <!-- 6-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/lighting2.jpg" alt="">
                      </div>
                      <!-- 6-3 타이틀 -->
                       <div class="title">
                         <h4>조명</h4>
                       </div>
                       <!-- 6-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                         <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -221,21 +264,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 7-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#07</h4>
                     </div>
                     <!-- 7-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/lifestyle5.jpg" alt="">
                      </div>
                      <!-- 7-3 타이틀 -->
                       <div class="title">
                         <h4>라이프스타일</h4>
                       </div>
                       <!-- 7-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                         <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -246,21 +289,21 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 8-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#08</h4>
                     </div>
                     <!-- 8-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/goods1.jpg" alt="굿즈">
                      </div>
                      <!-- 8-3 타이틀 -->
                       <div class="title">
                         <h4>굿즈</h4>
                       </div>
                       <!-- 8-4 화살표 -->
-                      <div class="icons">
-                        <img src="./images/Union.png"alt="화살표">
+                        <div class="icons">
+                        <img src="./images/Down Arrow Gr.png"alt="화살표">
                       </div>
                   </div>
                 </div>
@@ -271,13 +314,13 @@
                 <div class="menucontainer">
                   <div class="content">
                     <!-- 9-1글씨 -->
-                    <div class="txt">
+                    <div class="conttxt">
                       <h4>entry</h4>
                       <h4>#09</h4>
                     </div>
                     <!-- 9-2이미지 -->
                      <div class="img">
-                      <img src="./images/2.png" alt="">
+                      <img src="./images/logo-bl.png" alt="로고">
                      </div>
                      <!-- 9-3 타이틀 -->
                       <div class="title">

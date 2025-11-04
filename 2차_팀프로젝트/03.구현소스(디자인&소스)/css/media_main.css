@@ -1,0 +1,83 @@
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .banner-prev,
+    .banner-next {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .banner-prev:after,
+    .banner-next:after {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-prev,
+    .banner-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .banner-prev:after,
+    .banner-next:after {
+        font-size: 16px;
+    }
+    
+    .banner-prev {
+        left: 10px;
+    }
+    
+    .banner-next {
+        right: 10px;
+    }
+    
+    .banner-pagination {
+        bottom: 20px !important;
+    }
+    
+    .banner-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        margin: 0 4px;
+    }
+    
+    .banner-pagination .swiper-pagination-bullet-active {
+        width: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-prev,
+    .banner-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .banner-prev:after,
+    .banner-next:after {
+        font-size: 14px;
+    }
+    
+    .banner-pagination .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+    }
+    
+    .banner-pagination .swiper-pagination-bullet-active {
+        width: 20px;
+    }
+}
+
+/* 접근성을 위한 blind 클래스 유지 */
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
