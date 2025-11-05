@@ -326,3 +326,44 @@ img.bg {
 .icons {
   text-align: right;
 }
+
+/* md */
+
+ul.md {
+    display: flex
+;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.mdmenu-box h3{
+  font-size: 2rem;
+text-transform: uppercase;
+
+}
+
+.md li{
+    flex: 1;  /* 동일한 비율로 확장 */
+    min-width: 250px;  /* 최소 너비 설정 (선택사항) */
+    height: 340px;
+    text-align: center;
+    justify-items: center;
+}
+.mdcontent {
+    padding: 0 25px;
+}
+.mdtxt{
+      padding-bottom: 40px;
+  font-size: 2rem;
+}
+.mdimg{
+   aspect-ratio: 253/267;
+/* padding: 0 25px; */
+}
+
+.mdimg img{  
+ 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
