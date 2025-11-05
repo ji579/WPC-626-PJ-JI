@@ -27,21 +27,23 @@ html{
     /* rem단위 계산편의를 위함 */
     width: 100%;
     height: 100%;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 /* 전체 글씨체 적용하기 */
 body {
   /* 웹폰트체를 전체에 적용함! */
   font-family: "Instrument Sans", sans-serif;
-     font-size: 10px;
+     font-size: 10px;overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 .inbox{
   /* width: 100%;
     box-sizing: border-box;
     padding: 0 calc(100% / 12) 0; */
-        max-width: 1600px;
-    margin: 0 auto;
+        /* max-width: 1600px;
+    margin: 0 auto; */
+    padding: 0 75px;
 }
 
 
