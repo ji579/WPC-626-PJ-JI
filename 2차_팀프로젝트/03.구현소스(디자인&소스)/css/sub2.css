@@ -130,6 +130,14 @@ a {
 
 /* 메인영역 */
 
+/* 2-1배너영역 */
+section.banner-part {
+  width: inherit;
+  width: 100%;
+  /* height: 100vh; */
+  margin: 0 auto;
+}
+
 /* 메인-배너 */
 .banner-box {
   width: inherit;
@@ -139,8 +147,9 @@ a {
 }
 
 img.bg {
-  width: inherit;
-  object-fit: cover;
+    margin: 0 auto;
+    /* width: inherit; */
+    height: inherit;
 }
 /* 2-2 서브메뉴 */
 .menu-part {
@@ -171,13 +180,13 @@ img.bg {
 }
 
 .banner-box {
-  width: 100%;
-  height: 100%;
-  position: relative;
+padding-top: 74px;
+    width: 100%;
+    height: 80vh;
+    position: relative;
 }
 
 .banner-box .bg {
-  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
@@ -240,3 +249,9 @@ img.bg {
   width: 30px;
   border-radius: 6px;
 }
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 50%);
+    left: auto;
+  translate: -50% 0;}
+  
