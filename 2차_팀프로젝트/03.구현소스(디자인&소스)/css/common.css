@@ -6,12 +6,24 @@ CDN(Content Delivery Network)은
 어떤 웹파일을 네트워크로 불러오는 것임! */
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 /* 웹폰트 적용 코드 */
 /*   font-family: "Bagel Fat One", system-ui;
  font-family: "Diphylleia", serif;
   font-family: "Gowun Batang", serif; */
+@font-face {
+    /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
+    font-family: 'MyCustomFont';
 
+    /* 폰트 파일의 경로와 형식 지정 */
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
+        /* (선택 사항) 폰트의 굵기 지정 */
+    font-weight: normal;
+
+    /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
+    font-style: normal;
+
+}
 
 h1, h2{
   font-family: 'MyCustomFont', sans-serif;

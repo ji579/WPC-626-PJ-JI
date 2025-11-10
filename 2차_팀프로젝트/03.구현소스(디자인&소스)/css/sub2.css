@@ -147,9 +147,9 @@ section.banner-part {
 }
 
 img.bg {
-    margin: 0 auto;
-    /* width: inherit; */
-    height: inherit;
+  margin: 0 auto;
+  /* width: inherit; */
+  height: inherit;
 }
 /* 2-2 서브메뉴 */
 .menu-part {
@@ -180,10 +180,10 @@ img.bg {
 }
 
 .banner-box {
-padding-top: 74px;
-    width: 100%;
-    height: 80vh;
-    position: relative;
+  padding-top: 74px;
+  width: 100%;
+  height: 80vh;
+  position: relative;
 }
 
 .banner-box .bg {
@@ -193,7 +193,7 @@ padding-top: 74px;
 }
 .swiper-button-next,
 .swiper-button-prev {
-  color: #00592a !important
+  color: black !important
 ;
 }
 
@@ -250,8 +250,160 @@ padding-top: 74px;
   border-radius: 6px;
 }
 
-.swiper-button-next, .swiper-rtl .swiper-button-prev {
-    right: var(--swiper-navigation-sides-offset, 50%);
-    left: auto;
-  translate: -50% 0;}
-  
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: var(--swiper-navigation-sides-offset, 50%);
+  left: auto;
+  translate: -50% 0;
+}
+.swiper-pagination-bullet-active {
+  background: black !important;
+}
+
+/* 2-2 설명파트 */
+
+.rug-part {
+  text-align: center;
+}
+
+.color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.color > img {
+  width: 64px;
+  height: 64px;
+}
+.sizelist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+p,
+li {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 4rem;
+  padding-bottom: 20px;
+  font-family: "MyCustomFont";
+}
+
+.entitle{
+ letter-spacing: 3px;
+}
+
+.type,
+.name,
+.material,
+.sizelist,
+.stepslist {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.leftbox > p,
+.rightbox > p {
+  padding-bottom: 50px;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.note > li {
+  width: 600px;
+  list-style: decimal;
+  text-align: center;
+}
+
+/* 왼쪽 오른쪽 넘기기버튼 */
+.box {
+  display: flex;
+}
+
+.leftbox {
+  width: 50%;
+  text-align: right;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.rightbox {
+  width: 50%;
+  text-align: left;
+  border: 1px solid black;
+  border-left: none;
+  padding: 50px;
+}
+
+.stepslistname {
+  color: #828282;
+  transition: color 0.3s ease; /* 색상 변화 애니메이션 */
+}
+
+.imgbox.left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.imgbox.right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.item {
+  width: 138px;
+  height: 100%;
+}
+
+.arrow {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: opacity 0.3s ease; /* 화살표 전환 애니메이션 */
+}
+
+/* 화살표 호버 효과 */
+/* 기본 화살표 보이기, 호버 화살표 숨기기 */
+.imgbox .arrow:nth-child(1) {
+  display: block;
+}
+
+.imgbox .arrow:nth-child(2) {
+  display: none;
+}
+
+/* leftbox 호버 시 */
+.leftbox:hover .imgbox .arrow:nth-child(1) {
+  display: none;
+}
+.leftbox:hover .stepslistname {
+  color: black;
+}
+
+.leftbox:hover .imgbox .arrow:nth-child(2) {
+  display: block;
+}
+
+/* rightbox 호버 시 */
+.rightbox:hover .imgbox .arrow:nth-child(1) {
+  display: none;
+}
+
+.rightbox:hover .imgbox .arrow:nth-child(2) {
+  display: block;
+}
+.rightbox:hover .stepslistname {
+  color: black;
+}

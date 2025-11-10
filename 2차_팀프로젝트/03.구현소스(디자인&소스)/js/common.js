@@ -1,5 +1,8 @@
 // 2차 공통 JS - common.js /////////
 
+// html요소 로드후 실행할 JS 불러오기
+import goToPage from "./linksys.js";
+
 
 // default로 내보냈으므로 아무이름으로 받아도됨!
 

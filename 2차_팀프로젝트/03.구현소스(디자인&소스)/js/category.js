@@ -3,6 +3,10 @@
 // <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 // <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+// [2] 파라미터 키값 읽기 /////////
+let pm = location.search.split("=")[1];
+console.log('파라미터:', pm);
+
 document.addEventListener('DOMContentLoaded', function() {
     // 배너 스와이퍼 초기화
     const bannerSwiper = new Swiper('.bannerSwiper', {
