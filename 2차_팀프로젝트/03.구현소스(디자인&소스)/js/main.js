@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 
   window.addEventListener("scroll", () => {
     let curScroll = window.scrollY;
-    let scrollDirection = curScroll > prevScroll ? 'down' : 'up';
+    let scrollDirection = curScroll > prevScroll ? "down" : "up";
 
     // 헤더 스크롤 반응 (먼저 처리)
     if (prevScroll < curScroll && curScroll > 50) {
@@ -24,11 +24,14 @@ window.addEventListener("load", () => {
     const snapPosition = menuPartTop - headerHeight;
 
     // 아래로 스크롤하면서 snapPosition 근처 도달
-    if (!isSnapping && scrollDirection === 'down' && 
-        curScroll >= snapPosition - 20 && curScroll <= snapPosition + 20) {
-      
+    if (
+      !isSnapping &&
+      scrollDirection === "down" &&
+      curScroll >= snapPosition - 100 &&
+      curScroll <= snapPosition + 100
+    ) {
       isSnapping = true;
-      
+
       // header에 border-bottom 추가
       header.style.borderBottom = "2px solid #000";
 
@@ -37,33 +40,34 @@ window.addEventListener("load", () => {
 
       // 0.6초 동안만 고정 (짧게)
       let snapCount = 0;
-      const snapInterval = setInterval(() => {
+      const snapInterval = setTimeout(() => {
         const currentHeaderHeight = header.offsetHeight;
-        const currentMenuPartTop = menuPart.getBoundingClientRect().top + window.scrollY;
+        const currentMenuPartTop =
+          menuPart.getBoundingClientRect().top + window.scrollY;
         const targetPosition = currentMenuPartTop - currentHeaderHeight;
-        
+
         window.scrollTo(0, targetPosition);
         snapCount++;
-        
+
         // 0.2초 후 해제 10회 × 20ms
-if (snapCount > 10) {
-  clearInterval(snapInterval);
-  isSnapping = false;
+        if (snapCount > 10) {
+          clearTimeout(snapInterval);
+          isSnapping = false;
         }
-      }, 10);
+      }, 1);
     }
 
     // 위로 스크롤하면 즉시 해제
-    if (isSnapping && scrollDirection === 'up') {
+    if (isSnapping && scrollDirection === "up") {
       isSnapping = false;
     }
 
     // snapPosition에서 많이 벗어나면 border 제거
-    if (curScroll > snapPosition + 150) {
+    else if (curScroll > snapPosition + 150) {
       header.style.borderBottom = "";
     }
     // 위로 많이 올라가면 border 제거 및 리셋
-    if (curScroll < snapPosition - 100) {
+    else if (curScroll < snapPosition - 100) {
       header.style.borderBottom = "";
       isSnapping = false;
     }

@@ -303,7 +303,7 @@ img.bg {
 }
 
 .banner-pagination .swiper-pagination-bullet-active {
-  background: white;
+  background: #828282;
   width: 30px;
   border-radius: 6px;
 }
@@ -350,11 +350,13 @@ transform: scale(1.08);
 .conttxt {
   display: flex;
   font-size: 2rem;
-  color: #043b25;
+  /* color: #043b25; */
+    color:black;
   justify-content: space-between;
 }
 .title {
-  color: #043b25;
+  /* color: #043b25; */
+  color:black;
   font-size: 2rem;
   text-align: center;
 }

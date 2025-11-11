@@ -1,0 +1,186 @@
+/* 외부 CSS 불러오기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+/* 12그리드 CSS */
+@import url(./grid_12_flex.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 상단영역 */
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background: #005a2a;
+  /* background: #006633; */
+  /* background: #003f1f; */
+  transition: translate 0.3s ease; /* 부드럽게 숨김 효과 */
+  border-bottom: 2px solid #000000;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.toppad {
+  width: 100%;
+  height: auto;
+  height: 84px;
+  /* margin-top: 8px; */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.topleft,
+.topright {
+  flex: 1; /* ✅ 자동 크기 조정 */
+  min-width: 0;
+}
+
+.topright {
+  display: flex;
+
+  justify-content: flex-end;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0 10px;
+}
+a {
+  position: relative;
+  font-size: 1.9rem;
+  color: #f0ae1f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sub::before {
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  background: #f0ae1f;
+  left: 50%;
+  top: -5px;
+  translate: -50% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sub:hover::before {
+  opacity: 1;
+}
+
+.kr,
+.en {
+  margin-left: 5px;
+}
+
+.kr a:hover,
+.en a:hover {
+  color: #b67c0b;
+}
+.kr a:after,
+.ent a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* 텍스트 바로 아래 */
+  width: 0;
+  height: 2px;
+  background-color: #f0ae1f;
+  transition: width 0.3s ease;
+}
+
+.topleft a:hover::after,
+.topright a:hover::after {
+  width: 100%; /* 선이 왼쪽→오른쪽으로 그려짐 */
+}
+
+/* 상단로고 */
+.main-logo {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  translate: -50% 0;
+  transition: height 0.3s ease;
+  /*margin-top: 18px;*/
+}
+
+.main-logo img {
+  height: 50px;
+}
+
+/* 메인영역 */
+
+nav.shop-menu > ul {
+  display: flex;
+}
+
+nav.shop-menu > ul > li > a {
+  color: black;
+  font-size: 1.2rem;
+}
+nav.shop-menu > ul > li > a ::before {
+  
+  content: "\f054"; /* Font Awesome의 > 아이콘 */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-right: 10px; /* 텍스트와 간격 */
+  color: #000; /* 색상 */
+}
+.hd_inner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 20px 16px;
+  box-sizing: border-box;
+}
+/* list클릭 */
+.list_hd_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+ul.xans-element-.xans-product.xans-product-orderby.sort_list {
+  display: flex;
+}
+ul.xans-element-.xans-product.xans-product-orderby.sort_list > li > a {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.sort_list .sort_items + .sort_items {
+  padding-left: 9px;
+  position: relative;
+}
+.sort_list .sort_items + .sort_items::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: calc(100% - 8px);
+  background-color: #707070;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -7,6 +7,11 @@
 let pm = location.search.split("=")[1];
 console.log('파라미터:', pm);
 
+// [3] 메인 영역에 해당 파라미터의 이름으로 된 인클루드 페이지를
+// 제이쿼리 load() 메서드로 넣어준다.
+// 대상: #main-area
+$('#main-area').load('./inc/'+pm + '.html');
+
 document.addEventListener('DOMContentLoaded', function() {
     // 배너 스와이퍼 초기화
     const bannerSwiper = new Swiper('.bannerSwiper', {
