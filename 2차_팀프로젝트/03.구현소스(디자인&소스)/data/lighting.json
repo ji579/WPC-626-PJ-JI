@@ -1,0 +1,109 @@
+{
+  "category": "lighting",
+  "products": [
+    {
+      "id": 1,
+      "category": "lighting",
+      "name": "위스키 램프 그린",
+      "price": "89,000원",
+      "images": [
+        "lighting_1_01.jpg",
+        "lighting_1_02.jpg",
+        "lighting_1_03.jpg",
+        "lighting_1_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 2,
+      "category": "lighting",
+      "name": "위스키 램프 옐로우",
+      "price": "89,000원",
+      "images": [
+        "lighting_2_01.jpg",
+        "lighting_2_02.jpg",
+        "lighting_2_03.jpg",
+        "lighting_2_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 3,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 그린",
+      "price": "390,000원",
+      "images": [
+        "lighting_3_01.jpg",
+        "lighting_3_02.jpg",
+        "lighting_3_03.jpg",
+        "lighting_3_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 4,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 크림",
+      "price": "390,000원",
+      "images": [
+        "lighting_4_01.jpg",
+        "lighting_4_02.jpg",
+        "lighting_4_03.jpg",
+        "lighting_4_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 5,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 블랙",
+      "price": "390,000원",
+      "images": [
+        "lighting_5_01.jpg",
+        "lighting_5_02.jpg",
+        "lighting_5_03.jpg",
+        "lighting_5_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 6,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 브라운",
+      "price": "390,000원",
+      "images": [
+        "lighting_6_01.jpg",
+        "lighting_6_02.jpg",
+        "lighting_6_03.jpg",
+        "lighting_6_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 7,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 레드",
+      "price": "390,000원",
+      "images": [
+        "lighting_7_01.jpg",
+        "lighting_7_02.jpg",
+        "lighting_7_03.jpg",
+        "lighting_7_04.jpg"
+      ],
+      "status": "sold out"
+    },
+    {
+      "id": 8,
+      "category": "lighting",
+      "name": "믹스 플로어 램프 옐로우",
+      "price": "390,000원",
+      "images": [
+        "lighting_8_01.jpg",
+        "lighting_8_02.jpg",
+        "lighting_8_03.jpg",
+        "lighting_8_04.jpg"
+      ],
+      "status": "sold out"
+    }
+  ]
+}

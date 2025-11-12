@@ -1,0 +1,336 @@
+/* 외부 CSS 불러오기 */
+@import url(./reset.css);
+@import url(./core.css);
+@import url(./common.css);
+/* 12그리드 CSS */
+@import url(./grid_12_flex.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 상단영역 */
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background: #005a2a;
+  /* background: #006633; */
+  /* background: #003f1f; */
+  transition: translate 0.3s ease; /* 부드럽게 숨김 효과 */
+  border-bottom: 2px solid #000000;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+.toppad {
+  width: 100%;
+  height: auto;
+  height: 84px;
+  /* margin-top: 8px; */
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.topleft,
+.topright {
+  flex: 1; /* ✅ 자동 크기 조정 */
+  min-width: 0;
+}
+
+.topright {
+  display: flex;
+
+  justify-content: flex-end;
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  margin: 0 10px;
+}
+a {
+  position: relative;
+  font-size: 1.9rem;
+  color: #f0ae1f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sub::before {
+  content: "";
+  position: absolute;
+  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  background: #f0ae1f;
+  left: 50%;
+  top: -5px;
+  translate: -50% 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.sub:hover::before {
+  opacity: 1;
+}
+
+.kr,
+.en {
+  margin-left: 5px;
+}
+
+.kr a:hover,
+.en a:hover {
+  color: #b67c0b;
+}
+.kr a:after,
+.ent a:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* 텍스트 바로 아래 */
+  width: 0;
+  height: 2px;
+  background-color: #f0ae1f;
+  transition: width 0.3s ease;
+}
+
+.topleft a:hover::after,
+.topright a:hover::after {
+  width: 100%; /* 선이 왼쪽→오른쪽으로 그려짐 */
+}
+
+/* 상단로고 */
+.main-logo {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  translate: -50% 0;
+  transition: height 0.3s ease;
+  /*margin-top: 18px;*/
+}
+
+.main-logo img {
+  height: 50px;
+}
+/* products.css에 추가할 스타일 */
+
+/* 제품 그리드 섹션 */
+.products-section {
+  width: 100%;
+  padding: 40px 20px 100px;
+  background: #fff;
+}
+
+.products-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* 4개씩 그리드 */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-left: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* 제품 카드 */
+.product-card {
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  position: relative;
+}
+
+.product-card:hover {
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 제품 이미지 영역 */
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* 1:1 비율 */
+  background: #fff;
+  overflow: hidden;
+}
+
+.product-swiper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.product-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.product-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 좌우 화살표 버튼 (원본 사이트처럼) */
+.product-swiper .swiper-button-prev,
+.product-swiper .swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .swiper-button-prev,
+.product-card:hover .swiper-button-next {
+  opacity: 1;
+}
+
+.product-swiper .swiper-button-prev:after,
+.product-swiper .swiper-button-next:after {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+.product-swiper .swiper-button-prev {
+  left: 10px;
+}
+
+.product-swiper .swiper-button-next {
+  right: 10px;
+}
+
+/* 페이지네이션 (컬러 점들) */
+.product-swiper .swiper-pagination {
+  bottom: 15px !important;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.product-swiper .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ddd;
+  opacity: 1;
+  margin: 0 !important;
+  border-radius: 50%;
+}
+
+.product-swiper .swiper-pagination-bullet-active {
+  background: #000;
+}
+
+/* 제품 정보 */
+.product-info {
+  padding: 20px 15px;
+  text-align: center;
+  background: #fff;
+}
+
+.product-name {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 400;
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0;
+}
+
+.product-status {
+  display: none; /* 원본 사이트처럼 sold out 표시 안 함 */
+}
+
+/* 로딩 표시 */
+.loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 1.4rem;
+  color: #999;
+}
+
+/* 반응형 - 3개씩 */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 반응형 - 2개씩 */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .products-section {
+    padding: 30px 10px 80px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    min-height: 34px;
+  }
+  
+  .product-price {
+    font-size: 1.3rem;
+  }
+  
+  .product-swiper .swiper-button-prev,
+  .product-swiper .swiper-button-next {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .product-swiper .swiper-button-prev:after,
+  .product-swiper .swiper-button-next:after {
+    font-size: 14px;
+  }
+}
+
+/* 반응형 - 모바일 2개씩 유지 */
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .product-info {
+    padding: 15px 10px;
+  }
+}

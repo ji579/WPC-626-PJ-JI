@@ -78,6 +78,58 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // ========== 메뉴 카테고리 클릭 이벤트 ========== 
+    // shop.html의 메뉴를 클릭하면 products.html로 이동
+    $('.submenu li').click(function() {
+        const category = $(this).data('category');
+        if (category) {
+            // products.html 페이지로 이동하면서 카테고리 정보 전달
+            window.location.href = `products.html?category=${category}`;
+        }
+    });
+    
+    // ========== 제품 페이지 관련 코드 (products.html에서만 실행) ========== 
+    // products.html 페이지인지 확인
+    if (window.location.pathname.includes('products.html')) {
+        
+        // URL에서 카테고리 파라미터 읽기
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlCategory = urlParams.get('category') || 'all';
+        
+        // 카테고리 필터 버튼 이벤트
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // 활성 버튼 변경
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // 카테고리 변경 및 렌더링
+                const category = this.dataset.category;
+                
+                // URL 업데이트 (페이지 새로고침 없이)
+                const newUrl = `${window.location.pathname}?category=${category}`;
+                window.history.pushState({category: category}, '', newUrl);
+                
+                // 페이지 상단으로 부드럽게 스크롤
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // URL 파라미터에 따라 초기 활성 버튼 설정
+        const targetButton = document.querySelector(`[data-category="${urlCategory}"]`);
+        if (targetButton) {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            targetButton.classList.add('active');
+        }
+        
+        console.log('현재 카테고리:', urlCategory);
+    }
+    
     // 선택사항: 자동재생 컨트롤 버튼 추가 (필요시 사용)
     /*
     const playPauseBtn = document.createElement('button');
