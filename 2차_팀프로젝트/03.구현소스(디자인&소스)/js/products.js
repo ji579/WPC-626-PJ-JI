@@ -1,289 +1,321 @@
-// products.js - 완전한 제품 페이지 시스템
-console.log('🚀 products.js 파일 로드 시작');
-
-// 제품 데이터 저장 객체
-let productsData = {
-  edition: [],
-  textiles: [],
-  home: [],
-  mirror: [],
-  lighting: [],
-  lifestyle: [],
-  goods: []
-};
-
-let currentCategory = 'all';
+// 전역 변수
 let swiperInstances = [];
+let currentCategory = 'all';
+let allProducts = [];
 
-// 카테고리 이름
+// 카테고리 이름 매핑
 const categoryNames = {
-  all: '전체 상품',
-  edition: '커스텀제품',
-  textiles: '텍스타일',
-  home: '홈데코',
-  mirror: '거울',
-  lighting: '조명',
-  lifestyle: '라이프스타일',
-  goods: '굿즈'
+  'all': '전체상품',
+  'edition': '커스텀제품',
+  'textiles': '텍스타일',
+  'home': '홈데코',
+  'mirror': '거울',
+  'lighting': '조명',
+  'lifestyle': '라이프스타일',
+  'goods': '굿즈',
+  'sale': '세일'
 };
 
-// ========== 1. JSON 파일에서 데이터 로드 ==========
-async function loadProductsFromJSON() {
+// ⭐ 카테고리별 배너 이미지 매핑 (새로 추가!)
+const categoryBanners = {
+  'all': './images/rug1.jpg',
+  'edition': './images/edition_banner.jpg',
+  'textiles': './images/textiles_banner.jpg',
+  'home': './images/home_banner.jpg',
+  'mirror': './images/mirror_banner.jpg',
+  'lighting': './images/lighting_banner.jpg',
+  'lifestyle': './images/lifestyle_banner.jpg',
+  'goods': './images/goods_banner.jpg',
+  'sale': './images/sale_banner.jpg'
+};
+
+// DOM 로드 완료 시 실행
+document.addEventListener('DOMContentLoaded', function() {
+  initProducts();
+  initSortButtons();
+});
+
+// 상품 초기화
+async function initProducts() {
+  // URL 파라미터에서 카테고리 가져오기
+  const urlParams = new URLSearchParams(window.location.search);
+  currentCategory = urlParams.get('category') || 'all';
+  
+  // ⭐ 배너 이미지 변경 (새로 추가!)
+  updateBannerImage(currentCategory);
+  
+  // 카테고리 제목 업데이트
+  updateCategoryTitle(currentCategory);
+  
+  // 상품 데이터 로드
+  await loadProducts(currentCategory);
+}
+
+// ⭐ 배너 이미지 업데이트 함수 (새로 추가!)
+function updateBannerImage(category) {
+  // 배너 이미지 요소 찾기
+  const bannerImg = document.querySelector('.banner-box img.bg');
+  
+  if (bannerImg && categoryBanners[category]) {
+    // 배너 이미지 변경
+    bannerImg.src = categoryBanners[category];
+    
+    // alt 텍스트도 변경
+    bannerImg.alt = `${categoryNames[category]} 배너`;
+    
+    console.log(`배너 이미지 변경: ${categoryBanners[category]}`);
+  } else {
+    console.warn('배너 이미지를 찾을 수 없거나 카테고리가 유효하지 않습니다.');
+  }
+}
+
+// 상품 데이터 로드
+async function loadProducts(category) {
+  try {
+    if (category === 'all') {
+      // 전체 상품 로드
+      allProducts = await loadAllProducts();
+    } else {
+      // 특정 카테고리 로드 - data 폴더에서 읽기
+      const response = await fetch(`./data/${category}.json`);
+      const data = await response.json();
+      allProducts = data.products;
+    }
+    
+    // 상품 렌더링
+    renderProducts(allProducts);
+    updateProductCount(allProducts.length);
+    
+  } catch (error) {
+    console.error('상품 로드 실패:', error);
+    document.getElementById('productsGrid').innerHTML = 
+      '<div class="loading">상품을 불러올 수 없습니다.</div>';
+  }
+}
+
+// 전체 카테고리 상품 로드
+async function loadAllProducts() {
   const categories = ['edition', 'textiles', 'home', 'mirror', 'lighting', 'lifestyle', 'goods'];
   
-  console.log('📦 JSON 파일 로딩 시작...');
-  console.log('현재 경로:', window.location.href);
-  
   try {
-    const promises = categories.map(async (cat) => {
-      try {
-        const url = `./data/${cat}.json`;
-        console.log(`🔍 로드 시도: ${url}`);
-        const response = await fetch(url);
-        if (!response.ok) {
-          console.warn(`❌ ${cat}.json 파일을 찾을 수 없습니다. (${response.status})`);
-          return { category: cat, products: [] };
-        }
-        const data = await response.json();
-        console.log(`✅ ${cat} 데이터 로드 완료:`, data.products.length, '개');
-        return { category: cat, products: data.products || [] };
-      } catch (error) {
-        console.error(`❌ ${cat}.json 로드 실패:`, error);
-        return { category: cat, products: [] };
-      }
-    });
+    // 모든 파일을 동시에 불러오기 - data 폴더에서
+    const promises = categories.map(cat => 
+      fetch(`./data/${cat}.json`)
+        .then(res => res.json())
+        .catch(err => {
+          console.warn(`${cat}.json 로드 실패:`, err);
+          return { products: [] };
+        })
+    );
     
     const results = await Promise.all(promises);
     
-    results.forEach(result => {
-      productsData[result.category] = result.products;
-    });
+    // 모든 products 배열 합치기
+    const allProducts = results.flatMap(data => data.products || []);
     
-    console.log('✅ 전체 데이터 로드 완료!');
-    console.log('📊 로드된 데이터:', productsData);
-    
-    // 상품 개수 표시
-    const totalCount = Object.values(productsData).reduce((sum, products) => sum + products.length, 0);
-    console.log(`📦 총 ${totalCount}개 제품 로드됨`);
-    
-    // 데이터 로드 후 제품 렌더링
-    renderProducts(currentCategory);
-    
+    return allProducts;
   } catch (error) {
-    console.error('데이터 로드 중 오류:', error);
-    const grid = document.getElementById('productsGrid');
-    if (grid) {
-      grid.innerHTML = '<div class="loading">제품 데이터를 불러올 수 없습니다.</div>';
-    }
+    console.error('전체 상품 로드 실패:', error);
+    return [];
   }
 }
 
-// ========== 2. 전체 제품 가져오기 (랜덤 섞기) ==========
-function getAllProducts() {
-  const allProducts = [];
-  Object.keys(productsData).forEach(category => {
-    if (productsData[category] && productsData[category].length > 0) {
-      allProducts.push(...productsData[category]);
-    }
-  });
-  return allProducts.sort(() => Math.random() - 0.5);
-}
-
-// ========== 3. 제품 카드 HTML 생성 ==========
-function createProductCard(product, index) {
-  const uniqueId = `prod_${product.category}_${product.id}_${index}`;
+// 상품 렌더링
+function renderProducts(products) {
+  const productsGrid = document.getElementById('productsGrid');
   
-  return `
-    <div class="product-card" data-product-id="${product.id}" data-category="${product.category}">
-      <div class="product-image-wrapper">
-        <div class="swiper product-swiper swiper-${uniqueId}">
-          <div class="swiper-wrapper">
-            ${product.images.map(img => `
-              <div class="swiper-slide">
-                <img src="./images/products/${img}" 
-                     alt="${product.name}" 
-                     loading="lazy"
-                     onerror="this.src='https://via.placeholder.com/500x500/f5f5f5/999?text=No+Image'">
-              </div>
-            `).join('')}
-          </div>
-          <!-- 좌우 화살표 버튼 -->
-          <div class="swiper-button-prev swiper-btn-prev-${uniqueId}"></div>
-          <div class="swiper-button-next swiper-btn-next-${uniqueId}"></div>
-          <!-- 페이지네이션 (점 표시) -->
-          <div class="swiper-pagination swiper-pagi-${uniqueId}"></div>
-        </div>
-      </div>
-      <div class="product-info">
-        <div class="product-name">${product.name}</div>
-        <div class="product-price">${product.price}</div>
-        <span class="product-status">${product.status}</span>
-      </div>
-    </div>
-  `;
-}
-
-// ========== 4. 제품 렌더링 ==========
-function renderProducts(category) {
-  const grid = document.getElementById('productsGrid');
-  const categoryTitle = document.getElementById('category-title-nav');
-  const productCount = document.getElementById('product-count');
-  
-  if (!grid) {
-    console.error('productsGrid 요소를 찾을 수 없습니다!');
+  if (!productsGrid) {
+    console.error('productsGrid not found');
     return;
   }
   
-  console.log(`${category} 카테고리 렌더링 시작...`);
+  // 기존 Swiper 인스턴스 제거
+  destroySwipers();
   
-  // 기존 Swiper 인스턴스 모두 제거
+  // 그리드 초기화
+  productsGrid.innerHTML = '';
+  
+  if (!products || products.length === 0) {
+    productsGrid.innerHTML = '<div class="loading">해당 카테고리에 상품이 없습니다.</div>';
+    return;
+  }
+  
+  // 상품 카드 생성
+  products.forEach((product, index) => {
+    const card = createProductCard(product, index);
+    productsGrid.appendChild(card);
+  });
+  
+  // Swiper 초기화
+  setTimeout(() => {
+    initSwipers();
+  }, 100);
+}
+
+// 상품 카드 생성
+function createProductCard(product, index) {
+  const card = document.createElement('div');
+  card.className = 'product-card';
+  card.setAttribute('data-product-id', product.id);
+  
+  // 이미지 슬라이드 생성
+  const imageSlides = product.images.map(imgFileName => {
+    const imgPath = `./images/products/${imgFileName}`;
+    return `
+      <div class="swiper-slide">
+        <img src="${imgPath}" alt="${product.name}" loading="lazy" />
+      </div>
+    `;
+  }).join('');
+  
+  card.innerHTML = `
+    <!-- 이미지 슬라이더 -->
+    <div class="product-image-wrapper">
+      <div class="swiper product-swiper" data-index="${index}">
+        <div class="swiper-wrapper">
+          ${imageSlides}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+    
+    <!-- 상품 정보 -->
+    <div class="product-info">
+      <h3 class="product-name">${product.name}</h3>
+      <div class="product-price">${product.price}</div>
+    </div>
+  `;
+  
+  // 카드 클릭 이벤트
+  card.addEventListener('click', function(e) {
+    // 버튼/슬라이더 클릭 시 제외
+    if (
+      e.target.closest('.swiper-button-prev') || 
+      e.target.closest('.swiper-button-next') ||
+      e.target.closest('.swiper-pagination')
+    ) {
+      return;
+    }
+    goToProductDetail(product.id);
+  });
+  
+  return card;
+}
+
+// Swiper 초기화
+function initSwipers() {
+  const swiperElements = document.querySelectorAll('.product-swiper');
+  
+  swiperElements.forEach((swiperEl) => {
+    const swiper = new Swiper(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: false,
+      autoplay: false,
+      speed: 300,
+      navigation: {
+        nextEl: swiperEl.querySelector('.swiper-button-next'),
+        prevEl: swiperEl.querySelector('.swiper-button-prev'),
+      },
+      pagination: {
+        el: swiperEl.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      allowTouchMove: true,
+      watchSlidesProgress: true,
+      observer: true,
+      observeParents: true,
+    });
+    
+    swiperInstances.push(swiper);
+  });
+}
+
+// Swiper 인스턴스 제거
+function destroySwipers() {
   swiperInstances.forEach(swiper => {
     if (swiper && swiper.destroy) {
       swiper.destroy(true, true);
     }
   });
   swiperInstances = [];
-
-  // 제품 데이터 가져오기
-  let products = category === 'all' ? getAllProducts() : productsData[category] || [];
-  
-  console.log(`표시할 제품 수: ${products.length}개`);
-  
-  // 카테고리 타이틀 업데이트
-  if (categoryTitle) {
-    categoryTitle.textContent = categoryNames[category] || '전체상품';
-  }
-  
-  // 제품 개수 업데이트
-  if (productCount) {
-    productCount.textContent = `${products.length} items`;
-  }
-  
-  if (products.length === 0) {
-    grid.innerHTML = '<div class="loading">상품이 없습니다</div>';
-    if (productCount) {
-      productCount.textContent = '0 item';
-    }
-    return;
-  }
-
-  // 제품 카드 생성
-  grid.innerHTML = products.map((product, index) => createProductCard(product, index)).join('');
-
-  // Swiper 초기화
-  initSwiper(products);
 }
 
-// ========== 5. Swiper 초기화 (중요!) ==========
-function initSwiper(products) {
-  setTimeout(() => {
-    products.forEach((product, index) => {
-      const uniqueId = `prod_${product.category}_${product.id}_${index}`;
-      const swiperElement = document.querySelector(`.swiper-${uniqueId}`);
+// 카테고리 제목 업데이트
+function updateCategoryTitle(category) {
+  const titleElement = document.getElementById('category-title-nav');
+  if (titleElement && categoryNames[category]) {
+    titleElement.textContent = categoryNames[category];
+  }
+}
+
+// 상품 개수 업데이트
+function updateProductCount(count) {
+  const countElement = document.getElementById('product-count');
+  if (countElement) {
+    countElement.textContent = `${count} item${count !== 1 ? 's' : ''}`;
+  }
+}
+
+// 정렬 버튼 초기화
+function initSortButtons() {
+  const sortLinks = document.querySelectorAll('.sort_link');
+  
+  sortLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
       
-      if (swiperElement) {
-        try {
-          const swiper = new Swiper(`.swiper-${uniqueId}`, {
-            // 좌우 화살표 버튼
-            navigation: {
-              nextEl: `.swiper-btn-next-${uniqueId}`,
-              prevEl: `.swiper-btn-prev-${uniqueId}`,
-            },
-            // 페이지네이션 (점)
-            pagination: {
-              el: `.swiper-pagi-${uniqueId}`,
-              clickable: true,
-              type: 'bullets',
-            },
-            loop: false, // 무한 반복 끄기
-            speed: 400, // 전환 속도
-            effect: 'slide', // 슬라이드 효과
-            grabCursor: true, // 마우스 커서 변경
-            slidesPerView: 1, // 한 번에 1개씩
-            spaceBetween: 0, // 슬라이드 간격
-            
-            // 키보드로도 조작 가능
-            keyboard: {
-              enabled: true,
-            },
-            
-            // 마우스 휠 비활성화
-            mousewheel: false,
-          });
-          
-          swiperInstances.push(swiper);
-          console.log(`Swiper 초기화 완료: ${uniqueId}`);
-        } catch (error) {
-          console.error(`Swiper 초기화 실패 (${uniqueId}):`, error);
-        }
-      } else {
-        console.warn(`Swiper 요소를 찾을 수 없음: ${uniqueId}`);
-      }
+      // 활성화 클래스 토글
+      sortLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+      
+      const sortType = this.getAttribute('data-sort');
+      sortProducts(sortType);
     });
-    
-    console.log(`총 ${swiperInstances.length}개의 Swiper 초기화 완료`);
-  }, 200);
+  });
 }
 
-// ========== 6. 페이지 초기화 ==========
-function initProductsPage() {
-  console.log('===== 제품 페이지 초기화 시작 =====');
+// 상품 정렬
+function sortProducts(sortType) {
+  let sortedProducts = [...allProducts];
   
-  // URL에서 카테고리 파라미터 읽기
-  const urlParams = new URLSearchParams(window.location.search);
-  const urlCategory = urlParams.get('category') || 'all';
-  
-  console.log('URL 파라미터 카테고리:', urlCategory);
-  currentCategory = urlCategory;
-  
-  // 카테고리 필터 버튼 이벤트 (있는 경우에만)
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  
-  if (filterButtons.length > 0) {
-    console.log('필터 버튼 발견:', filterButtons.length, '개');
-    
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', function() {
-        const category = this.dataset.category;
-        console.log('필터 버튼 클릭:', category);
-        
-        // 활성 버튼 변경
-        filterButtons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        // 카테고리 변경
-        currentCategory = category;
-        renderProducts(category);
-        
-        // URL 업데이트
-        const newUrl = `${window.location.pathname}?category=${category}`;
-        window.history.pushState({category: category}, '', newUrl);
-        
-        // 상단으로 스크롤
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        });
+  switch(sortType) {
+    case 'new':
+      // 신상품: ID 역순
+      sortedProducts.sort((a, b) => b.id - a.id);
+      break;
+    case 'low':
+      // 낮은 가격순 (숫자만 추출해서 비교)
+      sortedProducts.sort((a, b) => {
+        const priceA = parseInt(a.price.replace(/[^0-9]/g, '')) || 0;
+        const priceB = parseInt(b.price.replace(/[^0-9]/g, '')) || 0;
+        return priceA - priceB;
       });
-    });
-    
-    // 초기 활성 버튼 설정
-    const targetButton = document.querySelector(`[data-category="${urlCategory}"]`);
-    if (targetButton) {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      targetButton.classList.add('active');
-    }
+      break;
+    case 'high':
+      // 높은 가격순
+      sortedProducts.sort((a, b) => {
+        const priceA = parseInt(a.price.replace(/[^0-9]/g, '')) || 0;
+        const priceB = parseInt(b.price.replace(/[^0-9]/g, '')) || 0;
+        return priceB - priceA;
+      });
+      break;
+    case 'popular':
+      // 인기순 (ID 순서)
+      sortedProducts.sort((a, b) => a.id - b.id);
+      break;
+    default:
+      break;
   }
   
-  // JSON 데이터 로드 및 렌더링
-  loadProductsFromJSON();
+  renderProducts(sortedProducts);
 }
 
-// ========== 7. 페이지 로드 시 자동 실행 ==========
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initProductsPage);
-} else {
-  setTimeout(initProductsPage, 100);
+// 상품 상세 페이지로 이동
+function goToProductDetail(productId) {
+  console.log(`상품 ${productId} 상세 페이지로 이동`);
+  // 실제 구현 시 상세 페이지 URL로 이동
+  // window.location.href = `product-detail.html?id=${productId}`;
 }
-
-console.log('products.js 로드 완료');
