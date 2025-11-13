@@ -52,58 +52,6 @@
         "lighting_4_04.jpg"
       ],
       "status": "sold out"
-    },
-    {
-      "id": 5,
-      "category": "lighting",
-      "name": "믹스 플로어 램프 블랙",
-      "price": "390,000원",
-      "images": [
-        "lighting_5_01.jpg",
-        "lighting_5_02.jpg",
-        "lighting_5_03.jpg",
-        "lighting_5_04.jpg"
-      ],
-      "status": "sold out"
-    },
-    {
-      "id": 6,
-      "category": "lighting",
-      "name": "믹스 플로어 램프 브라운",
-      "price": "390,000원",
-      "images": [
-        "lighting_6_01.jpg",
-        "lighting_6_02.jpg",
-        "lighting_6_03.jpg",
-        "lighting_6_04.jpg"
-      ],
-      "status": "sold out"
-    },
-    {
-      "id": 7,
-      "category": "lighting",
-      "name": "믹스 플로어 램프 레드",
-      "price": "390,000원",
-      "images": [
-        "lighting_7_01.jpg",
-        "lighting_7_02.jpg",
-        "lighting_7_03.jpg",
-        "lighting_7_04.jpg"
-      ],
-      "status": "sold out"
-    },
-    {
-      "id": 8,
-      "category": "lighting",
-      "name": "믹스 플로어 램프 옐로우",
-      "price": "390,000원",
-      "images": [
-        "lighting_8_01.jpg",
-        "lighting_8_02.jpg",
-        "lighting_8_03.jpg",
-        "lighting_8_04.jpg"
-      ],
-      "status": "sold out"
     }
   ]
 }
