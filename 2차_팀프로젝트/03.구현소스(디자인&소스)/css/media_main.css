@@ -10,6 +10,15 @@
     .banner-next:after {
         font-size: 18px;
     }
+.topright {
+    display: none;
+}
+  .menu{
+    display: none;
+  }
+
+  ul.media-menu {
+  display: flex;
 }
 
 @media (max-width: 768px) {

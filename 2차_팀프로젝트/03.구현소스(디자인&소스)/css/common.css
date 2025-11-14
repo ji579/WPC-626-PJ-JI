@@ -5,60 +5,59 @@
 CDN(Content Delivery Network)은 
 어떤 웹파일을 네트워크로 불러오는 것임! */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 /* 웹폰트 적용 코드 */
 /*   font-family: "Bagel Fat One", system-ui;
  font-family: "Diphylleia", serif;
   font-family: "Gowun Batang", serif; */
 @font-face {
-    /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
-    font-family: 'MyCustomFont';
+  /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
+  font-family: "MyCustomFont";
 
-    /* 폰트 파일의 경로와 형식 지정 */
-    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
-        /* (선택 사항) 폰트의 굵기 지정 */
-    font-weight: normal;
+  /* 폰트 파일의 경로와 형식 지정 */
+  src: url("../fonts/Lobster-Regular.ttf") format("truetype");
+  /* (선택 사항) 폰트의 굵기 지정 */
+  font-weight: normal;
 
-    /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
-    font-style: normal;
-
+  /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
+  font-style: normal;
 }
 
-h1, h2{
-  font-family: 'MyCustomFont', sans-serif;
+h1,
+h2 {
+  font-family: "MyCustomFont", sans-serif;
 }
 
 /* 공통셋팅 */
-html{
-    /* 부드러운 스크롤 셋팅 */
-    scroll-behavior: smooth;  
+html {
+  /* 부드러운 스크롤 셋팅 */
+  scroll-behavior: smooth;
 
-    /* 전체 글자크기 */
-    font-size: 10px;
-    /* rem단위 계산편의를 위함 */
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden; /* 가로 스크롤 방지 */
+  /* 전체 글자크기 */
+  font-size: 10px;
+  /* rem단위 계산편의를 위함 */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
 /* 전체 글씨체 적용하기 */
 body {
   /* 웹폰트체를 전체에 적용함! */
   font-family: "Instrument Sans", sans-serif;
-     font-size: 10px;overflow-x: hidden; /* 가로 스크롤 방지 */
+  font-size: 10px;
+  overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
-.inbox{
+.inbox {
   /* width: 100%;
     box-sizing: border-box;
     padding: 0 calc(100% / 12) 0; */
-        /* max-width: 1600px;
+  /* max-width: 1600px;
     margin: 0 auto; */
-    padding: 0 75px;
+  padding: 0 75px;
 }
-
-
 
 /* 하단영역 */
 #bottom-area {
@@ -119,19 +118,18 @@ body {
   flex-direction: column;
   gap: 15px;
 }
-.before{
+.before {
   position: relative;
 }
-.before::before{
-  content: '';
+.before::before {
+  content: "";
   position: absolute;
-      top: -5px;
+  top: -5px;
   left: -15px;
   width: 1px;
   height: 30px;
   background-color: #b3b3b3;
   z-index: 1;
- 
 }
 button {
   width: 100%;
@@ -154,12 +152,18 @@ button:hover {
   margin: 0;
 }
 
-.sns{
+.sns {
   display: flex;
   justify-content: flex-end;
-    gap: 10px;
-margin-bottom: 10px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
-.sns img{
+.sns img {
   height: 20px;
+}
+
+ul.media-menu {
+  font-size: 18px;
+  color: #f0ae1f;
+ display: none;
 }

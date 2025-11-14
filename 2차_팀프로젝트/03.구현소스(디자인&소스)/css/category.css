@@ -201,7 +201,7 @@ section.banner-part {
 .banner-box {
   width: inherit;
   box-sizing: border-box;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   /* width: 1600px; */
 }
 
@@ -333,19 +333,22 @@ transform: scale(1.08);
     opacity: 0.5;
 }
 .menucontainer {
-  width: inherit;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 40px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .content {
-  /* width: 450px; */
-  /* width: 90%; */
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
+  gap: 15px;
 }
 .conttxt {
   display: flex;
@@ -365,10 +368,18 @@ transform: scale(1.08);
 .img {
   text-align: center;
   align-content: center;
-  height: 450px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: 60%;
 }
 .img > img {
+  width: 100%;
   height: 100%;
+  object-fit: contain;
+  transition: all 0.2s;
 }
 .img .menulogo {
   width: 100%;
@@ -408,13 +419,155 @@ padding: 50px 0 30px 0;
   padding-bottom: 40px;
   font-size: 2rem;
 }
-.mdimg {
+/* .mdimg {} */
   /* aspect-ratio: 253/267; */
   /* padding: 0 25px; */
-}
+
 
 .mdimg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* =============================================== */
+/* 반응형 미디어 쿼리 */
+/* =============================================== */
+
+/* 태블릿 가로 (1024px 이하) - 2칸 레이아웃 */
+@media (max-width: 1024px) {
+  .submenu > li {
+    flex: 0 0 calc(50%); /* 2칸 */
+    max-width: calc(50%);
+  }
+  
+  .menucontainer {
+    padding: 15px;
+  }
+  
+  .content {
+    gap: 12px;
+  }
+  
+  .conttxt {
+    font-size: 1.8rem;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  /* MD 메뉴도 2칸으로 */
+  .md li {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    min-width: 0;
+  }
+  
+  .mdmenu-box {
+    padding: 0 20px; /* 패딩 축소 */
+  }
+}
+
+/* 태블릿 세로 (768px 이하) - 2칸 유지 */
+@media (max-width: 768px) {
+  .submenu > li {
+    flex: 0 0 calc(50%);
+    max-width: calc(50%);
+  }
+  
+  .menucontainer {
+    padding: 12px;
+  }
+  
+  .content {
+    gap: 10px;
+  }
+  
+  .conttxt {
+    font-size: 1.5rem; /* 폰트 크기 축소 */
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  /* MD 메뉴 */
+  .md li {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    min-width: 0;
+  }
+  
+  .mdtxt {
+    font-size: 1.6rem;
+  }
+  
+  .mdmenu-box {
+    padding: 0 20px;
+  }
+}
+
+/* 모바일 (480px 이하) - 2칸 레이아웃 유지 */
+@media (max-width: 480px) {
+  .submenu > li {
+    flex: 0 0 calc(50%); /* 2칸 유지 */
+    max-width: calc(50%);
+  }
+  
+  .menucontainer {
+    padding: 8px; /* 패딩 축소 */
+  }
+  
+  .content {
+    gap: 8px; /* 간격 축소 */
+  }
+  
+  .conttxt {
+    font-size: 1.2rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+  }
+  
+  .icons img {
+    width: 16px;
+    height: auto;
+  }
+  
+  /* MD 메뉴도 2칸으로 */
+  .md li {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 7.5px);
+    max-width: calc(50% - 7.5px);
+    min-width: 0;
+  }
+  
+  ul.md {
+    gap: 15px; /* 간격 축소 */
+  }
+  
+  .mdmenu-box {
+    padding: 0 15px;
+  }
+  
+  .mdmenu-box h3 {
+    font-size: 1.5rem;
+    padding: 30px 0 20px 0;
+  }
+  
+  .mdtxt {
+    font-size: 1.3rem;
+    padding-bottom: 20px;
+  }
+  
+  .mdcontent {
+    padding: 0 10px; /* 패딩 축소 */
+  }
 }

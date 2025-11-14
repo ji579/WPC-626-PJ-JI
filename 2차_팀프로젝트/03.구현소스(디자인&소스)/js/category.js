@@ -163,8 +163,7 @@ function initShopMenuEvents() {
     console.log('✅ 이벤트 연결 완료!');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
     
-    // 4. MD 키워드 메뉴 (선택사항)
-    const mdItems = document.querySelectorAll('.md li');
+   
     
     if (mdItems.length > 0) {
         console.log('4️⃣ MD 메뉴 아이템 개수:', mdItems.length);

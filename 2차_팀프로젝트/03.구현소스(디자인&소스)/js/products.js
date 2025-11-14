@@ -212,7 +212,8 @@ function initSwipers() {
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 1,
       spaceBetween: 0,
-      loop: false,
+      loop: true, // 무한 루프 활성화
+      loopAdditionalSlides: 1, // 무한 루프를 부드럽게
       autoplay: false,
       speed: 300,
       navigation: {
@@ -227,6 +228,8 @@ function initSwipers() {
       watchSlidesProgress: true,
       observer: true,
       observeParents: true,
+      centeredSlides: true, // 슬라이드 중앙 정렬
+      loopPreventsSliding: false, // 루프 전환 중에도 슬라이딩 허용
     });
     
     swiperInstances.push(swiper);
@@ -283,11 +286,9 @@ function sortProducts(sortType) {
   
   switch(sortType) {
     case 'new':
-      // 신상품: ID 역순
       sortedProducts.sort((a, b) => b.id - a.id);
       break;
     case 'low':
-      // 낮은 가격순 (숫자만 추출해서 비교)
       sortedProducts.sort((a, b) => {
         const priceA = parseInt(a.price.replace(/[^0-9]/g, '')) || 0;
         const priceB = parseInt(b.price.replace(/[^0-9]/g, '')) || 0;
@@ -295,7 +296,6 @@ function sortProducts(sortType) {
       });
       break;
     case 'high':
-      // 높은 가격순
       sortedProducts.sort((a, b) => {
         const priceA = parseInt(a.price.replace(/[^0-9]/g, '')) || 0;
         const priceB = parseInt(b.price.replace(/[^0-9]/g, '')) || 0;
@@ -303,11 +303,23 @@ function sortProducts(sortType) {
       });
       break;
     case 'popular':
-      // 인기순 (ID 순서)
       sortedProducts.sort((a, b) => a.id - b.id);
       break;
     default:
       break;
+  }
+  
+  // 모든 정렬 링크의 active 클래스 제거
+  document.querySelectorAll('.sort_link').forEach(link => {
+    link.style.borderBottom = 'none';
+    link.style.fontWeight = 'normal';
+  });
+  
+  // 선택된 링크에 스타일 적용
+  const activeLink = document.querySelector(`[data-sort="${sortType}"]`);
+  if (activeLink) {
+    activeLink.style.borderBottom = '2px solid #000';
+    activeLink.style.fontWeight = 'bold';
   }
   
   renderProducts(sortedProducts);
