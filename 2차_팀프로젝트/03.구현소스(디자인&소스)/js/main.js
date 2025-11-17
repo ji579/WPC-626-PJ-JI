@@ -74,4 +74,50 @@ window.addEventListener("load", () => {
 
     prevScroll = curScroll;
   });
+
+  // Swiper 초기화
+  let menuSwiper;
+  
+  function initSwiper() {
+    // 기존 Swiper가 있으면 제거
+    if (menuSwiper) {
+      menuSwiper.destroy(true, true);
+    }
+
+    const windowWidth = window.innerWidth;
+
+    // 1024px 이하에서만 Swiper 초기화
+    if (windowWidth <= 1024) {
+      const slidesCount = windowWidth <= 768 ? 1 : 2;
+      
+      menuSwiper = new Swiper(".menu-box", {
+        slidesPerView: slidesCount,
+        slidesPerGroup: 1, // 중요: 한 번에 1개씩만 슬라이드
+        spaceBetween: 0,
+        loop: true,
+        loopedSlides: 3, // 전체 슬라이드 개수
+        navigation: {
+          nextEl: ".menu-swiper-next",
+          prevEl: ".menu-swiper-prev",
+        },
+        pagination: {
+          el: ".menu-swiper-pagination",
+          clickable: true,
+        },
+        speed: 600, // 슬라이드 전환 속도
+      });
+    }
+  }
+
+  // 초기 실행
+  initSwiper();
+
+  // 리사이즈 이벤트
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initSwiper();
+    }, 250);
+  });
 });

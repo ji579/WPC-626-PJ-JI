@@ -396,7 +396,7 @@ transform: scale(1.08);
 ul.md {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-around;
   padding-bottom: 150px;
 }
 
@@ -436,6 +436,10 @@ padding: 50px 0 30px 0;
 
 /* 태블릿 가로 (1024px 이하) - 2칸 레이아웃 */
 @media (max-width: 1024px) {
+  .inbox {
+    padding: 0 20px;
+}
+
   .submenu > li {
     flex: 0 0 calc(50%); /* 2칸 */
     max-width: calc(50%);
@@ -461,8 +465,8 @@ padding: 50px 0 30px 0;
   .md li {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: calc(50% - 10px);
-    max-width: calc(50% - 10px);
+   flex-basis: calc(45% - 10px);
+        max-width: calc(45% - 10px);
     min-width: 0;
   }
   
@@ -473,6 +477,8 @@ padding: 50px 0 30px 0;
 
 /* 태블릿 세로 (768px 이하) - 2칸 유지 */
 @media (max-width: 768px) {
+
+
   .submenu > li {
     flex: 0 0 calc(50%);
     max-width: calc(50%);
@@ -498,8 +504,8 @@ padding: 50px 0 30px 0;
   .md li {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: calc(50% - 10px);
-    max-width: calc(50% - 10px);
+ flex-basis: calc(45% - 10px);
+        max-width: calc(45% - 10px);
     min-width: 0;
   }
   
@@ -514,6 +520,10 @@ padding: 50px 0 30px 0;
 
 /* 모바일 (480px 이하) - 2칸 레이아웃 유지 */
 @media (max-width: 480px) {
+  .inbox {
+    padding: 0 15px;
+}
+
   .submenu > li {
     flex: 0 0 calc(50%); /* 2칸 유지 */
     max-width: calc(50%);
