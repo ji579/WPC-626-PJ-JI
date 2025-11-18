@@ -35,6 +35,7 @@
   }
   ul.media-menu.right {
     display: flex;
+    gap: 15px;
   }
 
   /* Swiper 2개 보이기 */

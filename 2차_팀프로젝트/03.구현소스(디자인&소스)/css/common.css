@@ -132,7 +132,7 @@ body {
   background-color: #b3b3b3;
   z-index: 1;
 }
-button {
+.footerbtn {
   width: 100%;
   height: 35px;
   background: transparent;
@@ -143,7 +143,7 @@ button {
   transition: 0.3s ease;
   cursor: pointer;
 }
-button:hover {
+.footerbtn:hover {
   color: #ffffff;
   background: #000000;
 }

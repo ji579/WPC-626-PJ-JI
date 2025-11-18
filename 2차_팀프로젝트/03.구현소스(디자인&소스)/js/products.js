@@ -2,6 +2,9 @@
 let swiperInstances = [];
 let currentCategory = 'all';
 let allProducts = [];
+let currentPage = 1;
+let itemsPerPage = 12; // 페이지당 상품 수
+let totalPages = 1;
 
 // 카테고리 이름 매핑
 const categoryNames = {
@@ -16,9 +19,9 @@ const categoryNames = {
   'sale': '세일'
 };
 
-// ⭐ 카테고리별 배너 이미지 매핑 (새로 추가!)
+// 카테고리별 배너 이미지 매핑
 const categoryBanners = {
-  'all': './images/rug1.jpg',
+  'all': './images/all_banner.jpg',
   'edition': './images/edition_banner.jpg',
   'textiles': './images/textiles_banner.jpg',
   'home': './images/home_banner.jpg',
@@ -33,39 +36,28 @@ const categoryBanners = {
 document.addEventListener('DOMContentLoaded', function() {
   initProducts();
   initSortButtons();
+  initPaginationButtons();
 });
 
 // 상품 초기화
 async function initProducts() {
-  // URL 파라미터에서 카테고리 가져오기
   const urlParams = new URLSearchParams(window.location.search);
   currentCategory = urlParams.get('category') || 'all';
   
-  // ⭐ 배너 이미지 변경 (새로 추가!)
   updateBannerImage(currentCategory);
-  
-  // 카테고리 제목 업데이트
   updateCategoryTitle(currentCategory);
   
-  // 상품 데이터 로드
   await loadProducts(currentCategory);
 }
 
-// ⭐ 배너 이미지 업데이트 함수 (새로 추가!)
+// 배너 이미지 업데이트
 function updateBannerImage(category) {
-  // 배너 이미지 요소 찾기
   const bannerImg = document.querySelector('.banner-box img.bg');
   
   if (bannerImg && categoryBanners[category]) {
-    // 배너 이미지 변경
     bannerImg.src = categoryBanners[category];
-    
-    // alt 텍스트도 변경
     bannerImg.alt = `${categoryNames[category]} 배너`;
-    
     console.log(`배너 이미지 변경: ${categoryBanners[category]}`);
-  } else {
-    console.warn('배너 이미지를 찾을 수 없거나 카테고리가 유효하지 않습니다.');
   }
 }
 
@@ -73,18 +65,19 @@ function updateBannerImage(category) {
 async function loadProducts(category) {
   try {
     if (category === 'all') {
-      // 전체 상품 로드
       allProducts = await loadAllProducts();
     } else {
-      // 특정 카테고리 로드 - data 폴더에서 읽기
       const response = await fetch(`./data/${category}.json`);
       const data = await response.json();
       allProducts = data.products;
     }
     
-    // 상품 렌더링
-    renderProducts(allProducts);
+    currentPage = 1;
+    totalPages = Math.ceil(allProducts.length / itemsPerPage);
+    
+    renderCurrentPage();
     updateProductCount(allProducts.length);
+    renderPagination();
     
   } catch (error) {
     console.error('상품 로드 실패:', error);
@@ -98,7 +91,6 @@ async function loadAllProducts() {
   const categories = ['edition', 'textiles', 'home', 'mirror', 'lighting', 'lifestyle', 'goods'];
   
   try {
-    // 모든 파일을 동시에 불러오기 - data 폴더에서
     const promises = categories.map(cat => 
       fetch(`./data/${cat}.json`)
         .then(res => res.json())
@@ -109,8 +101,6 @@ async function loadAllProducts() {
     );
     
     const results = await Promise.all(promises);
-    
-    // 모든 products 배열 합치기
     const allProducts = results.flatMap(data => data.products || []);
     
     return allProducts;
@@ -118,6 +108,21 @@ async function loadAllProducts() {
     console.error('전체 상품 로드 실패:', error);
     return [];
   }
+}
+
+// ✅ 현재 페이지 상품만 렌더링
+function renderCurrentPage() {
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const productsToShow = allProducts.slice(startIndex, endIndex);
+  
+  renderProducts(productsToShow);
+  
+  // 상단으로 부드럽게 스크롤
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
 }
 
 // 상품 렌더링
@@ -129,10 +134,7 @@ function renderProducts(products) {
     return;
   }
   
-  // 기존 Swiper 인스턴스 제거
   destroySwipers();
-  
-  // 그리드 초기화
   productsGrid.innerHTML = '';
   
   if (!products || products.length === 0) {
@@ -140,13 +142,11 @@ function renderProducts(products) {
     return;
   }
   
-  // 상품 카드 생성
   products.forEach((product, index) => {
     const card = createProductCard(product, index);
     productsGrid.appendChild(card);
   });
   
-  // Swiper 초기화
   setTimeout(() => {
     initSwipers();
   }, 100);
@@ -158,7 +158,6 @@ function createProductCard(product, index) {
   card.className = 'product-card';
   card.setAttribute('data-product-id', product.id);
   
-  // 이미지 슬라이드 생성
   const imageSlides = product.images.map(imgFileName => {
     const imgPath = `./images/products/${imgFileName}`;
     return `
@@ -169,7 +168,6 @@ function createProductCard(product, index) {
   }).join('');
   
   card.innerHTML = `
-    <!-- 이미지 슬라이더 -->
     <div class="product-image-wrapper">
       <div class="swiper product-swiper" data-index="${index}">
         <div class="swiper-wrapper">
@@ -181,16 +179,13 @@ function createProductCard(product, index) {
       </div>
     </div>
     
-    <!-- 상품 정보 -->
     <div class="product-info">
       <h3 class="product-name">${product.name}</h3>
       <div class="product-price">${product.price}</div>
     </div>
   `;
   
-  // 카드 클릭 이벤트
   card.addEventListener('click', function(e) {
-    // 버튼/슬라이더 클릭 시 제외
     if (
       e.target.closest('.swiper-button-prev') || 
       e.target.closest('.swiper-button-next') ||
@@ -212,8 +207,8 @@ function initSwipers() {
     const swiper = new Swiper(swiperEl, {
       slidesPerView: 1,
       spaceBetween: 0,
-      loop: true, // 무한 루프 활성화
-      loopAdditionalSlides: 1, // 무한 루프를 부드럽게
+      loop: true,
+      loopAdditionalSlides: 1,
       autoplay: false,
       speed: 300,
       navigation: {
@@ -228,8 +223,8 @@ function initSwipers() {
       watchSlidesProgress: true,
       observer: true,
       observeParents: true,
-      centeredSlides: true, // 슬라이드 중앙 정렬
-      loopPreventsSliding: false, // 루프 전환 중에도 슬라이딩 허용
+      centeredSlides: true,
+      loopPreventsSliding: false,
     });
     
     swiperInstances.push(swiper);
@@ -244,6 +239,110 @@ function destroySwipers() {
     }
   });
   swiperInstances = [];
+}
+
+// ✅ 페이지네이션 렌더링
+function renderPagination() {
+  const paginationWrapper = document.getElementById('paginationWrapper');
+  const pageNumbers = document.getElementById('pageNumbers');
+  
+  // 상품이 없으면 페이징 숨기기
+  if (allProducts.length === 0) {
+    paginationWrapper.style.display = 'none';
+    return;
+  }
+  
+  // 페이징 보이기
+  paginationWrapper.style.display = 'flex';
+  
+  // 페이지 번호 초기화
+  pageNumbers.innerHTML = '';
+  
+  // 페이지 그룹 계산 (5개씩 묶음)
+  const pageGroupSize = 5;
+  const currentGroup = Math.ceil(currentPage / pageGroupSize);
+  const startPage = (currentGroup - 1) * pageGroupSize + 1;
+  const endPage = Math.min(startPage + pageGroupSize - 1, totalPages);
+  
+  // 페이지 번호 생성
+  for (let i = startPage; i <= endPage; i++) {
+    const pageBtn = document.createElement('button');
+    pageBtn.className = 'page-number';
+    pageBtn.textContent = i;
+    
+    if (i === currentPage) {
+      pageBtn.classList.add('active');
+    }
+    
+    pageBtn.addEventListener('click', () => {
+      goToPage(i);
+    });
+    
+    pageNumbers.appendChild(pageBtn);
+  }
+  
+  // 버튼 상태 업데이트
+  updatePaginationButtons();
+}
+
+// ✅ 페이지네이션 버튼 초기화
+function initPaginationButtons() {
+  const firstPage = document.getElementById('firstPage');
+  const prevPage = document.getElementById('prevPage');
+  const nextPage = document.getElementById('nextPage');
+  const lastPage = document.getElementById('lastPage');
+  
+  // 맨 처음 (<<)
+  firstPage.addEventListener('click', () => {
+    goToPage(1);
+  });
+  
+  // 이전 그룹 (<) - 5페이지씩 이동
+  prevPage.addEventListener('click', () => {
+    const prevGroupLastPage = Math.floor((currentPage - 1) / 5) * 5;
+    goToPage(Math.max(1, prevGroupLastPage));
+  });
+  
+  // 다음 그룹 (>) - 5페이지씩 이동
+  nextPage.addEventListener('click', () => {
+    const nextGroupFirstPage = Math.ceil(currentPage / 5) * 5 + 1;
+    goToPage(Math.min(totalPages, nextGroupFirstPage));
+  });
+  
+  // 맨 끝 (>>)
+  lastPage.addEventListener('click', () => {
+    goToPage(totalPages);
+  });
+}
+
+// ✅ 페이지 이동
+function goToPage(pageNumber) {
+  if (pageNumber < 1 || pageNumber > totalPages || pageNumber === currentPage) {
+    return;
+  }
+  
+  currentPage = pageNumber;
+  renderCurrentPage();
+  renderPagination();
+}
+
+// ✅ 페이지네이션 버튼 상태 업데이트
+function updatePaginationButtons() {
+  const firstPage = document.getElementById('firstPage');
+  const prevPage = document.getElementById('prevPage');
+  const nextPage = document.getElementById('nextPage');
+  const lastPage = document.getElementById('lastPage');
+  
+  // 첫 페이지 그룹에 있으면 << < 비활성화
+  const isFirstGroup = currentPage <= 5;
+  firstPage.disabled = isFirstGroup;
+  prevPage.disabled = isFirstGroup;
+  
+  // 마지막 페이지 그룹에 있으면 > >> 비활성화
+  const lastGroupStart = Math.floor((totalPages - 1) / 5) * 5 + 1;
+  const isLastGroup = currentPage >= lastGroupStart;
+  nextPage.disabled = isLastGroup;
+  lastPage.disabled = isLastGroup;
 }
 
 // 카테고리 제목 업데이트
@@ -270,7 +369,6 @@ function initSortButtons() {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       
-      // 활성화 클래스 토글
       sortLinks.forEach(l => l.classList.remove('active'));
       this.classList.add('active');
       
@@ -309,25 +407,26 @@ function sortProducts(sortType) {
       break;
   }
   
-  // 모든 정렬 링크의 active 클래스 제거
   document.querySelectorAll('.sort_link').forEach(link => {
     link.style.borderBottom = 'none';
     link.style.fontWeight = 'normal';
   });
   
-  // 선택된 링크에 스타일 적용
   const activeLink = document.querySelector(`[data-sort="${sortType}"]`);
   if (activeLink) {
     activeLink.style.borderBottom = '2px solid #000';
     activeLink.style.fontWeight = 'bold';
   }
   
-  renderProducts(sortedProducts);
+  allProducts = sortedProducts;
+  currentPage = 1;
+  totalPages = Math.ceil(allProducts.length / itemsPerPage);
+  
+  renderCurrentPage();
+  renderPagination();
 }
 
 // 상품 상세 페이지로 이동
 function goToProductDetail(productId) {
   console.log(`상품 ${productId} 상세 페이지로 이동`);
-  // 실제 구현 시 상세 페이지 URL로 이동
-  // window.location.href = `product-detail.html?id=${productId}`;
 }

@@ -1,8 +1,3 @@
-// ========== 배너 Swiper 초기화 ========== 
-// Swiper CDN을 먼저 HTML head에 추가해야 합니다
-// <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-// <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 // [2] 파라미터 키값 읽기 /////////
 let pm = location.search.split("=")[1];
 console.log('파라미터:', pm);
@@ -20,9 +15,10 @@ $('#main-area').load('./inc/'+pm + '.html', function(response, status, xhr) {
         if (pm === 'shop') {
             console.log('=== shop 페이지 감지 ===');
             
-            // 약간의 지연을 주고 이벤트 초기화
+            // ✅ shop.html 로드 후 Swiper 초기화
             setTimeout(function() {
-                initShopMenuEvents();
+                initBannerSwiper(); // 배너 스와이퍼 초기화
+                initShopMenuEvents(); // 메뉴 이벤트 초기화
             }, 300);
         }
     } else if (status === "error") {
@@ -30,8 +26,10 @@ $('#main-area').load('./inc/'+pm + '.html', function(response, status, xhr) {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // 배너 스와이퍼 초기화
+// ✅ 배너 스와이퍼 초기화 함수
+function initBannerSwiper() {
+    console.log('🎬 배너 Swiper 초기화 시작');
+    
     const bannerSwiper = new Swiper('.bannerSwiper', {
         // 자동 슬라이드 설정
         autoplay: {
@@ -82,7 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
-});
+    
+    console.log('✅ 배너 Swiper 초기화 완료');
+}
 
 // ========== shop.html 메뉴 이벤트 초기화 함수 ========== 
 function initShopMenuEvents() {
@@ -163,7 +163,8 @@ function initShopMenuEvents() {
     console.log('✅ 이벤트 연결 완료!');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
     
-   
+    // 4. MD 메뉴 아이템 이벤트
+    const mdItems = document.querySelectorAll('.md li');
     
     if (mdItems.length > 0) {
         console.log('4️⃣ MD 메뉴 아이템 개수:', mdItems.length);

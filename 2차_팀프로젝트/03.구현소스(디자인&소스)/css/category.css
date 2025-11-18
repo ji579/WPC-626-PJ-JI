@@ -145,8 +145,8 @@ a {
 
 .marquee-content {
   display: inline-flex; /* flex 대신 inline-flex */
-gap: 330px;
-    line-height: 28px;
+  gap: 330px;
+  line-height: 28px;
   animation: marquee 30s linear infinite;
   white-space: nowrap;
   will-change: transform; /* 성능 최적화 */
@@ -183,8 +183,8 @@ section.banner-part {
 
 .banner-explain {
   /* width: 1000px; */
-    padding: 84px 0 0 0;
-    border-bottom: 1px solid;
+  padding: 84px 0 0 0;
+  border-bottom: 1px solid;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -328,9 +328,9 @@ img.bg {
   box-sizing: border-box;
   transition: all 0.2s;
 }
-.submenu > li:hover .img{
-transform: scale(1.08);
-    opacity: 0.5;
+.submenu > li:hover .img {
+  transform: scale(1.08);
+  opacity: 0.5;
 }
 .menucontainer {
   width: 100%;
@@ -354,12 +354,12 @@ transform: scale(1.08);
   display: flex;
   font-size: 2rem;
   /* color: #043b25; */
-    color:black;
+  color: black;
   justify-content: space-between;
 }
 .title {
   /* color: #043b25; */
-  color:black;
+  color: black;
   font-size: 2rem;
   text-align: center;
 }
@@ -391,7 +391,7 @@ transform: scale(1.08);
 
 /* md */
 .mdmenu-box {
-    padding: 0 40px;
+  padding: 0 40px;
 }
 ul.md {
   display: flex;
@@ -403,11 +403,10 @@ ul.md {
 .mdmenu-box h3 {
   font-size: 2rem;
   text-transform: uppercase;
-padding: 50px 0 30px 0;
+  padding: 50px 0 30px 0;
 }
 .md li {
   flex: 1; /* 동일한 비율로 확장 */
-  min-width: 250px; /* 최소 너비 설정 (선택사항) */
   /* height: 340px; */
   text-align: center;
   justify-items: center;
@@ -416,13 +415,12 @@ padding: 50px 0 30px 0;
   padding: 0 25px;
 }
 .mdtxt {
-  padding-bottom: 40px;
+  height: 60px;
   font-size: 2rem;
 }
 /* .mdimg {} */
-  /* aspect-ratio: 253/267; */
-  /* padding: 0 25px; */
-
+/* aspect-ratio: 253/267; */
+/* padding: 0 25px; */
 
 .mdimg img {
   width: 100%;
@@ -438,38 +436,48 @@ padding: 50px 0 30px 0;
 @media (max-width: 1024px) {
   .inbox {
     padding: 0 20px;
-}
+  }
 
   .submenu > li {
     flex: 0 0 calc(50%); /* 2칸 */
     max-width: calc(50%);
   }
-  
+  /* ✅ 마지막 아이템만 전체 너비로 확장 */
+  .submenu > li:last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+    aspect-ratio: 2 / 1;
+  }
+
+  .img .menulogo {
+    width: 90%;
+  }
+
   .menucontainer {
     padding: 15px;
   }
-  
+
   .content {
     gap: 12px;
   }
-  
+
   .conttxt {
     font-size: 1.8rem;
   }
-  
+
   .title {
     font-size: 1.8rem;
   }
-  
+
   /* MD 메뉴도 2칸으로 */
   .md li {
     flex-grow: 0;
     flex-shrink: 0;
-   flex-basis: calc(45% - 10px);
-        max-width: calc(45% - 10px);
+    flex-basis: calc(45% - 10px);
+    max-width: calc(45% - 10px);
     min-width: 0;
   }
-  
+
   .mdmenu-box {
     padding: 0 20px; /* 패딩 축소 */
   }
@@ -477,44 +485,49 @@ padding: 50px 0 30px 0;
 
 /* 태블릿 세로 (768px 이하) - 2칸 유지 */
 @media (max-width: 768px) {
-
-
   .submenu > li {
     flex: 0 0 calc(50%);
     max-width: calc(50%);
   }
-  
+
   .menucontainer {
     padding: 12px;
   }
-  
+
   .content {
     gap: 10px;
   }
-  
+
   .conttxt {
     font-size: 1.5rem; /* 폰트 크기 축소 */
   }
-  
+
   .title {
     font-size: 1.5rem;
   }
-  
+
   /* MD 메뉴 */
+  ul.md {
+    row-gap: 15px;
+  }
+
   .md li {
     flex-grow: 0;
     flex-shrink: 0;
- flex-basis: calc(45% - 10px);
-        max-width: calc(45% - 10px);
+    flex-basis: calc(45% - 10px);
+    max-width: calc(45% - 10px);
     min-width: 0;
   }
-  
+
   .mdtxt {
     font-size: 1.6rem;
   }
-  
+
   .mdmenu-box {
     padding: 0 20px;
+  }
+  .mdcontent {
+    padding: 0 15px;
   }
 }
 
@@ -522,62 +535,65 @@ padding: 50px 0 30px 0;
 @media (max-width: 480px) {
   .inbox {
     padding: 0 15px;
+  }
+.main-logo img {
+    height: 40px;
 }
-
   .submenu > li {
     flex: 0 0 calc(50%); /* 2칸 유지 */
     max-width: calc(50%);
   }
-  
+
   .menucontainer {
     padding: 8px; /* 패딩 축소 */
   }
-  
+
   .content {
     gap: 8px; /* 간격 축소 */
   }
-  
+
   .conttxt {
     font-size: 1.2rem;
   }
-  
+
   .title {
     font-size: 1.2rem;
   }
-  
+
   .icons img {
     width: 16px;
     height: auto;
   }
-  
+
   /* MD 메뉴도 2칸으로 */
   .md li {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: calc(50% - 7.5px);
-    max-width: calc(50% - 7.5px);
+    flex-basis: calc(45% - 10px);
+    max-width: calc(45% - 10px);
     min-width: 0;
   }
-  
+
   ul.md {
-    gap: 15px; /* 간격 축소 */
+    row-gap: 15px; /* 간격 축소 */
+    padding-bottom: 80px;
   }
-  
+
   .mdmenu-box {
     padding: 0 15px;
   }
-  
+
   .mdmenu-box h3 {
     font-size: 1.5rem;
     padding: 30px 0 20px 0;
   }
-  
+
   .mdtxt {
     font-size: 1.3rem;
-    padding-bottom: 20px;
+height: 40px;
   }
-  
+
   .mdcontent {
-    padding: 0 10px; /* 패딩 축소 */
+    padding: 0;
   }
 }

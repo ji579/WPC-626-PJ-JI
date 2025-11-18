@@ -67,7 +67,7 @@
         <section class="banner-part">
           <h2 class="temp-tit blind">2-1. 배너영역</h2>
           <div class="banner-box">
-            <img src="./images/rug1.jpg" alt="세이투세 러그 1" class="bg" />
+            <img src="./images/rugbanner.jpg" alt="세이투세 러그배너" class="bg" />
           </div>
         </section>
         <!-- 배너파트 끝 -->
@@ -106,10 +106,31 @@
           </div>
         </section>
 
-        <!-- 2-3 제품 그리드 -->
+       <!-- 2-3 제품 그리드 -->
         <div class="products-grid" id="productsGrid">
           <!-- JavaScript로 동적 생성됩니다 -->
           <div class="loading">상품을 불러오는 중...</div>
+        </div>
+
+        <!-- ✅ 페이징 영역 - 폰트어썸 아이콘 사용 -->
+        <div class="pagination-wrapper" id="paginationWrapper" style="display: none;">
+          <div class="pagination" id="pagination">
+            <button class="page-btn first-page" id="firstPage">
+              <i class="fa-solid fa-angles-left"></i>
+            </button>
+            <button class="page-btn prev-page" id="prevPage">
+              <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <div class="page-numbers" id="pageNumbers">
+              <!-- JavaScript로 동적 생성 -->
+            </div>
+            <button class="page-btn next-page" id="nextPage">
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
+            <button class="page-btn last-page" id="lastPage">
+              <i class="fa-solid fa-angles-right"></i>
+            </button>
+          </div>
         </div>
       </div>
       <!-- 메인영역 끝 -->

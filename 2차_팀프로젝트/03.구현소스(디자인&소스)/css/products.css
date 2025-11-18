@@ -363,8 +363,81 @@ a#category-title-nav {
 /* 가격 */
 .product-price {
   font-size: 14px;
-  font-weight: 600;
   color: #000;
+}
+/* =============================================== */
+/* 페이징 스타일 */
+/* =============================================== */
+
+.pagination-wrapper {
+  width: 100%;
+  padding: 40px 20px 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.page-btn {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+      border: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #898989;
+  transition: all 0.2s;
+}
+
+/* .page-btn:hover:not(:disabled) {
+  border-color: #000;
+} */
+
+button i {
+    color: black;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 8px;
+  margin: 0 8px;
+}
+
+.page-number {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+      border: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+ color: #898989;
+  transition: all 0.2s;
+}
+
+.page-number:hover {
+    font-weight: bold;
+  color: #000;
+  background: none;
+}
+
+.page-number.active {
+  color: #000;
+}
+.page-btn span {
+  color: #000000;
+  background: transparent;
+}
+.page-btn span:hover {
+  color: #000000;
+  background: transparent;
 }
 
 /* 반응형 - 태블릿 (3열) */
@@ -404,6 +477,25 @@ a#category-title-nav {
   .product-swiper .swiper-button-prev::after,
   .product-swiper .swiper-button-next::after {
     font-size: 12px;
+  }
+   .pagination-wrapper {
+    padding: 30px 15px 60px;
+  }
+
+  .page-btn,
+  .page-number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .pagination {
+    gap: 4px;
+  }
+
+  .page-numbers {
+    gap: 4px;
+    margin: 0 4px;
   }
 }
 
