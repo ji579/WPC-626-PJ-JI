@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub1-profile.css" />
+        <script type="module" src="./js/common.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+
+    <!-- 폰트어썸 CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+    <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+          <div class="center-box">
+            <ul>
+              <li class="on">
+                <a href="sub1.html">Profile</a>
+              </li>
+              <li>
+                <a href="sub2.html">Works</a>
+              </li>
+              <li>
+                <a href="index.html">
+                <h1>草間彌生</h1></a>
+              </li>
+              <li>
+                <a href="sub3-1-1visitinfo.html">Museum</a>
+              </li>
+              <li>
+                <a href="index.html#contact-area">Contact
+                </a>
+
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- 상단동그라미 -->
+      </div>
+
+      <!--제목 -->
+      <div class="tit">
+        <h2>Profile</h2>
+      </div>
+    </header>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 2.컨텐츠영역 -->
+    <main id="main-area">
+      <div id="pro-area inbox">
+        <h2 class="temp-tit blind">컨텐츠영역</h2>
+        <section class="pro-box">
+          <ul>
+            <!-- 2-1 프로필얼굴이미지 -->
+            <li class="profile">
+              <img src="./images/뒷배경.png" alt="컨텐츠" class="profile" />
+              <img src="./images/야요이.png" alt="얼굴" class="yayoi" />
+
+              <p>
+                Born : March 22, 1929; Matsumoto, Nagano, Japan <br />
+                Nationality : Japanese<br />
+                Field : painting, sculpture, drawing, performance,
+                installation<br />
+              </p>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- 3.책영역 -->
+    <div id="books-area" class="inbox">
+         <!-- 3-2-1배경이미지 -->
+        <div class="bg inbox">
+    
+          <img src="./images/책_좀더 라운드.png"   alt="배경이미지"  />
+        </div>
+        <!-- 배경이미지 -->
+         
+        <div class="rightmenu">
+        <!-- 3-1버튼그룹박스 -->
+        <div class="btn-group">
+          <!-- 검색버튼 -->
+          <button class="btn-search">
+            <i class="fa-solid fa-magnifying-glass"> </i>
+          </button>
+          <!-- 햄버거/닫기 -->
+          <button class="btn-ham">
+            <i class="fa-solid fa-bars"> </i>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <!-- 버튼그룹박스 끝 -->
+
+        <!-- 숨겼다가 나오는 메뉴들 -->
+        <div class="marginbox">
+          <div class="blindbox">
+            <section class="searchbox">
+              <div class="searchbar"></div>
+              <div class="searicon">
+                <i class="fa-solid fa-magnifying-glass"> <p>Search</p></i>
+                <i class="fa-solid fa-xmark"></i>
+              </div>
+            </section>
+            <!-- searchbox 끝 -->
+            <section class="listbox">
+              <div>
+                <div class="list-tit">
+                  <p>page</p>
+                </div>
+                <!-- 디스플레이 -->
+                <ul class="list">
+                  <li>1-2</li>
+                  <li>3-4</li>
+                  <li>5-6</li>
+                  <li>7-8</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+          <!-- blindbox끝-->
+        </div>
+        <!-- 마진상자 끝 -->
+      </div>
+      <!-- rightmenu끝 -->
+
+      <!--3-2책슬라이드 -->
+      <div
+        style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+        class="swiper mySwiper"
+      >
+    
+
+        <!-- 3-2-2책슬라이드시작 -->
+        <div class="swiper-wrapper inbox">
+          <div class="swiper-slide">
+            <!-- <div class="title" data-swiper-parallax="-300">Slide 1</div>
+        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div> -->
+            <div class="text" data-swiper-parallax="-100">
+              <div class="text-box">
+                <section class="left">
+                  <div class="name">
+                    <!-- 야요이 첫줄 -->
+                    <ul>
+                      <li class="y">Y</li>
+                      <li class="a">a</li>
+                      <li class="bottom">y</li>
+                      <li class="o">o</li>
+                      <li class="i">i</li>
+                    </ul>
+                    <!-- 쿠사마 두번째줄 -->
+                    <ul>
+                      <li class="rotate k">K</li>
+                      <li class="u">u</li>
+                      <li class="bottom">s</li>
+                      <li class="a">a</li>
+                      <li class="bottom">m</li>
+                      <li class="rotate a">a</li>
+                    </ul>
+                  </div>
+                </section>
+                <!-- ///////////////////// -->
+                <section class="right">
+                  Started to paint using polka dots and nets as motifs at
+                  around age ten ,and created fantastic paintings in
+                  watercolors, pastels and oils. <br /><br /><br />
+                  Went to the United States in 1957. Showed large paintings,
+                  soft sculptures, and environmental sculptures using mirrors
+                  and electric lights. In the latter 1960s, staged many
+                  happenings such as body painting festivals, fashion shows
+                  and anti-war demonstrations. Launched media-related
+                  activities such as film production and newspaper
+                  publication. In 1968, the film “Kusama's
+                  Self-Obliteration"which Kusama produced and starred in won a
+                  prize at the Fourth International Experimental Film
+                  Competition in Belgium and the Second Maryland Film Festival
+                  and the second prize at the Ann Arbor Film Festival. Held
+                  exhibitions and staged happenings also in various countries
+                  in Europe. <br /><br /><br />
+                  Returned to Japan in 1973. While continuing to produce and
+                  show art works, Kusama issued a number of novels and
+                  anthologies. In 1983, the novel “The Hustlers Grotto of
+                  Christopher Street" won the Tenth Literary Award for New
+                  Writers from the monthly magazine Yasei Jidai.
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-4페이지 -->
+          <div class="swiper-slide inbox">
+            <!-- <div class="title" data-swiper-parallax="-300">Slide 1</div>
+        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div> -->
+            <div class="text" data-swiper-parallax="-100">
+              <div class="text-box">
+                <section class="left">
+                  In 1986, held solo exhibitions at the Musee Municipal, Dole
+                  and the Musee des Beaux-Arts de Calais, France, in 1989,
+                  solo exhibitions at the Center for International
+                  Contemporary Arts, New York and the Museum of Modern Art,
+                  Oxford, England. In 1993, participated in the 45th Venice
+                  Biennale.<br /><br /><br />
+
+                  Began to create open-air sculptures in 1994. Produced
+                  open-air pieces for the Fukuoka Kenko Center, the Fukuoka
+                  Municipal Museum of Art, the Bunka-mura on Benesse Island of
+                  Naoshima, Kirishima Open-Air Museum and Matsumoto City
+                  Museum of Art, , in front of Matsudai Station, Niigata,TGV's
+                  Lille-Europe Station in France, Beverly Gardens Park,
+                  Beverly hills, Pyeonghwa Park, Anyang and a mural for the
+                  hallway at subway station in Lisbon.<br /><br /><br />
+
+                  Began to show works mainly at galleries in New York in 1996.
+                  A solo show held in New York in the same year won the Best
+                  Gallery Show in 1995/96 and the Best Gallery Show in 1996/97
+                  from the International Association of Art Critics in
+                  1996.<br /><br /><br />
+                </section>
+                <section class="right">
+                  From1998 to 1999, a major retrospective of Kusama's works
+                  which opened at the Los Angeles County Museum of Art
+                  traveled to the Museum of Modern Art, New York, the Walker
+                  Art Center and the Museum of Contemporary Art, Tokyo.<br /><br /><br />
+
+                  In 2000, Kusama won The Education Minister's Art
+                  Encouragement Prize and Foreign-Minister's Commendations.
+                  Her solo exhibition that started at Le Consortium in France
+                  in the same year traveled to Maison de la culture du Japon,
+                  Paris, KUNSTHALLEN BRANDTS ÆDEFABRIK, Denmark, Les
+                  Abattoirs, Toulouse, KUNSTHALLE Wien, Art Sonje Center,
+                  Seoul.<br /><br /><br />
+
+                  Received the Asahi Prize in 2001, the Medal with Dark Navy
+                  Blue Ribbon in 2002, the French Ordre des Arts et des
+                  Lettres (Officier), and the Nagano Governor Prize (for the
+                  contribution in encouragement of art and culture) in 2003<br /><br /><br />
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <!-- ///////////////////////////////////////////// -->
+          <!-- 5-6페이지 -->
+          <div class="swiper-slide inbox">
+            <!-- <div class="title" data-swiper-parallax="-300">Slide 1</div>
+        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div> -->
+            <div class="text" data-swiper-parallax="-100">
+              <div class="text-box">
+                <section class="left">
+                  In 2004, Her solo exhibition “KUSAMATRIX" started at Mori
+                  Museum in Tokyo. This exhibition drew visitors totaling
+                  520,000 people. In the same year, another solo exhibition
+                  started at The National Museum of Modern Art, Tokyo In 2005,
+                  it traveled to The National Museum of Modern Art, Kyoto,
+                  Hiroshima City Museum of Contemporary Art, Contemporary Art
+                  Museum, Kumamoto, Matsumoto City Museum of Art.<br /><br /><br />
+
+                  Received the 2006 National Lifetime Achievement Awards, the
+                  Order of the Rising Sun, Gold Rays with Losette and The
+                  Praemium Imperiale -Painting- in 2006.<br /><br /><br />
+
+                  In 2008, Documentary film : “Yayoi Kusama, I adore myself"
+                  released in Japan and also screened at international film
+                  festival and museum. Exhibition tour started at Museum
+                  Boijmans Van Beuningen in Rotterdam, traveled to Museum of
+                  Contemporary Art Sydney in Australia in 2009, City Gallery
+                  Wellington in New Zealand. Conferred the honorary citizen of
+                  Matsumoto city.
+                </section>
+                <section class="right">
+                  Solo exhibition at Gagosian Gallery NY and LA, Victora Miro
+                  Gallery in London and Padiglione d'Arte Contemporanea in
+                  Milan. Honored as Person of Cultural Merits in Japan
+                  2009.<br /><br /><br />
+
+                  In 2010, solo exhibition and permanent outdoor sculpture at
+                  Towada Art Center in Japan.? Participation to Sydney
+                  Biennale and Aichi Triennale. Solo exhibition at Victoria
+                  Miro Gallery in London, fiac in Paris.<br /><br /><br />
+
+                  2011, solo exhibition at Gagosian gallery (Roma), Victoria
+                  Miro gallery (London). Europe and North America
+                  retrospective tour started at Museo Nacional Centro De Arte
+                  Reina Sofia, Madrid traveling to Centre Pompidou (Paris),
+                  TATE MODERN (London) and Whitney Museum (New York). Solo
+                  exhibition at Watari Art Museum (Tokyo). In September,
+                  participate in the 2011 Chengdu Biennale (China). Programmed
+                  solo exhibition at Queensland Art Gallery (Brisbane) in
+                  November.
+                </section>
+              </div>
+            </div>
+          </div>
+          <!-- ///////////////////////////////////////////// -->
+          <!-- 7-8페이지 -->
+          <div class="swiper-slide inbox">
+            <!-- <div class="title" data-swiper-parallax="-300">Slide 1</div>
+        <div class="subtitle" data-swiper-parallax="-200">Subtitle</div> -->
+            <div class="text" data-swiper-parallax="-100">
+              <div class="text-box">
+                <section class="left">
+                  2012, “Eternity of Eternal Eternity", recent works solo
+                  national traveling show started at National Museum of Art,
+                  Osaka traveled to The Museum of Modern Art, Saitama,
+                  Matsumoto City Museum of Art, Nagano, Niigata City Art
+                  Museum. In the next year, it travel to Shizuoka Prefectural
+                  Museum of Art, Oita Art Museum and Museum of Art, Koch. Solo
+                  exhibition at Victoria Miro gallery (London). Shinjuku
+                  Honorary Citizen Award. The American Academy Of Arts and
+                  Letters Foreign Honorary Membership. Collaborated with Louis
+                  Vuitton creative director Marc Jacobs on collaborative
+                  collection “LOUIS VUITTON × YAYOI KUSAMA Collection".<br /><br /><br />
+
+                  2013, “Yayoi Kusama. Obsesión infinita [Infinite
+                  Obsession]", South America retrospective tour started at
+                  Malba - Fundacacion Constantini. It will travel to Centro
+                  Cultural Banco do Brasil, Rio de Janeiro, Centro Cultutal
+                  Banco do Brasil, Brasília, Instituto Tomie Ohtake, São Paulo
+                  and Mexico City. “KUSAMA YAYOI, A Dream I Dreamed", recent
+                  works exhibition tour started at Daegu Art Museum, Korea. It
+                  will travel to Museum of Contemporary Art Shanghai, Seoul
+                  Arts Centre, Taipei Fine Arts Museum, National Gallery of
+                  Modern Art, New Delhi.
+                </section>
+                <section class="right last">To be continued</section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 책슬라이드 끝 -->
+      </div>
+      <!-- 책슬라이드 끝 -->
+
+      =
+<div class="swiper-pagination-left"></div>
+<div class="swiper-pagination-right"></div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- <div class="swiper-pagination"></div> -->
+    </div>
+    <!-- 책영역끝 -->
+
+    <!-- 책영역끝 -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+
+      var swiper1 = new Swiper(".mySwiper", {
+        speed: 600,
+        parallax: true,
+        pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      /************************************************ 
+    3. 햄버거 버튼 클릭시 상단영역에 클래스넣기
+************************************************/
+      // (1) 이벤트 대상 : .btn-ham
+      const $btnHam = $(".btn-ham");
+      // (2) 변경 대상 : #top-area
+      const $topArea = $("#books-area");
+      // console.log($topArea, $btnHam);
+      // const $listBox = $(".listbox");
+      // (3) 이벤트 대상 클릭시
+      // 변경대상에 클래스 토글로 on넣기
+      $('.btn-search').click(()=>{
+        $('.listbox').hide();     // listbox 숨기기
+        $('.searchbox').show();   // searchbox 보이기
+      });
+
+      $('.btn-ham').click(()=>{
+        $('.searchbox').hide();   // searchbox 숨기기
+        $('.listbox').toggle();   // listbox 보이기
+      });
+
+      $('.fa-solid.fa-xmark').click(()=>{
+        $('.searchbox').hide();
+      })
+
+      const totalSlides = 8; // 전체 페이지 수 
+      const swiper = new Swiper(".mySwiper", {
+        speed: 600,
+        parallax: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          slideChange: function () {
+            const currentLeftPage = swiper.activeIndex * 2 + 1;
+            const currentRightPage = currentLeftPage + 1;
+
+            // 왼쪽 페이지 번호
+            document.querySelector(".swiper-pagination-left").textContent =
+              `${currentLeftPage}/${totalSlides}`;
+
+            // 오른쪽 페이지 번호 (마지막 페이지 처리)
+            if (currentRightPage <= totalSlides) {
+              document.querySelector(".swiper-pagination-right").textContent =
+                `${currentRightPage}/${totalSlides}`;
+            } else {
+              document.querySelector(".swiper-pagination-right").textContent = "";
+            }
+          },
+        },
+      });
+
+// 초기 표시 (첫 슬라이드)
+swiper.emit("slideChange");
+
+    </script>
+
+    <!-- 6. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
+          </div>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

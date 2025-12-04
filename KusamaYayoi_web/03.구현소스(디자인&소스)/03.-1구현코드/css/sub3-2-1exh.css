@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+/* 제목파트 */
+.tit3 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 a.active {
+    color: #c52531;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  padding-left: calc(100% /12);
+}
+
+.line2 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-content: center;
+  padding-left: calc(100% /12);
+}
+
+.link-label {
+    cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+    display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
+}
+.link-label a {
+    text-decoration: none; /* a 태그의 밑줄 제거 */
+    color: inherit; /* 부모 요소의 글자색 상속 */
+    /* 원하는 스타일링 추가 */
+}
+.line2 img {
+  margin-left: 5px;
+}
+.line2 a {
+  margin-right: 5px;
+}
+/* input 요소를 숨겨도 작동은됨! */
+input[type="radio"] {
+  display: none; 
+}
+
+.check {
+  display: flex;
+  position: relative;
+}
+
+/* 라벨요소 */
+label {
+      font-size: 1.4rem;
+  display: flex;
+  gap: 5px;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-right: 13px;
+  /* 텍스트와 가상요소 순서를 맞추기 위해 flex-direction: row-reverse 적용 권장 */
+  /* flex-direction: row-reverse; */ 
+}
+
+/* 동그라미 크기 설정 */
+label::after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  margin-top: 4px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+}
+
+/* 라디오 버튼 체크시 라벨 변경 */
+/* 체크된 라디오버튼의 다음 형제 라벨요소선택 */
+input:checked + label::after {
+  background: #c52531;
+}
+
+input:checked + label {
+  color: #c52531;
+}
+/* 라디오버튼 체크시
+        하단 형제요소인 ul>li 변경하기 */
+/* 체크박스/라디오버튼 체크시
+        가상클래스는 :checked 
+        -> 틸드(~) 선택자는 형제요소들을 모두
+        찾아 해당 요소를 선택함!
+        */
+
+.line3 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+  margin-bottom: 35px;
+}
+/* ////////////////////////////////////////// */
+
+.main-area {
+  /* position: relative; */
+  max-width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+li {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+}
+
+li img {
+  width: 886px;
+  height: 1013px;
+ padding-bottom: 45px;
+}
+b {
+ font-size: 1.8rem;
+ padding-bottom: 20px;
+}
+
+button{
+border-radius: 0.2vw;
+    background: white;
+    margin-bottom: 118px;
+    font-size: 1.6rem;
+}
+button:hover{
+border-radius: 0.2vw;
+    background: #808080;
+    color: white;
+    margin-bottom: 118px;
+    font-size: 1.6rem;
+}

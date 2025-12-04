@@ -1,0 +1,509 @@
+@charset "utf-8";
+
+
+/* 1360px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1360px) {
+  .top {
+    height: 100vh;
+    height: 100dvh; /* 모바일 브라우저 주소창 고려 */
+  }
+.bg {
+  /* aspect-ratio: 1295 /548; */
+  position: absolute;
+top: 10%;
+        left: 50%;
+        width: 1200px;
+        height: 686px;
+
+  translate: -50% 0;
+}
+.yayoi {
+  position: absolute;
+        top: 10vh;
+        width: 243px;
+  left: 50%;
+  translate: -50% 0;
+  z-index: 1;
+}
+
+  .inbox {
+    padding: 0 2vw;
+  }
+  /* .contact-area h2 {
+    padding: 9vw 0 1vw 0;
+  } */
+  .contact-area h2 {
+    padding: 1vw 0 1vw 0;
+  }
+}
+/* 1360px 이하 미디어쿼리 종료 */
+
+/* 1200px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 9px;
+  }
+
+  .center-box {
+    /*상단메뉴*/
+    width: 1200px;
+  }
+
+  .yayoi {
+              width: 210px;
+        top: 12vh;
+  }
+  .bg {
+ 
+    width: 1000px;
+ 
+  }
+  .scroll-inbox {
+    top: 80%;
+  }
+
+  /* 컨택영역 */
+  .desc-box {
+    width: 480px;
+    border: 0.2vw solid rgb(0, 0, 0);
+    height: 4vw;
+    border-radius: 0.8vw;
+  }
+
+  .details-box {
+    height: 136px;
+  }
+  .big {
+    right: -594px;
+  }
+  .middle {
+    right: -488px;
+  }
+  .small {
+    right: 57px;
+    top: -277px;
+    width: 132px;
+  }
+  .bottom-area {
+    max-width: 1200px;
+    /* padding: 0 calc(100% / 12) 2.7vw; */
+  }
+}
+/* 1200px 이하 미디어쿼리 종료 */
+
+/* 1024px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+  /* 전체 글자 크기 변경 */
+  html {
+    font-size: 8px;
+  }
+
+  /* 메인-상단 창 */
+  .center-box {
+    justify-content: center !important;
+  }
+  /* //////////메인상단끝////////////// */
+
+  .center-box {
+    /*상단메뉴*/
+    width: 1024px;
+  }
+
+  .circle {
+    background: url(../images/연결1024.png) no-repeat center top / cover;
+    height: 95px;
+    top: 30px;
+    width: 1024px;
+  }
+
+  /* 컨택영역 */
+  .contact-area {
+    height: 1045px;
+    padding: 1vw calc(100% / 12) 1vw;
+  }
+  .contact-area h2 {
+    padding: 0vw 0 1vw 0;
+  }
+  .circle2 {
+    background: url(../images/연결1024.png) no-repeat center top / cover;
+    height: 95px;
+    width: 1024px;
+  }
+  .desc-box {
+    width: auto;
+    margin: 0 20px;
+  }
+  .big {
+    position: absolute;
+    top: 9px;
+    left: 48%;
+    translate: -50% 0;
+  }
+  .small {
+    position: absolute;
+    top: -145px;
+    right: -63px;
+  }
+  .middle {
+    position: absolute;
+    top: 250px;
+    left: 75%;
+    translate: -50% 0;
+  }
+}
+/* 1024px 이하 미디어쿼리 종료 */
+
+/* 800px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+  /* ///////////화면전체*/
+  /* 모바일용 메뉴 */
+
+ /* 메뉴그룹 변경 */
+  .menu-group {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding: 5vw; */
+    background-color: white;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-sizing: border-box;
+    /* padding: 10vh 5vw; */
+  }
+
+
+  .center-box {
+    width: 800px;
+    position: relative;
+  }
+  body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+  }
+  .menu-box {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 94px;
+    height: 100vh;
+    background-color: #fff;
+    padding-right: 0;
+    transition: left 0.5s ease-in-out;
+  }
+  .menubtn-group {
+    display: block;
+  }
+  /* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  메뉴박스인 .menu-box의 left값을 0으로 변경한다! */
+  #top-area.on .menu-box {
+    left: 0;
+  }
+ 
+
+  /* .gnb-list > ul{
+  margin: 0
+}; */
+
+  /* 탑메뉴 변경 */
+  /* .top-menu ul {
+    width: 85vw;
+    line-height: 4;
+    margin-top: 5vh;
+    border-bottom: 5px solid #e5e5e5;
+  } */
+  /* GNB 메뉴 변경 */
+  .gnb-menu ul {
+    margin-top: 5vh;
+    flex-direction: column;
+    font-size: 2.5vh;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* GNB메뉴 가로크기 변경 */
+  nav.gnb-menu {
+    width: 100%;
+  }
+  .sub {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+  /* GNB 메뉴 아이콘 크기위치변경 */
+  .gnb-menu i {
+    float: right;
+  }
+  .sub2 {
+    position: absolute;
+    width: 40%;
+    text-align: left;
+    right: calc(100% / 12);
+  }
+  .sub2 > div {
+    font-size: 2.5vh;
+    position: relative;
+  }
+  .exhibitionmenu,
+  .visitmenu {
+    position: relative;
+  }
+
+  .fa-chevron-down:before {
+    /* position: absolute; */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  /* 활성화 시 화살표 회전 */
+  .fa-chevron-down.active {
+    transform: rotate(180deg);
+  }
+  /* ///////////////////// */
+  /* 또는 더 간단하게 */
+  .fa-chevron-down {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 8px; /* 아이콘과 텍스트 사이 간격 */
+  }
+  /* ///////////////////// */
+
+  .gnb-menu ul {
+    align-items: flex-start;
+  }
+  .gnb-list > li {
+    width: 100%;
+    border-bottom: 1px solid #000000;
+    /* padding: 1.6rem 0;
+
+    margin-bottom: 3.2rem; */
+    padding: 3.2rem;
+  }
+  .gnb-list > li:nth-child(3),
+  .gnb-list > li:nth-child(4) {
+    padding: 3.2rem 3.2rem calc(2.5vh * 2 + 3.2rem) 3.2rem;
+  }
+  .gnb-list > li > a:nth-child(1),
+  .gnb-list > li > a:nth-child(2),
+  .gnb-list > li > a:nth-child(5) {
+    width: 100%;
+  }
+
+  .gnb-list > li > a {
+    color: #000 !important;
+    width: 33%;
+    /* width: 100%; */
+    /* margin: 0 10vh; */
+    margin: 0 0 0 calc(100% / 12);
+    text-align: left;
+
+    font-size: 2.5vh !important;
+  }
+  .two-line > li > a {
+    color: #000 !important;
+    font-size: 2.5vh !important;
+  }
+  .sub-menu > li > a {
+    color: #000 !important;
+  }
+  .sub-list {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+  .sub-list.active {
+    display: block;
+    max-height: 500px;
+  }
+
+  /* 서브메뉴 화면 채우기 설정변경 */
+  .sub-menu {
+    position: fixed;
+    top: 0;
+    /* left: 100%; */
+    /* 왼쪽 바깥에 나가있음! */
+    z-index: 1;
+    /* width: 100vw; */
+    height: 100vh;
+    width: 50%;
+    background-color: #8c4b4b;
+    max-height: none;
+  }
+
+  /* 서브메뉴에 클래스 on을 주면 left값을 0으로 변경 */
+  .sub-menu.on {
+    left: 0;
+  }
+
+  .mob {
+    display: none !important;
+  }
+
+  /* GNB메뉴 기존 높이값 해제 */
+  .gnb-menu ul {
+    height: auto;
+  }
+  /* GNB메뉴 li 기존 가로값 해제 */
+  .sub-list li {
+    width: auto;
+  }
+
+  /* 모바일용 메인 화면 구성 */
+  /* 1. 데스크탑용 article 숨기기 */
+  #col1,
+  #col2,
+  #col3 {
+    display: none !important;
+  }
+
+  /* 2. 모바일 통합 리스트를 Flex 컨테이너로 설정 (보이게 함) */
+  .mobile-main-list {
+    display: flex !important; /* li를 정렬하기 위해 Flex 사용 */
+    flex-direction: column; /* li를 세로로 정렬 */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 5px; /* li 간 간격 */
+  }
+
+  /* 4. 항목 스타일 적용 (li 자체가 아닌 내부 요소에 적용) */
+  .mobile-main-list .contact,
+  .mobile-main-list .img-box,
+  .mobile-main-list .main-center {
+    /* li 자체에 width: 100% */
+    width: 100%;
+    height: auto;
+    /* 높이 설정을 위해 li 내부의 콘텐츠에 aspect-ratio 적용 */
+  }
+
+  .mobile-main-list .contact img,
+  .mobile-main-list .img-box img,
+  .mobile-main-list video {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* 5. hover 효과 제거 */
+  .contact:hover img {
+    animation: none !important;
+  }
+
+  #maincontent {
+    width: 100%;
+  }
+
+  .main-center {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* background: white; */
+  }
+
+  .main-info {
+    height: 100%;
+    top: 65px;
+    display: block;
+  }
+
+  .main-info h4 {
+    position: absolute;
+    bottom: 15vw;
+    left: 50%;
+    translate: -50% 0;
+    font-size: 1.6rem;
+  }
+  /* //////////////////////////////////////////////////////// */
+  .main-area {
+    display: block;
+    margin: 0 auto;
+  }
+  .contact,
+  .img-box img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  }
+
+  .main-center h1 {
+    letter-spacing: 10rem;
+  }
+
+  .contact img {
+    box-sizing: border-box;
+    padding: 0.1vw 6vw;
+    height: 100%;
+    animation: none;
+  }
+
+  #myvid {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* 배너영역*/
+  .yayoi {
+        top: 20%;
+        width: 180px;
+  }
+  .bg {
+    top: 13%;
+    width: 700px;
+  }
+  .scroll-inbox {
+    top: 85%;
+  }
+
+  /* .spart-menu ul li 1,2,4,5 번만 display:none 
+스티키 메뉴*/
+  /* .spart-menu ul > li:nth-child(1),
+  .spart-menu ul > li:nth-child(2),
+  .spart-menu ul > li:nth-child(4),
+  .spart-menu ul > li:nth-child(5) {
+    display: none;
+  } */
+
+  /* 컨택영역 */
+  .contact-area {
+    background: url(../images/bg_mb.png) no-repeat center top / cover;
+    background-color: #fff;
+  }
+
+  .paddingbox {
+    padding: 5vw calc(100% / 12) 1vw;
+  }
+  .contact-area h2 {
+    padding: 2vw 0 1vw 0;
+  }
+
+  .desc-box {
+    width: auto;
+    margin: 0 20px;
+  }
+  .big {
+    position: absolute;
+    top: 17px;
+    left: 44%;
+    translate: -50% 0;
+  }
+  .small {
+    position: absolute;
+    top: -107px;
+    right: -62px;
+  }
+  .middle {
+    position: absolute;
+    top: 263px;
+    left: 76%;
+  }
+
+  /* 하단영역 */
+  .bottom-info-right {
+    justify-content: flex-start;
+  }
+}
+/* 800px 이하 미디어쿼리 종료 */

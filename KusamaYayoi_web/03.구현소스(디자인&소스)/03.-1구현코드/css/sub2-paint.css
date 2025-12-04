@@ -1,0 +1,388 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+.paging-list ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 30px;
+  padding: 5vh 0;
+}
+
+/***************** 메인 CSS ********************/
+
+/* 제목파트 */
+.tit2 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 a.active {
+    color: #c52531;
+    font-weight: bold;
+    background-color: transparent
+}
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  /* ?? */
+  padding-left: calc(100% / 12);
+}
+
+.line2 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+}
+
+.line3 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-content: center;
+  margin-bottom: 45px;
+
+  padding-left: calc(100% / 12);
+}
+
+/*이동버튼*/
+.abtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+   
+  /*Y축 중앙이동*/
+}
+
+/*왼쪽버튼*/
+.ab1 {
+  left: 50px;
+  
+}
+
+/*오른쪽버튼*/
+.ab2 {
+  right: 50px;
+}
+
+/* ////////////////////////////////////////// */
+
+/* for문 전에 */
+/*.painting-part ul.cont-box {
+    gap: 21.4vh 4.5vh;
+}
+.cont-box{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    
+}
+.painting-part li {
+  컨텐츠 세로 배치 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+    width: calc((100% - 4.5vh * 2) / 3); */
+
+/* 전체 화면구성 
+    aspect-ratio: 340 / 455;
+    box-shadow: 0 0 10px #ccc;
+    box-sizing: border-box;
+    padding: 24px 20px;
+    cursor: pointer;}
+
+    .cont-box img{
+      max-width: 340px;
+    }
+    .cont-box h3{
+     text-align: center;
+     font-size: 1.8rem;
+     } */
+
+.wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* 내부 플렉스박스 */
+.wrap ul {
+  display: flex;
+  /* 랩핑박스 - 줄바꿈됨 */
+  flex-wrap: wrap;
+  /* 사이간격: gap */
+  /* gap: 위아래 양쪽 */
+  gap: 21.4vh 4.5vh;
+}
+
+.wrap li {
+  position: relative;
+  /* 한줄에 3개 오는 설정값을 찾음 */
+  width: calc((100% - 4.5vh * 2) / 3);
+  aspect-ratio: 340 / 455;
+  cursor: pointer;
+  text-align: center;
+
+  /* 이미지,글자 셋팅 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  /* 패딩, 보더를 크기에 포함하기 : bxb */
+  box-sizing: border-box;
+  gap: 32px;
+}
+
+/* 이미지태그를 배경처럼 넣기 */
+.wrap img {
+  max-width: 340px;
+  /* height: 100%; */
+  object-fit: cover;
+  /* object-fit속성
+            이미지를 해당박스에서 이미지처럼
+            넘치는 부분을 적당히 잘라서 안보이게하며
+            비율 유지를 할 수 있게 해주는 속성
+            그 값으로 cover를 사용함! */
+}
+.wrap h3 {
+  font-size: 1.8rem;
+}
+
+.dots {
+  position: relative;
+  text-align: center;
+  margin: 107px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  background-color: #bdbdbd;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 19px;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #666666;
+}
+
+/* 4. 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+
+  /* border-radius: 10px; */
+  border: #000000 solid 1px;
+  width: 90%;
+  max-width: 1114px;
+  height: 560px;
+  position: relative;
+  animation: slideIn 0.3s ease;
+  /* overflow: auto; */
+}
+.modal-content::before {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background-color: #000000;
+  z-index: 999;
+}
+
+.flex {
+  display: flex;
+}
+
+.modal-content > .flex {
+  position: relative;
+  height: 560px;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+}
+
+section.modal-img {
+  width: 50%;
+  text-align: center;
+  align-content: center;
+}
+section.modal-img>img {
+    width: 400px;}
+
+/* .modal-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 30px solid #ffffff;
+  box-sizing: border-box;
+  z-index: 2;
+  pointer-events: none;
+} */
+
+.modal-tit {
+  /* position: absolute; */
+  /* left: 50%; */
+  width: 50%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  /* margin: 35px 0 25px 30px; */
+}
+
+.modal-tit > h3 {
+  font-size: 3.2rem;
+  height: 245px;
+  /* padding: 30px 0 75px; */
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+  margin: 0;
+  align-content: center;
+}
+
+.txtbox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 60px;
+  border-bottom: #000 solid 1px;
+  padding: 75px 125px;
+}
+.box {
+  display: flex;
+}
+
+strong {
+  font-size: 1.8rem;
+  min-width: 150px;
+  text-align: left;
+  /* margin-right: 90px; */
+  align-content: center;
+}
+.copyright {
+  font-size: 1.4rem;
+  text-align: right;
+  margin: 23px;
+  color: #808080;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+ right: 5px;
+  top: 0;
+  z-index: 3;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.modal-btn{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+ background: transparent;
+  border: none;
+width: 100%;
+height: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 999;
+}
+
+.search-form>button {
+  display: none;
+}
+
+.disabled {
+  /* 투명도를 50%로 설정합니다. */
+  opacity: 0.5;
+
+  /* 마우스 이벤트도 무시하게 하려면 (필요한 경우) */
+  /* pointer-events: none; */
+}
+.search-form {
+    /* 폼의 너비나 위치를 .line3 스타일에 맞춰 조정하세요. */
+    width: 100%;
+ 
+    margin: 0 auto; /* 중앙 정렬 */
+    text-align: center;
+}
+
+/* 검색 입력 칸 스타일 */
+#search-input {
+    /* **핵심: 테두리와 배경 제거** */
+    border: none;             /* 테두리 제거 */
+    /* 얇은 밑줄만 남기기 (깔끔함) */
+    background: transparent;  /* 배경 투명하게 */
+    outline: none;            /* 포커스 시 생기는 파란색 테두리 제거 */
+    
+    /* 너비 및 텍스트 스타일 */
+    width: 100%;
+    padding: 10px 0;         /* 상하 패딩만 남기고 좌우는 0 */
+    font-size: 1.2em;
+    color: #333;             /* 글자색 */
+}
+
+/* 포커스 시 밑줄 색상 변경 (선택 사항: 사용자 피드백) */
+#search-input:focus {
+    border-bottom-color: #c52531; /* 포커스 시 강조 색상 적용 */
+}
+
+/* Placeholder 스타일링 (브라우저별 접두사 필요) */
+#search-input::placeholder {
+    color: #000000;
+    font-size: 1.6rem;
+    opacity: 1; /* 파이어폭스에서 투명도 문제 해결 */
+}

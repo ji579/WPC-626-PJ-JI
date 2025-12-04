@@ -1,0 +1,326 @@
+**
+
+블릿과 페이지 설정 
+04html학습 > 01, 가로방향무한이동
+04html학습 > unlimit_jquery.js
+
+
+
+상단 사이트 아이콘 사이즈변경사이트
+https://favicon.io/
+
+007js> 01js실험실> 01웹디스플레이기법
+
+자바스크립트로 
+JS8-2.DOM_이벤트객체_ a 눌렀을때 위로 안올라가게 막는거 참고하기 67글
+  // 기본기능막기(a요소는 이동특성이 있음. 이것을 막음!)
+  // e.preventDefault();
+  return false;
+
+////////////////////
+css 09-2nth child 참고
+label태그?
+
+패딩이 없어야 닫힘 만약 디자인이 필요하면 패딩박스가 따로있어야함
+
+블릿 참고
+main3js
+03페이드.html
+
+// 휠 이벤트 막기 테스트 
+휠로 내리면서 화면전환또는 옆에서 나오고 할때 필요
+
+//// 220줄
+window.addEventListener(
+  "wheel",
+  (e) => {
+    // 기본기능막기
+    e.preventDefault();
+
+    console.log("휠~~~~");
+    // 배경색 변경
+    myFn.qs("body").style.backgroundColor = "lightcoral";
+  },
+  { passive: false }
+);
+// 이벤트막기할 경우 window, body, document
+// 일 경우 막기를 할 수 없게 셋팅됨!
+// 이것을 쓰려면 이벤트 설정시 맨뒤에 {passive:false}
+// 설정을 추가한다!
+    //////////////////////////////////////////
+
+user-select: none;
+    -webkit-user-drag: none;
+
+***인트로 영상 넘어가기 코딩참고
+007js함수> js5-1함수 뒷배경
+
+* 문단 깔끔하게 정렬하는 코드
+text-align: justify;
+*단어 깨져서 보이게
+word-break: break-all;
+
+
+* 스크롤 부드럽게 넘어가기
+html {
+  font-size: 10px;
+   /* 1rem = 10px */
+
+   /* 스크롤 위치 이동시 부드럽게 애니메이션 이동설정 
+   -> 이 설정은 전체 페이지이동일 경우 html에 셋팅함 */
+   scroll-behavior: smooth;
+} 
+
+
+mediaQuery참고용
+05css학습-05미디어커리-미디어03번 // 비율유지 상자
+
+
+책넘기기효과
+1.
+https://web.dev/case-studies/20things-pageflip?hl=ko
+2.
+https://fliphtml5.com/learning-center/ko/how-to-create-an-interactive-pdf-magazine/
+3.
+https://www.php.cn/ko/faq/495739.html
+
+    /* 글자배치 세로방향 left-> right */
+    writing-mode: vertical-lr;
+    letter-spacing: 30px;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 2px #00000070;
+
+********************************
+
+자바 for 문 연습2 참고해서
+그림 배열하고 자동만들기
+자바 for_in 문
+********************************
+
+
+CSS 실험실-> 햄버거 버튼 三 -> X 버튼
+모바일때 사용 버튼
+
+******영상 어둡게 만들기**********
+  /* 필터 명도값 조정하여 어두워보이게함 */
+    filter: brightness(.5);
+
+/* 마영오*/
+ 마(진) 영(위) 오(양쪽) 아래 
+
+     /* 가상요소 자신이 block이므로 최소한 
+    display를 inline-block로 해야 자신의 크기만큼
+    크기를 가지게 된다.*/
+
+****************************************************************
+<!--*** 젠코딩***
+div*2>ul.link-list>li*5>a[target=_blank] 
+
+****************************************************************
+반응형 _컬크로 계산하기
+
+.link-box{
+    /* 가로크기는 레이아웃은 아니지만
+    12그리드 크기를 기준해서 준다. */
+    width: calc(100%/12*10);
+}
+****************************************************************
+<선 가상요소 넣기>
+
+(1) 선 위치 조절방법 ---> 선이 글자랑 붙어나옴
+.sub-part-title::before{
+    content: '';
+    display: block;
+    margin: 0 auto;
+    max-width: 865px;
+    height: 1px;
+    background-color: ccc;
+}
+
+(2) 선 위치 조절방법 
+.sub-part-title {
+  /* 박스설정*/
+  padding-bottom: 28px;
+  text-align: center;
+  /* 글자설정*/
+  font-size: 36px;
+}
+
+/* 구분선은 타이틀 박스의 가상요소로 구성 */
+.sub-part-title::before {
+  content: "";
+  display: block;
+  /* 마(진) 영(위) 오(양쪽) 아래 */
+  margin: 0 auto 28px;
+  max-width: 865px;
+  height: 1px;
+  background-color: #ccc;
+}
+****************************************************************
+
+<글 2문단으로 나누기>
+
+     /* 라벨디자인-버튼형 */
+      .btn-action {
+        /* 위 아래 마진 보더 등 적용위해 */
+        display: inline-block;
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        background-color: #ccc;
+        /* 손가락모양 */
+        cursor: pointer;
+      }
+      /* 가상요소로 버튼글씨 넣기 */
+      .btn-action::before {
+        content: "클릭";
+      }
+      /* 체크박스 체크시 버튼형 라벨 변경하기 */
+      #chkbx:checked + .btn-action {
+        background-color: rgb(255, 176, 242);
+      }
+      #chkbx:checked + .btn-action::before {
+        content: "따딴";
+      }
+      /* 체크박스 숨기기 */
+      #chkbx {
+        display: none;
+      }
+ #chkbx:checked ~ .move-box #chi{
+    /* 투명도 op- opacity:0~1사이값(0투명-반투명-1불투명) */
+   left: 100%;
+    /* 트랜지션 trs : 3.9초 후 0.1초간 애니 */
+    transition: 10s ;}
+
+        #chi {
+        position: absolute;
+        left: 0%;
+        width: 2%;}
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+const paint = [
+  {
+    title: 
+    "Dress","Mushrooms","Papillon(Ⅰ)","Butterfly","Shoes","Pumpkin",
+    "Fruit Basket(2)","Fruit Basket(4)","Dandelions","Pumpkin","Yellow Pumpkin","Shanghai Pumpkin",
+    "The Place For Life","All The Eternal Love"," EVERY DAY I PRAY FOR LOVE",
+    "The Endless Life of a Man","Pound of Repose","I pray for love every day ",
+    
+    img: [
+      "./images/paint1.jpg","./images/paint2.jpg","./images/paint3.jpg",
+    "./images/paint4.jpg","./images/paint5.jpg","./images/paint6.jpg",
+    "./images/paint7.jpg","./images/paint8.jpg","./images/paint9.jpg",
+    "./images/paint10.jpg","./images/paint11.jpg","./images/paint12.jpg",
+    "./images/paint13.jpg","./images/paint14.jpg","./images/paint15.jpg",
+    "./images/paint16.jpg","./images/paint17.jpg","./images/paint18.jpg",
+    ],
+
+    date:
+     "1982","1995","2000","1988","1985","1990",
+    "1999","1999","1985","1982","1992","2010",
+    "2013","2014"," 2019","2010","2014","2023"
+
+  technique:
+   "Screen print","Screen print","Screen print","Screen print","Screen print","Screen print"
+  ,"Screen print","Screen print","Screen print","Screen print","Screen print","Screen print"
+  ,"acrylic on canvas","Acrylic on canvas","acrylic on canvas","acrylic on canvas","acrylic on canvas","acrylic on canvas"
+
+   dimensions:
+    "53 x 45.6 cm","15.8 x 22.7 cm","38 × 45.5cm","47.8 x 59.9 cm","45.5 x 53.0 cm","62.7 x 54 cm",
+    "60 × 68 cm","60 × 68 cm","45.2 x 52.6 cm","65.5 x 51 cm","71 x 84 cm","76 x 56 cm",
+    "194 x 194 cm ","194 x 194 cm","100 x 100 cm","40.3 x 40.1 cm.","194 × 194 cm","53 × 65.2 cm"
+    
+
+  }]
+  ////////////////////////////////////////////////////////////////////////////
+
+
+  const books = [
+  {
+    title:  "『 Infinity Net: The Autobiography of Yayoi Kusama 』",
+    "『 Yayoi Kusama: Festival of Life 』",
+    "『 Yayoi Kusama: Revised & expanded edition 』",
+    "『 Yayoi Kusama: The Journal 』",
+    "『 Yayoi Kusama: Cosmic Nature 』",
+    "『 Yayoi Kusama: 1945 to Now 』",
+    "『 Yayoi Kusama: Infinity Mirrors 』",
+    "『 Yayoi Kusama: Every Day I Pray for Love 』",
+    "『 草間彌生全版画集 All prints of KUSAMA YAYOI 1979-2004  』",
+    "『 Louis Vuitton Yayoi Kusama 』",
+    "『 Yayoi Kusama: All About My Love 』",
+    "『 Kusama 』",
+    "『 Kusama 』",
+    "『  Yayoi Kusama 』",
+    "『 Yayoi Kusama Midori Yamamura 』",
+    "『 Love Forever: Yayoi Kusama, 1958-1968 』",
+    "『 草間彌生全版画: 1979-2011 JP Oversized 』",
+    "『 Yayoi Kusama: Give Me Love 』",
+    "『 Yayoi Kusama: A Retrospective  』",
+    "『 別冊Discover Japan 草間彌生を知りたい JP Oversized 』",
+    "『 家庭画報 2025年3月号 Print Magazine  』",
+    "『 YAYOI KUSAMA: IN INFINITY 』",
+    "『 Yayoi Kusama  』",
+    "『 Yayoi Kusama : Present Infinite 』",
+
+
+    img: ["./images/book1_1.jpg", "./images/book1_2.jpg", "./images/book1_3.jpg"],
+
+    author: "Yayoi Kusama","Yayoi Kusama, Jenni Sorkin","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+    "Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama","Yayoi Kusama",
+
+    publisher: "Tate Publishing","David Zwirner Books","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+    "David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner","David Zwirner",
+
+    detail: 
+    
+    "“Infinity Net” is a memoir by Yayoi Kusama, one of the most important figures in the contemporary art world, exploring her unique and fascinating life and art.
+This autobiography details Kusama's journey from overcoming obsessive-compulsive disorder to breaking down cultural barriers through art and creating her own unique artistic world.
+The 2021 revised edition includes a new foreword by Francis Morris and a poem by Yayoi Kusama, allowing a deeper understanding of her work and thoughts.
+
+During her ten years in New York, Kusama transformed from a poor artist to a mainstay of the counterculture art scene.
+She solidified her position through her association with art world giants such as Georgia O'Keeffe, Donald Judd, and Andy Warhol.
+She speaks candidly about the obsessions that plagued her childhood and her entire life, and discusses her journey to explore her inner world through art.
+
+After returning to Japan, Kusama was admitted to a mental hospital and found artistic inspiration there.
+Over the past decade, he has established himself as an internationally recognized artist, having been featured in several major exhibitions.
+Translated into English by Ralph McCarthy, this autobiography explores Kusama’s ongoing artistic exploration and
+It powerfully tells the story of how, despite the hardships she endured, she forged her own path through art.
+
+"Infinity Net" explores the life and art of Yayoi Kusama, the challenges she faced and her achievements, in a profound and dreamlike way.
+It shows how her art shaped her.
+
+This autobiography leaves a powerful impression on readers through Kusama's boundless creativity and dreamlike intensity.",
+"2","3","4","5",
+"6","7","8","9",
+"10","11","12","13",
+"14","15","16","17",
+"18","19","20","21",
+"22","23","24"
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  }]

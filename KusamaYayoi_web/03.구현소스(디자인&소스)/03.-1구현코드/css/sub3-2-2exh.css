@@ -1,0 +1,639 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+/* 제목파트 */
+.tit3 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 a.active {
+    color: #c52531;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  padding-left: calc(100% /12);
+}
+
+.line2 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-content: center;
+  padding-left: calc(100% /12);
+}
+
+.link-label {
+    cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+    display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
+}
+.link-label a {
+    text-decoration: none; /* a 태그의 밑줄 제거 */
+    color: inherit; /* 부모 요소의 글자색 상속 */
+    /* 원하는 스타일링 추가 */
+}
+.line2 img {
+  margin-left: 5px;
+}
+.line2 a {
+  margin-right: 5px;
+}
+/* input 요소를 숨겨도 작동은됨! */
+input[type="radio"] {
+  display: none; 
+}
+
+.check {
+  display: flex;
+  position: relative;
+}
+
+/* 라벨요소 */
+label {
+      font-size: 1.4rem;
+  display: flex;
+  gap: 5px;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-right: 13px;
+  /* 텍스트와 가상요소 순서를 맞추기 위해 flex-direction: row-reverse 적용 권장 */
+  /* flex-direction: row-reverse; */ 
+}
+
+/* 동그라미 크기 설정 */
+label::after {
+  content: '';
+  width: 11px;
+  height: 11px;
+  margin-top: 4px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+}
+
+/* 라디오 버튼 체크시 라벨 변경 */
+/* 체크된 라디오버튼의 다음 형제 라벨요소선택 */
+input:checked + label::after {
+  background: #c52531;
+}
+
+input:checked + label {
+  color: #c52531;
+}
+/* 라디오버튼 체크시
+        하단 형제요소인 ul>li 변경하기 */
+/* 체크박스/라디오버튼 체크시
+        가상클래스는 :checked 
+        -> 틸드(~) 선택자는 형제요소들을 모두
+        찾아 해당 요소를 선택함!
+        */
+
+
+.line3 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+  margin-bottom: 35px;
+}
+/* ////////////////////////////////////////// */
+
+.main-area {
+  /* position: relative; */
+  max-width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.change > ul {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+
+  justify-content: center;
+}
+
+.row , .col {
+  position: relative; /* 자식 이미지의 절대 위치 기준점 */
+  width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
+  height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+}
+
+/* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+.row img, .col img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+}
+
+/* 4. 호버 이미지 숨기기 (기본 상태) */
+.hover-row, .hover-col
+ {
+  opacity: 0; /* 평소에는 투명하게 숨김 */
+}
+
+/* 5. 호버 시 이미지 전환 */
+.row:hover .default-row,
+.col:hover .default-col {
+  opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+}
+
+.row:hover .hover-row,
+.col:hover .hover-col{
+  opacity: 1; /* 호버 이미지를 보이게 함 */
+}
+
+
+.wrap {
+  max-width: 1114px;
+  margin: 0 auto;
+}
+
+/* 내부 플렉스박스 */
+.exbsbox {
+  display: flex;
+  /* width: calc((100% - -97.5vh * 3) / 4); */
+  /* 랩핑박스 - 줄바꿈됨 */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0 35px;
+  overflow: hidden;
+}
+
+.wrap ul {
+  /* 한줄에 3개 오는 설정값을 찾음 */
+  /* width: calc((100% - 4.5vh*3) / 4); */
+  aspect-ratio: 250 / 540;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-end; */
+  align-items: center;
+  box-sizing: border-box;
+  gap: 56px;
+}
+
+
+.exb {
+  width: 250px;
+  height: 365px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+/* .list를 호버하면 .exb>img filter:brightness(0.5)적용
+ */
+.list:hover .exb>img{
+  filter: brightness(0.5);
+  z-index: 99999;
+}
+
+.list {
+  position: relative;
+  /* 부모자격 */
+}
+.list::after {
+  content: "";
+  position: absolute;
+  top: 400px;
+  /* width: 1140px; */
+ width: 249%;
+  height: .5px;
+  z-index: 999;
+  background-color: black;
+}
+/* 이미지태그를 배경처럼 넣기 */
+.wrap img {
+  max-width: 250px;
+  height: 365px;
+  border: 1px solid #d9d9d9;
+  object-fit: cover;
+}
+
+.exbtxt {
+  width: 250px;
+}
+.wrap h3 {
+  font-size: 1.8rem;
+  max-width: 250px;
+  min-height: 70px;
+  text-overflow: ellipsis;
+  text-align: left;
+  word-break: break-all;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.wrap h4 {
+
+  padding: 25px 0;
+  font-size: 1.6rem;
+  max-width: 250px;
+
+  text-align: left;
+  word-break: break-all;
+  color: #808080;
+}
+
+/* .opacity {
+  width: 100%;
+  height: 250px;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  background: #ffffff;
+  opacity: 0.6;
+  filter: blur(5px);
+} */
+main::after {
+  content: "";
+  width: 100%;
+  left: 0;
+  height: 250px;
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent 0%, #fff 85%);
+  opacity: 1;
+  transition: all 0.3s;
+  z-index: 9999;
+}
+main.end:after {
+  height: 2vw;
+  opacity: 0;
+}
+.ubbtn {
+  margin: 38px 0;
+  text-align: center;
+}
+section#uppBtn {
+    margin: 0 auto;
+    width: 38px;}
+.image-wrapper {
+    position: relative; /* 자식 이미지의 절대 위치 기준점 */
+    width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
+    height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+}
+
+/* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+.image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+}
+
+/* 4. 호버 이미지 숨기기 (기본 상태) */
+.hover-arrow {
+    opacity: 0; /* 평소에는 투명하게 숨김 */
+}
+
+/* 5. 호버 시 이미지 전환 */
+.image-wrapper:hover .default-arrow {
+    opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+}
+
+.image-wrapper:hover .hover-arrow {
+    opacity: 1; /* 호버 이미지를 보이게 함 */
+}
+      /* 이거 추가한거 */ 
+.page-row .hover-row {
+  opacity: 1;
+}
+.page-row .default-row {
+  opacity: 0;
+}
+
+.page-col .hover-col {
+  opacity: 1;
+}
+.page-col .default-col {
+  opacity: 0;
+}
+
+body.page-col .line1 a[href="sub3-2-1exh.html"],
+body.page-row .line1 a[href="sub3-2-1exh.html"] {
+  color: #c52531;
+  font-weight: bold;
+}
+      /* 4. 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      /* ⭐️ .modal-content 수정: 화면 중앙에 완전히 고정 */
+      .modal-content {
+        background-color: white;
+        position: fixed; /* 👈 위치 고정 */
+
+        /* 중앙 정렬 추가 */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 👈 정확한 중앙 정렬 */
+
+        /* 기존 스타일 유지 */
+        max-width: 1114px;
+        width: 90%; /* max-width와 함께 반응형을 위해 추가 */
+        height: 950px;
+           /* height: 70%; */
+        border: #000000 solid 1px;
+
+         /* animation: slideIn 0.3s ease;*/
+        /* overflow-y: auto; */ /* 👈 모달 내부에서만 스크롤되도록 허용 */
+        text-align: center;
+        overflow: hidden;
+        overscroll-behavior: auto;
+      }
+
+      .modal-box {
+       
+        margin: 0 auto;
+        justify-items: center;
+        line-height: 1.8;
+        background: white;
+      }
+
+      .modal-box > div {
+            width: 100%;
+        height: 100%;
+        justify-items: anchor-center;
+        overflow: auto;
+      }
+
+      /* ... (나머지 CSS는 그대로 유지) ... */
+
+      .titbox {
+            width: 750px;
+        padding: 30px 0 20px 0;
+      }
+      .title {
+        font-size: 1.8rem;
+        width: 750px;
+        /* height: 33px; */
+        align-content: center;
+        border-left: #000000 solid 1px;
+        text-align: left;
+      }
+      .title > strong {
+        margin-left: 25px;
+      display: block;
+      }
+
+      section.modal-img > img {
+        aspect-ratio: 884 / 1012;
+        width: 750px;
+      }
+      section.modal-img {
+        width: 750px;
+        text-align: right;
+        padding-bottom: 40px;
+      }
+
+      .modal-img > p {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      .close {
+      position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+   right: 25px;
+    top: 0;
+    z-index: 3;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .box {
+        position: absolute;
+    width: 750px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+        margin-bottom: 35px;
+        
+      }
+      .box1 {
+        border-left: #000000 solid 1px;
+
+      }
+      .box1 > p {
+        margin-left: 25px;
+        word-break: break-all;
+        text-align: justify;
+        font-size: 1.8rem;
+      }
+
+      .set-it5 {
+        width: 100%;
+        /* text-align: right; */
+        /* padding-bottom: 60px; */
+      }
+    
+     .box2 {
+    padding-top: 50px;
+    /* padding-bottom: 30px; */
+    margin-bottom: 30px;
+    width: 750px;
+    text-align: right;
+      }
+      .box3{
+               position: absolute;
+   
+    left: 50%;
+    top: 45%;
+    translate: -50% -50%;
+      }
+      .imgbx1 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx2 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx1 > img {
+            width: 50%;
+        /* height: 510px; */
+      }
+      .imgbx2 > img {
+        /* height: 280px; */
+            width: 50%;
+      }
+      .imgbx3 > img {
+            width: 50%;
+        /* height: 450px; */
+      }
+      .box2 > p {
+        margin-bottom: 35px;
+        font-size: 1.4rem;
+      }
+      .sectionbx {
+        display: flex;
+        position: relative;
+        /* margin-bottom: 15px; */
+      }
+      .section_title {
+       position: absolute;
+    left: -100px;
+    /* translate: -90%; */
+    width: 90px;
+    /* margin-right: 10px; */
+    /* padding-top: 14px; */
+    font-size: 1.6rem;
+    text-align: right;
+      }
+      .section_content {
+        width: 750px;
+        text-align: left;
+        border-left: #000000 solid 1px;
+      }
+
+      .section_content > p {
+        margin-left: 25px;
+      }
+      span {
+        font-size: 1.4rem;
+        color: #b3b3b5;
+      }
+
+      .section_content > span {
+        margin-left: 25px;
+      }
+
+      /* ⭐️ topBtn 위치 조정: 모달 콘텐츠를 기준으로 상대 위치 지정 */
+
+      .ubtn {
+    margin: 38px 0;
+    z-index: 99;
+    position: absolute;
+    cursor: pointer;
+   left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+      }
+
+      /* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+      .image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+      }
+
+      /* 4. 호버 이미지 숨기기 (기본 상태) */
+      .hover-arrow {
+        opacity: 0; /* 평소에는 투명하게 숨김 */
+      }
+
+      /* 5. 호버 시 이미지 전환 */
+      .image-wrapper:hover .default-arrow {
+        opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+      }
+
+      .image-wrapper:hover .hover-arrow {
+        opacity: 1; /* 호버 이미지를 보이게 함 */
+      }
+
+      .set-it1 {
+        opacity: 1; /* 초기값은 보이게 설정 */
+        transition: 1.2s ease-in-out;
+      }
+
+      .set-it2.on {
+       /* transform: translateY(10%);  */
+       /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
+        opacity: 1;
+      }
+
+      .set-it2 {
+        opacity: 0;
+        /* transform: translateY(6%); */
+         /* 👈 초기 위치 설정 */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it3.on {
+        /* transform: translateY(6%); */
+        opacity: 1;
+      }
+
+      .set-it3 {
+        opacity: 0;
+        /* transform: translateY(15%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it4.on {
+        /* transform: translateY(0%); */
+        opacity: 1;
+      }
+
+      .set-it4 {
+        opacity: 0;
+        /* transform: translateY(0%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it5.on {
+        /* transform: translateY(15%); */
+        opacity: 1;
+      }
+
+      .set-it5 {
+        opacity: 0;
+        transform: translateY(0%);
+        transition: 1.2s ease-in-out;
+      }

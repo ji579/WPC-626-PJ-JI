@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* 도깨비 PJ 메인 페이지 미디어쿼리 - media_main.css */
+
+/* 1360px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1360px) {
+  .mapwrap .img{
+      padding: 1vw;}
+}
+/* 1360px 이하 미디어쿼리 종료 */
+
+/* 1200px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1200px) {
+}
+/* 1200px 이하 미디어쿼리 종료 */
+
+/* 1024px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1024px) {
+  /* sub3-2 층 */
+  .floorwrap,
+  .floor,
+  .floortxt {
+    width: 100% !important;
+  }
+  .floorcont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .floorwrap{
+    z-index: 999;
+  }
+}
+/* 1024px 이하 미디어쿼리 종료 */
+
+/* 800px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 800px) {
+  /* 하단영역 */
+  .bottom-info-right {
+    justify-content: flex-start;
+  }
+}
+/* 800px 이하 미디어쿼리 종료 */

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Swiper demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      body * {
+        outline: 2px dashed #ccc;
+      }
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        font-family: "Instrument Sans", sans-serif;
+        font-size: 10px;
+      }
+      body {
+        background: #000;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #000;
+        color: #000;
+      }
+
+      /* 4. 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        animation: fadeIn 0.3s ease;
+        overflow: auto;
+      }
+
+      .modal-content {
+        background-color: white;
+        margin: 10% auto;
+
+        /* border-radius: 10px; */
+        border: #000000 solid 1px;
+        width: 90%;
+        max-width: 1114px;
+        height: 560px;
+        position: relative;
+        animation: slideIn 0.3s ease;
+        /* overflow: auto; */
+      }
+      .modal-content::before {
+        content: "";
+        width: 1px;
+        position: absolute;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        background-color: #000000;
+        z-index: 999;
+      }
+
+      .flex {
+        display: flex;
+      }
+
+      .modal-content > .flex {
+        position: relative;
+        height: 560px;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+      }
+
+      section.modal-img {
+        width: 50%;
+        text-align: center;
+        align-content: center;
+      }
+
+      /* .modal-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 30px solid #ffffff;
+  box-sizing: border-box;
+  z-index: 2;
+  pointer-events: none;
+} */
+
+      .modal-tit {
+        /* position: absolute; */
+        /* left: 50%; */
+        width: 50%;
+        height: 100%;
+
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        /* margin: 35px 0 25px 30px; */
+      }
+
+      .modal-tit > h3 {
+        font-size: 3.2rem;
+       height: 245px;
+        /* padding: 30px 0 75px; */
+        border-bottom: 1px solid;
+        box-sizing: border-box;
+        margin: 0;
+        align-content: center;
+      }
+
+      .txtbox {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 60px;
+        border-bottom: #000 solid 1px;
+        padding: 40px 125px 60px;
+      }
+      .box {
+        display: flex;
+      }
+
+      strong {
+     font-size: 1.8rem;
+    min-width: 110px;
+    text-align: left;
+ margin-right: 90px;
+    align-content: center;
+      }
+.copyright {
+    text-align: right;
+    margin: 15px;
+    color: #808080;}
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 3;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .modal-btn {
+        background: #e74c3c;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s ease;
+      }
+
+      .modal-btn:hover {
+        background: #c0392b;
+      }
+    </style>
+  </head>
+
+  <body>
+   
+<!-- 모달시작 -->
+    <div class="section">
+      <button class="modal-btn" onclick="openModal()">모달 열기</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="flex">
+          <section class="modal-img">
+            <img src="./images/paint1.jpg" alt="" />
+          </section>
+
+          <!-- 오른쪽 글씨부분 -->
+          <!-- <div class="modal-scroll"> -->
+          <section class="modal-tit">
+            <h3>『 Pumpkin 』</h3>
+            <!-- 두번째줄 -->
+            <div class="txtbox">
+              <div class="box box1">
+                <strong>Date. </strong>
+                <p class="date">1990</p>
+              </div>
+              <div class="box box2">
+                <strong>Technique. </strong>
+                <p class="technique">Art Brut, Pop Art</p>
+              </div>
+              <div class="box box3">
+                <strong>Dimensions. </strong>
+                <p class="dimensions">figurative</p>
+              </div>
+            </div>
+            <!-- txtbox 끝 -->
+             <div class="copyright">
+              ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED 
+             </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- 모달버튼끝 -->
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 10,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+      var swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+          swiper: swiper,
+        },
+      });
+
+      // 4. 모달 기능
+      function openModal() {
+        document.getElementById("modal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      // 모달 배경 클릭시 닫기
+      window.addEventListener("click", (event) => {
+        const modal = document.getElementById("modal");
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    </script>
+  </body>
+</html>

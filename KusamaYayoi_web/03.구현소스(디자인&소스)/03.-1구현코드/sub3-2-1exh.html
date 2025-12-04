@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub3-2-1exh.css" />
+        <script type="module" src="./js/common.js"></script>
+  </head>
+  <body>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+   <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+         <ul>
+              <li class="on">
+                <a href="sub1.html">Profile</a>
+              </li>
+              <li>
+                <a href="sub2.html">Works</a>
+              </li>
+              <li>
+                <a href="index.html">
+                <h1>草間彌生</h1></a>
+              </li>
+              <li>
+                <a href="sub3-1-1visitinfo.html">Museum</a>
+              </li>
+              <li>
+                <a href="index.html#contact-area">Contact
+                </a>
+
+              </li>
+            </ul>
+        </nav>
+      </div>
+
+      <!--제목 -->
+
+      <!--tit3 제목 -->
+
+      <div class="tit2 inbox">
+        <section class="line1">
+          <a href="sub3-1-1visitinfo.html">Visit</a>
+          <a href="sub3-2-1exh.html">Exhibition</a>
+        </section>
+
+        <section class="line2">
+        <div class="check"> 
+    <input type="radio" id="rdo1" name="rdo" style="display: none;" />
+    <label for="rdo1" data-url="sub3-2-1exh.html">
+      Current Exhibition 
+    </label>
+    
+    <input type="radio" id="rdo2" name="rdo" style="display: none;" />
+    <label for="rdo2" data-url="sub3-2-2-1exh.html">
+     Past Exhibition
+    </label>
+
+</div>
+        </section>
+
+
+
+
+        <section class="line3">
+          <h2>Current Exhibition</h2>
+        </section>
+      </div>
+    </header>
+    <!-- 메인영역 -->
+    <div id="main-area">
+      <main class="main-area inbox">
+        <section class= "exh-box">
+          <ul>
+            <li>
+              <img src="./images/exhibiton01.jpg" alt="exh">
+              <b>Title | Reverberation from the Universe</b>
+            </li>
+            <li>
+              <button>
+                Read more
+              </button>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+        <!-- 이미지상자 -->
+   
+    <!-- 6. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
+          </div>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+       <script>
+// 모든 라벨 요소를 가져옵니다.
+    const linkLabels = document.querySelectorAll('.check label');
+    
+    /**
+     * 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다.
+     */
+    function handleLabelClick() {
+        // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+        const targetUrl = this.getAttribute('data-url');
+        
+        // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+        // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+        
+        if (targetUrl) {
+            // 페이지 이동을 실행합니다.
+            window.location.href = targetUrl;
+        }
+    }
+
+    /**
+     * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+     */
+    window.addEventListener('load', () => {
+        const currentPath = window.location.pathname.split('/').pop();
+        
+        linkLabels.forEach(label => {
+            // 1. 클릭 이벤트 리스너를 등록합니다.
+            label.addEventListener('click', handleLabelClick);
+            
+            // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+            const labelUrl = label.getAttribute('data-url');
+            
+            // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+            // (예: "sub3-1-1visitinfo.html")
+            if (labelUrl && labelUrl === currentPath) {
+                const inputId = label.getAttribute('for');
+                const input = document.getElementById(inputId);
+                
+                if (input) {
+                    input.checked = true;
+                }
+            }
+        });
+    });
+    </script>
+
+  </body>
+</html>

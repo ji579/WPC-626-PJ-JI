@@ -1,0 +1,98 @@
+
+좋아하는 작가를 선정해서 작가를 소개하는 페이지
+'백세주' 홈페이지를 크로스오버하여 작가 홈페이지를 만들 계획
+-----------------------------------
+0. 메인페이지
+-사이트 정책
+
+1. 작가소개/대표작품소개
+- 년도별 활동
+
+2.대표작품소개
+- 책 _ 국제도서전 효과
+- 협업
+
+
+3. 갤러리 내용
+(1) 이용안내(운영시간.요금) /찾아오시는길
+(2)전시 
+- 현재전시 
+-지난전시 -> 년도별_국립고궁박물관 효과
+
+4. contact
+
+(소장되어있는 갤러리들, 공지사항)
+
+-----------------------------------
+
+*** 크로스오버 사이트 ***
+
+스크롤사이트(?)
+https://www.bagigia.com/
+
+
+*백세주 홈페이지 ( 큰 틀/메인 )
+https://www.bekseju.com/
+
+*한국불교하이붓다 ( 글씨효과 )
+https://hibuddha.co.kr/
+
+*국립고궁박물관 ( 전시 부분 정리 효과 )
+https://online.gogung.go.kr/onlinemuseum/bbs/BMSR00002/specialListTimeLine.do
+
+*아트앤컬쳐 ( 넘어가는 효과 )
+https://artandculture.kr/
+
+*서울 국제도서전 ( 책 올라가는 효과 )
+https://sibf.or.kr/
+
+-----------------------------------
+책 목업
+https://m.blog.naver.com/voytovoy/221021086248
+
+
+
+
+*** 기존 홈페이지 *** 
+
+쿠사마야요이 
+https://www.yayoi-kusama.jp/
+https://yayoikusamamuseum.jp/en/home/
+https://www.wikiart.org/en/yayoi-kusama
+
+책
+https://tart.co.kr/product/search.html?banner_action=&keyword=+%EC%BF%A0%EC%82%AC%EB%A7%88+%EC%95%BC%EC%9A%94%EC%9D%B4+%EC%95%84%ED%8A%B8%EB%B6%81+
+https://pisache.kr/product/%EC%BF%A0%EC%82%AC%EB%A7%88-%EC%95%BC%EC%9A%94%EC%9D%B4-%EC%95%84%ED%8A%B8%EB%B6%81-yayoi-kusama-present-infinite/1141/category/47/display/1/
+https://www.readings.com.au/product/9781922398109/yayoi-kusama--2024--9781922398109
+https://www.artbook.com/9781633451742.html
+
+
+평면작품
+https://m.kartprice.net/price/artistview/?artist_no=AJPAA0000178&page=14&sort=
+https://www.shibayama-co-ltd.co.jp/estimate/contemporary/%E8%8D%89%E9%96%93%E5%BD%8C%E7%94%9F/
+https://www.artnet.com/artists/yayoi-kusama/438
+
+*** 참고 홈페이지 ***
+
+1.데이비드호크니
+https://www.hockney.com/home
+
+2. 장욱진
+https://www.yangju.go.kr/changucchin/contents.do?key=1999
+
+3. 김창열 미술관 홈페이지
+https://kimtschang-yeul.jeju.go.kr/
+
+4. 김환기
+http://whankimuseum.org/kim-whanki/artist/
+ 
+ 5.히구치요코 + 전시
+https://gallery.higuchiyuko.tokyo/
+ 
+ https://higuchiyuko.com/
+
+ https://gallery.higuchiyuko.tokyo/#access
+ 
+ 김현정작가
+
+ https://kimhyunjung.kr/shopinfo/company.html

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paintings</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub2-paint.css" />
+        <script type="module" src="./js/common.js"></script>
+      <script src="./js/JSpaint.js" defer></script>
+  </head>
+  <body>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+       <ul>
+              <li class="on">
+                <a href="sub1.html">Profile</a>
+              </li>
+              <li>
+                <a href="sub2.html">Works</a>
+              </li>
+              <li>
+                <a href="index.html">
+                <h1>草間彌生</h1></a>
+              </li>
+              <li>
+                <a href="sub3-1-1visitinfo.html">Museum</a>
+              </li>
+              <li>
+                <a href="index.html#contact-area">Contact
+                </a>
+
+              </li>
+            </ul>
+        </nav>
+      </div>
+
+      <!--tit2 제목 -->
+
+      <div class="tit2 inbox">
+      <section class="line1">
+          <a href="sub2.html">Paintings</a>
+        <a href="sub2-1.html">Books</a>
+        </section>
+
+<section class="line2">
+        <h2>Paintings</h2></section>
+
+   <section class="line3">
+      <form class="search-form">
+        <input 
+            type="text" 
+            placeholder="Search" 
+            name="q" 
+            id="search-input"
+        />
+        <button type="submit">검색</button> 
+    </form>
+        </section>
+
+
+      </div>
+    </header>
+<!-- //////////////////////////////// -->
+ <!-- 컨텐츠영역 -->
+<!-- <section class="painting-part inbox">
+  <div>
+    <ul class="cont-box">
+      <li>
+        <img src="./images/paint01.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+      <li>
+        <img src="./images/paint02.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+      <li>
+        <img src="./images/paint03.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+      <li>
+        <img src="./images/paint04.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+      <li>
+        <img src="./images/paint05.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+      <li>
+        <img src="./images/paint06.jpg" alt="painting1">
+        <h3>『 Dress 』</h3>
+    </li>
+     
+    </ul>
+  </div>
+
+</section> -->
+
+
+<div class="painting-part inabox">
+
+        <a href="" class="abtn ab1">
+          <img src="images/left_btn.png" alt="왼쪽이동버튼" />
+        </a>
+        <a href="" class="abtn ab2">
+          <img src="images/right_btn.png" alt="오른쪽이동버튼" />
+        </a>
+  
+
+ <section class="wrap">
+  
+<!-- 제이쿼리 -->
+ </section>
+
+
+
+
+<!-- 모달시작 -->
+    <!-- <div class="section">
+      <button class="modal-btn" onclick="openModal()"></button>
+    </div> -->
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="flex">
+          <section class="modal-img">
+            <img src="./images/paint1.jpg" alt="" />
+          </section>
+
+         
+          <section class="modal-tit">
+            <h3>『 Pumpkin 』</h3>
+           
+            <div class="txtbox">
+              <div class="box box1">
+                <strong>Date. </strong>
+                <p class="date">1990</p>
+              </div>
+              <div class="box box2">
+                <strong>Technique. </strong>
+                <p class="technique">Screen print</p>
+              </div>
+              <div class="box box3">
+                <strong>Dimensions. </strong>
+                <p class="dimensions">15. 8 x 22. 7 cm</p>
+              </div>
+            </div>
+          
+             <div class="copyright">
+              ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED 
+             </div>
+          </section>
+        </div><!-- flex 끝 -->
+      </div>
+    </div>
+    <!-- 모달버튼끝 -->
+
+
+
+
+
+
+<div class="paging-list">
+        <div class="dots">
+            <span class="dot" data-val="1"></span>
+            <span class="dot" data-val="2"></span>
+            <span class="dot" data-val="3"></span>
+        </div>
+
+</div>
+
+
+
+
+
+<!-- 
+<div class="paging-list">
+  <ul>
+    <li>
+      <a href="#">1</a>
+    </li>
+    <li>
+      <a href="#">2</a>
+    </li>
+    <li>
+      <a href="#">3</a>
+    </li>
+  </ul>
+</div> -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ///////////////////////////////////////////// -->
+    <!-- 6. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
+          </div>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

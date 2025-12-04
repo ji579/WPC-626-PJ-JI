@@ -1,0 +1,386 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+.top {
+  max-height: 185px;
+}
+
+.tit {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+  margin-bottom: 50px;
+}
+#main-area {
+  position: relative;
+  margin-bottom: 134px;
+}
+
+.pro-box {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.pro-box > ul > li {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile {
+  position: relative;
+  width: 885px;
+  left: 50%;
+  translate: -50% 0;
+  /* height: 477px;
+
+background: url(../images/뒷배경.png) no-repeat center top / cover;
+margin-bottom: 20px; */
+}
+
+/* 야요이 얼굴 */
+.yayoi {
+  position: absolute;
+  width: 503px;
+  bottom: 80px;
+  left: 53%;
+  translate: -49% 0;
+  opacity: 0;
+
+  animation: pro-ani 2s linear forwards;
+}
+@keyframes pro-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pro-box > ul > li > p {
+  font-size: 1.6rem;
+}
+/* 2-2 프로필 책 글  */
+.book {
+  position: relative;
+  max-width: 1360px;
+}
+/* 데모  */
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+/* body {
+      background: #000;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    } */
+
+.swiper {
+  width: 1360px;
+  height: 100%;
+  background: transparent;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  color: #000000;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* padding: 40px 60px; */
+}
+
+#books-area {
+  /* height: 89%; */
+  position: relative;
+overflow: hidden;
+    margin-bottom: 150px;
+}
+/* 라운드 책이미지 */
+.bg {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* -webkit-background-size: cover;*/
+  /* background-size: cover;
+  background-position: center; */
+  /* background: url(../images/책_좀더\ 라운드.png) no-repeat center / cover; */
+}
+
+.bg>img{
+    position: absolute;
+    top: -146px;
+    width: 100%;
+    height: 139.6%;
+}
+
+
+
+.rightmenu {
+  position: relative;
+}
+.btn-group {
+  position: absolute;
+  right: 3.3vw;
+  top: 5.6vh;
+  padding: 10px;
+  display: flex;
+  gap: 17px;
+  z-index: 999;
+}
+
+/* 버튼 디자인 */
+.btn-group button {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  cursor: pointer;
+  color: #808080;
+}
+
+/* 햄버거 버튼 셋팅 : 처음에 두번째 i태그인 x버튼 안보임 */
+.btn-ham i:nth-child(2) {
+  display: none;
+}
+
+/* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  x버튼보이기/햄버거숨기기 */
+
+#books-area.on .btn-ham i:nth-child(2) {
+  display: block;
+}
+#books-area.on .btn-ham i:nth-child(1) {
+  display: none;
+}
+
+.blindbox {
+  position: absolute;
+  right: 3.3vw;
+  top: calc(5.6vh + 56px);
+  height: 26vh;
+
+  width: 22vh;
+  /* z-index: 99;    */
+  /* z-index: 1; */
+
+  /* 트랜지션 */
+  transition: 0.5s ease-in-out;
+}
+
+/* #top-area.on .blindbox {
+  z-index: 999;
+} */
+
+.searchbox {
+  height: 39px;
+  width: 100%;
+  border-radius: 0.5vw;
+  align-content: center;
+  background: #b3b3b5;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+.searicon {
+  width: 20vh;
+  display: flex;
+  margin: 0 auto;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.searchbox i {
+  display: flex;
+  z-index: 1;
+  font-size: 2.5rem;
+  color: #808080;
+  align-items: center;
+}
+
+i > p {
+  font-family: sans-serif;
+}
+
+.searchbar {
+  top: 5px;
+  left: 3px;
+  width: 80%;
+  height: 29px;
+  border-radius: 10vw;
+  background: white;
+  position: absolute;
+}
+
+.listbox {
+  /* position: absolute;
+    width: 100%;
+    top: 0; */
+  height: 175px;
+  background: #b3b3b5;
+  border-radius: 0.5vw;
+  display: none;
+}
+
+.list-tit {
+  width: 100%;
+  border-bottom: white solid 1px;
+  color: white;
+  line-height: 1.7;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  font-size: 1.6rem;
+  color: white;
+}
+
+/* 
+.swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+
+.swiper-slide .subtitle {
+  font-size: 21px;
+} */
+
+.swiper-slide .section {
+  font-size: 1.8rem;
+  word-break: break-all;
+  line-height: 1.8;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: row;
+  gap: 95px;
+  width: 1255px;
+  height: 940px;
+  margin: 0 auto;
+  align-items: center;
+}
+.name {
+  display: flex;
+  flex-direction: column;
+  gap: 14vw;
+  align-items: center;
+}
+
+.name > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+.left {
+  width: 540px;
+  margin-left: 40px;
+}
+.right {
+  width: 540px;
+  margin-right: 40px;
+}
+
+.y {
+  font-size: 5rem;
+  rotate: -15deg;
+}
+.k {
+  font-size: 5rem;
+}
+
+.i {
+  rotate: 10deg;
+  padding-top: 17px;
+}
+
+.a {
+  box-sizing: border-box;
+  padding-top: 20px;
+}
+
+.u,
+.o {
+  padding-top: 10px;
+}
+.rotate {
+  rotate: -10deg;
+}
+
+.bottom {
+  padding-bottom: 30px;
+}
+
+.name > ul > li {
+  font-size: 3.8rem;
+  font-weight: bold;
+}
+
+.last {
+  text-align: center;
+}
+
+/* 하단 페이지  */
+.swiper-pagination {
+  bottom: var(--swiper-pagination-bottom, 150px) !important;
+
+  
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev
+  {
+    right: var(--swiper-navigation-sides-offset, 60px )!important;
+    left: auto;}
+    
+    .swiper-button-prev, .swiper-rtl .swiper-button-next{
+      left: var(--swiper-navigation-sides-offset, 60px)!important;
+    right: auto;
+    }
+
+    
+    .swiper-pagination-left {
+  position: absolute;
+  bottom: 80px;
+  left: 25%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  z-index: 10;
+}
+
+.swiper-pagination-right {
+  position: absolute;
+  bottom: 80px;
+  right: 25%;
+  font-size: 1.4rem;
+  font-weight: 500;
+  z-index: 10;
+}

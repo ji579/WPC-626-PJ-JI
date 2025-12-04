@@ -1,0 +1,245 @@
+@charset "utf-8";
+/* 공통모듈 CSS - common.css */
+
+/* 웹폰트 CDN으로 불러오기
+CDN(Content Delivery Network)은 
+어떤 웹파일을 네트워크로 불러오는 것임! */
+
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* 웹폰트 적용 코드 */
+/*   font-family: "Bagel Fat One", system-ui;
+ font-family: "Diphylleia", serif;
+  font-family: "Gowun Batang", serif; */
+@font-face {
+    /* 폰트 이름 정의: CSS에서 이 이름으로 폰트를 참조합니다. */
+    font-family: 'MyCustomFont';
+
+    /* 폰트 파일의 경로와 형식 지정 */
+    src: url('../fonts/HCRBatang.ttf') format('truetype');
+
+    /* (선택 사항) 폰트의 굵기 지정 */
+    font-weight: normal;
+
+    /* (선택 사항) 폰트의 스타일 지정 (예: italic) */
+    font-style: normal;
+}
+body * {
+  outline: none !important;
+}
+h1, h2{
+  font-family: 'MyCustomFont', sans-serif;
+}
+
+/* 공통셋팅 */
+html{
+    /* 부드러운 스크롤 셋팅 */
+    scroll-behavior: smooth;  
+
+    /* 전체 글자크기 */
+    font-size: 10px;
+    /* rem단위 계산편의를 위함 */
+}
+
+/* 전체 글씨체 적용하기 */
+body {
+  /* 웹폰트체를 전체에 적용함! */
+  font-family: "Instrument Sans", sans-serif;
+     font-size: 10px;
+}
+
+
+/* 기본적으로 메뉴박스는 화면 밖에 숨김 */
+.menu-box {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 100%; /* 오른쪽 밖에 숨김 */
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  padding-right: 0;
+  transition: left 0.5s ease-in-out;
+}
+
+#spart-menu2.menu-open .menu-box {
+left: 50%;
+    translate: -50% 0;
+}
+
+/* 햄버거 아이콘 - 기본적으로 X 버튼 숨김 */
+.menubtn-ham i:nth-child(2) {
+  display: none;
+}
+
+/* menu-open 클래스가 있을 때 X 버튼 보이기, 햄버거 숨기기 */
+#spart-menu2.menu-open .menubtn-ham i:nth-child(1) {
+  display: none; /* 햄버거 숨김 */
+}
+
+#spart-menu2.menu-open .menubtn-ham i:nth-child(2) {
+  display: block; /* X 버튼 보임 */
+}
+#spart-menu {
+  max-width: 1360px;
+  top: 0;
+  margin: 0 auto;
+  background: url(../images/background.gif) no-repeat center top / cover;
+  z-index: 999;
+  height: 94px;
+}
+
+.menubtn-group{
+  display: none;
+  position: absolute;
+  top: 50%;
+    translate: 0 -50%;
+    right: calc(100% / 12);
+    gap: 20px;
+  
+}
+.menubtn-group>button{
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+.menubtn-ham i:nth-child(2) {
+  display: none;
+}
+/* 모바일용 메뉴 숨겨두기 */
+    .menu-box { display: none; }
+
+/* 상단영역 최상위 부모인  #top-area에 클래스 on을 주면
+  x버튼보이기/햄버거숨기기 */
+#spart-menu2 .on .menubtn-ham i:nth-child(2) {
+  display: block;
+}
+#spart-menu2 .on .menubtn-ham i:nth-child(1) {
+  display: none;
+}
+/* 인박스 높이값 초기화 */
+.spart-menu.inbox {
+  height: auto;
+}
+
+.spart-menu.inbox h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+.spart-menu ul {
+  /* 플렉스박스 */
+  display: flex;
+  height: 94px;
+ /* padding: 0 34px; */
+ padding: 0 calc(100% / 12);
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.4s ease-out;
+}
+.spart-menu ul li {
+  flex: 1;
+  text-align: center;
+}
+.spart-menu ul li:nth-child(1),
+.spart-menu ul li:nth-child(2) {
+
+  text-align: left;
+
+}
+.spart-menu ul li:nth-child(4),
+.spart-menu ul li:nth-child(5) {
+
+  text-align: right;
+
+}
+
+/* 스티키 메뉴이름 */
+.spart-menu ul > li > a {
+  color: white;
+  font-size: 1.8rem;
+  display: block;
+  /* padding: 9px 24px; */
+  /* 줄바꿈방지 */
+  white-space: nowrap;
+  background-color: transparent;
+}
+
+/* 호버시 색 변경 */
+.spart-menu ul > li > a:hover {
+  color: #c52531;
+   background-color: transparent;
+}
+.spart-menu ul > li > a.active {
+  color: #c52531;
+ background-color: transparent;
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////// */
+
+
+.line2 a{
+  font-size: 1.4rem;
+}
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////// */
+/* 하단공통 */
+.paddingbox{
+  padding: 118px calc(100% / 12) 1vw;
+}
+
+
+.bottom-flx h1 {
+  font-size: 6rem;
+}
+.bottom-flx p,
+.bottom-info-right h3,
+p {
+  font-size: 1.6rem;
+}
+
+.bottom-area {
+  /* height: 310px; */
+  background: url(../images/background.gif);
+  /* overflow: hidden; */
+  color: #fff;
+  box-sizing: border-box;
+     /* padding: 0 calc(100% / 12)  2.7vw;
+      */
+          /* padding: 0 calc(100% / 12) 60px; */
+}
+.bottompd {
+  padding: 0 calc(100% / 12) 60px;
+}
+.bottom-info-right {
+  padding-top: 6vmin;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5vmin;
+}
+.bottom-info {
+  padding-top: 6vmin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+}
+
+.bottom-area img {
+  width: 28px;
+}

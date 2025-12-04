@@ -1,0 +1,801 @@
+@charset "utf-8";
+/* 서브 페이지 CSS - sub.css */
+
+/* 공통 외부 CSS 불러오기 */
+/* @import url(경로/파일명); */
+
+/* 상단 하단 공통모듈 */
+@import url(./common.css);
+
+@import url(./core.css);
+/* 초기화CSS */
+@import url(./reset.css);
+
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #ccc;
+}
+
+/***************** 메인 CSS ********************/
+/* 제목파트 */
+.tit3 .inbox {
+  max-width: 1360px;
+}
+/* 하위메뉴 호버시 */
+.line1 > a:hover {
+  color: #c52531;
+  font-weight: bold;
+}
+
+.line1 a.active {
+  color: #c52531;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.line1 {
+  display: flex;
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-items: center;
+  gap: 18px;
+  font-size: 1.6rem;
+  padding-left: calc(100% / 12);
+}
+
+.line2 {
+  height: 30px;
+  border-bottom: 2px solid #b3b3b5;
+  align-content: center;
+  padding-left: calc(100% / 12);
+}
+.link-label {
+  cursor: pointer; /* 클릭 가능한 요소임을 표시 */
+  display: block; /* 전체 영역 클릭을 위해 필요할 수 있음 */
+}
+.link-label a {
+  text-decoration: none; /* a 태그의 밑줄 제거 */
+  color: inherit; /* 부모 요소의 글자색 상속 */
+  /* 원하는 스타일링 추가 */
+}
+.line2 img {
+  margin-left: 5px;
+}
+.line2 a {
+  margin-right: 5px;
+}
+/* input 요소를 숨겨도 작동은됨! */
+input[type="radio"] {
+  display: none;
+}
+
+.check {
+  display: flex;
+  position: relative;
+}
+
+/* 라벨요소 */
+label {
+  font-size: 1.4rem;
+  display: flex;
+  gap: 5px;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-right: 13px;
+  /* 텍스트와 가상요소 순서를 맞추기 위해 flex-direction: row-reverse 적용 권장 */
+  /* flex-direction: row-reverse; */
+}
+
+/* 동그라미 크기 설정 */
+label::after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  margin-top: 4px;
+  border-radius: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  display: inline-block;
+}
+
+/* 라디오 버튼 체크시 라벨 변경 */
+/* 체크된 라디오버튼의 다음 형제 라벨요소선택 */
+input:checked + label::after {
+  background: #c52531;
+}
+
+input:checked + label {
+  color: #c52531;
+}
+/* 라디오버튼 체크시
+        하단 형제요소인 ul>li 변경하기 */
+/* 체크박스/라디오버튼 체크시
+        가상클래스는 :checked 
+        -> 틸드(~) 선택자는 형제요소들을 모두
+        찾아 해당 요소를 선택함!
+        */
+
+.line3 {
+  font-size: 3.6rem;
+  text-align: center;
+  align-content: center;
+  height: 85px;
+  border-bottom: 2px solid #b3b3b5;
+  margin-bottom: 35px;
+}
+/* ////////////////////////////////////////// */
+
+.main-area {
+  /* position: relative; */
+  max-width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.change > ul {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  display: flex;
+
+  justify-content: center;
+}
+
+.row,
+.col {
+  position: relative; /* 자식 이미지의 절대 위치 기준점 */
+  width: 38px; /* 이미지의 실제 너비에 맞춰 조정 */
+  height: 38px; /* 이미지의 실제 높이에 맞춰 조정 */
+}
+
+/* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+.row img,
+.col img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+}
+
+/* 4. 호버 이미지 숨기기 (기본 상태) */
+.hover-row,
+.hover-col {
+  opacity: 0; /* 평소에는 투명하게 숨김 */
+}
+
+/* 5. 호버 시 이미지 전환 */
+.row:hover .default-row,
+.col:hover .default-col {
+  opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+}
+
+.row:hover .hover-row,
+.col:hover .hover-col {
+  opacity: 1; /* 호버 이미지를 보이게 함 */
+}
+
+.wrap {
+  /* max-width: 1114px;
+  margin: 0 auto; */
+  height: 715px;
+}
+
+/* 내부 플렉스박스 */
+/* .exbsbox {
+  display: flex;
+
+
+  gap: 0 35px;
+overflow-x: hidden;
+} */
+
+/* .wrap ul {
+
+  aspect-ratio: 250 / 540;
+  cursor: pointer;
+  text-align: center;
+
+  align-items: center;
+  box-sizing: border-box;
+  gap: 56px;
+} */
+
+/* .list :hover {
+  filter: brightness(0.5);
+  z-index: 99999;
+} */
+swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.exb-box {
+  width: 310px;
+  height: 525px;
+  margin: 15px;
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff;
+  border: 2px solid;
+  border-image: linear-gradient(to bottom, black, #666666);
+  border-image-slice: 1;
+  /* filter: drop-shadow(0px 0px 0px 14px rgba(0, 0, 0, 0.5)); */
+  box-shadow: 1px 1px 14px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exbtxt img {
+  aspect-ratio: 280 / 413;
+  /* justify-content: center; */
+  object-fit: cover;
+}
+.exb-box.swiper-slide:hover img {
+  filter: brightness(0.5);
+  /* 부드러운 전환을 위해 transition 속성을 포함하는 것이 좋습니다. */
+  transition: filter 0.3s ease;
+}
+
+/* 이미지의 기본 상태에는 transition을 설정하는 것이 좋습니다. */
+.exbtxt img {
+  /* 기존 스타일 유지... */
+  transition: filter 0.3s ease;
+}
+
+/* .exbtxt를 호버시 .exbtxt안에 있는 img filter:brightness(0.5)적용하기
+ */
+/* .swiper-slide swiper-slide:hover .exbtxt>img{
+  
+  filter: brightness(0.5);
+  z-index: 9999999;
+} */
+
+.mySwiper .swiper-wrapper .swiper-slide .exbtxt {
+  max-width: 280px;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  gap: 10px;
+}
+.wrap h3 {
+  font-size: 1.8rem;
+  height: 45px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+.wrap h4 {
+  font-size: 1.6rem;
+
+  word-break: break-all;
+  color: #808080;
+}
+
+.exb-box {
+  width: 310px;
+  height: 525px;
+  justify-items: center;
+  padding: 15px 15px 10px 15px;
+  box-sizing: border-box;
+  /* display: flex;
+    flex-direction: column;  */
+  /* 제목, 날짜, 이미지를 수직으로 배치 */
+  /* justify-content: flex-start;  */
+  /* 내용을 상단부터 배치하도록 수정 (필요 시) */
+  /* align-items: center; */
+}
+
+/* .swiper::nth-child(n + 3) {
+  translate: 0 50vw;
+} */
+
+.mySwiper {
+  height: 100%;
+}
+.swiper-pagination-bullet i{
+  display: none;
+}
+.swiper-pagination-bullet-active i{
+  display: block;
+}
+.swiper-pagination-bullet i::after  {
+content: '';
+    position: absolute;
+  top: -0.6vw;
+    left: 50%;
+    width: .46vw;
+    height: .26vw;
+    background: #1e1e1e;
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+    transform: translateX(-50%);
+}
+.swiper-pagination-bullet {
+  /* width: 5px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 20%;
+  background: #808080;opacity: 1;
+
+      z-index: 99; */
+  position: relative;
+  width: 30px;
+  height: 15px;
+  opacity: 1;
+  background: none;
+  /* background: #808080; */
+}
+
+.swiper-pagination-bullet-active {
+  background: none;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 0.1vw;
+  height: 9px;
+  border-radius: 20%;
+  background: #808080;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 0.1vw;
+  height: 20px;
+  border-radius: 20%;
+  background: #000000;
+  opacity: 1;
+}
+.swiper-pagination-bullet-:active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 10px;
+  height: 9px;
+
+  border-left: 0.1vw solid #6e6e6e;
+  border-right: 0.1vw solid #6e6e6e;
+}
+/* .swiper-pagination-bullet::before {
+  width: 5px;
+  height: 20px;
+  display: inline-block;
+  border-radius: 20%;
+  background: #808080;
+  opacity: 1;
+  
+} */
+
+.swiper-pagination-bullet-active .line {
+  display: block;
+}
+.swiper-pagination-bullet .line {
+  display: block;
+}
+
+/* .swiper-pagination-bullet-active .line 에 before 을 주고싶어 */
+.swiper-pagination-bullet-active .line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 20px;
+  height: 15px;
+  border-left: 0.1vw solid #5e5e5e;
+  border-right: 0.1vw solid #5e5e5e;
+}
+
+.swiper-pagination-bullet-active .line::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 30px;
+  justify-self: center;
+
+  height: 10px;
+  border-left: 0.1vw solid #3e3e3e;
+  border-right: 0.1vw solid #3e3e3e;
+}
+
+/* Past Exhibition 목록 (가로 스와이퍼)의 슬라이드에만 적용 */
+.mySwiper .swiper-wrapper .swiper-slide:nth-child(even) {
+  translate: 0 20%;
+}
+.mySwiper .swiper-wrapper .swiper-slide:nth-child(odd) {
+  translate: 0 10%;
+}
+
+/* 추가적으로, 모달 내부의 .swiper-slide에도 영향을 미치는 경우를 완전히 방지하기 위해, 
+   모달 슬라이드에 대해 해당 속성을 초기화하는 코드를 추가할 수 있습니다. */
+
+.modalSwiper .swiper-wrapper .swiper-slide {
+    /* 모달 내부 슬라이드에는 translate를 초기화하여 정상 위치에 배치 */
+    translate: 0 0 !important; 
+}
+
+
+.swiper-wrapper {
+  position: relative;
+  height: 100px;
+  /* gap: 60px;  */
+  /* margin: 20px 0; */
+}
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  background-color: #808080;
+
+  z-index: 1;
+
+  left: 50%;
+  transform: translate(-50%, -50%); /* X축 (-50%)과 Y축 (-50%) 모두 중앙 정렬 */
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  position: relative;
+  z-index: 100;
+  align-self: center;
+  align-items: center; /* 버튼들을 세로 중앙에 배치 */
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  /* left: 50%; */
+  width: 50%;
+  display: flex;
+  margin: 20px 0;
+  gap: 20px;
+  /* box-sizing: border-box; */
+  justify-content: space-between;
+}
+.modal-btn {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  /* transition: background 0.3s ease; */
+  z-index: 999;
+}
+/* ////////////////////////// */
+
+
+      /* ⭐️ 모달 열릴 때 body 스크롤 방지용 클래스 추가 */
+      .modal-open {
+        overflow: hidden;
+      }
+
+
+      /* 4. 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+      }
+
+      /* ⭐️ .modal-content 수정: 화면 중앙에 완전히 고정 */
+      .modal-content {
+        background-color: white;
+        position: fixed; /* 👈 위치 고정 */
+
+        /* 중앙 정렬 추가 */
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); /* 👈 정확한 중앙 정렬 */
+
+        /* 기존 스타일 유지 */
+        max-width: 1114px;
+        width: 90%; /* max-width와 함께 반응형을 위해 추가 */
+        height: 950px;
+           /* height: 70%; */
+        border: #000000 solid 1px;
+
+         /* animation: slideIn 0.3s ease;*/
+        /* overflow-y: auto; */ /* 👈 모달 내부에서만 스크롤되도록 허용 */
+        text-align: center;
+        overflow: hidden;
+        overscroll-behavior: auto;
+      }
+
+      .modal-box {
+       
+        margin: 0 auto;
+        justify-items: center;
+        line-height: 1.8;
+        background: white;
+      }
+
+      .modal-box > div {
+            width: 100%;
+        height: 100%;
+        justify-items: anchor-center;
+        overflow: auto;
+      }
+
+      /* ... (나머지 CSS는 그대로 유지) ... */
+
+      .titbox {
+            width: 750px;
+        padding: 30px 0 20px 0;
+      }
+      .title {
+        font-size: 1.8rem;
+        width: 750px;
+        /* height: 33px; */
+        align-content: center;
+        border-left: #000000 solid 1px;
+        text-align: left;
+      }
+      .title > strong {
+        margin-left: 25px;
+      display: block;
+      }
+
+      section.modal-img > img {
+        aspect-ratio: 884 / 1012;
+        width: 750px;
+      }
+      section.modal-img {
+        width: 750px;
+        text-align: right;
+        padding-bottom: 40px;
+      }
+
+      .modal-img > p {
+        margin: 0;
+        font-size: 1.4rem;
+      }
+
+      .close {
+      position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+   right: 25px;
+    top: 0;
+    z-index: 3;
+      }
+
+      .close:hover {
+        color: #000;
+      }
+
+      .box {
+        position: absolute;
+    width: 750px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+        margin-bottom: 35px;
+        
+      }
+      .box1 {
+        border-left: #000000 solid 1px;
+
+      }
+      .box1 > p {
+        margin-left: 25px;
+        word-break: break-all;
+        text-align: justify;
+        font-size: 1.8rem;
+      }
+
+      .set-it5 {
+        width: 100%;
+        /* text-align: right; */
+        /* padding-bottom: 60px; */
+      }
+    
+     .box2 {
+    padding-top: 50px;
+    /* padding-bottom: 30px; */
+    margin-bottom: 30px;
+    width: 750px;
+    text-align: right;
+      }
+      .box3{
+               position: absolute;
+   
+    left: 50%;
+    top: 45%;
+    translate: -50% -50%;
+      }
+      .imgbx1 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx2 {
+        display: flex;
+        width: 750px;
+        justify-content: space-between;
+      }
+      .imgbx1 > img {
+            width: 50%;
+        /* height: 510px; */
+      }
+      .imgbx2 > img {
+        /* height: 280px; */
+            width: 50%;
+      }
+      .imgbx3 > img {
+            width: 50%;
+        /* height: 450px; */
+      }
+      .box2 > p {
+        margin-bottom: 35px;
+        font-size: 1.4rem;
+      }
+      .sectionbx {
+        display: flex;
+        position: relative;
+        /* margin-bottom: 15px; */
+      }
+      .section_title {
+       position: absolute;
+    left: -100px;
+    /* translate: -90%; */
+    width: 90px;
+    /* margin-right: 10px; */
+    /* padding-top: 14px; */
+    font-size: 1.6rem;
+    text-align: right;
+      }
+      .section_content {
+        width: 750px;
+        text-align: left;
+        border-left: #000000 solid 1px;
+      }
+
+      .section_content > p {
+        margin-left: 25px;
+      }
+      span {
+        font-size: 1.4rem;
+        color: #b3b3b5;
+      }
+
+      .section_content > span {
+        margin-left: 25px;
+      }
+
+      /* ⭐️ topBtn 위치 조정: 모달 콘텐츠를 기준으로 상대 위치 지정 */
+
+      .ubtn {
+    margin: 38px 0;
+    z-index: 99;
+    position: absolute;
+    cursor: pointer;
+   left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 48px;
+    height: 48px;
+      }
+
+      /* 3. 모든 이미지에 적용: 겹쳐 놓기 및 부드러운 전환 효과 */
+      .image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 0.3s ease; /* 투명도 전환 시 0.3초 동안 부드럽게 */
+      }
+
+      /* 4. 호버 이미지 숨기기 (기본 상태) */
+      .hover-arrow {
+        opacity: 0; /* 평소에는 투명하게 숨김 */
+      }
+
+      /* 5. 호버 시 이미지 전환 */
+      .image-wrapper:hover .default-arrow {
+        opacity: 0; /* 기본 이미지를 투명하게 만들어서 숨김 */
+      }
+
+      .image-wrapper:hover .hover-arrow {
+        opacity: 1; /* 호버 이미지를 보이게 함 */
+      }
+
+      .set-it1 {
+        opacity: 1; /* 초기값은 보이게 설정 */
+        transition: 1.2s ease-in-out;
+      }
+
+      .set-it2.on {
+       /* transform: translateY(10%);  */
+       /* 👈 최종 위치를 0으로 통일하여 명확히 함 */
+        opacity: 1;
+      }
+
+      .set-it2 {
+        opacity: 0;
+        /* transform: translateY(6%); */
+         /* 👈 초기 위치 설정 */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it3.on {
+        /* transform: translateY(6%); */
+        opacity: 1;
+      }
+
+      .set-it3 {
+        opacity: 0;
+        /* transform: translateY(15%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it4.on {
+        /* transform: translateY(0%); */
+        opacity: 1;
+      }
+
+      .set-it4 {
+        opacity: 0;
+        /* transform: translateY(0%); */
+        transition: 1.2s ease-in-out;
+      }
+      .set-it5.on {
+        /* transform: translateY(15%); */
+        opacity: 1;
+      }
+
+      .set-it5 {
+        /* opacity: 0; */
+        transform: translateY(0%);
+        transition: 1.2s ease-in-out;
+      }
+      /* 이거 추가한거 */ 
+.page-row .hover-row {
+  opacity: 1;
+}
+.page-row .default-row {
+  opacity: 0;
+}
+
+.page-col .hover-col {
+  opacity: 1;
+}
+.page-col .default-col {
+  opacity: 0;
+}
+

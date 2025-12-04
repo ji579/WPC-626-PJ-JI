@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pastexhibition</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub3-2-2-1exh.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- <script type="module" src="./js/common.js"></script> -->
+    <!-- 메인 JS -->
+  <script type="module" src="./js/JSexhswiper.js"></script>
+  </head>
+  <body class="page-row">
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+          <ul>
+            <li class="on">
+              <a href="sub1.html">Profile</a>
+            </li>
+            <li>
+              <a href="sub2.html">Works</a>
+            </li>
+            <li>
+              <a href="index.html"> <h1>草間彌生</h1></a>
+            </li>
+            <li>
+              <a href="sub3-1-1visitinfo.html">Museum</a>
+            </li>
+            <li>
+              <a href="index.html#contact-area">Contact </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--제목 -->
+
+      <!--tit3 제목 -->
+
+      <div class="tit2 inbox">
+        <section class="line1">
+          <a href="sub3-1-1visitinfo.html">Visit</a>
+          <a href="sub3-2-1exh.html">Exhibition</a>
+        </section>
+
+        <section class="line2">
+          <div class="check">
+            <input type="radio" id="rdo1" name="rdo" style="display: none" />
+            <label for="rdo1" data-url="sub3-2-1exh.html">
+              Current Exhibition
+            </label>
+
+            <input type="radio" id="rdo2" name="rdo" style="display: none" />
+            <label for="rdo2" data-url="sub3-2-2-1exh.html">
+              Past Exhibition
+            </label>
+          </div>
+        </section>
+      </div>
+    </header>
+
+    <!-- 메인영역 -->
+    <div id="main-area">
+      <main class="main-area inbox">
+        <div class="change">
+          <ul>
+            <li class="row">
+              <a href="sub3-2-2-1exh.html">
+                <img
+                  src="./images/가로미선택작.png"
+                  alt="가로"
+                  class="default-row" />
+                <img
+                  src="./images/가로선택작.png"
+                  alt="가로 호버"
+                  class="hover-row"
+              /></a>
+            </li>
+            <li class="col">
+              <a href="sub3-2-2-2exh.html">
+                <img
+                  src="./images/세로미선택작.png"
+                  alt="가로"
+                  class="default-col" />
+                <img
+                  src="./images/세로선택작.png"
+                  alt="가로 호버"
+                  class="hover-col"
+              /></a>
+            </li>
+          </ul>
+        </div>
+
+        <section class="wrap">
+          <div class="swiper mySwiper">
+            <section class="swiper-wrapper">
+              <!-- <section class='exbsbox'></section> -->
+              <!-- <section class="booksbox">
+<div class="wrap"> -->
+              <!--  <ul class="list">
+    <li class="book">
+    </li>
+    <li class="booktxt">
+      <h3>제목</h3>
+    </li>
+  
+  </ul> -->
+              <!-- </div> -->
+            </section>
+          </div>
+        </section>
+        <div class="swiper-wrapper">
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- 모달 -->
+
+        <div id="modal" class="modal">
+          <div class="modal-content modalSwiper">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="ubtn">
+              <section class="up" id="upBtn" onclick="scrollToTop()">
+                <div class="image-wrapper">
+                  <img
+                    src="./images/위로올리기 .png"
+                    alt="위로 올리기"
+                    class="default-arrow"
+                  />
+                  <img
+                    src="./images/위로올리기_호버시.png"
+                    alt="위로 올리기 호버"
+                    class="hover-arrow"
+                  />
+                </div>
+              </section>
+            </div>
+
+            <div class="modal-box swiper-wrapper">
+              <div class="scroll-act sa1 set-it1 swiper-slide">
+                <section class="titbox">
+                  <div class="title">
+                    <strong>Reverberation from the Universe</strong>
+                  </div>
+                </section>
+                <section class="modal-img">
+                  <img src="./images/exb1.jpg" alt="" />
+                  <p class="imgtxt1">
+                    Pink Dots － Let Me Rest in a Tomb of Stars (detail)
+                    1993–1994<br />
+                    © YAYOI KUSAMA
+                  </p>
+                </section>
+              </div>
+              <div class="scroll-act sa2 set-it2 swiper-slide">
+                <section class="box box1">
+                  <p class="exbtxt">
+                    From a young age, Kusama has suffered from visual and
+                    auditory hallucinations. Her mental health condition has had
+                    a tremendous impact on the artist’s creative activities. In
+                    the 1950s, driven by her own obsessions, Kusama created an
+                    enormous number of drawings, resulting in an opportunity to
+                    make her breakthrough as an artist. After relocating to the
+                    United States in 1957, the artist began to create a series
+                    of works that could be described as ritual of
+                    “self-obliteration,” where all existence is engulfed in
+                    infinitely repetitive patterns such as polka dots and nets
+                    while the self is immersed into a boundless world. These
+                    works express a desire for salvation from psychological
+                    disorders and simultaneously reflect her intention to
+                    liberate society from absurd oppression through happenings
+                    and other forms of expression. However, from the late 1970s
+                    to the 1980s, after returning to Japan due to mental and
+                    physical health conditions, Kusama created small-scale works
+                    such as collages and works on ‘shikishi’ paperboards in her
+                    room in a psychiatric hospital. Subsequently, her creations
+                    expanded to an environmental scale, such as multi-canvas
+                    paintings and gigantic inflatable works. Kusama’s concept of
+                    “self-obliteration” is no longer solely a matter of the
+                    artist’s inner psyche; rather, it invites us into this
+                    sensation as though we are caught in a solemn “reverberation
+                    from the universe.” This exhibition focuses on the theme of
+                    illness, which can be described as the driving force behind
+                    Kusama’s art, showcasing a diverse range of works and
+                    related materials from her early years to the present day.
+                    We invite you to witness these productions of Kusama’s
+                    abundant creativity that reverberate to the farthest reaches
+                    of the universe.
+                  </p>
+                </section>
+              </div>
+              <div class="scroll-act sa3 set-it3 swiper-slide">
+                <section class="box box2">
+                  <div class="imgbx imgbx1">
+                    <img src="./images/exb1-1.jpg" alt="왼쪽그림" />
+                    <img src="./images/exb1-2.jpg" alt="오른쪽그림" />
+                  </div>
+                  <p class="imgtxt2">
+                    L: Left: Yayoi-chan 2013 Right: TOKO-TON 2013 <br />
+                    Installation view at Aviva Studios, Manchester, 2023 R:
+                    Ancient Fire 1953 <br />
+                    © YAYOI KUSAMA
+                  </p>
+                </section>
+              </div>
+              <div class="scroll-act sa4 set-it4 swiper-slide">
+                <section class="box box2 hidden-box">
+                  <div class="imgbx imgbx2">
+                    <img src="./images/exb1-3.jpg" alt="" />
+                    <img src="./images/exb1-4.jpg" alt="" />
+                  </div>
+                  <p class="imgtxt3">
+                    L: STAR FAIRY 2013<br />
+                    R: The Obliteration Room 2002–present<br />
+                    Collaboration between Yayoi Kusama and Queens land Art
+                    Gallery.<br />
+                    Commissioned Queensland Art Gallery.<br />
+                    Gift of the artist through the Queensland Art Gallery
+                    Foundation 2012. Collection: QAGOMA.<br />
+                    © YAYOI KUSAMA. Photo: QAGOMA
+                  </p>
+                  <div class="imgbx imgbx3">
+                    <img src="./images/exb1-5.jpg" alt="" />
+                  </div>
+                  <p class="imgtxt4">
+                    Narcissus Garden 1966/2020 Installation view at YAYOI KUSAMA
+                    MUSEUM, Tokyo 2020 <br />
+                    © YAYOI KUSAMA
+                  </p>
+                </section>
+              </div>
+              <div class="scroll-act sa5 set-it5 swiper-slide">
+                <section class="box3">
+                  <!-- 1. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Dates </strong>
+                    </div>
+
+                    <div class="section_content dates_box">
+                      <p class="date">
+                        Thursday, April 24 – Sunday, August 31, 2025
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- 2. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Open </strong>
+                    </div>
+                    <div class="section_content">
+                      <p>Thursdays to Sundays and National Holidays</p>
+                    </div>
+                  </div>
+
+                  <!-- 3. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Closed </strong>
+                    </div>
+                    <div class="section_content">
+                      <p>
+                        Mondays, Tuesdays and Wednesdays (except national
+                        holidays)
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- 4. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Hours </strong>
+                    </div>
+                    <div class="section_content">
+                      <p>11:00 - 17:30</p>
+                    </div>
+                  </div>
+
+                  <!-- 5. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Admission<br />Charges</strong><br />
+                      <span
+                        >(including<br />
+                        tax)
+                      </span>
+                    </div>
+                    <div class="section_content">
+                      <p>Adults: JPY 1,100　Children aged 6 - 18: JPY 600</p>
+                      <span> *Children under age 6 are free.</span><br />
+                      <span>
+                        *Group and disability discounts are not available.
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- 6. -->
+                  <div class="sectionbx">
+                    <div class="section_title">
+                      <strong>Admission <br />Times</strong>
+                    </div>
+                    <div class="section_content">
+                      <p>
+                        ① 11:00 - 12:30 (Enter by 11:30) <br />
+                        ②12:00 - 13:30 (Enter by 12:30) <br />
+                        ③ 13:00 - 14:30 (Enter by 13:30) <br />
+                        ④14:00 - 15:30 (Enter by 14:30) <br />
+                        ⑤ 15:00 - 16:30 (Enter by 15:30) <br />
+                        ⑥16:00 - 17:30 (Enter by 16:30) <br />
+                        <span
+                          >Yayoi Kusama Museum has no designated waiting area
+                          for visitors arriving before the admission time.
+                          Please refrain from coming to the museum before your
+                          admission time.</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <!-- modal-box 끝 -->
+            <!-- txtbox 끝 -->
+          </div>
+        </div>
+        <!-- 모달 끝 -->
+      </main>
+    </div>
+
+     <!-- 6. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
+          </div>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+     <script>
+// 모든 라벨 요소를 가져옵니다.
+    const linkLabels = document.querySelectorAll('.check label');
+    
+    /**
+     * 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다.
+     */
+    function handleLabelClick() {
+        // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+        const targetUrl = this.getAttribute('data-url');
+        
+        // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+        // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+        
+        if (targetUrl) {
+            // 페이지 이동을 실행합니다.
+            window.location.href = targetUrl;
+        }
+    }
+
+    /**
+     * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+     */
+    window.addEventListener('load', () => {
+        const currentPath = window.location.pathname.split('/').pop();
+        
+        linkLabels.forEach(label => {
+            // 1. 클릭 이벤트 리스너를 등록합니다.
+            label.addEventListener('click', handleLabelClick);
+            
+            // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+            const labelUrl = label.getAttribute('data-url');
+            
+            // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+            // (예: "sub3-1-1visitinfo.html")
+            if (labelUrl && labelUrl === currentPath) {
+                const inputId = label.getAttribute('for');
+                const input = document.getElementById(inputId);
+                
+                if (input) {
+                    input.checked = true;
+                }
+            }
+        });
+    });
+    </script>
+  </body>
+</html>

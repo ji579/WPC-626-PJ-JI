@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트</title>
+
+<style type="text/css">
+ .box
+ {
+  border: solid 1px gray;
+  width:100px;
+  height:50px;
+ }
+</style>
+
+<script type="text/javascript">
+ //window.onload = window_load;   //★이벤트 등록 2번째 방법
+ 
+ function window_load(){
+  alert("window_load 호출됨");
+ }
+ 
+ function btn1_click() {
+  alert("btn1_click 호출됨");
+  
+  //btn2에 이벤트 3번째 등록
+  //btn2.attachEvent(이벤트,어떤메서드);
+  var obj2 = document.getElementById("btn2");
+  obj2.className ="box"; //input에 class에 다가 box 이름을 넣음.
+  obj2.attachEvent("onclick",btn2_click);
+  //obj2.detachEvent("onclick",btn2_click); //이벤트 취소
+  
+  //밑에껏은 안되는 브라우저가 많다. 위의 거 쓰자.
+  //btn2.className = "box"; //input에 class에 다가 box 이름을 넣음.
+  //btn2.attachEvent("onclick",btn2_click);
+  
+ }
+ function btn2_click() {
+  alert("btn2_click 호출됨");
+ }
+</script>
+
+</head>
+<body> <!-- ★ <body onload="window_load();"> --> 
+ 이벤트 등록<br/>
+ 1. on속성<br/>
+ <input type="button" id="btn1" onclick="btn1_click()" value="btn1" /> <br/>
+ <input type="button" id="btn2" value="btn2" />
+</body>
+</html>
+
+[출처] 7. 버튼 클릭시 CSS에 정의한 클래스 사용하는 법|작성자 ChangeWorld
+

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museum</title>
+    <!-- 파비콘 넣기 -->
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/sub3-2Facilities.css" />
+      <!-- 미디어쿼리는 반드시 일반css아래 위치함! -->
+    <link rel="stylesheet" href="./css/media_sub.css" />
+    <script type="module" src="./js/common.js"></script>
+  </head>
+  <body>
+    <!-- //////////////////////////////////////////////// -->
+    <!-- 1. 상단영역 -->
+    <!-- 1. 상단영역 -->
+    <header class="top inbox">
+      <div id="spart-menu">
+        <nav class="spart-menu inbox">
+          <ul>
+            <li class="on">
+              <a href="sub1.html">Profile</a>
+            </li>
+            <li>
+              <a href="sub2.html">Works</a>
+            </li>
+            <li>
+              <a href="index.html"> <h1>草間彌生</h1></a>
+            </li>
+            <li>
+              <a href="sub3-1-1visitinfo.html">Museum</a>
+            </li>
+            <li>
+              <a href="index.html#contact-area">Contact </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <!--제목 -->
+
+      <!--tit3 제목 -->
+
+      <div class="tit2 inbox">
+        <section class="line1">
+          <a href="sub3-1-1visitinfo.html">Visit</a>
+          <a href="sub3-2-1exh.html">Exhibition</a>
+        </section>
+
+        <section class="line2">
+          <div class="check">
+            <input type="radio" id="rdo1" name="rdo" style="display: none" />
+            <label for="rdo1" data-url="sub3-1-1visitinfo.html">
+              Visit Information
+            </label>
+
+            <input type="radio" id="rdo2" name="rdo" style="display: none" />
+            <label for="rdo2" data-url="sub3-1-2Facilities.html">
+              Facilities
+            </label>
+
+            <input type="radio" id="rdo3" name="rdo" style="display: none" />
+            <label for="rdo3" data-url="sub3-1-3about.html"> About </label>
+          </div>
+        </section>
+
+        <section class="line3">
+          <h2>Facilities</h2>
+        </section>
+      </div>
+    </header>
+
+    <!-- 메인영역 -->
+    <div id="main-area">
+      <main class="main-area inbox">
+        <div class="facilities">
+          <div class="facilities-box">
+            <div class="title">
+              <h3>Floor Map</h3>
+            </div>
+
+            <div class="floorcont">
+              <!-- 왼쪽: 층 리스트 -->
+              <section class="floorwrap">
+                <ul class="floor">
+                  <li class="floortxt" data-floor="5F">
+                    <h4>5F</h4>
+                    <p>Browsing space | Rooftop Gallery</p>
+                  </li>
+                  <li class="floortxt" data-floor="4F">
+                    <p>4F</p>
+                    <p>Gallery</p>
+                  </li>
+                  <li class="floortxt" data-floor="3F">
+                    <p>3F</p>
+                    <p>Gallery</p>
+                  </li>
+                  <li class="floortxt" data-floor="2F">
+                    <p>2F</p>
+                    <p>Gallery</p>
+                  </li>
+                  <li class="floortxt" data-floor="1F">
+                    <p>1F</p>
+                    <p>Reception | Entrance | Shop</p>
+                  </li>
+                  <li class="floortxt" data-floor="B1F">
+                    <p>B1F</p>
+                    <p>Accessible toilet</p>
+                  </li>
+                </ul>
+
+                <!-- 선택된 층 설명 영역(아코디언 패널) -->
+                <!-- <div class="desc-panel"> -->
+                <!-- 각 층별 설명 블록: JS로 보여줄 것  -->
+                <!-- <div class="desc" data-floor="5F">
+                    <p>여기는 Rooftop Gallery</p>
+                  </div>
+                  <div class="desc" data-floor="4F">
+                    <p>여기는 Gallery</p>
+                  </div>
+                  <div class="desc" data-floor="3F">
+                    <p>여기는 Gallery.</p>
+                  </div>
+                  <div class="desc" data-floor="2F">
+                    <p>여기는 Gallery.</p>
+                  </div>
+                  <div class="desc" data-floor="1F">
+                    <p>여기는 Reception / Entrance / Shop.</p>
+                  </div>
+                  <div class="desc" data-floor="B1F">
+                    <p>여기는 Accessible toilet.</p>
+                  </div>
+                </div> 
+              --></section>
+
+              <!-- 오른쪽: 도면/이미지 (층별 탭 컨텐츠) -->
+              <section class="mapwrap">
+                <div class="floor_5" data-floor="5F">
+                  <div class="img">
+                    <img src="./images/gallery1.png" alt="5F" />
+                  </div>
+                </div>
+                <div class="floor_4" data-floor="4F">
+                  <div class="img">
+                    <img src="./images/gallery2.png" alt="4F" />
+                  </div>
+                </div>
+                <div class="floor_3" data-floor="3F">
+                  <div class="img">
+                    <img src="./images/gallery3.png" alt="3F" />
+                  </div>
+                </div>
+                <div class="floor_2" data-floor="2F">
+                  <div class="img">
+                    <img src="./images/gallery4.png" alt="2F" />
+                  </div>
+                </div>
+                <div class="floor_1" data-floor="1F">
+                  <div class="img">
+                    <img src="./images/gallery5.png" alt="1F" />
+                  </div>
+                </div>
+                <div class="floor_b1" data-floor="B1F">
+                  <div class="img">
+                    <img src="./images/gallery6.png" alt="B1F" />
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <span> -All floors are wheelchair accessible. </span><br />
+            <span>
+              -Accessible toilet and baby changing station are located on the
+              MB1 floor.
+            </span>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 6. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area inbox">
+        <div class="bottompd">
+          <h2 class="temp-tit blind">하단영역</h2>
+          <div class="bottom-info-right">
+            <h3>Japanese Artist</h3>
+            <p>Yayoi Kusama</p>
+          </div>
+
+          <section class="bottom-flx">
+            <div class="bottom-info">
+              <ul>
+                <li>
+                  <h1>草間彌生</h1>
+                </li>
+                <li>
+                  <p>ⓒ YAYOI KUSAMA ALL RIGHTS RESERVED</p>
+                </li>
+              </ul>
+
+              <a href="#" target="_blank" id="sns">
+                <img src="./images/ico-insta.svg" id="insta" />
+              </a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+    <script>
+    
+   //  // 모든 라벨 요소를 가져옵니다.
+  const linkLabels = document.querySelectorAll(".check label");
+  /*** 라벨 클릭 이벤트 핸들러: 페이지 이동을 처리합니다. */
+  function handleLabelClick() {
+    // 라벨의 data-url 속성에서 이동할 URL을 가져옵니다.
+    const targetUrl = this.getAttribute("data-url");
+    // 라벨을 클릭하면, 'for' 속성 덕분에 연결된 input이 자동으로 체크됩니다.
+    // 체크 상태가 변경되면 CSS 'input:checked + label'이 작동하여 색상이 변합니다.
+    if (targetUrl) {
+      // 페이지 이동을 실행합니다.
+      window.location.href = targetUrl;
+    }
+  }
+  /**
+   * 페이지 로드 시 현재 URL에 맞는 라디오 버튼을 선택 상태로 만듭니다.
+   */
+  window.addEventListener("load", () => {
+    const currentPath = window.location.pathname.split("/").pop();
+    linkLabels.forEach((label) => {
+      // 1. 클릭 이벤트 리스너를 등록합니다.
+      label.addEventListener("click", handleLabelClick);
+      // 2. 현재 페이지에 맞는 라디오 버튼을 'checked' 상태로 설정합니다.
+      const labelUrl = label.getAttribute("data-url");
+      // URL 비교를 더 정확하게 하기 위해 includes 대신 strict comparison을 사용합니다.
+      // (예: "sub3-1-1visitinfo.html")
+      if (labelUrl && labelUrl === currentPath) {
+        const inputId = label.getAttribute("for");
+        const input = document.getElementById(inputId);
+        if (input) {
+          input.checked = true;
+        }
+      }
+    });
+  });
+
+      const DEFAULT_FLOOR = "5F"; // 기본 선택층
+      const floorsOrder = ["5F", "4F", "3F", "2F", "1F", "B1F"]; //여기서 순서를 정해놔야 뒤에서 위층 아래층 구분 가능
+      const mapPos = [18, 8, 0, -8, -16, -9]; // 층별 부모박스의 translate Y축 위치값을 미리 셋팅함
+
+      // 요소
+      const floorItems = document.querySelectorAll(".floortxt"); //각 층 버튼
+      const mapWrap = document.querySelector(".mapwrap"); // 지도박스 부모
+      const maps = document.querySelectorAll(".mapwrap > div"); //지도 이미지 묶음
+      const descAll = document.querySelectorAll(".desc"); // 층 설명
+
+      let currentOpenFloor = null; //지금 열려있는 층을 기록해두기 위한 변수
+
+      // 층별 이미지 경로 매핑 (첫 번째 이미지: 기본, 두 번째 이미지: 활성화)
+      const floorImages = {
+        "5F": {
+          default: "./images/gallery1.png",
+          active: "./images/gallery1.png",
+        },
+        "4F": {
+          default: "./images/4f_down.png",
+          active: "./images/gallery2.png",
+        },
+        "3F": {
+          default: "./images/3f_down.png",
+          active: "./images/gallery3.png",
+        },
+        "2F": {
+          default: "./images/2f_down.png",
+          active: "./images/gallery4.png",
+        },
+        "1F": {
+          default: "./images/1f_down.png",
+          active: "./images/gallery5.png",
+        },
+        B1F: {
+          default: "./images/gallery6.png",
+          active: "./images/gallery6.png",
+        },
+      };
+
+      function closeAllDescs() {
+        descAll.forEach((el) => {
+          el.style.display = "none";
+        });
+      }
+
+      // 해당 층의 .desc 찾아서 li 밑에 표기
+      function openDescUnder(li, floor) {
+        const desc = document.querySelector(`.desc[data-floor="${floor}"]`);
+        // 클릭한 층(floor)에 해당하는 .desc 요소를 가져옴
+        if (!desc) return; // 누른 층 설명 없으면 걍 안하는건데 이건 오류 방지용
+
+        if (desc.previousElementSibling !== li) {
+          li.insertAdjacentElement("afterend", desc); // 동일 노드 이동
+        }
+
+        // 보이게 하고 클래스 부여
+        desc.style.display = "block";
+      }
+
+      // 지도 상태 업데이트
+      function updateMaps(activeFloor) {
+        const index = floorsOrder.indexOf(activeFloor);
+        maps.forEach((m) => {
+          const i = floorsOrder.indexOf(m.dataset.floor);
+          const floor = m.dataset.floor;
+          const imgEl = m.querySelector("img");
+          console.log("순번?", index);
+          mapWrap.style.translate = `0 ${mapPos[index]}%`;  // 순번에 맞게 해당 순번의 translate Y축 위치값을 적용함
+          if (i < index) {
+            // 위층: 숨기기 (이미지 없음)
+            imgEl.src = floorImages[floor].default; // 기본 이미지로 설정 (안 보이지만 혹시 몰라)
+            m.style.opacity = 0;
+            m.style.visibility = "hidden";
+            m.style.zIndex = 0;
+            m.style.pointerEvents = "none";
+          } else if (i === index) {
+            // 지금 층: 두 번째 이미지(활성화) 보여주기
+            imgEl.src = floorImages[floor].active; // 2번째 이미지로 변경
+            m.style.opacity = 1;
+            m.style.filter = "none";
+            m.style.zIndex = 99;
+            m.style.visibility = "visible";
+            m.style.pointerEvents = "auto";
+          } else {
+            // 아래층: 첫 번째 이미지(기본)를 흐릿하게 깔기
+            imgEl.src = floorImages[floor].default; // 1번째 이미지로 변경
+            m.style.opacity = 0.3;
+            m.style.filter = "blur(2px)";
+            m.style.visibility = "visible";
+            m.style.zIndex = 0;
+            m.style.pointerEvents = "none";
+          }
+        });
+      }
+
+      // 층 전환
+      function setActive(floor) {
+        // 1. 선택된 층의 CSS 스타일 (.active 클래스) 업데이트
+        floorItems.forEach((li) => {
+          if (li.dataset.floor === floor) {
+            li.classList.add("active"); // 선택된 층에 active 클래스 추가 (색상/::after 이미지 변경용)
+          } else {
+            li.classList.remove("active"); // 나머지 층에서 active 클래스 제거
+          }
+        });
+
+        if (floor === currentOpenFloor) return; // 같은 층이면 무시
+        closeAllDescs(); // 먼저 다 닫고
+        const li = [...floorItems].find((x) => x.dataset.floor === floor);
+        // if (li) openDescUnder(li, floor); // 주석 처리된 아코디언 패널 로직
+        updateMaps(floor); // 지도 이미지 갱신
+        currentOpenFloor = floor;
+      }
+
+      // 이벤트 (모든 층 버튼 .floortxt에 클릭 이벤트 연결하는거)
+      floorItems.forEach((li) => {
+        const floor = li.dataset.floor; // 각 li의 data-floor 값 가져오기 (예: "5F", "4F")
+        li.addEventListener("click", () => setActive(floor)); // 마우스로 클릭했을 때 해당 층 활성화
+      });
+
+      // 초기 상태
+      setActive(DEFAULT_FLOOR);
+    </script>
+  </body>
+</html>
