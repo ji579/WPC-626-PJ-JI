@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 폰트어썸 CDN CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+
+    <!-- 매거진 리스트 CSS -->
+    <link rel="stylesheet" href="./css/magazine_cart.css" />
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Common JS (공통 모듈 로드) -->
+    <script src="./js/common.js" type="module"></script>
+
+    <!-- 매거진 리스트 데이터 바인딩 JS -->
+    <script type="module" src="./js/magazine_cart.js"></script>
+
+    <title>VOGUE 정기구독 장바구니</title>
+  </head>
+  <body>
+    <!-- ========== 헤더 영역 (공통 모듈) ========== -->
+    <div id="header-area"></div>
+
+    <!-- ========== 메인 영역 ============-->
+    <main class="main-area inbox">
+      <!-- 탭 메뉴 -->
+      <div class="tab-menu">
+        <button class="tab-item active">일반주문(0)</button>
+        <button class="tab-item">예약주문(0)</button>
+        <button class="tab-item">매장픽업(0)</button>
+      </div>
+
+      <!-- 선택 컨트롤 -->
+      <div class="select-controls">
+        <label class="checkbox-label">
+          <input type="checkbox" class="checkbox" checked />
+          <span>전체선택</span>
+        </label>
+        <button class="delete-btn">선택삭제</button>
+      </div>
+
+      <!-- 메인 컨텐츠 -->
+      <div class="main-content inbox">
+        <!-- 장바구니 아이템 -->
+        <div class="cart-items">
+          <!-- 동적으로 생성되는 장바구니 아이템들이 여기에 들어갑니다 -->
+        </div>
+
+        <!-- 결제 정보 -->
+        <div class="payment-summary">
+          <div class="summary-title">결제정보</div>
+
+          <div class="summary-row">
+            <span>상품 금액</span>
+            <span class="amount">0원</span>
+          </div>
+
+          <div class="summary-row">
+            <span>배송비</span>
+            <span class="amount">무료배송</span>
+          </div>
+
+          <div class="summary-row discount">
+            <span>총 할인금액</span>
+            <span class="amount">-0원</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="summary-row total">
+            <span>총 주문금액</span>
+            <span class="amount">0원</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="mileage-row">
+            <span>적립예상 마일리지</span>
+            <span class="amount">+0M</span>
+          </div>
+
+          <button class="order-btn">주문하기</button>
+        </div>
+      </div>
+
+      <!-- 이용 안내 -->
+      <div class="usage-info">
+        <div class="usage-header">
+          <div class="usage-title">이용 안내</div>
+          <svg
+            class="arrow-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </div>
+      </div>
+    </main>
+
+    <!-- ========== 푸터 영역 (공통 모듈) ========== -->
+    <div id="footer-area"></div>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!-- ========== 헤더 ========== -->
+<header>
+  <div class="header-top">
+    <div class="logo">
+      <img src="./images/svg/logo.svg" alt="보그로고" />
+    </div>
+    <div class="header-actions">
+      <!-- 로그인/로그아웃 버튼 -->
+      <button class="login-btn">
+        <i class="fa-solid fa-right-to-bracket" title="로그인"></i>
+        <i class="fa-solid fa-right-from-bracket" title="로그아웃"></i>
+      </button>
+      <!-- 회원가입 버튼 -->
+      <button class="mem-btn" title="회원가입">
+        <i class="fa-solid fa-user-tie"></i>
+      </button>
+      <!-- 장바구니 버튼 -->
+      <button class="cart-btn" title="장바구니">
+        <i class="fa-solid fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="lang-btn">Korea</button>
+      <button class="gudok-btn">구독하기</button>
+      <button class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <!-- GNB메뉴 -->
+    <nav class="gnb-menu">
+      <ul class="nav-list">
+        <li><a href="#fashion">Fashion</a></li>
+        <li><a href="#beauty">Beauty</a></li>
+        <li><a href="#living">Living</a></li>
+        <li><a href="#culture">Culture</a></li>
+        <li><a href="#video">Video</a></li>
+        <li><a href="#opinion">Opinion</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- GNB 전체 메뉴  -->
+<div class="gnb" id="gnb">
+  <div class="container">
+    <div class="inner">
+      <button class="close" type="button" id="closeBtn"></button>
+
+      <div class="logo">
+        <img
+          class="pc"
+          src="https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/logo_white_m.svg"
+          alt="VOGUE"
+          width="192"
+          height="50"
+        />
+      </div>
+
+      <div class="search">
+        <input id="keyword_header" type="text" placeholder="SEARCH" />
+        <span id="btn_search_x_header" class="x"></span>
+        <button id="btn_search_header" type="button"></button>
+      </div>
+
+      <ul class="menu_list">
+        <li class="menu-item menu-item-has-children">
+          <a href="/fashion">FASHION</a>
+          <ul class="sub-menu">
+            <li><a href="/fashion">전체</a></li>
+            <li><a href="/fashion">패션 트렌드</a></li>
+            <li><a href="/fashion">패션 아이템</a></li>
+            <li><a href="/fashion">셀러브리티 스타일</a></li>
+            <li><a href="/fashion">패션 화보</a></li>
+            <li><a href="/fashion">인터뷰</a></li>
+            <li><a href="/fashion">패션 뉴스</a></li>
+            <li><a href="/fashion">워치 &amp; 주얼리</a></li>
+          </ul>
+        </li>
+        <li class="menu-item menu-item-has-children">
+          <a href="/beauty">BEAUTY</a>
+          <ul class="sub-menu">
+            <li><a href="/beauty">전체</a></li>
+            <li><a href="/beauty">뷰티 트렌드</a></li>
+            <li><a href="/beauty">뷰티 아이템</a></li>
+            <li><a href="/beauty">웰니스</a></li>
+            <li><a href="/beauty">뷰티 화보</a></li>
+          </ul>
+        </li>
+        <li class="menu-item menu-item-has-children">
+          <a href="/living">LIVING</a>
+          <ul class="sub-menu">
+            <li><a href="/living">전체</a></li>
+            <li><a href="/living">여행</a></li>
+            <li><a href="/living">푸드</a></li>
+            <li><a href="/living">데코</a></li>
+            <li><a href="/living">라이프</a></li>
+          </ul>
+        </li>
+        <li class="menu-item menu-item-has-children">
+          <a href="/culture">CULTURE</a>
+          <ul class="sub-menu">
+            <li><a href="/culture">전체</a></li>
+            <li><a href="/culture">엔터테인먼트</a></li>
+            <li><a href="/culture">아트</a></li>
+            <li><a href="/culture">셀럽 뉴스</a></li>
+            <li><a href="/culture">뷰 포인트</a></li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="/video">VIDEO</a>
+        </li>
+        <li class="menu-item">
+          <a href="#opinion">Opinion</a>
+        </li>
+      </ul>
+
+      <div class="link_group">
+        <a href="https://www.magazineshop.co.kr/" target="_blank">정기구독</a>
+        <a href="https://www.doosanmagazine.com/brands/vogue" target="_blank"
+          >회사소개</a
+        >
+        <a href="https://www.doosanmagazine.com/contact/" target="_blank"
+          >광고/제휴</a
+        >
+        <a href="https://www.doosanmagazine.com/notice/" target="_blank"
+          >공지사항</a
+        >
+        <a href="/masthead/">MASTHEAD</a>
+
+        <ul class="sns_list">
+          <li>
+            <a href="https://www.instagram.com/VOGUEKOREA" target="_blank">
+              <img
+                src="https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/ic_sns_insta.svg"
+                alt="instagram"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/VOGUEkr" target="_blank">
+              <img
+                src="https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/ic_sns_facebook.svg"
+                alt="facebook"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/VogueKorea" target="_blank">
+              <img
+                src="https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/ic_sns_x.svg"
+                alt="x"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/user/VogueKorea" target="_blank">
+              <img
+                src="https://www.vogue.co.kr/wp-content/themes/vogue/assets/images/ic_sns_youtube.svg"
+                alt="youtube"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
