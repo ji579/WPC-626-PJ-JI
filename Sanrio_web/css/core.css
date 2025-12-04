@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+/* 산리오 PJ : 웹폰트, 공용클래스 CSS - core.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&display=swap');
+
+/* 기본 글자체, 글자크기 설정 - 최상위 html에 설정 */
+html {
+    font-family: "Montserrat","Nanum Gothic", serif;
+    font-size: 16px;
+}
+
+/* 
+font-family: "Montserrat", serif;
+font-family: "Nanum Gothic", serif;
+*/
+
+/* 공통클래스 */
+/* 1. 중앙속박스 */
+.inbox{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* 2. 공통 제목 */
+.stit {
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+    color: #222;
+    /* text-transform : 글자변환속성
+        1. 모두 대문자 - uppercase
+        2. 모두 소문자 - lowercase
+        3. 첫글자만 대문자 - capitalize
+    */
+    text-transform: uppercase;
+    font-weight: 500;
+}
+/* 글자색 반전 공통제목 */
+.stit.reversal {
+    color: #fff;
+}
+/* 3-1. 공통 버튼 */
+.com-btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    border-radius: 3rem;
+    padding: 1.6rem 3rem;
+    border: 1px solid #222;
+    color: #222;
+    transition: .3s;
+    text-transform: uppercase;
+}
+/* 버튼오버시 */
+.com-btn:hover{
+    color: #fff;
+    background-color: #222;
+}
+/* 화살표 나오는 버튼 추가 클래스 */
+.view-btn::after {
+    content: url(../images/ico_more1.png);
+    display: inline-block;
+    padding-left: 2rem;
+    vertical-align: middle;
+}
+/* 오버시 이미지 변경 */
+.view-btn:hover::after {
+    content: url(../images/ico_more2.png);
+}
+/* 3-2. 공통 버튼 : 반전셋팅 */
+.com-btn.reversal {
+    border-color: #fff;
+    color: #fff;
+}
+/* 버튼오버시 */
+.com-btn.reversal:hover{
+    color: #222;
+    background-color: #fff;
+}
+/* 화살표 나오는 버튼 추가 클래스 */
+.view-btn.reversal::after {
+    content: url(../images/ico_more2.png);
+}
+/* 오버시 이미지 변경 */
+.view-btn.reversal:hover::after {
+    content: url(../images/ico_more1.png);
+}
+
+/* 4. 센터박스 */
+.center-box{
+    text-align: center;
+}

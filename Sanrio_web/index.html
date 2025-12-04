@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="산리오, 산리오코리아" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="http://sanriokorea.co.kr/favicon.png.ico"
+    />
+    <title>산리오 사이트</title>
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <!-- 미디어쿼리 CSS -->
+    <link rel="stylesheet" href="./css/main_media.css" />
+    <!-- 메인 JS -->
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="top-area">
+      <header class="top-area">
+        <!-- 양쪽구성 레이아웃 ul : 플렉스jcsb -->
+        <ul>
+          <li>
+            <!-- 로고 -->
+            <h1 class="logo">
+              <a href="#">
+                <img src="./images/logo_2023.png" alt="메인로고" />
+              </a>
+            </h1>
+          </li>
+          <li>
+            <!-- GNB메뉴 -->
+            <nav class="gnb on"></nav>
+            <!--  모바일 GNB -->
+            <nav class="gnb-mob">
+              <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+            </nav>
+          </li>
+        </ul>
+      </header>
+    </div>
+    <!-- 상단영역 끝 -->
+    <!-- 2. 메인영역 -->
+    <main id="main-area">
+      <!-- 2-1. 배너영역 -->
+      <div class="banner">
+        <section class="inbox dt-box">
+          <img
+            src="./images/main_visual_pc_v1.png"
+            alt="데스크탑용 메인 배너"
+          />
+        </section>
+        <section class="mob-box">
+          <img src="./images/main_visual_m_v1.png" alt="모바일용 메인 배너" />
+        </section>
+      </div>
+      <!-- 2-2. 캐릭터영역 -->
+      <div class="character">
+        <section class="inbox">
+          <h2 class="stit">character</h2>
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn"> view more </a>
+          </div>
+          <!-- 캐릭터 리스트박스 -->
+          <div class="cat-list"></div>
+        </section>
+      </div>
+      <!-- 2-3. 컴퍼니영역 -->
+      <div class="company">
+        <section class="inbox">
+          <h2 class="stit">company</h2>
+          <!-- 컴퍼니 리스트박스 -->
+          <div class="company-list"></div>
+        </section>
+      </div>
+      <!-- 2-4. 리쿠르트영역 -->
+      <div class="recruit">
+        <section class="inbox">
+          <h2 class="stit">recruit</h2>
+          <!-- 리쿠르트 리스트박스 -->
+          <div class="recruit-list"></div>
+        </section>
+      </div>
+      <!-- 2-5. 플레이스영역 -->
+      <div class="place">
+        <section class="inbox">
+          <h2 class="stit">place</h2>
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn"> place more </a>
+          </div>
+        </section>
+      </div>
+          <!-- 2-6. 컨텍어스영역 -->
+      <div class="contact-us">
+        <section class="inbox">
+          <!-- 타이틀박스 -->
+          <h2 class="stit reversal">
+            <img src="./images/logo_w.png" alt="흰색로고" /> <br />
+            contact us
+          </h2>
+          <!-- 버튼박스 -->
+          <div class="center-box">
+            <a href="#" class="com-btn view-btn reversal"> view more </a>
+          </div>
+          <!-- 지도정보박스 -->
+          <article class="map-info inbox">
+            <!-- 구글맵 아이프레임 박스 -->
+            <div class="map-box">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3165.006323824252!2d127.05816469999999!3d37.507768999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z7ISc7Jq47IucIOqwleuCqOq1rCDthYztl6TrnoDroZwgNTA5LCA07Li1ICjsgrzshLHrj5ksIOyXlOyUqO2DgOybjDEp!5e0!3m2!1sko!2skr!4v1738302837846!5m2!1sko!2skr"
+              ></iframe>
+            </div>
+            <!-- 위치정보 박스 -->
+            <div class="info-box">
+              <h3>서울시 강남구 테헤란로 509, 4층 (삼성동, 엔씨타워1)</h3>
+              <address>
+                509, Teheranro, Gangnam-gu, Seoul <br />
+                (4th floor, Samsung-dong, NC Tower 1)
+              </address>
+              <p>
+                <span>M</span>
+                : webmaster@sanriokorea.co.kr <br />
+                <span>T</span>
+                : +82 (0) 2 543 3810 <br />
+                <span>F</span>
+                : +82 (0) 2 543 2904
+              </p>
+              <img src="./images/contact_img.png" alt="컨텍어스 이미지" />
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <!-- 메인영역 끝 -->
+
+     <!-- 3. 하단영역 -->
+    <div id="bottom-area">
+      <footer class="bottom-area">
+        <!-- 카피라잇박스 -->
+        <div class="copy-right">
+          <img src="./images/copyright_2023_02_v2.png" alt="카피라잇" />
+        </div>
+        <!-- 버튼박스 -->
+        <div class="btn-box">
+          <a href="#" class="com-btn reversal">개인정보처리방침</a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- sns추가 버튼 그룹박스 -->
+    <aside class="q-btn">
+      <div class="sns">
+        <a href="https://www.instagram.com/sanrio_kr/" target="_blank">
+          <img src="./images/i_ins_pc_v3.png" alt="instargram"
+        /></a>
+        <a href="https://www.youtube.com/c/sanriokorea/featured" target="_blank"
+          ><img src="./images/i_you_pc_v3.png" alt="youtube"
+        /></a>
+      </div>
+    </aside>
+    <!-- 탑이동버튼 -->
+    <div id="to-top" class="top-btn" tabindex="0" role="button" aria-label="페이지 상단으로 이동">
+      <span aria-hidden="true">top</span>
+    </div>
+  </body>
+</html>
