@@ -5,11 +5,6 @@
 /* 12그리드 CSS */
 @import url(./grid_12_flex.css);
 
-/* 공사중 표시 */
-body * {
-  outline: 2px dashed #ccc;
-}
-
 /***************** 메인 CSS ********************/
 
 /* 상단영역 */
