@@ -33,15 +33,15 @@
       }
 
       nav {
-        position: fixed ;
-        top: 0 ;
-        left: 0 ;
-        right: 0 ;
-        width: 100% ;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(20px);
         padding: 1.8rem 6%;
-        z-index: 99999 ;
+        z-index: 99999;
         border-bottom: 1px solid rgba(139, 115, 85, 0.2);
         transform: translateZ(0);
       }
@@ -428,7 +428,7 @@
 
       .portfolio-track {
         position: absolute;
-            top: 61%;
+        top: 61%;
         left: 0;
         transform: translateY(-50%);
         display: flex;
@@ -439,6 +439,13 @@
 
       .portfolio-item {
         flex: 0 0 550px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .portfolio-card {
+        width: 100%;
         aspect-ratio: 4/5;
         background: var(--white);
         position: relative;
@@ -447,7 +454,7 @@
         overflow: hidden;
       }
 
-      .portfolio-item:hover {
+      .portfolio-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 20px 40px rgba(42, 42, 42, 0.2);
       }
@@ -508,6 +515,34 @@
 
       .portfolio-info p {
         color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* 프로젝트 버튼 영역 */
+      .project-buttons {
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+      }
+
+      .project-btn {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        background: var(--white);
+        border: 1px solid var(--brown);
+        color: var(--dark);
+        text-decoration: none;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .project-btn:hover {
+        background: var(--brown);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
       }
 
       /* Floating animation for contact section */
@@ -800,9 +835,9 @@
     <section id="about" class="hero">
       <div class="hero-content" id="heroContent">
         <div class="hero-image aboutimg">
-    <div class="spani4 big big2">
-        <span class="ir"></span>
-    </div>
+          <div class="spani4 big big2">
+            <span class="ir"></span>
+          </div>
           <!-- <img src="your-photo.jpg" alt="Profile"> -->
         </div>
         <div class="hero-text">
@@ -827,7 +862,11 @@
                   ><span
                     class="__cf_email__"
                     data-cfemail="117b787974747f742121517f706774633f727e7c"
-                    >kih3193@naver.com</span
+                    ><span
+                      class="__cf_email__"
+                      data-cfemail="b8d3d1d08b89818bf8d6d9ceddca96dbd7d5"
+                      >[email&#160;protected]</span
+                    ></span
                   ></a
                 ></span
               >
@@ -908,63 +947,94 @@
           </div>
           <div class="portfolio-track" id="portfolioTrack">
             <div class="portfolio-item" data-project="1">
-              <div class="portfolio-image">프로젝트 이미지 1</div>
-              <span class="portfolio-number">01</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>E-Commerce</h3>
-                  <p>온라인 쇼핑몰 플랫폼</p>
+              <div class="portfolio-card">
+                <div class="portfolio-image">프로젝트 이미지 1</div>
+                <span class="portfolio-number">01</span>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h3>Kusama Yayoi Website</h3>
+                    <p>쿠사마야요이 반응형 사이트 리뉴얼</p>
+                  </div>
                 </div>
+              </div>
+              <div class="project-buttons">
+                <a
+                  href="https://your-website-url.com"
+                  target="_blank"
+                  class="project-btn"
+                  >Website</a
+                >
+                <a
+                  href="https://www.figma.com/design/KgTSg4rfpzXrdJSgEh9XBJ/1%EC%B0%A8%EA%B3%BC%EC%A0%9C_%EC%BF%A0%EC%82%AC%EB%A7%88%EC%95%BC%EC%9A%94%EC%9D%B4?node-id=0-1&t=GQGs2zKOTmZueixf-1"
+                  target="_blank"
+                  class="project-btn"
+                  >Figma</a
+                >
+                <a
+                  href="https://github.com/your-repo"
+                  target="_blank"
+                  class="project-btn"
+                  >Github</a
+                >
               </div>
             </div>
             <div class="portfolio-item" data-project="2">
-              <div class="portfolio-image">프로젝트 이미지 2</div>
-              <span class="portfolio-number">02</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Brand Website</h3>
-                  <p>기업 브랜드 사이트</p>
+              <div class="portfolio-card">
+                <div class="portfolio-image">프로젝트 이미지 2</div>
+                <span class="portfolio-number">02</span>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h3>Brand Website</h3>
+                    <p>세이투세 반응형 사이트 리뉴얼</p>
+                  </div>
                 </div>
+              </div>
+              <div class="project-buttons">
+                <a
+                  href="https://your-website-url.com"
+                  target="_blank"
+                  class="project-btn"
+                  >Website</a
+                >
+                <!-- <a href="https://your-figma-url.com" target="_blank" class="project-btn">Figma</a> -->
+                <a
+                  href="https://github.com/your-repo"
+                  target="_blank"
+                  class="project-btn"
+                  >Github</a
+                >
               </div>
             </div>
             <div class="portfolio-item" data-project="3">
-              <div class="portfolio-image">프로젝트 이미지 3</div>
-              <span class="portfolio-number">03</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Portfolio</h3>
-                  <p>개인 작품 포트폴리오</p>
+              <div class="portfolio-card">
+                <div class="portfolio-image">프로젝트 이미지 3</div>
+                <span class="portfolio-number">03</span>
+                <div class="portfolio-overlay">
+                  <div class="portfolio-info">
+                    <h3>Vogue Website</h3>
+                    <p>보그 반응형 사이트</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="portfolio-item" data-project="4">
-              <div class="portfolio-image">프로젝트 이미지 4</div>
-              <span class="portfolio-number">04</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Dashboard</h3>
-                  <p>데이터 대시보드</p>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item" data-project="5">
-              <div class="portfolio-image">프로젝트 이미지 5</div>
-              <span class="portfolio-number">05</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Landing Page</h3>
-                  <p>제품 랜딩 페이지</p>
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-item" data-project="6">
-              <div class="portfolio-image">프로젝트 이미지 6</div>
-              <span class="portfolio-number">06</span>
-              <div class="portfolio-overlay">
-                <div class="portfolio-info">
-                  <h3>Web App</h3>
-                  <p>모바일 웹 앱</p>
-                </div>
+              <div class="project-buttons">
+                <a
+                  href="https://your-website-url.com"
+                  target="_blank"
+                  class="project-btn"
+                  >Website</a
+                >
+                <a
+                  href="https://www.figma.com/site/zFArO7ini5mUnctIibn0Mq/vogue-%EB%B0%98%EC%9D%91%ED%98%95-%EC%82%AC%EC%9D%B4%ED%8A%B8?node-id=0-1&t=CVhU2czYZFaHmkVZ-1"
+                  target="_blank"
+                  class="project-btn"
+                  >Figma</a
+                >
+                <a
+                  href="https://github.com/your-repo"
+                  target="_blank"
+                  class="project-btn"
+                  >Github</a
+                >
               </div>
             </div>
           </div>
@@ -1011,17 +1081,15 @@
               <span class="meta-value" id="modalContribution">100%</span>
             </div>
           </div>
-          <p id="modalDescription">프로젝트 설명이 여기에 표시됩니다.</p>
+          <p id="modalDescription">프로젝트 설명</p>
           <div class="project-tags" id="modalTags"></div>
         </div>
       </div>
     </div>
 
-    <script
-      data-cfasync="false"
-      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
-    ></script>
     <script>
+      document.getElementById("portfolioTrack");
+      document.querySelector(".portfolio-spacer");
       // 프로젝트 데이터
       const projects = {
         1: {
@@ -1029,57 +1097,38 @@
           duration: "2025 Aug-Oct",
           role: "Web Publisher",
           contribution: "100%",
-          description:
-           `작가의 아이덴티티를 담은 웹사이트. 
+          description: `작가의 아이덴티티를 담은 웹사이트. 
             기존에 분리되어 있던 작가 페이지와 미술관 페이지를 하나의 플랫폼으로 통합하여 사용 흐름을 단순화하고 접근성을 개선하였다. 
             사용자들이 작품 정보와 전시 콘텐츠를 보다 직관적으로 탐색할 수 있도록 정보 구조를 재정비하고, 
             시각적 아이덴티티 또한 작가의 스타일에 맞춰 재해석하여 웹사이트 전반의 완성도를 높였다.`,
-          tags: ["HTML5", "CSS3","Figma", "JavaScript","Photoshop", "Illustrator"],
+          tags: [
+            "HTML5",
+            "CSS3",
+            "Figma",
+            "JavaScript",
+            "Photoshop",
+            "Illustrator",
+          ],
         },
         2: {
-          title: "Brand Identity Site",
+          title: "SAY TOUCHÉ 반응형 사이트 리뉴얼",
           duration: "2025 Nov",
           role: "Web Publisher",
           contribution: "100%",
           description:
-            "기업의 브랜드 아이덴티티를 담은 웹사이트. 모던한 디자인과 인터랙티브한 요소로 브랜드 스토리를 효과적으로 전달합니다.",
-         tags: ["HTML5", "CSS3","Figma", "JavaScript"],
+            `세이투세의 개성 있고 유니크한 브랜드 아이덴티티를 웹에서 자연스럽게 드러내기 위해, 이에 맞는 UI 디자인과 인터랙션 요소를 중심으로 구성한 웹사이트. 
+            반응형 레이아웃을 기반으로 브랜드의 분위기를 담아낸 비주얼 스타일과 스크롤 페이드 인, 슬라이더 등 주요 모션을 구현하여 시각적 경험을 강화하였다. 
+            정적 문서가 아닌 ‘브랜드 무드가 살아 있는 인터랙티브 가이드’ 형태로 제작하여, 디자인 의도와 실제 구현 흐름을 명확하게 보여주고 프로젝트 전반의 완성도를 높였다.`,
+          tags: ["HTML5", "CSS3", "JavaScript"],
         },
         3: {
-          title: "Creative Portfolio",
-          duration: "2025 nov",
+          title: "Vogue 반응형 사이트",
+          duration: "2025 Nov",
           role: "Web Publisher",
           contribution: "100%",
           description:
-            "크리에이터를 위한 포트폴리오 사이트. 작품을 돋보이게 하는 미니멀한 디자인과 케이스 스터디 기능을 제공합니다.",
-         tags: ["HTML5", "CSS3","Figma", "JavaScript"],
-        },
-        4: {
-          title: "Admin Dashboard",
-          duration: "2024 Q3",
-          role: "UI Developer",
-          contribution: "80%",
-          description:
-            "데이터를 직관적으로 시각화하는 관리자 대시보드. 실시간 데이터 업데이트와 커스터마이징 가능한 위젯을 제공합니다.",
-          tags: ["React", "D3.js", "Chart.js"],
-        },
-        5: {
-          title: "Product Landing Page",
-          duration: "2024 Q2",
-          role: "Web Publisher",
-          contribution: "100%",
-          description:
-            "신제품 런칭을 위한 랜딩 페이지. 높은 전환율을 위한 전략적 레이아웃과 설득력 있는 콘텐츠 구성이 특징입니다.",
-          tags: ["HTML", "CSS", "JavaScript"],
-        },
-        6: {
-          title: "Mobile Web Application",
-          duration: "2024 Q2",
-          role: "Frontend Dev",
-          contribution: "100%",
-          description:
-            "모바일 환경에 최적화된 프로그레시브 웹 앱. 오프라인 지원과 푸시 알림 기능을 포함한 네이티브 앱 같은 경험을 제공합니다.",
-          tags: ["React", "PWA", "Mobile First"],
+            "기존 이커머스 사이트를 따라 만들며 UI 재현뿐 아니라 장바구니(담기·수량 변경·총액 계산) 기능과 로그인·회원가입 흐름을 구현해 실제 서비스와 유사한 사용자 경험을 구축한 프로젝트입니다.",
+          tags: ["HTML5", "CSS3", "Figma", "JavaScript"],
         },
       };
 
@@ -1111,29 +1160,43 @@
       const portfolioTrack = document.getElementById("portfolioTrack");
       const portfolioSpacer = document.querySelector(".portfolio-spacer");
 
+      console.log("portfolioTrack:", portfolioTrack);
+      console.log("portfolioSpacer:", portfolioSpacer);
+
       function updateHorizontalScroll() {
         const rect = portfolioSpacer.getBoundingClientRect();
+        const progress =
+          Math.abs(rect.top) /
+          (portfolioSpacer.offsetHeight - window.innerHeight);
+        const maxScroll = portfolioTrack.scrollWidth - window.innerWidth;
+
+        console.log("rect.top:", rect.top);
+        console.log("progress:", progress);
+        console.log("maxScroll:", maxScroll);
+        console.log("portfolioTrack.scrollWidth:", portfolioTrack.scrollWidth);
+
         if (
           rect.top <= 0 &&
           rect.top > -portfolioSpacer.offsetHeight + window.innerHeight
         ) {
-          const progress =
-            Math.abs(rect.top) /
-            (portfolioSpacer.offsetHeight - window.innerHeight);
-          const maxScroll = portfolioTrack.scrollWidth - window.innerWidth;
           portfolioTrack.style.transform = `translateY(-50%) translateX(${
             -progress * maxScroll
           }px)`;
+          console.log("Transform applied:", portfolioTrack.style.transform);
         }
       }
 
       window.addEventListener("scroll", updateHorizontalScroll);
       window.addEventListener("resize", updateHorizontalScroll);
 
+      // 초기 실행
+      updateHorizontalScroll();
+
       // Portfolio Modal
-      document.querySelectorAll(".portfolio-item").forEach((item) => {
-        item.addEventListener("click", function () {
-          const projectId = this.getAttribute("data-project");
+      document.querySelectorAll(".portfolio-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const item = this.closest(".portfolio-item");
+          const projectId = item.getAttribute("data-project");
           const project = projects[projectId];
 
           document.getElementById("modalTitle").textContent = project.title;
@@ -1168,12 +1231,6 @@
             closeModal();
           }
         });
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          closeModal();
-        }
-      });
     </script>
   </body>
 </html>
