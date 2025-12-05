@@ -9,817 +9,888 @@
       rel="stylesheet"
     />
     <style>
-      :root {
-        --cream: #f5f3ee;
-        --dark: #2a2a2a;
-        --brown: #8b7355;
-        --light-brown: #c4b5a0;
-        --beige: #e8e3da;
-        --white: #ffffff;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Outfit", sans-serif;
-        background: var(--cream);
-        color: var(--dark);
-        line-height: 1.7;
-        overflow-x: hidden;
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(20px);
-        padding: 1.8rem 6%;
-        z-index: 99999;
-        border-bottom: 1px solid rgba(139, 115, 85, 0.2);
-        transform: translateZ(0);
-      }
-
-      nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 4rem;
-      }
-
-      nav a {
-        text-decoration: none;
-        color: var(--dark);
-        font-weight: 400;
-        font-size: 0.95rem;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        transition: all 0.4s ease;
-        opacity: 0.7;
-      }
-
-      nav a:hover {
-        opacity: 1;
-        color: var(--brown);
-      }
-
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 8rem 5%;
-      }
-
-      .hero-content {
-        display: flex;
-        align-items: center;
-        gap: 5rem;
-        max-width: 1400px;
-      }
-
-      .hero-image {
-        flex: 0 0 400px;
-        aspect-ratio: 1;
-        background: var(--beige);
-        border: 1px solid rgba(139, 115, 85, 0.2);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--brown);
-        font-size: 0.9rem;
-        overflow: hidden;
-      }
-      .hero-image.aboutimg {
-        position: relative;
-        width: 341.33px;
-        height: 496.5px;
-      }
-      /* 웃는여자 */
-      .spani4 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(./images/girl_frames.jpeg) no-repeat;
-        background-size: 300% 200%;
-        /* 가로 3프레임 = 300%, 세로 2프레임 = 200% */
-        background-position: 0% 0%;
-
-        /* 애니메이션: 이시이지반방마 */
-        animation: spani4X 1.2s steps(3) infinite,
-          spani4Y 2.4s steps(2) infinite;
-      }
-      /* 웃는여자 키프레임 X축 */
-      @keyframes spani4X {
-        to {
-          background-position-x: -1024px;
-        }
-      }
-      /* 웃는여자 키프레임 Y축 */
-      @keyframes spani4Y {
-        to {
-          background-position-y: -993px;
-        }
-      }
-      .big:hover {
-        /* 오버시 확대,멈춤,위로 */
-        transform: scale(1.1);
-        animation-play-state: paused;
-        z-index: 1;
-      }
-      /* 웃는여자용 */
-      .big2:hover {
-        animation-play-state: paused;
-      }
-
-      .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .hero-text {
-        flex: 1;
-        text-align: left;
-      }
-
-      .hero-greeting {
-        font-size: 1.2rem;
-        color: var(--brown);
-        margin-bottom: 0.5rem;
-        font-weight: 400;
-      }
-
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 4.5rem;
-        font-weight: 400;
-        margin-bottom: 1rem;
-        letter-spacing: -2px;
-        line-height: 1.3;
-      }
-
-      .hero h1 .highlight {
-        color: var(--brown);
-      }
-
-      .hero h1 .changing-text {
-        position: relative;
-        display: inline-block;
-        color: var(--brown);
-      }
-
-      .hero h1 .changing-text::after {
-        content: "성장하는";
-        animation: textChange 8s ease-in-out infinite;
-      }
-
-      .hero h1 .changing-text::before {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--brown);
-        transform-origin: left;
-        animation: underlineChange 8s ease-in-out infinite;
-      }
-
-      @keyframes textChange {
-        0%,
-        45% {
-          content: "성장하는";
-        }
-        50%,
-        95% {
-          content: "노력하는";
-        }
-        100% {
-          content: "성장하는";
-        }
-      }
-
-      @keyframes underlineChange {
-        0%,
-        45% {
-          transform: scaleX(1);
-          opacity: 1;
-        }
-        47%,
-        48% {
-          transform: scaleX(0);
-          opacity: 0;
-        }
-        50%,
-        95% {
-          transform: scaleX(1);
-          opacity: 1;
-        }
-        97%,
-        98% {
-          transform: scaleX(0);
-          opacity: 0;
-        }
-        100% {
-          transform: scaleX(1);
-          opacity: 1;
-        }
-      }
-
-      .hero-intro {
-        font-size: 1.1rem;
-        color: var(--dark);
-        opacity: 0.8;
-        margin-bottom: 2.5rem;
-        line-height: 1.8;
-      }
-
-      .hero-contact {
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
-        margin-top: 2rem;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 1rem;
-      }
-
-      .contact-label {
-        font-weight: 600;
-        color: var(--brown);
-        min-width: 80px;
-      }
-
-      .contact-value {
-        color: var(--dark);
-      }
-
-      .contact-value a {
-        color: var(--dark);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .contact-value a:hover {
-        color: var(--brown);
-      }
-
-      .hero .subtitle {
-        font-size: 1rem;
-        color: var(--brown);
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        font-weight: 300;
-      }
-
-      section {
-        min-height: 100vh;
-        padding: 10rem 8%;
-        position: relative;
-      }
-
-      /* Skills & Education */
-      #skills {
-        background: var(--white);
-      }
-
-      .education-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .education-item {
-        background: var(--cream);
-        padding: 3.5rem;
-        border-left: 4px solid var(--brown);
-        transition: all 0.4s ease;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      .education-item:hover {
-        transform: translateX(10px);
-        border-left-color: var(--dark);
-        box-shadow: 0 10px 30px rgba(42, 42, 42, 0.1);
-      }
-
-      .education-school {
-        font-family: "Playfair Display", serif;
-        font-size: 1.8rem;
-        font-weight: 500;
-        color: var(--dark);
-        margin-bottom: 1.2rem;
-      }
-
-      .education-course {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--dark);
-        opacity: 0.8;
-        margin-bottom: 1.2rem;
-      }
-
-      .education-date {
-        font-size: 0.95rem;
-        color: var(--brown);
-        font-weight: 500;
-        letter-spacing: 1px;
-      }
-
-      h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 4rem;
-        font-weight: 400;
-        margin-bottom: 4rem;
-        text-align: center;
-      }
-
-      .skills-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .skill-card {
-        background: var(--white);
-        padding: 4rem 3rem;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-        transform-style: preserve-3d;
-        position: relative;
-        border: 1px solid rgba(139, 115, 85, 0.2);
-      }
-
-      .skill-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, var(--brown), var(--light-brown));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-      }
-
-      .skill-card:hover {
-        border-color: var(--brown);
-      }
-
-      .skill-card:hover::before {
-        opacity: 0.05;
-      }
-
-      .skill-card h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        color: var(--brown);
-        transform: translateZ(20px);
-      }
-
-      .skill-card p {
-        line-height: 1.9;
-        color: var(--dark);
-        opacity: 0.8;
-        transform: translateZ(10px);
-      }
-
-      #portfolio {
-        padding: 0;
-        min-height: 0;
-        display: block;
-      }
-
-      .portfolio-spacer {
-        height: 500vh;
-        position: relative;
-      }
-
-      .portfolio-sticky {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-      }
-
-      .portfolio-header {
-        position: absolute;
-        top: 12rem;
-        left: 8%;
-        z-index: 10;
-      }
-
-      .portfolio-track {
-        position: absolute;
-        top: 61%;
-        left: 0;
-        transform: translateY(-50%);
-        display: flex;
-        gap: 3rem;
-        padding: 0 8%;
-        will-change: transform;
-      }
-
-      .portfolio-item {
-        flex: 0 0 550px;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .portfolio-card {
-        width: 100%;
-        aspect-ratio: 4/5;
-        background: var(--white);
-        position: relative;
-        cursor: pointer;
-        transition: all 0.6s ease;
-        overflow: hidden;
-      }
-
-      .portfolio-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(42, 42, 42, 0.2);
-      }
-
-      .portfolio-image {
-        width: 100%;
-        height: 100%;
-        background: var(--beige);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--brown);
-        font-size: 0.9rem;
-      }
-
-      .portfolio-number {
-        position: absolute;
-        top: 0rem;
-        right: 3rem;
-        font-family: "Playfair Display", serif;
-        font-size: 5rem;
-        color: var(--brown);
-        opacity: 0.15;
-        z-index: 1;
-      }
-
-      .portfolio-overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          135deg,
-          rgba(139, 115, 85, 0.95),
-          rgba(196, 181, 160, 0.95)
-        );
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        padding: 3rem;
-        z-index: 2;
-      }
-
-      .portfolio-item:hover .portfolio-overlay {
-        opacity: 1;
-      }
-
-      .portfolio-info {
-        transform: translateY(0);
-      }
-
-      .portfolio-info h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 2rem;
-        color: var(--white);
-        margin-bottom: 0.5rem;
-      }
-
-      .portfolio-info p {
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      /* 프로젝트 버튼 영역 */
-      .project-buttons {
-        display: flex;
-        gap: 0.8rem;
-        justify-content: center;
-      }
-
-      .project-btn {
-        flex: 1;
-        padding: 0.8rem 1rem;
-        background: var(--white);
-        border: 1px solid var(--brown);
-        color: var(--dark);
-        text-decoration: none;
-        text-align: center;
-        font-size: 0.9rem;
-        font-weight: 500;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-      }
-
-      .project-btn:hover {
-        background: var(--brown);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
-      }
-
-      /* Floating animation for contact section */
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
-
-      /* Modal */
-      .modal {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(42, 42, 42, 0.95);
-        z-index: 2000;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        backdrop-filter: blur(10px);
-      }
-
-      .modal.active {
-        display: flex;
-        opacity: 1;
-      }
-
-      .modal-content {
-        background: var(--white);
-        max-width: 900px;
-        width: 90%;
-        max-height: 85vh;
-        overflow-y: auto;
-        position: relative;
-        transform: scale(0.95);
-        transition: transform 0.5s ease;
-      }
-
-      .modal.active .modal-content {
-        transform: scale(1);
-      }
-
-      .modal-close {
-        position: absolute;
-        top: 2.5rem;
-        right: 2.5rem;
-        width: 45px;
-        height: 45px;
-        background: transparent;
-        color: var(--brown);
-        border: 1px solid var(--brown);
-        cursor: pointer;
-        font-size: 1.3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
-        z-index: 10;
-        font-weight: 300;
-      }
-
-      .modal-close:hover {
-        background: var(--brown);
-        color: var(--white);
-        transform: rotate(90deg);
-      }
-
-      .modal-image {
-        width: 100%;
-        height: 450px;
-        background: var(--beige);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--brown);
-        font-weight: 300;
-      }
-
-      .modal-info {
-        padding: 5rem;
-      }
-
-      .modal-info h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 3rem;
-        margin-bottom: 2rem;
-        color: var(--dark);
-        font-weight: 400;
-        letter-spacing: -1px;
-      }
-
-      .project-meta {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-        margin-bottom: 3rem;
-        padding-bottom: 3rem;
-        border-bottom: 1px solid rgba(139, 115, 85, 0.2);
-      }
-
-      .meta-item {
-        font-size: 0.95rem;
-      }
-
-      .meta-label {
-        color: var(--brown);
-        font-weight: 500;
-        display: block;
-        margin-bottom: 0.5rem;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-      }
-
-      .meta-value {
-        color: var(--dark);
-        font-weight: 300;
-      }
-
-      .modal-info p {
-        font-size: 1.05rem;
-        line-height: 1.9;
-        margin-bottom: 2rem;
-        color: var(--dark);
-        opacity: 0.8;
-        font-weight: 300;
-      }
-
-      .project-tags {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 3rem;
-      }
-
-      .tag {
-        padding: 0.6rem 1.5rem;
-        background: transparent;
-        border: 1px solid var(--brown);
-        color: var(--brown);
-        font-size: 0.85rem;
-        font-weight: 400;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-      }
-
-      .tag:hover {
-        background: var(--brown);
-        color: var(--white);
-      }
-
-      #contact {
-        background: var(--brown);
-        color: var(--white);
-      }
-
-      #contact h2 {
-        color: var(--white);
-      }
-
-      .contact-content {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto;
-      }
-
-      .contact-content p {
-        font-size: 1.15rem;
-        line-height: 2;
-        margin: 3rem 0;
-        opacity: 0.9;
-      }
-
-      .contact-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-
-      .contact-links a {
-        padding: 1.2rem 3rem;
-        background: transparent;
-        border: 2px solid var(--white);
-        color: var(--white);
-        text-decoration: none;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        transition: all 0.4s ease;
-        transform-style: preserve-3d;
-      }
-
-      .contact-links a:hover {
-        background: var(--white);
-        color: var(--brown);
-        animation: float 2s ease-in-out infinite;
-      }
-
-      @media (max-width: 1024px) {
-        .hero-content {
-          flex-direction: column;
-          gap: 3rem;
-        }
-
-        .hero-image {
-          flex: 0 0 300px;
-        }
-
-        .hero-text {
-          text-align: center;
-        }
-
-        .hero h1 {
-          font-size: 3.5rem;
-        }
-
-        .hero-contact {
-          align-items: center;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero h1 {
-          font-size: 2.8rem;
-        }
-        .skills-container {
-          grid-template-columns: 1fr;
-        }
-        .portfolio-item {
-          flex: 0 0 350px;
-        }
-        .modal-info {
-          padding: 3rem;
-        }
-        .project-meta {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-image {
-          flex: 0 0 250px;
-        }
-
-        .hero-greeting {
-          font-size: 1rem;
-        }
-
-        .contact-item {
-          flex-direction: column;
-          gap: 0.3rem;
-          align-items: center;
-        }
-
-        .contact-label {
-          min-width: auto;
-        }
-
-        .education-title {
-          font-size: 2.5rem;
-        }
-
-        .education-item {
-          padding: 2.5rem;
-        }
-
-        .education-school {
-          font-size: 1.5rem;
-        }
-
-        .education-course {
-          font-size: 1rem;
-        }
-      }
+            :root {
+              --cream: #f5f3ee;
+              --dark: #2a2a2a;
+              --brown: #8b7355;
+              --light-brown: #c4b5a0;
+              --beige: #e8e3da;
+              --white: #ffffff;
+            }
+
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+
+            body {
+              font-family: "Outfit", sans-serif;
+              background: var(--cream);
+              color: var(--dark);
+              line-height: 1.7;
+              overflow-x: hidden;
+            }
+
+            nav {
+              position: fixed;
+              top: 0;
+              left: 0;
+              right: 0;
+              width: 100%;
+              background: rgba(255, 255, 255, 0.1);
+              backdrop-filter: blur(20px);
+              padding: 1.8rem 6%;
+              z-index: 99999;
+              border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+              transform: translateZ(0);
+            }
+
+            nav ul {
+              list-style: none;
+              display: flex;
+              justify-content: center;
+              gap: 4rem;
+            }
+
+            nav a {
+              text-decoration: none;
+              color: var(--dark);
+              font-weight: 400;
+              font-size: 0.95rem;
+              letter-spacing: 1.5px;
+              text-transform: uppercase;
+              transition: all 0.4s ease;
+              opacity: 0.7;
+            }
+
+            nav a:hover {
+              opacity: 1;
+              color: var(--brown);
+            }
+
+            .hero {
+              min-height: 100vh;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              padding: 8rem 5%;
+            }
+
+            .hero-content {
+              display: flex;
+              align-items: center;
+              gap: 5rem;
+              max-width: 1400px;
+            }
+
+            .hero-image {
+              flex: 0 0 400px;
+              aspect-ratio: 1;
+              background: var(--beige);
+              border: 1px solid rgba(139, 115, 85, 0.2);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--brown);
+              font-size: 0.9rem;
+              overflow: hidden;
+            }
+            .hero-image.aboutimg {
+              position: relative;
+              width: 341.33px;
+              height: 496.5px;
+            }
+            /* 웃는여자 */
+            .spani4 {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: url(./images/girl_frames.jpeg) no-repeat;
+              background-size: 300% 200%;
+              /* 가로 3프레임 = 300%, 세로 2프레임 = 200% */
+              background-position: 0% 0%;
+
+              /* 애니메이션: 이시이지반방마 */
+              animation: spani4X 1.2s steps(3) infinite,
+                spani4Y 2.4s steps(2) infinite;
+            }
+            /* 웃는여자 키프레임 X축 */
+            @keyframes spani4X {
+              to {
+                background-position-x: -1024px;
+              }
+            }
+            /* 웃는여자 키프레임 Y축 */
+            @keyframes spani4Y {
+              to {
+                background-position-y: -993px;
+              }
+            }
+            .big:hover {
+              /* 오버시 확대,멈춤,위로 */
+              transform: scale(1.1);
+              animation-play-state: paused;
+              z-index: 1;
+            }
+            /* 웃는여자용 */
+            .big2:hover {
+              animation-play-state: paused;
+            }
+
+            .hero-image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .hero-text {
+              flex: 1;
+              text-align: left;
+            }
+
+            .hero-greeting {
+              font-size: 1.2rem;
+              color: var(--brown);
+              margin-bottom: 0.5rem;
+              font-weight: 400;
+            }
+
+            .hero h1 {
+              font-family: "Playfair Display", serif;
+              font-size: 4.5rem;
+              font-weight: 400;
+              margin-bottom: 1rem;
+              letter-spacing: -2px;
+              line-height: 1.3;
+            }
+
+            .hero h1 .highlight {
+              color: var(--brown);
+            }
+
+            .hero h1 .changing-text {
+              position: relative;
+              display: inline-block;
+              color: var(--brown);
+            }
+
+            .hero h1 .changing-text::after {
+              content: "성장하는";
+              animation: textChange 8s ease-in-out infinite;
+            }
+
+            .hero h1 .changing-text::before {
+              content: "";
+              position: absolute;
+              bottom: -5px;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background: var(--brown);
+              transform-origin: left;
+              animation: underlineChange 8s ease-in-out infinite;
+            }
+
+            @keyframes textChange {
+              0%,
+              45% {
+                content: "성장하는";
+              }
+              50%,
+              95% {
+                content: "노력하는";
+              }
+              100% {
+                content: "성장하는";
+              }
+            }
+
+            @keyframes underlineChange {
+              0%,
+              45% {
+                transform: scaleX(1);
+                opacity: 1;
+              }
+              47%,
+              48% {
+                transform: scaleX(0);
+                opacity: 0;
+              }
+              50%,
+              95% {
+                transform: scaleX(1);
+                opacity: 1;
+              }
+              97%,
+              98% {
+                transform: scaleX(0);
+                opacity: 0;
+              }
+              100% {
+                transform: scaleX(1);
+                opacity: 1;
+              }
+            }
+
+            .hero-intro {
+              font-size: 1.1rem;
+              color: var(--dark);
+              opacity: 0.8;
+              margin-bottom: 2.5rem;
+              line-height: 1.8;
+            }
+
+            .hero-contact {
+              display: flex;
+              flex-direction: column;
+              gap: 0.8rem;
+              margin-top: 2rem;
+            }
+
+            .contact-item {
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+              font-size: 1rem;
+            }
+
+            .contact-label {
+              font-weight: 600;
+              color: var(--brown);
+              min-width: 80px;
+            }
+
+            .contact-value {
+              color: var(--dark);
+            }
+
+            .contact-value a {
+              color: var(--dark);
+              text-decoration: none;
+              transition: color 0.3s ease;
+            }
+
+            .contact-value a:hover {
+              color: var(--brown);
+            }
+
+            .hero .subtitle {
+              font-size: 1rem;
+              color: var(--brown);
+              letter-spacing: 4px;
+              text-transform: uppercase;
+              font-weight: 300;
+            }
+
+            section {
+              min-height: 100vh;
+              padding: 10rem 8%;
+              position: relative;
+            }
+
+            /* Skills & Education */
+            #skills {
+              background: var(--white);
+            }
+
+            .education-container {
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+            .education-item {
+              background: var(--cream);
+              padding: 3.5rem;
+              border-left: 4px solid var(--brown);
+              transition: all 0.4s ease;
+              max-width: 900px;
+              margin: 0 auto;
+            }
+
+            .education-item:hover {
+              transform: translateX(10px);
+              border-left-color: var(--dark);
+              box-shadow: 0 10px 30px rgba(42, 42, 42, 0.1);
+            }
+
+            .education-school {
+              font-family: "Playfair Display", serif;
+              font-size: 1.8rem;
+              font-weight: 500;
+              color: var(--dark);
+              margin-bottom: 1.2rem;
+            }
+
+            .education-course {
+              font-size: 1.1rem;
+              line-height: 1.8;
+              color: var(--dark);
+              opacity: 0.8;
+              margin-bottom: 1.2rem;
+            }
+
+            .education-date {
+              font-size: 0.95rem;
+              color: var(--brown);
+              font-weight: 500;
+              letter-spacing: 1px;
+            }
+
+            h2 {
+              font-family: "Playfair Display", serif;
+              font-size: 4rem;
+              font-weight: 400;
+              margin-bottom: 4rem;
+              text-align: center;
+            }
+
+            .skills-container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 3rem;
+              max-width: 1200px;
+              margin: 0 auto;
+            }
+
+            .skill-card {
+              background: var(--white);
+              padding: 4rem 3rem;
+              border-radius: 2px;
+              transition: all 0.3s ease;
+              transform-style: preserve-3d;
+              position: relative;
+              border: 1px solid rgba(139, 115, 85, 0.2);
+            }
+
+            .skill-card::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(135deg, var(--brown), var(--light-brown));
+              opacity: 0;
+              transition: opacity 0.3s ease;
+              z-index: -1;
+            }
+
+            .skill-card:hover {
+              border-color: var(--brown);
+            }
+
+            .skill-card:hover::before {
+              opacity: 0.05;
+            }
+
+            .skill-card h3 {
+              font-family: "Playfair Display", serif;
+              font-size: 2rem;
+              margin-bottom: 1.5rem;
+              color: var(--brown);
+              transform: translateZ(20px);
+            }
+
+            .skill-card p {
+              line-height: 1.9;
+              color: var(--dark);
+              opacity: 0.8;
+              transform: translateZ(10px);
+            }
+
+            #portfolio {
+              padding: 0;
+              min-height: 0;
+              display: block;
+            }
+
+            .portfolio-spacer {
+              height: 500vh;
+              position: relative;
+            }
+
+            .portfolio-sticky {
+              position: sticky;
+              top: 0;
+              height: 100vh;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+            }
+
+            .portfolio-header {
+              position: absolute;
+              top: 8rem;
+              left: 8%;
+              z-index: 10;
+            }
+
+            .portfolio-track {
+              position: absolute;
+              top: 60%;;
+              left: 0;
+              transform: translateY(-50%);
+              display: flex;
+              gap: 3rem;
+              padding: 0 8%;
+              will-change: transform;
+            }
+
+            .portfolio-item {
+              flex: 0 0 550px;
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+            }
+
+            .portfolio-card {
+              width: 100%;
+              aspect-ratio: 4/5;
+              background: var(--white);
+              position: relative;
+              cursor: pointer;
+              transition: all 0.6s ease;
+              overflow: hidden;
+            }
+
+            .portfolio-card:hover {
+              transform: translateY(-10px);
+              box-shadow: 0 20px 40px rgba(42, 42, 42, 0.2);
+            }
+
+            .portfolio-image {
+              width: 100%;
+              height: 100%;
+              background: var(--beige);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--brown);
+              font-size: 0.9rem;
+              overflow: hidden;
+            }
+
+            .portfolio-image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            .portfolio-number {
+              position: absolute;
+              top: 0rem;
+              right: 3rem;
+              font-family: "Playfair Display", serif;
+              font-size: 5rem;
+              color: var(--brown);
+              opacity: 0.15;
+              z-index: 1;
+            }
+
+            .portfolio-overlay {
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(
+                135deg,
+                rgba(139, 115, 85, 0.95),
+                rgba(196, 181, 160, 0.95)
+              );
+              opacity: 0;
+              transition: opacity 0.5s ease;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              padding: 3rem;
+              z-index: 2;
+            }
+
+            .portfolio-item:hover .portfolio-overlay {
+              opacity: 1;
+            }
+
+            .portfolio-info {
+              transform: translateY(0);
+            }
+
+            .portfolio-info h3 {
+              font-family: "Playfair Display", serif;
+              font-size: 2rem;
+              color: var(--white);
+              margin-bottom: 0.5rem;
+            }
+
+            .portfolio-info p {
+              color: rgba(255, 255, 255, 0.9);
+            }
+
+            /* Read More 스타일 - 언더라인 효과 */
+            .read-more {
+              display: inline-block;
+              color: white;
+              font-size: 0.9rem;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin-top: 1rem;
+              position: relative;
+              padding-bottom: 5px;
+            }
+
+            .read-more::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 0;
+              height: 2px;
+              background: white;
+              transition: width 0.3s ease;
+            }
+
+            .portfolio-card:hover .read-more::after {
+              width: 100%;
+            }
+
+            /* 프로젝트 버튼 영역 */
+            .project-buttons {
+              display: flex;
+              gap: 0.8rem;
+              justify-content: center;
+            }
+
+            .project-btn {
+              flex: 1;
+              padding: 0.8rem 1rem;
+              background: var(--white);
+              border: 1px solid var(--brown);
+              color: var(--dark);
+              text-decoration: none;
+              text-align: center;
+              font-size: 0.9rem;
+              font-weight: 500;
+              border-radius: 5px;
+              transition: all 0.3s ease;
+            }
+
+            .project-btn:hover {
+              background: var(--brown);
+              color: white;
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(139, 115, 85, 0.3);
+            }
+
+            /* Floating animation for contact section */
+            @keyframes float {
+              0%,
+              100% {
+                transform: translateY(0px);
+              }
+              50% {
+                transform: translateY(-20px);
+              }
+            }
+
+            /* Modal */
+            .modal {
+              display: none;
+              position: fixed;
+              inset: 0;
+              background: rgba(42, 42, 42, 0.95);
+              z-index: 2000;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+              transition: opacity 0.5s ease;
+              backdrop-filter: blur(10px);
+            }
+
+            .modal.active {
+              display: flex;
+              opacity: 1;
+            }
+
+            .modal-content {
+              background: var(--white);
+              max-width: 900px;
+              width: 90%;
+              max-height: 85vh;
+              overflow-y: auto;
+              position: relative;
+              transform: scale(0.95);
+              transition: transform 0.5s ease;
+              margin: 60px; /* X 버튼을 위한 여백 추가 */
+            }
+
+            .modal.active .modal-content {
+              transform: scale(1);
+            }
+
+            .modal-close {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              width: 50px;
+              height: 50px;
+              background: var(--white);
+              color: var(--brown);
+              border: 2px solid var(--brown);
+              border-radius: 50%;
+              cursor: pointer;
+              font-size: 1.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.4s ease;
+              z-index: 10;
+              font-weight: 300;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            }
+
+            .modal-close:hover {
+              background: var(--brown);
+              color: var(--white);
+              transform: rotate(90deg) scale(1.1);
+            }
+
+            .modal-image {
+              width: 100%;
+              height: 450px;
+              background: var(--beige);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--brown);
+              font-weight: 300;
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            .modal-info {
+              padding: 5rem;
+            }
+
+            .modal-info h3 {
+              font-family: "Playfair Display", serif;
+              font-size: 3rem;
+              margin-bottom: 2rem;
+              color: var(--dark);
+              font-weight: 400;
+              letter-spacing: -1px;
+            }
+
+            .project-meta {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 2rem;
+              margin-bottom: 3rem;
+              padding-bottom: 3rem;
+              border-bottom: 1px solid rgba(139, 115, 85, 0.2);
+            }
+
+            .meta-item {
+              font-size: 0.95rem;
+            }
+
+            .meta-label {
+              color: var(--brown);
+              font-weight: 500;
+              display: block;
+              margin-bottom: 0.5rem;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              font-size: 0.8rem;
+            }
+
+            .meta-value {
+              color: var(--dark);
+              font-weight: 300;
+            }
+
+            .modal-info p {
+              font-size: 1.05rem;
+              line-height: 1.9;
+              margin-bottom: 2rem;
+              color: var(--dark);
+              opacity: 0.8;
+              font-weight: 300;
+            }
+
+            .project-tags {
+              display: flex;
+              gap: 1rem;
+              flex-wrap: wrap;
+              margin-top: 3rem;
+            }
+
+            .tag {
+              padding: 0.6rem 1.5rem;
+              background: transparent;
+              border: 1px solid var(--brown);
+              color: var(--brown);
+              font-size: 0.85rem;
+              font-weight: 400;
+              letter-spacing: 1px;
+              transition: all 0.3s ease;
+            }
+
+            .tag:hover {
+              background: var(--brown);
+              color: var(--white);
+            }
+
+            #contact {
+              background: var(--brown);
+              color: var(--white);
+              padding: 10rem 8%;
+            }
+
+            #contact h2 {
+              color: var(--white);
+            }
+
+            .contact-content {
+              text-align: center;
+              max-width: 700px;
+              margin: 0 auto;
+            }
+
+            .contact-content p {
+              font-size: 1.15rem;
+              line-height: 2;
+              margin: 3rem 0;
+              opacity: 0.9;
+            }
+
+            .contact-links {
+              display: flex;
+              justify-content: center;
+              gap: 2rem;
+              margin-top: 4rem;
+            }
+
+            .contact-links a,
+            .email-copy-btn {
+              padding: 1.2rem 3rem;
+              background: transparent;
+              border: 2px solid var(--white);
+              color: var(--white);
+              text-decoration: none;
+              font-size: 0.9rem;
+              letter-spacing: 2px;
+              transition: all 0.4s ease;
+              transform-style: preserve-3d;
+              cursor: pointer;
+              font-family: inherit;
+            }
+
+            .contact-links a:hover,
+            .email-copy-btn:hover {
+              background: var(--white);
+              color: var(--brown);
+              animation: float 2s ease-in-out infinite;
+            }
+
+            .email-copy-btn {
+              position: relative;
+            }
+
+            .email-copied {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: var(--white);
+              color: var(--brown);
+              padding: 2rem 3rem;
+              border-radius: 10px;
+              font-size: 1.2rem;
+              font-weight: bold;
+              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+              z-index: 10000;
+              opacity: 0;
+              pointer-events: none;
+              transition: opacity 0.3s ease;
+            }
+
+            .email-copied.show {
+              opacity: 1;
+            }
+
+            @media (max-width: 1024px) {
+              .hero-content {
+                flex-direction: column;
+                gap: 3rem;
+              }
+
+              .hero-image {
+                flex: 0 0 300px;
+              }
+
+              .hero-text {
+                text-align: center;
+              }
+
+              .hero h1 {
+                font-size: 3.5rem;
+              }
+
+              .hero-contact {
+                align-items: center;
+              }
+            }
+
+            @media (max-width: 768px) {
+              .hero h1 {
+                font-size: 2.8rem;
+              }
+              .skills-container {
+                grid-template-columns: 1fr;
+              }
+              .portfolio-item {
+                flex: 0 0 350px;
+              }
+              .modal-info {
+                padding: 3rem;
+              }
+              .project-meta {
+                grid-template-columns: 1fr;
+              }
+      .portfolio-header {top: 13rem;}
+              .hero-image {
+                flex: 0 0 250px;
+              }
+
+              .hero-greeting {
+                font-size: 1rem;
+              }
+
+              .contact-item {
+                flex-direction: column;
+                gap: 0.3rem;
+                align-items: center;
+              }
+
+              .contact-label {
+                min-width: auto;
+              }
+
+              .education-title {
+                font-size: 2.5rem;
+              }
+
+              .education-item {
+                padding: 2.5rem;
+              }
+
+              .education-school {
+                font-size: 1.5rem;
+              }
+
+              .education-course {
+                font-size: 1rem;
+              }
+            }
     </style>
   </head>
   <body>
@@ -865,7 +936,7 @@
                     ><span
                       class="__cf_email__"
                       data-cfemail="b8d3d1d08b89818bf8d6d9ceddca96dbd7d5"
-                      >[email&#160;protected]</span
+                      >jiheene00@naver.com</span
                     ></span
                   ></a
                 ></span
@@ -948,18 +1019,21 @@
           <div class="portfolio-track" id="portfolioTrack">
             <div class="portfolio-item" data-project="1">
               <div class="portfolio-card">
-                <div class="portfolio-image">프로젝트 이미지 1</div>
+                <div class="portfolio-image">
+                  <img src="./images/yayoi.jpg" alt="쿠사마야요이" />
+                </div>
                 <span class="portfolio-number">01</span>
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h3>Kusama Yayoi Website</h3>
                     <p>쿠사마야요이 반응형 사이트 리뉴얼</p>
+                    <span class="read-more">Click to View</span>
                   </div>
                 </div>
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://your-website-url.com"
+                  href="https://ji579.github.io/WPC-626-PJ-JI/KusamaYayoi_web/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4(%EB%94%94%EC%9E%90%EC%9D%B8&%EC%86%8C%EC%8A%A4)/03.-1%EA%B5%AC%ED%98%84%EC%BD%94%EB%93%9C/index.html"
                   target="_blank"
                   class="project-btn"
                   >Website</a
@@ -971,7 +1045,7 @@
                   >Figma</a
                 >
                 <a
-                  href="https://github.com/your-repo"
+                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/KusamaYayoi_web"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -980,25 +1054,28 @@
             </div>
             <div class="portfolio-item" data-project="2">
               <div class="portfolio-card">
-                <div class="portfolio-image">프로젝트 이미지 2</div>
+                <div class="portfolio-image">
+                  <img src="./images/saytouche.jpg" alt="세이투세" />
+                </div>
                 <span class="portfolio-number">02</span>
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
-                    <h3>Brand Website</h3>
+                    <h3>Saytouche Website</h3>
                     <p>세이투세 반응형 사이트 리뉴얼</p>
+                    <span class="read-more">Click to View</span>
                   </div>
                 </div>
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://your-website-url.com"
+                  href="https://ji579.github.io/WPC-626-PJ-JI/saytouche_web/02.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4(%EB%94%94%EC%9E%90%EC%9D%B8&%EC%86%8C%EC%8A%A4)/index.html"
                   target="_blank"
                   class="project-btn"
                   >Website</a
                 >
                 <!-- <a href="https://your-figma-url.com" target="_blank" class="project-btn">Figma</a> -->
                 <a
-                  href="https://github.com/your-repo"
+                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/saytouche_web"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1007,18 +1084,21 @@
             </div>
             <div class="portfolio-item" data-project="3">
               <div class="portfolio-card">
-                <div class="portfolio-image">프로젝트 이미지 3</div>
+                <div class="portfolio-image">
+                  <img src="./images/vogue.jpg" alt="보그" />
+                </div>
                 <span class="portfolio-number">03</span>
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h3>Vogue Website</h3>
                     <p>보그 반응형 사이트</p>
+                    <span class="read-more">Click to View</span>
                   </div>
                 </div>
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://your-website-url.com"
+                  href="https://ji579.github.io/WPC-626-PJ-JI/Vogue_web/04.AI_Coding/source/index.html"
                   target="_blank"
                   class="project-btn"
                   >Website</a
@@ -1030,7 +1110,7 @@
                   >Figma</a
                 >
                 <a
-                  href="https://github.com/your-repo"
+                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/Vogue_web"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1039,24 +1119,27 @@
             </div>
             <div class="portfolio-item" data-project="4">
               <div class="portfolio-card">
-                <div class="portfolio-image">프로젝트 이미지 4</div>
+                <div class="portfolio-image">
+                  <img src="./images/sanrio.jpg" alt="산리오" />
+                </div>
                 <span class="portfolio-number">04</span>
                 <div class="portfolio-overlay">
                   <div class="portfolio-info">
                     <h3>Sanrio Website</h3>
                     <p>산리오 반응형 사이트</p>
+                    <span class="read-more">Click to View</span>
                   </div>
                 </div>
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://your-website-url.com"
+                  href="https://ji579.github.io/WPC-626-PJ-JI/Sanrio_web/index.html"
                   target="_blank"
                   class="project-btn"
                   >Website</a
                 >
                 <a
-                  href="https://github.com/your-repo"
+                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/Sanrio_web"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1068,25 +1151,25 @@
       </div>
     </section>
 
-    <section id="contact">
+    <div id="contact">
       <div class="contact-content">
         <h2>Let's Work Together</h2>
         <div class="contact-links">
-          <a
-            href="/cdn-cgi/l/email-protection#334a5c464173565e525a5f1d505c5e"
-            class="tilt"
-            >Email</a
+          <button
+            class="email-copy-btn tilt"
+            onclick="copyEmail()"
           >
-          <a href="#" class="tilt">LinkedIn</a>
-          <a href="#" class="tilt">Behance</a>
+            Email
+          </button>
+          <a href="https://github.com/ji579/WPC-626-PJ-JI/tree/main" class="tilt">Github</a>
         </div>
       </div>
-    </section>
+    </div>
 
     <div class="modal" id="projectModal">
       <div class="modal-content">
         <button class="modal-close" onclick="closeModal()">×</button>
-        <div class="modal-image">프로젝트 이미지</div>
+        <div class="modal-image" id="modalImage">프로젝트 이미지</div>
         <div class="modal-info">
           <h3 id="modalTitle">프로젝트 제목</h3>
           <div class="project-meta">
@@ -1116,6 +1199,7 @@
       const projects = {
         1: {
           title: "쿠사마야요이 반응형 사이트 리뉴얼",
+          image: "./images/project1.png",
           duration: "2025 Aug-Oct",
           role: "Web Publisher",
           contribution: "100%",
@@ -1134,17 +1218,18 @@
         },
         2: {
           title: "SAY TOUCHÉ 반응형 사이트 리뉴얼",
+          image: "./images/project2.png",
           duration: "2025 Nov",
           role: "Web Publisher",
           contribution: "100%",
-          description:
-            `세이투세의 개성 있고 유니크한 브랜드 아이덴티티를 웹에서 자연스럽게 드러내기 위해, 이에 맞는 UI 디자인과 인터랙션 요소를 중심으로 구성한 웹사이트. 
+          description: `세이투세의 개성 있고 유니크한 브랜드 아이덴티티를 웹에서 자연스럽게 드러내기 위해, 이에 맞는 UI 디자인과 인터랙션 요소를 중심으로 구성한 웹사이트. 
             반응형 레이아웃을 기반으로 브랜드의 분위기를 담아낸 비주얼 스타일과 스크롤 페이드 인, 슬라이더 등 주요 모션을 구현하여 시각적 경험을 강화하였다. 
             정적 문서가 아닌 ‘브랜드 무드가 살아 있는 인터랙티브 가이드’ 형태로 제작하여, 디자인 의도와 실제 구현 흐름을 명확하게 보여주고 프로젝트 전반의 완성도를 높였다.`,
           tags: ["HTML5", "CSS3", "JavaScript"],
         },
         3: {
           title: "Vogue 반응형 사이트",
+          image: "./images/project3.png",
           duration: "2025 Nov",
           role: "Web Publisher",
           contribution: "100%",
@@ -1154,12 +1239,12 @@
         },
         4: {
           title: "Sanrio 반응형 사이트",
+          image: "./images/project4.png",
           duration: "2025 Nov",
           role: "Web Publisher",
           contribution: "100%",
-          description:
-           `기존 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.`,
-          tags: ["HTML5", "CSS3","JavaScript"],
+          description: `기존 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.`,
+          tags: ["HTML5", "CSS3", "JavaScript"],
         },
       };
 
@@ -1230,6 +1315,16 @@
           const projectId = item.getAttribute("data-project");
           const project = projects[projectId];
 
+          // 이미지 업데이트
+          const modalImage = document.getElementById("modalImage");
+          if (project.image) {
+            modalImage.style.backgroundImage = `url('${project.image}')`;
+            modalImage.style.backgroundSize = "contain";
+            modalImage.style.backgroundRepeat = "no-repeat";
+            modalImage.style.backgroundPosition = "center";
+            modalImage.textContent = ""; // 텍스트 제거
+          }
+
           document.getElementById("modalTitle").textContent = project.title;
           document.getElementById("modalDuration").textContent =
             project.duration;
@@ -1262,6 +1357,61 @@
             closeModal();
           }
         });
+
+      // 이메일 복사 함수
+      function copyEmail() {
+        const email = 'jiheene00@naver.com';
+        
+        // 클립보드에 복사
+        navigator.clipboard.writeText(email).then(function() {
+          // 복사 성공 알림
+          showCopyNotification();
+        }).catch(function(err) {
+          // 복사 실패 시 대체 방법
+          fallbackCopyEmail(email);
+        });
+      }
+
+      // 복사 알림 표시
+      function showCopyNotification() {
+        // 알림 요소 생성
+        const notification = document.createElement('div');
+        notification.className = 'email-copied';
+        notification.textContent = '이메일이 복사되었습니다! ✓';
+        document.body.appendChild(notification);
+        
+        // 표시
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 10);
+        
+        // 2초 후 제거
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            notification.remove();
+          }, 300);
+        }, 2000);
+      }
+
+      // 대체 복사 방법 (구형 브라우저용)
+      function fallbackCopyEmail(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          showCopyNotification();
+        } catch (err) {
+          alert('이메일 복사에 실패했습니다: ' + text);
+        }
+        
+        document.body.removeChild(textArea);
+      }
     </script>
   </body>
 </html>
