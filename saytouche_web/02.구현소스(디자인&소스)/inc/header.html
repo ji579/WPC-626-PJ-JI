@@ -1,4 +1,4 @@
-   <div class="top-area inbox">
+<div class="top-area inbox">
           <h2 class="temp-tit blind">상단영역</h2>
           <div class="toppad">
             <!-- 왼쪽 상단 -->
@@ -56,7 +56,7 @@
             <nav class="media-nav">
               <ul class="media-menu left">
                 <li>
-                  <i class="fa-solid fa-bars"></i>
+                  <i class="fa-solid fa-bars" id="menuToggle"></i>
                 </li>
               </ul>
               <ul class="media-menu right">
@@ -75,3 +75,47 @@
           <!-- toppad끝 -->
         </div>
         <!-- topinbox 끝 -->
+
+        <!-- 사이드바 메뉴 -->
+        <div class="sidebar-menu" id="sidebarMenu">
+          <div class="sidebar-header">
+            <button class="sidebar-close" id="sidebarClose">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <div class="sidebar-content">
+            <ul class="sidebar-nav">
+              <li class="has-submenu">
+                <a href="#archive">ARCHIVE</a>
+              </li>
+              <li class="has-submenu">
+                <a href="#shop">SHOP</a>
+              </li>
+              <li><a href="#store">STORE</a></li>
+              <li><a href="#login">LOGIN</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+
+            <div class="sidebar-search">
+              <input type="text" placeholder="SEARCH">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="sidebar-social">
+              <a href="https://www.instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="https://www.youtube.com" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </div>
+
+            <div class="sidebar-logo">
+              <img src="./images/logo.png" alt="Saytouche">
+            </div>
+          </div>
+        </div>
+
+        <!-- 오버레이 -->
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>

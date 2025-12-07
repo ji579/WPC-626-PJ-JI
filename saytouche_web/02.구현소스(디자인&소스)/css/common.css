@@ -170,3 +170,179 @@ ul.media-menu {
   color: #f0ae1f;
  display: none;
 }
+
+/* ======================================= */
+/* 사이드바 메뉴 */
+/* ======================================= */
+
+/* 오버레이 */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 사이드바 */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 363px;
+  max-width: 90%;
+  height: 100%;
+  background: white;
+  z-index: 999;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+}
+
+.sidebar-menu.active {
+  left: 0;
+}
+
+/* 사이드바 헤더 */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.sidebar-icons i {
+  cursor: pointer;
+}
+
+/* 사이드바 컨텐츠 */
+.sidebar-content {
+  padding: 30px;
+}
+
+/* 사이드바 네비게이션 */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.sidebar-nav li {
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-nav li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.sidebar-nav li a:hover {
+  color: #005a2a;
+}
+
+.sidebar-nav li.has-submenu a i {
+  font-size: 12px;
+  color: #999;
+}
+
+/* 사이드바 검색 */
+.sidebar-search {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.sidebar-search input {
+  width: 100%;
+  padding: 12px 40px 12px 0;
+  border: none;
+  border-bottom: 1px solid #333;
+  font-size: 14px;
+  outline: none;
+}
+
+.sidebar-search input::placeholder {
+  color: #999;
+}
+
+.sidebar-search button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+/* 사이드바 소셜 */
+.sidebar-social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 80px;
+}
+
+.sidebar-social a {
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.sidebar-social a:hover {
+  color: #005a2a;
+}
+
+/* 사이드바 로고 */
+.sidebar-logo {
+  text-align: center;
+}
+
+.sidebar-logo img {
+  max-width: 200px;
+  height: auto;
+}
+

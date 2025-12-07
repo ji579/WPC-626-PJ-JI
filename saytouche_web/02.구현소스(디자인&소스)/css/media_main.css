@@ -77,6 +77,10 @@
 }
 
 @media (max-width: 768px) {
+    .sidebar-menu {
+    width: 363px;
+  }
+
   .banner-prev,
   .banner-next {
     width: 40px;
@@ -145,6 +149,18 @@
 }
 
   @media (max-width: 480px) {
+     .sidebar-menu {
+    width: 85%;
+  }
+  
+  .sidebar-header {
+    padding: 15px 20px;
+  }
+  
+  .sidebar-content {
+    padding: 20px;
+  }
+
     .banner-prev,
     .banner-next {
       width: 35px;
