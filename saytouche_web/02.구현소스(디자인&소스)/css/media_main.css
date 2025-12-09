@@ -77,7 +77,7 @@
 }
 
 @media (max-width: 768px) {
-    .sidebar-menu {
+  .sidebar-menu {
     width: 363px;
   }
 
@@ -148,64 +148,79 @@
   }
 }
 
-  @media (max-width: 480px) {
-     .sidebar-menu {
+@media (max-width: 480px) {
+  .banner-box {
+    flex: 0 0 45%;
+  }
+  section.banner-part {    gap: 85px;padding-top: 230px;}
+.banner-explain {height: 30%;}
+.banner-explain > h4 {
+    padding-top: 30px;}
+
+  /* .banner-explain > h3 {
+    padding-top: 100px;
+  } */
+
+  ul.media-menu.right {
+    gap: 0;
+  }
+  .sidebar-menu {
     width: 85%;
   }
-  
+
   .sidebar-header {
     padding: 15px 20px;
   }
-  
+
   .sidebar-content {
     padding: 20px;
   }
 
-    .banner-prev,
-    .banner-next {
-      width: 35px;
-      height: 35px;
-    }
-
-    .banner-prev:after,
-    .banner-next:after {
-      font-size: 14px;
-    }
-
-    .banner-pagination .swiper-pagination-bullet {
-      width: 8px;
-      height: 8px;
-      margin: 0 3px;
-    }
-
-    .banner-pagination .swiper-pagination-bullet-active {
-      width: 20px;
-    }
-    .store,
-    .customer {
-      width: 100%;
-    }
-
-    .before::before {
-      display: none;
-    }
-    .bottom-info-first {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      align-items: flex-end;
-      padding-top: 50px;
-    }
-    li.bottomlogo {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .bottom-info-second {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+  .banner-prev,
+  .banner-next {
+    width: 35px;
+    height: 35px;
   }
+
+  .banner-prev:after,
+  .banner-next:after {
+    font-size: 14px;
+  }
+
+  .banner-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+  }
+
+  .banner-pagination .swiper-pagination-bullet-active {
+    width: 20px;
+  }
+  .store,
+  .customer {
+    width: 100%;
+  }
+
+  .before::before {
+    display: none;
+  }
+  .bottom-info-first {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    align-items: flex-end;
+    padding-top: 50px;
+  }
+  li.bottomlogo {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .bottom-info-second {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
