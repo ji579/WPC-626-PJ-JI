@@ -265,18 +265,11 @@
             }
 
             .contact-value {
+              margin: 0;
+              font-size: 1rem;
               color: var(--dark);
             }
 
-            .contact-value a {
-              color: var(--dark);
-              text-decoration: none;
-              transition: color 0.3s ease;
-            }
-
-            .contact-value a:hover {
-              color: var(--brown);
-            }
 
             .hero .subtitle {
               font-size: 1rem;
@@ -626,7 +619,7 @@
             }
 
             .modal-close {
-              position: absolute;
+              position: fixed;
               top: 20px;
               right: 20px;
               width: 50px;
@@ -641,7 +634,7 @@
               align-items: center;
               justify-content: center;
               transition: all 0.4s ease;
-              z-index: 1;
+              z-index: 10001;
               font-weight: 300;
               box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             }
@@ -856,7 +849,8 @@
               .project-meta {
                 grid-template-columns: 1fr;
               }
-      .portfolio-header {top: 13rem;}
+      .portfolio-header {top: 6rem;}
+      .modal-content {margin: 10px;}
               .hero-image {
                 flex: 0 0 250px;
               }
@@ -921,27 +915,11 @@
           <div class="hero-contact">
             <div class="contact-item">
               <span class="contact-label">Phone</span>
-              <span class="contact-value"
-                ><a href="tel:010-3193-3530">010-3193-3530</a></span
-              >
+              <p class="contact-value">010-3193-3530</p>
             </div>
             <div class="contact-item">
               <span class="contact-label">Email</span>
-              <span class="contact-value"
-                ><a
-                  href="/cdn-cgi/l/email-protection#8de7e4e5e8e8e3e8bdbdcde3ecfbe8ffa3eee2e0"
-                  ><span
-                    class="__cf_email__"
-                    data-cfemail="117b787974747f742121517f706774633f727e7c"
-                    ><span
-                      class="__cf_email__"
-                      data-cfemail="b8d3d1d08b89818bf8d6d9ceddca96dbd7d5"
-                      ><span class="__cf_email__" data-cfemail="711b181914141f144141311f100714035f121e1c">[email&#160;protected]</span></span
-                    ></span
-                  ></a
-                ></span
-              >
-            </div>
+              <p class="contact-value">jiheene00@naver.com</p></div>
           </div>
         </div>
       </div>
@@ -970,7 +948,7 @@
             반응형 UI / UX 웹디자인 & 웹퍼블리셔<br />웹콘텐츠 개발자 양성과정
             수료
           </div>
-          <div class="education-date">2025.01</div>
+          <div class="education-date">2025.11</div>
         </div>
       </div>
 
@@ -1192,7 +1170,7 @@
       </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
       document.getElementById("portfolioTrack");
       document.querySelector(".portfolio-spacer");
       // 프로젝트 데이터
@@ -1394,7 +1372,7 @@
         }, 2000);
       }
 
-      // 대체 복사 방법 (구형 브라우저용)
+        // 대체 복사 방법 (구형 브라우저용)
       function fallbackCopyEmail(text) {
         const textArea = document.createElement('textarea');
         textArea.value = text;
@@ -1405,7 +1383,8 @@
         
         try {
           document.execCommand('copy');
-          showCopyNotification();   } catch (err) {
+          showCopyNotification();
+        } catch (err) {
           alert('이메일 복사에 실패했습니다: ' + text);
         }
         
