@@ -86,7 +86,7 @@
       }
 
       .hero-image {
-        flex: 0 0 400px;
+        flex: 0 0 340px;
         aspect-ratio: 1;
         background: var(--beige);
         border: 1px solid rgba(139, 115, 85, 0.2);
@@ -99,24 +99,21 @@
       }
       .hero-image.aboutimg {
         position: relative;
-        width: 341.33px;
-        height: 496.5px;
+        width: 341.333px;
+        height: 500px;
       }
       /* 웃는여자 */
       .spani4 {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(./images/girl_frames.jpeg) no-repeat;
-        background-size: 300% 200%;
-        /* 가로 3프레임 = 300%, 세로 2프레임 = 200% */
-        background-position: 0% 0%;
+        width: 341.333px;
+        height: 512px;
+        background: url(./images/girl_frames3.png) no-repeat;
 
         /* 애니메이션: 이시이지반방마 */
         animation: spani4X 1.2s steps(3) infinite,
-          spani4Y 2.4s steps(2) infinite;
+          spani4Y 3.6s steps(3) infinite;
       }
       /* 웃는여자 키프레임 X축 */
       @keyframes spani4X {
@@ -127,7 +124,7 @@
       /* 웃는여자 키프레임 Y축 */
       @keyframes spani4Y {
         to {
-          background-position-y: -993px;
+          background-position-y: -1536px;
         }
       }
       .big:hover {
