@@ -1,15 +1,14 @@
 <h1 align="center">안녕하세요! 저는 웹 퍼블리셔 강지희입니다.</h1>
 <h3 align="center">HTML, CSS, JavaScript를 바탕으로 반응형 웹, 웹 접근성 에 최적화된 웹 페이지를 제작합니다.</h3>
 
-- 01 [쿠사마 야요이 웹사이트](https://ji579.github.io/KusamaYayoi/)
+- 01 [Kusama Yayoi Website](https://ji579.github.io/KusamaYayoi/)
 
-- 02 [Saytouche 웹사이트](https://ji579.github.io/saytouche/index.html)
+- 02 [Saytouche Website](https://ji579.github.io/saytouche/index.html)
 
-- 03 [보그 웹사이트](https://ji579.github.io/vogue/)
+- 03 [Vogue Website](https://ji579.github.io/vogue/)
   
-- 04 [산리오 웹사이트](https://ji579.github.io/Sanrio/)
+- 04 [Sanrio Website](https://ji579.github.io/Sanrio/)
 
-<h3 align="left">나와 연결하세요:</h3>
 <p align="left">
 </p>
 
