@@ -86,7 +86,7 @@
       }
 
       .hero-image {
-        flex: 0 0 340px;
+        flex: 0 0 323px;
         aspect-ratio: 1;
         background: var(--beige);
         border: 1px solid rgba(139, 115, 85, 0.2);
@@ -99,7 +99,7 @@
       }
       .hero-image.aboutimg {
         position: relative;
-        width: 341.333px;
+        width: 323px;
         height: 500px;
       }
       /* 웃는여자 */
@@ -109,22 +109,22 @@
         left: 0;
         width: 341.333px;
         height: 512px;
-        background: url(./images/girl_frames3.png) no-repeat;
+        background: url(./images/girl_frames3.jpeg) no-repeat;
 
         /* 애니메이션: 이시이지반방마 */
         animation: spani4X 1.2s steps(3) infinite,
-          spani4Y 3.6s steps(3) infinite;
+          spani4Y 3.6s steps(2) infinite;
       }
       /* 웃는여자 키프레임 X축 */
       @keyframes spani4X {
         to {
-          background-position-x: -1024px;
+          background-position-x: -978px;
         }
       }
       /* 웃는여자 키프레임 Y축 */
       @keyframes spani4Y {
         to {
-          background-position-y: -1536px;
+          background-position-y: -1022px;
         }
       }
       .big:hover {
@@ -297,7 +297,7 @@
         border-left: 4px solid var(--brown);
         transition: all 0.4s ease;
         max-width: 900px;
-        margin: 0 auto;
+        margin: 20px auto;
       }
 
       .education-item:hover {
@@ -542,13 +542,13 @@
 
       /* 프로젝트 버튼 영역 */
       .project-buttons {
-      display: flex;
-  gap: 0.8rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 280px;  /* 버튼 3개만 들어갈 너비 */
-  margin: 0 auto;
-}
+        display: flex;
+        gap: 0.8rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 280px; /* 버튼 3개만 들어갈 너비 */
+        margin: 0 auto;
+      }
       .project-btn {
         flex: 1;
         padding: 0.8rem 1rem;
@@ -817,11 +817,31 @@
       @media (max-width: 1024px) {
         .hero-content {
           flex-direction: column;
-          gap: 3rem;
+          gap: 2rem;
         }
+.hero-image {
+    flex: 0 0 325px;
+    aspect-ratio: 1;
+     background: none ;
+    border: none;}
 
-        .hero-image {
-          flex: 0 0 300px;
+        /* 웃는여자 */
+        .spani4 {
+          position: absolute;
+          top: -52px;
+          left: 0;
+          width: 100%;
+          scale: 0.8;
+          background: url(./images/girl_frames5.jpeg) no-repeat;
+
+          /* 애니메이션: 이시이지반방마 */
+          animation: spani4X 1.2s steps(3) infinite;
+        }
+        /* 웃는여자 키프레임 X축 */
+        @keyframes spani4X {
+          to {
+            background-position-x: -978px;
+          }
         }
 
         .hero-text {
@@ -836,29 +856,34 @@
           align-items: center;
         }
         .modal-close {
-    right: 10px;
-    width: 45px;
-    height: 45px;}
+          right: 10px;
+          width: 45px;
+          height: 45px;
+        }
       }
 
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.8rem;
         }
-          h2{ font-size: 3rem;} 
+        h2 {
+          font-size: 2.7rem;
+        }
         .skills-container {
           grid-template-columns: 1fr;
         }
         .portplio-item {
-          flex: 0 0 350px;
+          flex: 0 0 290px;
         }
         .modal-info {
           padding: 3rem;
         }
-        .modal-close {top: 65px;
-        right: 52px;
-    width: 40px;
-    height: 40px;}
+        .modal-close {
+          top: 65px;
+          right: 52px;
+          width: 40px;
+          height: 40px;
+        }
         .project-meta {
           grid-template-columns: 1fr;
         }
@@ -867,9 +892,6 @@
         }
         .modal-content {
           margin: 10px;
-        }
-        .hero-image {
-          flex: 0 0 250px;
         }
 
         .hero-greeting {
@@ -900,6 +922,26 @@
 
         .education-course {
           font-size: 1rem;
+        }
+      }
+      /* 더 작은 모바일 (480px 이하) */
+      @media (max-width: 480px) {
+        .hero-image.aboutimg {
+          width: 200px;
+          height: 300px; /* 비율 유지 (200 * 1.5) */
+        }
+
+        .spani4 {
+               top: 10px;
+        width: 100%;
+        height: 100%;
+        background-size: 300%;
+        scale: 1;
+        animation: none;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
         }
       }
     </style>
@@ -966,7 +1008,14 @@
             반응형 UI / UX 웹디자인 & 웹퍼블리셔<br />웹콘텐츠 개발자 양성과정
             수료
           </div>
-          <div class="education-date">2025.11</div>
+          <div class="education-date">2025-06-26 ~ 2025-11-18</div>
+        </div>
+        <div class="education-item">
+          <div class="education-school">그린컴퓨터아카데미</div>
+          <div class="education-course">
+            UI/UX 디자이너의 필수! 실무 피그마(Figma) 수료
+          </div>
+          <div class="education-date">2025-02-19 ~ 2025-03-26</div>
         </div>
       </div>
 
@@ -1035,7 +1084,7 @@
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://bit.ly/YayoiKusamaWebsite"
+                  href="https://ji579.github.io/KusamaYayoi/"
                   target="_blank"
                   class="project-btn"
                   >Website</a
@@ -1047,16 +1096,14 @@
                   >Figma</a
                 >
                 <a
-                  href="https://bit.ly/3KTQJKh"
+                  href="https://github.com/ji579/KusamaYayoi.git"
                   target="_blank"
                   class="project-btn"
                   >Github</a
                 >
-                <a
-              href="./Kusama-Yayoi.pdf"
-  target="_blank"
-  class="project-btn"
->Project</a>
+                <a href="./Kusama-Yayoi.pdf" target="_blank" class="project-btn"
+                  >Project</a
+                >
               </div>
             </div>
             <div class="portplio-item" data-project="2">
@@ -1075,14 +1122,14 @@
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://bit.ly/3N0F7pq" 
+                  href="https://ji579.github.io/saytouche/index.html"
                   target="_blank"
                   class="project-btn"
                   >Website</a
                 >
                 <!-- <a href="https://your-figma-url.com" target="_blank" class="project-btn">Figma</a> -->
                 <a
-                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/saytouche_web"
+                  href="https://github.com/ji579/saytouche.git"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1105,18 +1152,19 @@
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://ji579.github.io/WPC-626-PJ-JI/Vogue_web/04.AI_Coding/source/index.html"
+                  href="https://ji579.github.io/vogue/"
                   target="_blank"
                   class="project-btn"
                   >Website</a
                 >
                 <a
-                  href="https://bit.ly/3MzpaXf" target="_blank"
+                  href="https://bit.ly/3MzpaXf"
+                  target="_blank"
                   class="project-btn"
                   >Figma</a
                 >
                 <a
-                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/Vogue_web"
+                  href="https://github.com/ji579/vogue.git"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1139,13 +1187,13 @@
               </div>
               <div class="project-buttons">
                 <a
-                  href="https://ji579.github.io/WPC-626-PJ-JI/Sanrio_web/index.html"
+                  href="https://ji579.github.io/Sanrio/"
                   target="_blank"
                   class="project-btn"
                   >Website</a
                 >
                 <a
-                  href="https://github.com/ji579/WPC-626-PJ-JI/tree/main/Sanrio_web"
+                  href="https://github.com/ji579/Sanrio.git"
                   target="_blank"
                   class="project-btn"
                   >Github</a
@@ -1214,7 +1262,7 @@
           >
             구현 포인트 :
           </h4>
-          <p id="modalPoint" style="white-space: pre-line;">구현 포인트</p>
+          <p id="modalPoint" style="white-space: pre-line">구현 포인트</p>
           <h4
             style="
               margin-top: 2rem;
@@ -1241,7 +1289,11 @@
       </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
@@ -1329,7 +1381,7 @@
           description: `기존 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.`,
           tags: ["Git/GitHub", "Visual Studio Code"],
         },
-          point: `- PC / Tablet / Mobile 반응형 제작
+        point: `- PC / Tablet / Mobile 반응형 제작
 - 기존 사이트 레이아웃 재현
 - 프로젝트 목적에 맞게 구조 및 UI 요소 변형`,
       };
@@ -1419,8 +1471,7 @@
             project.contribution;
           document.getElementById("modalDescription").textContent =
             project.description;
-          document.getElementById("modalPoint").textContent =
-            project.point;
+          document.getElementById("modalPoint").textContent = project.point;
 
           const languagesHTML = project.language
             .map((lang) => `<span class="tag">${lang}</span>`)
@@ -1499,13 +1550,13 @@
         document.body.appendChild(textArea);
         textArea.select();
 
-          try {
-          document.execCommand('copy');
+        try {
+          document.execCommand("copy");
           showCopyNotification();
         } catch (err) {
-          alert('이메일 복사에 실패했습니다: ' + text);
+          alert("이메일 복사에 실패했습니다: " + text);
         }
-        
+
         document.body.removeChild(textArea);
       }
     </script>
