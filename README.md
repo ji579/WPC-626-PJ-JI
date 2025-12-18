@@ -2,7 +2,7 @@
 
 HTML, CSS, JavaScript 기반 반응형 웹 퍼블리싱
 
-[Portfolio](https://ji579.github.io/) | [jiheene00@naver.com](mailto:jiheene00@naver.com) | [GitHub](https://github.com/ji579)
+[Portfolio](https://ji579.github.io/WPC-626-PJ-JI/portpolio/portpolio.html) | [jiheene00@naver.com](mailto:jiheene00@naver.com) | [GitHub](https://github.com/ji579)
 
 ---
 
