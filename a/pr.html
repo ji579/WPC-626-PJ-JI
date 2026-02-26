@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>강지희 포트폴리오 | 웹퍼블리셔 & 디자이너</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f5f3ee;
+        --dark: #2a2a2a;
+        --brown: #8b7355;
+        --light-brown: #c4b5a0;
+        --beige: #e8e3da;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: var(--cream);
+        color: var(--dark);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        padding: 1.6rem 6%;
+        z-index: 999;
+        border-bottom: 1px solid rgba(139, 115, 85, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transform: translateZ(0);
+      }
+
+      /* 로고 */
+      .nav-logo {
+        font-family: "Outfit", sans-serif;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--dark);
+        text-decoration: none;
+        opacity: 0.85;
+      }
+
+      /* 데스크탑 메뉴 */
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 400;
+        font-size: 0.78rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        opacity: 0.5;
+      }
+
+      nav a:hover,
+      nav a.active {
+        opacity: 1;
+        color: var(--dark);
+      }
+
+      /* active 언더라인 */
+      nav li a.active {
+        position: relative;
+      }
+      nav li a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: var(--dark);
+      }
+
+      /* 햄버거 버튼 (모바일) */
+      .nav-hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 4px;
+        background: none;
+        border: none;
+        z-index: 1001;
+      }
+
+      .nav-hamburger span {
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--dark);
+        transition: all 0.35s ease;
+        transform-origin: center;
+      }
+
+      /* 햄버거 → X 변환 */
+      .nav-hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .nav-hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .nav-hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* 모바일 풀스크린 메뉴 오버레이 */
+      .nav-mobile-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--white);
+        z-index: 1000;
+        flex-direction: column;
+        padding: 0 8%;
+      }
+
+      .nav-mobile-overlay.open {
+        display: flex;
+      }
+
+      /* 오버레이 상단: 로고 + X */
+      .nav-mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.6rem 0;
+        border-bottom: 1px solid rgba(139,115,85,0.15);
+      }
+
+      /* 오버레이 메뉴 리스트 */
+      .nav-mobile-overlay ul {
+        list-style: none;
+        padding: 0;
+        margin: 3rem 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .nav-mobile-overlay ul li {
+        border-bottom: 1px solid rgba(139,115,85,0.1);
+      }
+
+      .nav-mobile-overlay ul li a {
+        display: block;
+        padding: 1.4rem 0;
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--dark);
+        text-decoration: none;
+        opacity: 0.5;
+        transition: opacity 0.2s;
+      }
+
+      .nav-mobile-overlay ul li:first-child a {
+        opacity: 1;
+      }
+
+      .nav-mobile-overlay ul li a:hover {
+        opacity: 1;
+      }
+
+      /* 모바일에서 햄버거 표시, 데스크탑 메뉴 숨김 */
+      @media (max-width: 768px) {
+        nav ul { display: none; }
+        .nav-hamburger { display: flex; }
+      }
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 8rem 5%;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        gap: 5rem;
+        max-width: 1400px;
+      }
+
+      .hero-image {
+        flex: 0 0 323px;
+        aspect-ratio: 1;
+        background: var(--beige);
+        border: 1px solid rgba(139, 115, 85, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--brown);
+        font-size: 0.9rem;
+        overflow: hidden;
+      }
+      .hero-image.aboutimg {
+        position: relative;
+        width: 323px;
+        height: 500px;
+      }
+      .spani4 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 341.333px;
+        height: 512px;
+        background: url(./images/girl_frames3.jpeg) no-repeat;
+        animation: spani4X 1.2s steps(3) infinite,
+          spani4Y 3.6s steps(2) infinite;
+      }
+      @keyframes spani4X {
+        to { background-position-x: -978px; }
+      }
+      @keyframes spani4Y {
+        to { background-position-y: -1022px; }
+      }
+      .big:hover {
+        transform: scale(1.1);
+        animation-play-state: paused;
+        z-index: 1;
+      }
+      .big2:hover {
+        animation-play-state: paused;
+      }
+
+      .hero-text {
+        flex: 1;
+        text-align: left;
+      }
+
+      .hero-greeting {
+        font-size: 1.2rem;
+        color: var(--brown);
+        margin-bottom: 0.5rem;
+        font-weight: 400;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 4.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        letter-spacing: -2px;
+        line-height: 1.3;
+      }
+
+      .hero h1 .highlight {
+        color: var(--brown);
+      }
+
+      .hero h1 .changing-text {
+        position: relative;
+        display: inline-block;
+        color: var(--brown);
+      }
+
+      .hero h1 .changing-text::after {
+        content: "성장하는";
+        animation: textChange 8s ease-in-out infinite;
+      }
+
+      .hero h1 .changing-text::before {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--brown);
+        transform-origin: left;
+        animation: underlineChange 8s ease-in-out infinite;
+      }
+
+      @keyframes textChange {
+        0%, 45% { content: "성장하는"; }
+        50%, 95% { content: "노력하는"; }
+        100% { content: "성장하는"; }
+      }
+
+      @keyframes underlineChange {
+        0%, 45% { transform: scaleX(1); opacity: 1; }
+        47%, 48% { transform: scaleX(0); opacity: 0; }
+        50%, 95% { transform: scaleX(1); opacity: 1; }
+        97%, 98% { transform: scaleX(0); opacity: 0; }
+        100% { transform: scaleX(1); opacity: 1; }
+      }
+
+      .hero-contact {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1rem;
+      }
+
+      .contact-label {
+        font-weight: 600;
+        color: var(--brown);
+        min-width: 80px;
+      }
+
+      .contact-value {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--dark);
+      }
+
+      .hero .subtitle {
+        font-size: 1rem;
+        color: var(--brown);
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+
+      section {
+        min-height: 100vh;
+        padding: 10rem 8%;
+        position: relative;
+      }
+
+      /* Skills & Education */
+      #skills {
+        background: var(--white);
+      }
+
+      .education-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .education-item {
+        background: var(--cream);
+        padding: 3.5rem;
+        border-left: 4px solid var(--brown);
+        transition: all 0.4s ease;
+        max-width: 900px;
+        margin: 20px auto;
+      }
+
+      .education-item:hover {
+        transform: translateX(10px);
+        border-left-color: var(--dark);
+        box-shadow: 0 10px 30px rgba(42, 42, 42, 0.1);
+      }
+
+      .education-school {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: var(--dark);
+        margin-bottom: 1.2rem;
+      }
+
+      .education-course {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--dark);
+        opacity: 0.8;
+        margin-bottom: 1.2rem;
+      }
+
+      .education-date {
+        font-size: 0.95rem;
+        color: var(--brown);
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        font-weight: 400;
+        margin-bottom: 4rem;
+        text-align: center;
+      }
+
+      .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .skill-card {
+        background: var(--white);
+        padding: 4rem 3rem;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        border: 1px solid rgba(139, 115, 85, 0.2);
+      }
+
+      .skill-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, var(--brown), var(--light-brown));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      .skill-card:hover {
+        border-color: var(--brown);
+      }
+
+      .skill-card:hover::before {
+        opacity: 0.05;
+      }
+
+      .skill-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--brown);
+        transform: translateZ(20px);
+      }
+
+      .skill-card p {
+        line-height: 1.9;
+        color: var(--dark);
+        opacity: 0.8;
+        transform: translateZ(10px);
+      }
+
+      /* ── PORTFOLIO ── */
+      #portplio {
+        padding: 0;
+        min-height: 0;
+        display: block;
+        background: var(--cream);
+      }
+
+      /* 프로젝트 블록 전체 래퍼 */
+      .project-wrap {
+        border-top: 1px solid rgba(139,115,85,0.2);
+        background: var(--cream);
+      }
+      .project-wrap:last-of-type {
+        border-bottom: 1px solid rgba(139,115,85,0.2);
+      }
+
+      /* 메타바: 좌(번호) / 우(Period·Role·Contribution) — 2열 정렬 */
+      .project-meta-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        box-sizing: border-box;
+      }
+
+      /* 번호 — 왼쪽 열, project-left 패딩과 동일하게 */
+      .project-meta-bar .meta-num {
+        padding: 1.2rem 3rem;
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 500;
+        letter-spacing: 2px;
+        display: flex;
+      }
+
+      /* 메타 정보들 — 오른쪽 열, project-right-inner 패딩과 동일하게 */
+      .project-meta-bar .meta-cats {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.2rem 8%;
+        box-sizing: border-box;
+      }
+
+      .project-meta-bar .meta-cat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .project-meta-bar .meta-cat span:first-child {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--dark);
+        opacity: 0.5;
+      }
+
+      .project-meta-bar .meta-cat span:last-child {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--dark);
+      }
+
+      /* 이미지+텍스트 2열 그리드 */
+      .project-editorial {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: var(--cream);
+      }
+
+      /* 왼쪽: 이미지 */
+      .project-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 440px;
+        padding: 3.5rem 3rem;
+        box-sizing: border-box;
+      }
+
+      .project-left-inner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-left-inner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      /* 오른쪽: 텍스트 */
+      .project-right {
+        display: flex;
+        flex-direction: column;
+        background: var(--cream);
+      }
+
+      .project-right-inner {
+        padding: 4rem 8% 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+      }
+
+      /* reverse: 텍스트 왼쪽 / 이미지 오른쪽 */
+      .project-editorial.reverse .project-left {
+        order: 2;
+        border-right: none;
+      }
+      .project-editorial.reverse .project-right {
+        order: 1;
+      }
+
+      /* 흰색 부가설명 파트 */
+      /* ── supplement 공통 ── */
+      .project-supplement {
+        background: var(--white);
+        border-top: 1px solid rgba(139,115,85,0.12);
+        border-bottom: 1px solid rgba(139,115,85,0.12);
+      }
+
+      .supplement-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--brown);
+        opacity: 0.7;
+        margin-bottom: 2rem;
+        display: block;
+      }
+
+      /* ────────────────────────────
+         안 1: 스토리텔링형
+         텍스트(배경·문제·해결) + 이미지
+      ──────────────────────────── */
+      .project-supplement.style-story {
+        padding: 5rem 8%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: start;
+      }
+
+      .supplement-story-block {
+        margin-bottom: 2.2rem;
+      }
+
+      .supplement-story-block-title {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: var(--dark);
+        margin-bottom: 0.6rem;
+        display: block;
+      }
+
+      .supplement-story-block p {
+        font-size: 0.93rem;
+        line-height: 1.95;
+        color: var(--dark);
+        opacity: 0.65;
+      }
+
+      /* 이미지: 위 1장 크게 + 아래 2장 */
+      .supplement-story-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+
+      .supplement-story-images img:first-child {
+        grid-column: 1 / 3;
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        display: block;
+      }
+
+      .supplement-story-images img:not(:first-child) {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ────────────────────────────
+         안 3: 에디토리얼형
+         콜라주 이미지 + 인용구·텍스트
+      ──────────────────────────── */
+      .project-supplement.style-editorial {
+        padding: 5rem 8%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        align-items: center;
+      }
+
+      /* 이미지: 왼쪽 세로 1장 + 오른쪽 위아래 2장 */
+      .supplement-collage {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.7rem;
+        height: 380px;
+      }
+
+      .supplement-collage img:first-child {
+        grid-row: 1 / 3;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .supplement-collage img:not(:first-child) {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .supplement-editorial-text blockquote {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--brown);
+        border-left: 2px solid var(--light-brown);
+        padding-left: 1.5rem;
+        margin: 0 0 2rem;
+      }
+
+      .supplement-editorial-text p {
+        font-size: 0.93rem;
+        line-height: 1.95;
+        color: var(--dark);
+        opacity: 0.65;
+        margin-bottom: 1.2rem;
+      }
+
+      /* ── supplement 반응형 ── */
+      @media (max-width: 900px) {
+        .project-supplement.style-story,
+        .project-supplement.style-editorial {
+          grid-template-columns: 1fr;
+          gap: 3rem;
+          padding: 4rem 6%;
+        }
+        .supplement-collage { height: auto; }
+        .supplement-collage img:first-child { aspect-ratio: 4/3; height: auto; }
+        .supplement-collage img:not(:first-child) { aspect-ratio: 4/3; height: auto; }
+      }
+
+      @media (max-width: 600px) {
+        .project-supplement.style-story,
+        .project-supplement.style-editorial { padding: 3rem 5%; }
+      }
+
+      .project-title-editorial {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 2.8vw, 3rem);
+        font-weight: 400;
+        line-height: 1.25;
+        color: var(--dark);
+        margin-bottom: 2rem;
+        letter-spacing: -1px;
+      }
+
+      .project-title-editorial em {
+        font-style: italic;
+        color: var(--brown);
+      }
+
+      .project-desc-editorial {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--dark);
+        opacity: 0.75;
+        margin-bottom: 2rem;
+        max-width: 480px;
+      }
+
+      .project-point-editorial {
+        font-size: 0.88rem;
+        line-height: 1.9;
+        color: var(--dark);
+        opacity: 0.65;
+        white-space: pre-line;
+        margin-bottom: 2rem;
+        padding-left: 1.2rem;
+        border-left: 2px solid var(--light-brown);
+      }
+
+      /* 태그 그룹 */
+      .project-tags-group {
+        margin-bottom: 2rem;
+      }
+
+      .project-tags-group-label {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--brown);
+        margin-bottom: 0.6rem;
+        display: block;
+        letter-spacing: 0.5px;
+      }
+
+      .project-tags-editorial {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .tag-editorial {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 0.3rem 0.85rem;
+        border: 1px solid rgba(139,115,85,0.4);
+        color: var(--brown);
+        text-transform: uppercase;
+      }
+
+      /* 버튼 */
+      .project-btns-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--dark);
+        opacity: 0.4;
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .project-btns-label::after {
+        content: "↓";
+        font-size: 0.85rem;
+        opacity: 1;
+      }
+
+      .project-btns-editorial {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+      }
+
+      .project-btn {
+        padding: 0.75rem 1.8rem;
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--dark);
+        border: 1px solid rgba(139,115,85,0.5);
+        transition: all 0.3s ease;
+        background: transparent;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .project-btn:hover {
+        background: var(--brown);
+        color: var(--white);
+        border-color: var(--brown);
+      }
+
+      /* ══════════════════════════════════════
+         반응형
+      ══════════════════════════════════════ */
+
+      /* 태블릿 가로 (1024px 이하) */
+      @media (max-width: 1024px) {
+        /* Hero */
+        .hero-content { flex-direction: column; gap: 2rem; }
+        .hero-image { flex: 0 0 325px; aspect-ratio: 1; background: none; border: none; }
+        .hero-text { text-align: center; }
+        .hero h1 { font-size: 3.5rem; }
+        .hero-contact { align-items: center; }
+        .spani4 {
+          top: -52px; width: 100%; scale: 0.8;
+          background: url(./images/girl_frames5.jpeg) no-repeat;
+          animation: spani4X 1.2s steps(3) infinite;
+        }
+        @keyframes spani4X { to { background-position-x: -978px; } }
+
+        /* Project */
+        .project-left { min-height: 360px; padding: 3rem 2.5rem; }
+        .project-right-inner { padding: 3rem 6% 4rem; }
+        .project-meta-bar .meta-num { padding: 1.2rem 2.5rem; }
+        .project-meta-bar .meta-cats { padding: 1.2rem 6%; }
+      }
+
+      /* 태블릿 세로 / 모바일 (900px 이하) */
+      @media (max-width: 900px) {
+        /* Skills */
+        .skills-container { grid-template-columns: 1fr; }
+
+        /* Project: 2열 → 1열 */
+        .project-editorial,
+        .project-editorial.reverse { grid-template-columns: 1fr; }
+
+        .project-left {
+          order: 1 !important;
+          border-right: none !important;
+          border-left: none !important;
+          border-bottom: 1px solid rgba(139,115,85,0.15);
+          min-height: 300px;
+          padding: 2.5rem 6%;
+        }
+        .project-right { order: 2 !important; }
+        .project-right-inner { padding: 3rem 6% 4rem; }
+
+        /* 메타바: 세로 쌓기 */
+        .project-meta-bar { grid-template-columns: 1fr; }
+        .project-meta-bar .meta-num {
+          border-right: none;
+          border-bottom: 1px solid rgba(139,115,85,0.15);
+          padding: 1rem 6%;
+        }
+        .project-meta-bar .meta-cats {
+          padding: 1.2rem 6%;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+        }
+
+      }
+
+      /* 모바일 (768px 이하) */
+      @media (max-width: 768px) {
+        /* Nav */
+        nav ul { display: none; }
+        .nav-hamburger { display: flex; }
+
+        /* Hero */
+        .hero h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.7rem; }
+        .hero-greeting { font-size: 1rem; }
+        .contact-item { flex-direction: column; gap: 0.3rem; align-items: center; }
+        .contact-label { min-width: auto; }
+
+        /* Education */
+        .education-item { padding: 2.5rem; }
+        .education-school { font-size: 1.5rem; }
+        .education-course { font-size: 1rem; }
+      }
+
+      /* 모바일 소형 (600px 이하) */
+      @media (max-width: 600px) {
+        .project-left { min-height: 240px; padding: 2rem 5%; }
+        .project-right-inner { padding: 2.5rem 5% 3.5rem; }
+        .project-meta-bar .meta-num { padding: 0.9rem 5%; font-size: 0.85rem; }
+        .project-meta-bar .meta-cats { padding: 1rem 5%; gap: 1.2rem; }
+        .project-meta-bar .meta-cat span:last-child { font-size: 0.82rem; }
+        .project-title-editorial { font-size: 1.6rem; }
+        .project-desc-editorial { font-size: 0.92rem; }
+        .project-point-editorial { font-size: 0.82rem; }
+      }
+
+      /* 소형 모바일 (480px 이하) */
+      @media (max-width: 480px) {
+        .hero-image.aboutimg { width: 200px; height: 300px; }
+        .spani4 { top: 10px; width: 100%; height: 100%; background-size: 300%; scale: 1; animation: none; }
+        .hero h1 { font-size: 2.2rem; }
+
+        .project-left { min-height: 200px; padding: 1.5rem 4%; }
+        .project-right-inner { padding: 2rem 4% 3rem; }
+        .project-meta-bar .meta-num { padding: 0.8rem 4%; }
+        .project-meta-bar .meta-cats { padding: 0.9rem 4%; gap: 1rem; }
+        .project-title-editorial { font-size: 1.4rem; margin-bottom: 1.2rem; }
+        .project-btn { padding: 0.6rem 1.2rem; font-size: 0.72rem; }
+      }
+
+      /* ── DESIGN SECTION ── */
+      #design {
+        background: var(--white);
+        padding: 7rem 8% 6rem;
+        border-top: 1px solid rgba(139,115,85,0.15);
+      }
+
+      #design h2 { text-align: left; margin-bottom: 0.5rem; }
+
+      .design-subtitle {
+        font-size: 0.95rem;
+        color: var(--dark);
+        opacity: 0.55;
+        margin-bottom: 3rem;
+        letter-spacing: 0.5px;
+      }
+
+      .design-scroll-wrap {
+        overflow-x: auto;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 1rem;
+      }
+
+      .design-scroll-wrap:active { cursor: grabbing; }
+
+      .design-track {
+        display: flex;
+        gap: 1.5rem;
+        width: max-content;
+      }
+
+      .design-card {
+        flex: 0 0 320px;
+        aspect-ratio: 3/4;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+
+      .design-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .design-lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(10,10,10,0.92);
+        z-index: 999;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .design-lightbox.active { display: flex; }
+
+      .design-lightbox img {
+        max-width: 90vw;
+        max-height: 88vh;
+        object-fit: contain;
+        border-radius: 4px;
+        box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      }
+
+      .design-lightbox-close {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        color: rgba(255,255,255,0.7);
+        font-size: 2rem;
+        font-weight: 200;
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.2s;
+      }
+
+      .design-lightbox-close:hover { color: #fff; }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(--cream);
+        border-top: 1px solid rgba(139,115,85,0.2);
+        padding: 7rem 8% 0;
+      }
+
+      .contact-label-top {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--brown);
+        opacity: 0.7;
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+
+      #contact h2 {
+        font-family: "Outfit", sans-serif;
+        font-weight: 300;
+        font-size: clamp(2.5rem, 5vw, 5rem);
+        letter-spacing: -2px;
+        color: var(--dark);
+        margin-bottom: 1.5rem;
+        text-align: left;
+      }
+
+      .contact-desc {
+        font-size: 0.95rem;
+        color: var(--dark);
+        opacity: 0.6;
+        line-height: 1.8;
+        margin-bottom: 4rem;
+      }
+
+      .contact-info-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 600px;
+        border-top: 1px solid rgba(139,115,85,0.15);
+        margin-bottom: 6rem;
+      }
+
+      .contact-info-cell {
+        padding: 1.8rem 0;
+        border-right: 1px solid rgba(139,115,85,0.15);
+      }
+
+      .contact-info-cell:last-child { border-right: none; }
+
+      .contact-info-cell .ci-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--brown);
+        opacity: 0.7;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-info-cell .ci-value {
+        font-size: 1rem;
+        color: var(--dark);
+        font-weight: 400;
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+
+      .contact-info-cell .ci-value:hover { opacity: 0.6; }
+
+      .contact-footer {
+        border-top: 1px solid rgba(139,115,85,0.15);
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+        color: var(--dark);
+        opacity: 0.45;
+        letter-spacing: 0.5px;
+      }
+
+      .email-copied {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: var(--dark);
+        color: var(--white);
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .email-copied.show { opacity: 1; }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#about" class="nav-logo">Jihee Kang</a>
+      <ul>
+        <li><a href="#about" class="active">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portplio">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- 모바일 풀스크린 오버레이 -->
+    <div class="nav-mobile-overlay" id="mobileOverlay">
+      <div class="nav-mobile-header">
+        <a href="#about" class="nav-logo" onclick="closeMobileMenu()">Jihee Kang</a>
+        <button class="nav-hamburger open" id="hamburgerClose" aria-label="메뉴 닫기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <ul>
+        <li><a href="#about"   onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#skills"  onclick="closeMobileMenu()">Skills</a></li>
+        <li><a href="#portplio" onclick="closeMobileMenu()">Works</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+      </ul>
+    </div>
+
+    <section id="about" class="hero">
+      <div class="hero-content" id="heroContent">
+        <div class="hero-image aboutimg">
+          <div class="spani4 big big2">
+            <span class="ir"></span>
+          </div>
+        </div>
+        <div class="hero-text">
+          <p class="hero-greeting">안녕하세요</p>
+          <h1>
+            <span class="changing-text"></span><br />웹퍼블리셔
+            <span class="highlight">강지희</span> 입니다.
+          </h1>
+          <p class="subtitle">Web Publisher & Designer</p>
+          <div class="hero-contact">
+            <div class="contact-item">
+              <span class="contact-label">Phone</span>
+              <p class="contact-value">010-3193-3530</p>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Email</span>
+              <p class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfb5b6b7babab1baefef9fb1bea9baadf1bcb0b2">[email&#160;protected]</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills · Education</h2>
+
+      <div class="education-container" style="margin-bottom: 6rem">
+        <h3 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;margin-bottom:2rem;color:var(--dark);letter-spacing:-1px;text-align:center;">Education</h3>
+        <div class="education-item">
+          <div class="education-school">그린컴퓨터아카데미</div>
+          <div class="education-course">반응형 UI / UX 웹디자인 & 웹퍼블리셔<br />웹콘텐츠 개발자 양성과정 수료</div>
+          <div class="education-date">2025-06-26 ~ 2025-11-18</div>
+        </div>
+        <div class="education-item">
+          <div class="education-school">그린컴퓨터아카데미</div>
+          <div class="education-course">UI/UX 디자이너의 필수! 실무 피그마(Figma) 수료</div>
+          <div class="education-date">2025-02-19 ~ 2025-03-26</div>
+        </div>
+      </div>
+
+      <h3 style="font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:400;margin-bottom:3rem;color:var(--dark);letter-spacing:-1px;text-align:center;">Skills</h3>
+      <div class="skills-container">
+        <div class="skill-card tilt">
+          <h3>Language / Library</h3>
+          <p>HTML5, CSS3, JavaScript(ES6+)와 jQuery를 활용해 웹 UI와 인터랙션을 구현했습니다.</p>
+        </div>
+        <div class="skill-card tilt">
+          <h3>Tools</h3>
+          <p>GitHub로 프로젝트를 관리하고, Figma·Photoshop·Illustrator를 사용해 디자인 작업과 시각 요소 제작을 진행했습니다.</p>
+        </div>
+        <div class="skill-card tilt">
+          <h3>UI/UX Design</h3>
+          <p>사용자 중심의 인터페이스 설계. 직관적인 디자인 <br />브랜드의 아이덴티티를 웹에서 일관되게 표현합니다.</p>
+        </div>
+        <div class="skill-card tilt">
+          <h3>Interactive Experience</h3>
+          <p>인터랙티브한 애니메이션으로 사용자 몰입도를 높입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="portplio">
+      <!-- 섹션 헤더 -->
+      <div style="padding: 8rem 8% 3rem; border-bottom: 1px solid rgba(139,115,85,0.2);">
+        <h2 style="margin-bottom:0; text-align:left;">Selected Works</h2>
+      </div>
+
+      <!-- 프로젝트 01 -->
+      <div class="project-wrap">
+        <div class="project-meta-bar">
+          <span class="meta-num">01.</span>
+          <div class="meta-cats">
+            <div class="meta-cat"><span>Period</span><span>2025 Aug–Oct</span></div>
+            <div class="meta-cat"><span>Role</span><span>Web Publisher</span></div>
+            <div class="meta-cat"><span>Contribution</span><span>100%</span></div>
+          </div>
+        </div>
+        <div class="project-editorial reverse">
+          <div class="project-left">
+            <div class="project-left-inner">
+              <img src="./images/yayoi.jpg" alt="쿠사마야요이 프로젝트" />
+            </div>
+          </div>
+          <div class="project-right">
+            <div class="project-right-inner">
+              <div>
+                <h3 class="project-title-editorial">쿠사마야요이<br /><em>반응형 사이트 리뉴얼</em></h3>
+                <p class="project-desc-editorial">작가의 아이덴티티를 웹사이트 전반에 담아내기 위해, 분리되어 있던 작가 페이지와 미술관 페이지를 하나의 플랫폼으로 통합한 퍼블리싱 프로젝트입니다. 사용자가 작품 정보와 전시 콘텐츠를 보다 직관적으로 탐색할 수 있도록 UI 구조를 개선했습니다.</p>
+                <p class="project-point-editorial">- PC / Tablet / Mobile 반응형 제작
+- 브랜드 스타일을 반영한 색감·패턴·모션 구현
+- 코드 구조화 및 UI 컴포넌트화로 유지보수성 향상
+- 레이아웃 재구성 및 사용자 흐름 개선</p>
+                <div class="project-tags-group">
+                  <span class="project-tags-group-label">사용 툴 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">HTML5</span>
+                    <span class="tag-editorial">CSS3</span>
+                    <span class="tag-editorial">JavaScript</span>
+                    <span class="tag-editorial">jQuery</span>
+                  </div>
+                  <span class="project-tags-group-label">사용 기술 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">Git/GitHub</span>
+                    <span class="tag-editorial">Visual Studio Code</span>
+                    <span class="tag-editorial">Figma</span>
+                    <span class="tag-editorial">Photoshop</span>
+                    <span class="tag-editorial">Illustrator</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-btns-label">View Project</span>
+              <div class="project-btns-editorial">
+                <a href="https://ji579.github.io/KusamaYayoi/" target="_blank" class="project-btn">Website</a>
+                <a href="https://www.figma.com/design/KgTSg4rfpzXrdJSgEh9XBJ/" target="_blank" class="project-btn">Figma</a>
+                <a href="https://github.com/ji579/KusamaYayoi.git" target="_blank" class="project-btn">Github</a>
+                <a href="./Kusama-Yayoi.pdf" target="_blank" class="project-btn">PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-supplement style-story">
+        <div class="supplement-story-text">
+          <span class="supplement-label">About this project</span>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">배경</span>
+            <p>웹 퍼블리셔 과정을 듣기 전, 쿠사마 야요이 작가의 전시회를 찾아보면서 공식 웹사이트를 이용한 적이 있었습니다. 그때 느꼈던 불편함들이 계속 기억에 남아, 이를 직접 개선해보고 싶다는 생각으로 해당 웹페이지를 선정했습니다.</p>
+          </div>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">문제점</span>
+            <p>기존 사이트는 테이블 레이아웃 기반의 구식 디자인과 낮은 가독성이 문제였습니다. 특히 작가 사이트와 미술관 사이트가 분리되어 있어 정보 접근성이 떨어졌고, 모바일에서는 레이아웃이 무너지는 문제도 있었습니다.</p>
+          </div>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">해결 방향</span>
+            <p>분리된 세 사이트를 하나의 플랫폼으로 통합하고, CSS Grid·Flexbox 기반으로 전면 재설계했습니다. 쿠사마 야요이 작품의 시각적 아이덴티티를 웹에 반영하면서, 사용자 동선을 중심으로 정보 구조를 재편했습니다.</p>
+          </div>
+        </div>
+        <div class="supplement-story-images">
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 1" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 2" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 3" />
+        </div>
+      </div>
+
+      <!-- 프로젝트 02 -->
+      <div class="project-wrap">
+        <div class="project-meta-bar">
+          <span class="meta-num">02.</span>
+          <div class="meta-cats">
+            <div class="meta-cat"><span>Period</span><span>2025 Nov</span></div>
+            <div class="meta-cat"><span>Role</span><span>Web Publisher</span></div>
+            <div class="meta-cat"><span>Contribution</span><span>100%</span></div>
+          </div>
+        </div>
+        <div class="project-editorial reverse">
+          <div class="project-left">
+            <div class="project-left-inner">
+              <img src="./images/saytouche.jpg" alt="세이투세 프로젝트" />
+            </div>
+          </div>
+          <div class="project-right">
+            <div class="project-right-inner">
+              <div>
+                <h3 class="project-title-editorial">SAY TOUCHÉ<br /><em>반응형 사이트 리뉴얼</em></h3>
+                <p class="project-desc-editorial">세이투세의 개성 있고 유니크한 브랜드 아이덴티티를 웹에서 자연스럽게 드러내기 위해, 비주얼 스타일과 스크롤 페이드 인, 슬라이더 등 주요 모션을 구현하여 시각적 경험을 강화하였습니다.</p>
+                <p class="project-point-editorial">- PC / Tablet / Mobile 반응형 제작
+- 스크롤 트리거 기반 Fade-in 인터랙션 적용
+- 이미지·아이콘·섹션 등 디자인 소스 최적화
+- float 해제 및 레이아웃 이슈 해결</p>
+                <div class="project-tags-group">
+                  <span class="project-tags-group-label">사용 툴 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">HTML5</span>
+                    <span class="tag-editorial">CSS3</span>
+                    <span class="tag-editorial">JavaScript</span>
+                  </div>
+                  <span class="project-tags-group-label">사용 기술 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">Git/GitHub</span>
+                    <span class="tag-editorial">Visual Studio Code</span>
+                    <span class="tag-editorial">Photoshop</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-btns-label">View Project</span>
+              <div class="project-btns-editorial">
+                <a href="https://ji579.github.io/saytouche/index.html" target="_blank" class="project-btn">Website</a>
+                <a href="https://www.figma.com/site/1ZpWIuizFK7GlPHvaj88eh/Saytouche" target="_blank" class="project-btn">Figma</a>
+                <a href="https://github.com/ji579/saytouche.git" target="_blank" class="project-btn">Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-supplement style-editorial">
+        <div class="supplement-collage">
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 1" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 2" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 3" />
+        </div>
+        <div class="supplement-editorial-text">
+          <span class="supplement-label">About this project</span>
+          <blockquote>브랜드의 개성을 웹에서 그대로 느낄 수 있도록, 시각적 경험을 최우선으로 설계했습니다.</blockquote>
+          <p>세이투세의 유니크한 브랜드 아이덴티티를 웹에서 자연스럽게 드러내기 위해 비주얼 스타일과 인터랙션에 집중했습니다. 스크롤 트리거 기반의 Fade-in 효과와 이미지 슬라이더를 직접 구현하며 사용자가 브랜드를 천천히 경험할 수 있도록 했습니다.</p>
+          <p>float 해제 이슈, 이미지 최적화 등 실무에서 마주치는 레이아웃 문제들을 직접 해결하면서 퍼블리싱 역량을 높인 프로젝트입니다.</p>
+        </div>
+      </div>
+
+      <!-- 프로젝트 03 -->
+      <div class="project-wrap">
+        <div class="project-meta-bar">
+          <span class="meta-num">03.</span>
+          <div class="meta-cats">
+            <div class="meta-cat"><span>Period</span><span>2025 Nov</span></div>
+            <div class="meta-cat"><span>Role</span><span>Web Publisher</span></div>
+            <div class="meta-cat"><span>Contribution</span><span>100%</span></div>
+          </div>
+        </div>
+        <div class="project-editorial reverse">
+          <div class="project-left">
+            <div class="project-left-inner">
+              <img src="./images/vogue.jpg" alt="보그 프로젝트" />
+            </div>
+          </div>
+          <div class="project-right">
+            <div class="project-right-inner">
+              <div>
+                <h3 class="project-title-editorial">Vogue<br /><em>반응형 사이트</em></h3>
+                <p class="project-desc-editorial">기존 이커머스 사이트를 따라 만들며 UI 재현뿐 아니라 장바구니(담기·수량 변경·총액 계산) 기능과 로그인·회원가입 흐름을 구현해 실제 서비스와 유사한 사용자 경험을 구축한 프로젝트입니다.</p>
+                <p class="project-point-editorial">- PC / Tablet / Mobile 반응형 제작
+- 장바구니 기능 구현 (담기·수량 변경·총액 계산)
+- 로그인·회원가입 흐름 구현</p>
+                <div class="project-tags-group">
+                  <span class="project-tags-group-label">사용 툴 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">HTML5</span>
+                    <span class="tag-editorial">CSS3</span>
+                    <span class="tag-editorial">JavaScript</span>
+                  </div>
+                  <span class="project-tags-group-label">사용 기술 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">Git/GitHub</span>
+                    <span class="tag-editorial">Visual Studio Code</span>
+                    <span class="tag-editorial">Figma</span>
+                    <span class="tag-editorial">Photoshop</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-btns-label">View Project</span>
+              <div class="project-btns-editorial">
+                <a href="https://ji579.github.io/vogue/" target="_blank" class="project-btn">Website</a>
+                <a href="https://bit.ly/3MzpaXf" target="_blank" class="project-btn">Figma</a>
+                <a href="https://github.com/ji579/vogue.git" target="_blank" class="project-btn">Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-supplement style-story">
+        <div class="supplement-story-text">
+          <span class="supplement-label">About this project</span>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">배경</span>
+            <p>기존 이커머스 사이트를 따라 만들며 단순 UI 재현에 그치지 않고, 실제 서비스처럼 동작하는 기능 구현에 도전한 프로젝트입니다.</p>
+          </div>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">핵심 구현</span>
+            <p>장바구니 담기·수량 변경·총액 계산 기능과 로그인·회원가입 흐름을 JavaScript로 직접 구현했습니다. 데이터 흐름과 DOM 조작을 깊이 이해하게 된 계기가 된 프로젝트입니다.</p>
+          </div>
+          <div class="supplement-story-block">
+            <span class="supplement-story-block-title">배운 점</span>
+            <p>단순 레이아웃을 넘어 사용자 인터랙션과 상태 관리의 중요성을 체감했습니다. PC·태블릿·모바일 전 디바이스에서 일관된 사용자 경험을 제공하는 것에 집중했습니다.</p>
+          </div>
+        </div>
+        <div class="supplement-story-images">
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 1" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 2" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 3" />
+        </div>
+      </div>
+
+      <!-- 프로젝트 04 -->
+      <div class="project-wrap">
+        <div class="project-meta-bar">
+          <span class="meta-num">04.</span>
+          <div class="meta-cats">
+            <div class="meta-cat"><span>Period</span><span>2025 Nov</span></div>
+            <div class="meta-cat"><span>Role</span><span>Web Publisher</span></div>
+            <div class="meta-cat"><span>Contribution</span><span>100%</span></div>
+          </div>
+        </div>
+        <div class="project-editorial reverse">
+          <div class="project-left">
+            <div class="project-left-inner">
+              <img src="./images/sanrio.jpg" alt="산리오 프로젝트" />
+            </div>
+          </div>
+          <div class="project-right">
+            <div class="project-right-inner">
+              <div>
+                <h3 class="project-title-editorial">Sanrio<br /><em>반응형 사이트</em></h3>
+                <p class="project-desc-editorial">기존 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.</p>
+                <p class="project-point-editorial">- PC / Tablet / Mobile 반응형 제작
+- 기존 사이트 레이아웃 재현
+- 프로젝트 목적에 맞게 구조 및 UI 요소 변형</p>
+                <div class="project-tags-group">
+                  <span class="project-tags-group-label">사용 툴 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">HTML5</span>
+                    <span class="tag-editorial">CSS3</span>
+                    <span class="tag-editorial">JavaScript</span>
+                  </div>
+                  <span class="project-tags-group-label">사용 기술 :</span>
+                  <div class="project-tags-editorial">
+                    <span class="tag-editorial">Git/GitHub</span>
+                    <span class="tag-editorial">Visual Studio Code</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-btns-label">View Project</span>
+              <div class="project-btns-editorial">
+                <a href="https://ji579.github.io/Sanrio/" target="_blank" class="project-btn">Website</a>
+                <a href="https://github.com/ji579/Sanrio.git" target="_blank" class="project-btn">Github</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="project-supplement style-editorial">
+        <div class="supplement-collage">
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 1" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 2" />
+          <img src="./images/sanrio.jpg" alt="프로젝트 이미지 3" />
+        </div>
+        <div class="supplement-editorial-text">
+          <span class="supplement-label">About this project</span>
+          <blockquote>기존 사이트의 레이아웃을 재현하면서, 나만의 구조와 코드로 다시 완성했습니다.</blockquote>
+          <p>산리오 공식 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.</p>
+          <p>PC·태블릿·모바일 반응형 제작과 함께, 기존 사이트 분석을 통해 레이아웃 구조를 파악하고 이를 직접 코드로 재현하는 과정에서 구조적 사고를 키울 수 있었습니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN SECTION -->
+    <section id="design">
+      <h2>Design</h2>
+      <p class="design-subtitle">이미지를 클릭해 보세요</p>
+      <div class="design-scroll-wrap" id="designScrollWrap">
+        <div class="design-track">
+          <div class="design-card" onclick="openLightbox('./images/design1.png')">
+            <img src="./images/design1.png" alt="Design 1" />
+          </div>
+          <div class="design-card" onclick="openLightbox('./images/design2.png')">
+            <img src="./images/design2.png" alt="Design 2" />
+          </div>
+          <div class="design-card" onclick="openLightbox('./images/design3.png')">
+            <img src="./images/design3.png" alt="Design 3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 라이트박스 -->
+    <div class="design-lightbox" id="designLightbox" onclick="closeLightbox()">
+      <span class="design-lightbox-close" onclick="closeLightbox()">&#x2715;</span>
+      <img src="" id="lightboxImg" alt="Design preview" />
+    </div>
+
+    <div id="contact">
+      <span class="contact-label-top">Get in Touch</span>
+      <h2>Let's Work Together</h2>
+      <p class="contact-desc">새로운 프로젝트나 협업에 관심이 있으시다면<br />언제든지 연락해 주세요.</p>
+      <div class="contact-info-row">
+        <div class="contact-info-cell">
+          <span class="ci-label">Email</span>
+          <a class="ci-value" href="/cdn-cgi/l/email-protection#8de7e4e5e8e8e3e8bdbdcde3ecfbe8ffa3eee2e0" onclick="copyEmail(); return false;"><span class="__cf_email__" data-cfemail="ee8487868b8b808bdedeae808f988b9cc08d8183">[email&#160;protected]</span></a>
+        </div>
+        <div class="contact-info-cell" style="padding-left:2rem;">
+          <span class="ci-label">Github</span>
+          <a class="ci-value" href="https://github.com/ji579" target="_blank">github.com/ji579</a>
+        </div>
+      </div>
+      <div class="contact-footer">
+        <span>© 2025 JIHEE KANG &nbsp;·&nbsp; Built with HTML5 · CSS3 · JavaScript · jQuery</span>
+        <span>WEB DESIGN</span>
+      </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+      // 3D Tilt Effect
+      document.querySelectorAll(".tilt").forEach((el) => {
+        el.addEventListener("mousemove", (e) => {
+          const rect = el.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+          el.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+          el.style.boxShadow = `${-rotateY}px ${rotateX}px 30px rgba(42, 42, 42, 0.2)`;
+        });
+        el.addEventListener("mouseleave", () => {
+          el.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+          el.style.boxShadow = "none";
+        });
+      });
+
+      // Design 라이트박스
+      function openLightbox(src) {
+        document.getElementById('lightboxImg').src = src;
+        document.getElementById('designLightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox() {
+        document.getElementById('designLightbox').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Design 드래그 스크롤
+      const wrap = document.getElementById('designScrollWrap');
+      let isDown = false, startX, scrollLeft;
+      wrap.addEventListener('mousedown', (e) => { isDown = true; startX = e.pageX - wrap.offsetLeft; scrollLeft = wrap.scrollLeft; });
+      wrap.addEventListener('mouseleave', () => { isDown = false; });
+      wrap.addEventListener('mouseup', () => { isDown = false; });
+      wrap.addEventListener('mousemove', (e) => { if (!isDown) return; e.preventDefault(); const x = e.pageX - wrap.offsetLeft; const walk = (x - startX) * 1.5; wrap.scrollLeft = scrollLeft - walk; });
+
+      // 이메일 복사
+      function copyEmail() {
+        const email = "jiheene00@naver.com";
+        navigator.clipboard.writeText(email).then(() => showCopyNotification()).catch(() => fallbackCopyEmail(email));
+      }
+      function showCopyNotification() {
+        const n = document.createElement("div");
+        n.className = "email-copied";
+        n.textContent = "이메일이 복사되었습니다! ✓";
+        document.body.appendChild(n);
+        setTimeout(() => n.classList.add("show"), 10);
+        setTimeout(() => { n.classList.remove("show"); setTimeout(() => n.remove(), 300); }, 2000);
+      }
+      function fallbackCopyEmail(text) {
+        const ta = document.createElement("textarea");
+        ta.value = text; ta.style.position = "fixed"; ta.style.left = "-999999px";
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); showCopyNotification(); } catch(e) { alert("이메일: " + text); }
+        document.body.removeChild(ta);
+      }
+
+      // ── 햄버거 메뉴 ──
+      const hamburger = document.getElementById('hamburger');
+      const overlay   = document.getElementById('mobileOverlay');
+      const hamburgerClose = document.getElementById('hamburgerClose');
+
+      function openMobileMenu() {
+        hamburger.classList.add('open');
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMobileMenu() {
+        hamburger.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', () => {
+        overlay.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
+      });
+      hamburgerClose.addEventListener('click', closeMobileMenu);
+
+      // ESC로 닫기
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { closeMobileMenu(); closeLightbox(); }
+      });
+
+      // ── 스크롤 active 메뉴 ──
+      const navLinks = document.querySelectorAll('nav ul a');
+      const sectionIds = ['about', 'skills', 'portplio', 'contact'];
+
+      function updateActiveNav() {
+        const scrollY = window.scrollY + window.innerHeight * 0.25;
+
+        let currentId = sectionIds[0];
+        sectionIds.forEach(id => {
+          const el = document.getElementById(id);
+          if (el && el.offsetTop <= scrollY) {
+            currentId = id;
+          }
+        });
+
+        navLinks.forEach(a => {
+          a.classList.remove('active');
+          if (a.getAttribute('href') === '#' + currentId) {
+            a.classList.add('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+    </script>
+  </body>
+</html>

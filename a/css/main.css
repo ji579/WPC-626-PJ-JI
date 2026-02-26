@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+/* 스프라이츠 애니 CSS - main.css */
+
+/* 웹폰트 CDN */
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah|ZCOOL+KuaiLe&display=swap);
+/*
+    웹폰트체
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'ZCOOL KuaiLe', cursive;
+*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #8cc63e;
+}
+
+/* 공통class */
+.ir {
+    /* IR(배경설명숨기기) */
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+/* 1. 타이틀 */
+.mtit{
+    position: absolute;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 52px;
+    z-index: 1;
+}
+
+/* 2.메뉴 */
+.gnb{
+    position: absolute;
+    top: 15vh;
+    left: 2vw;
+    z-index: 1;
+}
+.gnb ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.gnb a{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 32px;
+    line-height: 3;
+}
+/* 마우스 오버시 */
+.gnb a:hover{
+    color: #f00;
+    text-decoration: line-through;
+}
+
+
+/* 키프레임 */
+
+/* 
+    [ 스프라이츠를 이용한 장면 넘기기 애니를 하려면? ]
+    1. 배경이미지 전체 길이를 알아야함
+    -> 이유: 이동셋팅시 가로이동일 경우에 전체길이값을 써야함!
+
+    (비율이 유지되는 이미지이므로 가로/세로중 한쪽값을 변경하면
+    다른쪽값은 자동으로 변경된다!)
+
+    참고) 비례식사용
+        가로 : 세로 = 1472px : 325px = x : 176px
+        x = 1472*176/325 = 797.14
+        전체가 8장면 이므로 한 장면당 100px(99.625px)로 정해짐
+    
+    -> 더 편한 방법은 그림판에서 축소/확대를 사용하여
+    길이를 알아내면 된다!    
+    
+    2. 코딩법:
+
+    animation: 이름 시간 steps(장면개수) infinite;
+
+    -> 장면찍는 steps를 사용할때는 이징(가속도)불필요!
+
+    [ 여러줄 애니메이션 처리법 ]
+    배경이미지 이동을 x,y축으로 분리하여 셋팅함
+
+    -> 시간설정은 x축은 적당히 설정후
+    y축은 x축애니시간*줄수 로 설정한다!
+
+    예) x축 애니를 2초로 설정후 y축은 5줄이면 
+    -> 2초*5줄=10초
+
+    1. x축이동 : steps(장면수)
+        background-position-x : 값;
+
+    2. y축이동 : steps(줄수)
+        background-position-y : 값;
+ */
+
+/* 웃는여자 */
+.spani4{
+    position: absolute;
+    top: 7vh;
+    right: 0;
+    width: 255.7px;
+    /* 전체 width 1023px / 4장면 */
+    height: 441.5px;
+    /* 전체 height 883px / 2줄 */
+    background: url(../images/girl_frames.jpeg) no-repeat;
+
+    border: 20px ridge brown;
+    transform: scale(.5);
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    spani4X .8s steps(4) infinite,
+    spani4Y 2.4s steps(2) infinite;    
+
+
+}
+/* 웃는여자 키프레임 X축 */
+@keyframes spani4X {
+    to{
+       background-position-x: -1023px;
+    }
+}
+/* 웃는여자 키프레임 Y축 */
+@keyframes spani4Y {
+    to{
+        background-position-y: -883px;
+    }
+}
+.big:hover{
+    /* 오버시 확대,멈춤,위로 */
+    transform: scale(3);
+    animation-play-state: paused;
+    z-index: 1;
+}
+/* 웃는여자용 */
+.big2:hover{
+    transform: scale(.7);
+}
+
