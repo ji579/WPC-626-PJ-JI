@@ -1878,9 +1878,10 @@
         border-radius: 24px;
       }
       /* PC: 가로 넓은 비율, 높이 기준 */
-      .vg-responsive-item:nth-child(1) { width: 50%; height: 380px; }
+      .vg-responsive-item:nth-child(1) { width: 55%; height: 380px; }
       /* 태블릿: PC보다 낮은 높이 */
-      .vg-responsive-item:nth-child(2) { width: 22%; aspect-ratio: 4 / 5; }
+      .vg-responsive-item:nth-child(2) { width: 24%;height: 300px; 
+    aspect-ratio: 4 / 5; }
       /* 모바일: 자연 비율 */
       .vg-responsive-item:nth-child(3) { width: 10%; aspect-ratio: 9/19.5; }
       .vg-responsive-item img {
@@ -3041,6 +3042,15 @@ transform: scale(calc(216 / 445));}
           grid-template-columns: 1fr;
           gap: 1.5rem;
         }
+        .vg-responsive-section {
+    flex-direction: column;}
+    .vg-responsive-item:nth-child(2) {
+    width: 60%;
+        margin-right: 35%;}
+    .vg-responsive-item:nth-child(3) {
+    width: 25%;margin-left: 50%;}
+    .vg-responsive-item:nth-child(1) {
+    width: 100%;}
       }
 
       @media (max-width: 600px) {
@@ -3306,7 +3316,7 @@ margin-left: 60%;
             <div class="contact-item">
               <span class="contact-label">Email</span>
               <p class="contact-value">
-                <a href="/cdn-cgi/l/email-protection#6c060504090902095c5c2c020d1a091e420f0301"><span class="__cf_email__" data-cfemail="c8a2a1a0adada6adf8f888a6a9beadbae6aba7a5">[email&#160;protected]</span></a>
+                <a href="mailto:jiheene00@naver.com">jiheene00@naver.com</a>
               </p>
             </div>
           </div>
@@ -4636,8 +4646,7 @@ margin-left: 60%;
       <div class="contact-info-row">
         <div class="contact-info-cell">
           <span class="ci-label">Email</span>
-          <a class="ci-value" href="/cdn-cgi/l/email-protection#701a191815151e154040301e110615025e131f1d" onclick="copyEmail(); return false;"><span class="__cf_email__" data-cfemail="7c161514191912194c4c3c121d0a190e521f1311">[email&#160;protected]</span></a
-          >
+          <a class="ci-value" href="mailto:jiheene00@naver.com" onclick="copyEmail(); return false;">jiheene00@naver.com</a>
         </div>
         <div class="contact-info-cell" style="padding-left: 2rem">
           <span class="ci-label">Github</span>
