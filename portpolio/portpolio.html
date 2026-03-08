@@ -1348,15 +1348,47 @@
       @media (max-width: 900px) {
         .ky-cards {
           grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+        .ky-card-img {
+          width: 100%;
+          height: 220px;
+          margin-top: 0;
+          align-items: center;
+          justify-content: center;
         }
       }
 
       @media (max-width: 500px) {
         .ky-cards {
           grid-template-columns: 1fr;
+          gap: 2.5rem;
         }
         .ky-pages-section {
           padding: 3rem 5%;
+        }
+        .ky-card {
+          flex-direction: row;
+          gap: 1.2rem;
+          align-items: flex-start;
+        }
+        .ky-card-img {
+          width: 110px;
+          height: 145px;
+          flex-shrink: 0;
+          margin-top: 0;
+          align-items: center;
+          justify-content: center;
+        }
+        .ky-card-body {
+          flex: 1;
+          padding-top: 0.2rem;
+        }
+        .ky-card-title {
+          font-size: 1rem;
+        }
+        .ky-card-desc {
+          font-size: 0.78rem;
         }
       }
 
@@ -2836,7 +2868,15 @@ transform: scale(calc(216 / 445));}
           font-size: 2.2rem;
           letter-spacing: -1px;
         }
-        .hero-img-v4 { display: none; }
+        .hero-img-v4 {
+          display: block;
+          width: 100px;
+          height: 130px;
+          align-self: center;
+        }
+        .hero-img-v4 .spani4-v4 {
+          transform: scale(calc(130 / 512));
+        }
 
         .project-left {
           min-height: 200px;
@@ -3240,7 +3280,7 @@ transform: scale(calc(216 / 445));}
             <div class="contact-item">
               <span class="contact-label">Email</span>
               <p class="contact-value">
-                <a href="mailto:jiheene00@naver.com">jiheene00@naver.com</a>
+                <a href="/cdn-cgi/l/email-protection#117b787974747f742121517f706774633f727e7c"><span class="__cf_email__" data-cfemail="f3999a9b96969d96c3c3b39d92859681dd909c9e">[email&#160;protected]</span></a>
               </p>
             </div>
           </div>
@@ -4573,11 +4613,7 @@ transform: scale(calc(216 / 445));}
       <div class="contact-info-row">
         <div class="contact-info-cell">
           <span class="ci-label">Email</span>
-          <a
-            class="ci-value"
-            href="mailto:jiheene00@naver.com"
-            onclick="copyEmail(); return false;"
-            >jiheene00@naver.com</a
+          <a class="ci-value" href="/cdn-cgi/l/email-protection#442e2d2c21212a217474042a253221366a272b29" onclick="copyEmail(); return false;"><span class="__cf_email__" data-cfemail="f49e9d9c91919a91c4c4b49a95829186da979b99">[email&#160;protected]</span></a
           >
         </div>
         <div class="contact-info-cell" style="padding-left: 2rem">
@@ -4596,7 +4632,7 @@ transform: scale(calc(216 / 445));}
       </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
@@ -4808,6 +4844,8 @@ transform: scale(calc(216 / 445));}
       <a href="#design" class="works-sidebar-item works-sidebar-design" data-target="design">
         <span class="works-sidebar-section-label">Design</span>
       </a>
+      <!-- 모바일 전용 맨 위로 버튼 -->
+      <button class="sidebar-scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑</button>
     </nav>
 
     <style>
@@ -4917,6 +4955,10 @@ transform: scale(calc(216 / 445));}
       .works-sidebar-item.active::before {
         display: none;
       }
+      /* 맨위로 버튼 — 데스크탑에서 숨김 */
+      .sidebar-scroll-top {
+        display: none;
+      }
       @media (max-width: 900px) {
         .works-sidebar { display: none; }
         .project-editorial,
@@ -4928,49 +4970,88 @@ transform: scale(calc(216 / 445));}
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: center;
-          gap: 0.6rem;
+          justify-content: flex-start;
+          gap: 0;
           top: auto;
           bottom: 0;
           left: 0;
           right: 0;
           width: 100%;
           transform: none;
-          padding: 0.7rem 4%;
-          background: rgba(255, 255, 255, 0.88);
+          padding: 0.5rem 0;
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           border-top: 1px solid rgba(139, 115, 85, 0.15);
           z-index: 99;
           box-sizing: border-box;
           overflow-x: auto;
+          overflow-y: visible;
           scrollbar-width: none;
+          -webkit-overflow-scrolling: touch;
         }
         .works-sidebar::-webkit-scrollbar { display: none; }
         /* 하단 바에서 divider 숨김 */
         .works-sidebar-divider { display: none; }
+        /* Works 섹션 레이블 */
+        .works-sidebar > .works-sidebar-section-label {
+          flex-shrink: 0;
+          padding: 0.35rem 0.6rem 0.35rem 0.8rem;
+          white-space: nowrap;
+          font-size: 0.52rem;
+          letter-spacing: 2px;
+        }
         /* 아이템 가로 배치 */
         .works-sidebar-item {
           flex-direction: row;
           align-items: center;
-          gap: 0.3rem;
-          padding: 0.4rem 0.7rem;
+          flex-shrink: 0;
+          gap: 0.2rem;
+          padding: 0.35rem 0.55rem;
           white-space: nowrap;
         }
         .works-sidebar-item.active {
           border-radius: 20px;
-          padding: 0.4rem 0.7rem;
+          padding: 0.35rem 0.55rem;
         }
-        .works-sidebar-section-label {
-          font-size: 0.55rem;
-          letter-spacing: 2px;
-        }
+        .works-sidebar-num { font-size: 0.52rem; }
+        .works-sidebar-name { font-size: 0.62rem; }
+        /* Design 아이템 — 오른쪽 끝에 보이도록 */
         .works-sidebar-design {
           padding-top: 0;
           width: auto;
+          flex-shrink: 0;
+          padding-right: 0.8rem;
+        }
+        .works-sidebar-section-label {
+          font-size: 0.52rem;
+          letter-spacing: 1.5px;
+          white-space: nowrap;
         }
         .works-sidebar-design .works-sidebar-section-label {
-          font-size: 0.65rem;
+          font-size: 0.62rem;
+        }
+        /* 맨위로 버튼 모바일 스타일 */
+        .sidebar-scroll-top {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          margin-left: auto;
+          margin-right: 0.6rem;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          border: 1px solid rgba(139, 115, 85, 0.35);
+          background: transparent;
+          color: var(--brown);
+          font-size: 0.75rem;
+          cursor: pointer;
+          padding: 0;
+          line-height: 1;
+        }
+        .sidebar-scroll-top:hover {
+          background: var(--beige);
         }
       }
     </style>
@@ -5004,8 +5085,8 @@ transform: scale(calc(216 / 445));}
               current = id;
             }
           });
-          document.querySelectorAll('.works-sidebar-item').forEach(item => {
-                item.classList.toggle('active', item.dataset.target === current);
+              document.querySelectorAll('.works-sidebar-item').forEach(item => {
+            item.classList.toggle('active', item.dataset.target === current);
           });
         }
 
