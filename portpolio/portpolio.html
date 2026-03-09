@@ -119,11 +119,9 @@
       }
 
       /* 모바일에서 햄버거 표시, 데스크탑 메뉴 숨김 */
-      
 
       /* Selected Works 헤더 반응형 */
-      
-      
+
       .nav-hamburger {
         display: none;
         flex-direction: column;
@@ -215,7 +213,6 @@
       }
 
       /* 모바일에서 햄버거 표시, 데스크탑 메뉴 숨김 */
-      
 
       /* ── ABOUT (Version 04 · 미니멀 인덱스형) ── */
       .hero {
@@ -380,17 +377,44 @@
       }
 
       @keyframes textChange {
-        0%, 45%  { content: "성장하는"; }
-        50%, 95% { content: "노력하는"; }
-        100%     { content: "성장하는"; }
+        0%,
+        45% {
+          content: "성장하는";
+        }
+        50%,
+        95% {
+          content: "노력하는";
+        }
+        100% {
+          content: "성장하는";
+        }
       }
 
       @keyframes underlineChange {
-        0%, 45%   { transform: scaleX(1); opacity: 1; }
-        47%, 48%  { transform: scaleX(0); opacity: 0; }
-        50%, 95%  { transform: scaleX(1); opacity: 1; }
-        97%, 98%  { transform: scaleX(0); opacity: 0; }
-        100%      { transform: scaleX(1); opacity: 1; }
+        0%,
+        45% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        47%,
+        48% {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        50%,
+        95% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
+        97%,
+        98% {
+          transform: scaleX(0);
+          opacity: 0;
+        }
+        100% {
+          transform: scaleX(1);
+          opacity: 1;
+        }
       }
 
       .hero .subtitle {
@@ -447,12 +471,14 @@
       .hero-image.aboutimg {
         display: none;
       }
-      .spani4 { display: none; }
+      .spani4 {
+        display: none;
+      }
 
       /* v04 이미지 박스 */
       .hero-img-v4 {
-         width: 154px;
-    height: 240px;
+        width: 154px;
+        height: 240px;
         background: var(--beige);
         border: 1px solid rgba(139, 115, 85, 0.2);
         overflow: hidden;
@@ -462,7 +488,8 @@
       }
       .hero-img-v4 .spani4-v4 {
         position: absolute;
-        top: 0; left: 0;
+        top: 0;
+        left: 0;
         width: 341.333px;
         height: 512px;
         background: url(./images/girl_frames3.jpeg) no-repeat;
@@ -473,8 +500,16 @@
           spani4X 1.2s steps(3) infinite,
           spani4Y 3.6s steps(2) infinite;
       }
-      @keyframes spani4X { to { background-position-x: -978px; } }
-      @keyframes spani4Y { to { background-position-y: -1022px; } }
+      @keyframes spani4X {
+        to {
+          background-position-x: -978px;
+        }
+      }
+      @keyframes spani4Y {
+        to {
+          background-position-y: -1022px;
+        }
+      }
       .hero-img-v4:hover .spani4-v4 {
         animation-play-state: paused;
       }
@@ -484,7 +519,9 @@
         gap: 5rem;
         align-items: flex-end;
       }
-      .hero-right-text { flex: 1; }
+      .hero-right-text {
+        flex: 1;
+      }
 
       section {
         min-height: 100vh;
@@ -704,7 +741,7 @@
       }
 
       .project-right-inner {
-       padding: 4rem 8% 5rem 16%;
+        padding: 4rem 8% 5rem 16%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -894,10 +931,6 @@
         word-break: keep-all;
         overflow-wrap: break-word;
       }
-
-      
-
-      
 
       /* ── 세이투세 스타일 가이드 ── */
       .st-styleguide-section {
@@ -1133,10 +1166,6 @@
         font-family: "Instrument Sans", "Outfit", sans-serif;
       }
 
-      
-
-      
-
       /* ── 폰 목업 갤러리 (saytouche용) ── */
       .supplement-phone-gallery {
         display: flex;
@@ -1171,10 +1200,6 @@
         transform: rotate(3deg) translateY(6px);
       }
 
-      
-
-      
-
       /* ── 야요이 페이지 구성 카드 ── */
       .ky-pages-section {
         padding: 5rem 8%;
@@ -1198,7 +1223,7 @@
         height: 345px;
         display: flex;
         align-items: flex-end;
-            margin-top: 40px;
+        margin-top: 40px;
       }
 
       .ky-card-img img {
@@ -1239,10 +1264,6 @@
         word-break: keep-all;
       }
 
-      
-
-      
-
       .supplement-editorial-text blockquote {
         font-family: "Playfair Display", serif;
         font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -1265,9 +1286,6 @@
         word-break: keep-all;
       }
       /* ── supplement 반응형 ── */
-      
-
-      
 
       .project-title-editorial {
         font-family: "Playfair Display", serif;
@@ -1384,16 +1402,12 @@
       ══════════════════════════════════════ */
 
       /* 태블릿 가로 (1024px 이하) */
-      
 
       /* 태블릿 세로 / 모바일 (900px 이하) */
-      
 
       /* 모바일 (768px 이하) */
-      
 
       /* 모바일 소형 (600px 이하) */
-      
 
       /* 소형 모바일 (480px 이하) */
       /* ── 쿠사마 문제점 이미지 블록 ── */
@@ -1446,15 +1460,15 @@
         grid-column: 1;
         grid-row: 2;
         width: 100%;
-       /* overflow: hidden;
+        /* overflow: hidden;
         aspect-ratio: 4 / 3;*/
       }
       .ky-issue-image img {
-       object-fit: cover;
-    display: block;
-    border: 5px solid #000000;
-    border-radius: 24px;
-    filter: drop-shadow(-17px 24px 30px #00000033);
+        object-fit: cover;
+        display: block;
+        border: 5px solid #000000;
+        border-radius: 24px;
+        filter: drop-shadow(-17px 24px 30px #00000033);
       }
       /* 03번 — 이미지 한 줄 + 설명 아래 */
       .ky-issue-image.multi {
@@ -1506,10 +1520,14 @@
         bottom: 0;
         background: #fff;
       }
-      .ky-multi-back-left  {     left: 17%;
-    top: 42%;}
-      .ky-multi-back-right {right: 14%;
-    top: 68%;}
+      .ky-multi-back-left {
+        left: 17%;
+        top: 42%;
+      }
+      .ky-multi-back-right {
+        right: 14%;
+        top: 68%;
+      }
 
       .ky-issue-multi-desc {
         display: flex;
@@ -1553,9 +1571,6 @@
         opacity: 0.7;
       }
 
-      
-      
-
       /* ── Selected Works 하이라이트 ── */
       .selected-works-title {
         position: relative;
@@ -1563,16 +1578,16 @@
         z-index: 1;
       }
       .selected-works-title::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: -7px;
         left: -0.98vw;
-    z-index: -1;
-    width: 100%;
+        z-index: -1;
+        width: 100%;
         aspect-ratio: 163 / 20;
         background: url(./images/img_highlight.png) 0 0 no-repeat;
         background-size: auto 100%;
-        transition: width .25s ease-in;
+        transition: width 0.25s ease-in;
       }
 
       /* ── 산리오 핸드폰 + 카드 슬라이더 ── */
@@ -1605,14 +1620,18 @@
         animation: srScroll 28s linear infinite;
       }
       /* 홀수 카드: 위로, 짝수 카드: 아래로 */
-      .sr-card:nth-child(odd)  { transform: translateY(10px); }
-      .sr-card:nth-child(even) { transform: translateY(50px);  }
+      .sr-card:nth-child(odd) {
+        transform: translateY(10px);
+      }
+      .sr-card:nth-child(even) {
+        transform: translateY(50px);
+      }
       .sr-card {
         flex-shrink: 0;
         width: 150px;
         border-radius: 18px;
         overflow: hidden;
-        box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.13);
         margin: 0;
         background: #fff;
       }
@@ -1649,17 +1668,21 @@
         text-overflow: ellipsis;
       }
       @keyframes srScroll {
-        0%   { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
       .sr-phone-img {
         position: relative;
         width: 280px;
-        aspect-ratio:10 / 18.5;;
+        aspect-ratio: 10 / 18.5;
         pointer-events: none;
-            border: 5px solid #2b2b2b;
-    border-radius: 24px;
-        filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));
+        border: 5px solid #2b2b2b;
+        border-radius: 24px;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.18));
       }
       /* 슬라이더 하단 설명 */
       .sr-desc {
@@ -1696,7 +1719,8 @@
       }
       .sr-characters-label {
         padding: 3rem 8% 0;
-        background: #ffffff;margin-bottom: 2rem;
+        background: #ffffff;
+        margin-bottom: 2rem;
       }
       .sr-hover-compare {
         display: flex;
@@ -1734,15 +1758,12 @@
         animation: none;
         transform: none !important;
       }
-      
-      
-      
 
       /* ── 보그 공통 카드 섹션 ── */
       .vg-card-section {
         padding: 5rem 8% 0;
         background: #ffffff;
-        border-top: 1px solid rgba(139,115,85,0.12);
+        border-top: 1px solid rgba(139, 115, 85, 0.12);
         border-bottom: 1px solid white;
       }
       .vg-card-header {
@@ -1780,7 +1801,7 @@
         overflow: hidden;
         cursor: pointer;
         transition: transform 0.3s;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.09);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.09);
       }
       .vg-card:hover {
         transform: translateY(-5px);
@@ -1836,16 +1857,28 @@
       .vg-zz-item {
         display: flex;
       }
-      .vg-zz-item:nth-child(1) { justify-content: flex-start; padding-top: 0; }
-      .vg-zz-item:nth-child(2) { justify-content: flex-end; padding-right: 8%; padding-top: 3rem; }
-      .vg-zz-item:nth-child(3) { justify-content: center; padding-top: 3rem; }
-      .vg-zz-item:nth-child(4) { justify-content: flex-start; padding-top: 3rem; }
+      .vg-zz-item:nth-child(1) {
+        justify-content: flex-start;
+        padding-top: 0;
+      }
+      .vg-zz-item:nth-child(2) {
+        justify-content: flex-end;
+        padding-right: 8%;
+        padding-top: 3rem;
+      }
+      .vg-zz-item:nth-child(3) {
+        justify-content: center;
+        padding-top: 3rem;
+      }
+      .vg-zz-item:nth-child(4) {
+        justify-content: flex-start;
+        padding-top: 3rem;
+      }
       .vg-zz-item img {
         width: 40%;
         height: auto;
         display: block;
       }
-      
 
       /* 반응형 3종 이미지 */
       .vg-about-label-section {
@@ -1878,12 +1911,21 @@
         border-radius: 24px;
       }
       /* PC: 가로 넓은 비율, 높이 기준 */
-      .vg-responsive-item:nth-child(1) { width: 55%; height: 380px; }
+      .vg-responsive-item:nth-child(1) {
+        width: 55%;
+        height: 380px;
+      }
       /* 태블릿: PC보다 낮은 높이 */
-      .vg-responsive-item:nth-child(2) { width: 24%;height: 300px; 
-    aspect-ratio: 4 / 5; }
+      .vg-responsive-item:nth-child(2) {
+        width: 24%;
+        height: 300px;
+        aspect-ratio: 4 / 5;
+      }
       /* 모바일: 자연 비율 */
-      .vg-responsive-item:nth-child(3) { width: 10%; aspect-ratio: 9/19.5; }
+      .vg-responsive-item:nth-child(3) {
+        width: 10%;
+        aspect-ratio: 9/19.5;
+      }
       .vg-responsive-item img {
         width: 100%;
         height: 100%;
@@ -2141,7 +2183,6 @@
       .kor-sample {
         font-family: "MyCustomFont", "Playfair Display", serif;
       }
-      
 
       /* ── Color Palette ── */
       .ky-brand-colors {
@@ -2186,10 +2227,6 @@
         color: var(--dark);
         opacity: 0.6;
       }
-      
-
-      
-      
 
       /* ── 쿠사마 About 인트로 ── */
       .ky-about-intro {
@@ -2230,9 +2267,9 @@
         left: 6%;
         bottom: -45px;
         width: 90px;
-        filter: drop-shadow(-17px 24px 30px #00000033)
+        filter: drop-shadow(-17px 24px 30px #00000033);
       }
-      
+
       .ky-intro-body {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -2254,7 +2291,6 @@
         color: var(--dark);
         opacity: 0.65;
       }
-      
 
       /* ── 키워드 배너 ── */
       .ky-keyword-banner {
@@ -2360,10 +2396,6 @@
         opacity: 0.55;
         max-width: 560px;
       }
-      
-      
-
-      
 
       /* ── ST DIRECTION SECTION ── */
       .project-supplement.st-direction-section {
@@ -2406,11 +2438,11 @@
         margin-bottom: 0;
       }
       .st-store-img {
-     width: 35%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin-top: auto;
+        width: 35%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        margin-top: auto;
       }
       .st-direction-right {
         display: flex;
@@ -2448,9 +2480,6 @@
         opacity: 0.55;
         font-weight: 300;
       }
-      
-      
-      
 
       /* ── DESIGN SECTION ── */
       #design {
@@ -2478,11 +2507,11 @@
         -webkit-overflow-scrolling: touch;
         padding-bottom: 0;
         /* 스크롤바 숨기기 */
-        scrollbar-width: none;        /* Firefox */
-        -ms-overflow-style: none;     /* IE/Edge */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
       }
       .design-scroll-wrap::-webkit-scrollbar {
-        display: none;                /* Chrome/Safari */
+        display: none; /* Chrome/Safari */
       }
       .design-scroll-wrap:active {
         cursor: grabbing;
@@ -2658,7 +2687,7 @@
       /* ══ RESPONSIVE ══ */
 
       @media (max-width: 1024px) {
-/* Hero v04 */
+        /* Hero v04 */
         .hero {
           grid-template-columns: 220px 1fr;
         }
@@ -2669,8 +2698,8 @@
           font-size: clamp(2.5rem, 4.5vw, 4.5rem);
         }
         .hero-img-v4 {
-       width: 150px;
-        height: 240px;
+          width: 150px;
+          height: 240px;
         }
 
         /* Project */
@@ -2690,7 +2719,7 @@
       }
 
       @media (max-width: 900px) {
-.st-guide-header {
+        .st-guide-header {
           flex-direction: column;
           align-items: flex-start;
           gap: 1.5rem;
@@ -2715,18 +2744,18 @@
           border-bottom: none;
         }
 
-.supplement-phone-gallery {
+        .supplement-phone-gallery {
           gap: 0.8rem;
         }
         .phone-mockup {
           max-width: 130px;
         }
 
-.ky-cards {
+        .ky-cards {
           grid-template-columns: repeat(2, 1fr);
         }
 
-.project-supplement.style-story,
+        .project-supplement.style-story,
         .project-supplement.style-editorial {
           grid-template-columns: 1fr;
           gap: 3rem;
@@ -2744,7 +2773,7 @@
           height: auto;
         }
 
-/* Skills */
+        /* Skills */
         .skills-container {
           grid-template-columns: 1fr;
         }
@@ -2786,7 +2815,7 @@
           justify-content: flex-start;
         }
 
-.sr-hover-compare {
+        .sr-hover-compare {
           gap: 2.5rem;
           padding: 3rem 6%;
         }
@@ -2794,16 +2823,18 @@
           width: 220px;
         }
 
-.vg-zz-item img { width: 80%; }
+        .vg-zz-item img {
+          width: 80%;
+        }
 
-.ky-brand-section {
+        .ky-brand-section {
           padding: 4rem 6%;
         }
         .ky-font-grid {
           grid-template-columns: 1fr;
         }
 
-.ky-goals-section {
+        .ky-goals-section {
           grid-template-columns: 1fr;
           gap: 3rem;
           padding: 4rem 6%;
@@ -2812,7 +2843,7 @@
           position: static;
         }
 
-.project-supplement.st-direction-section {
+        .project-supplement.st-direction-section {
           grid-template-columns: 1fr;
           gap: 3rem;
           padding: 4rem 6%;
@@ -2830,14 +2861,14 @@
       }
 
       @media (max-width: 768px) {
-nav.main-nav ul {
+        nav.main-nav ul {
           display: none;
         }
         .nav-hamburger {
           display: flex;
         }
 
-.selected-works-header {
+        .selected-works-header {
           flex-direction: column;
           gap: 1.5rem;
           padding: 3.5rem 6% 2rem !important;
@@ -2854,14 +2885,14 @@ nav.main-nav ul {
           justify-content: flex-end;
         }
 
-nav ul {
+        nav ul {
           display: none;
         }
         .nav-hamburger {
           display: flex;
         }
 
-.st-shop-images {
+        .st-shop-images {
           gap: 1.2rem;
         }
         .st-shop-frame.tab {
@@ -2878,7 +2909,7 @@ nav ul {
           gap: 3.5rem;
         }
 
-/* Nav */
+        /* Nav */
         nav ul {
           display: none;
         }
@@ -2899,13 +2930,17 @@ nav ul {
           border-bottom: 1px solid rgba(139, 115, 85, 0.12);
           gap: 2rem;
         }
-        .hero-index-label { display: none; }
+        .hero-index-label {
+          display: none;
+        }
         .hero-name-block {
           flex: 1;
-                  text-align-last: center;
+          text-align-last: center;
           justify-content: flex-start;
         }
-        .hero-name-ko { font-size: 1.3rem; }
+        .hero-name-ko {
+          font-size: 1.3rem;
+        }
         .hero-contact {
           flex-direction: row;
           gap: 1.5rem;
@@ -2921,38 +2956,60 @@ nav ul {
         .hero-img-v4 {
           width: 160px;
           height: 210px;
-        }.hero-img-v4 .spani4-v4 {
-transform: scale(calc(216 / 445));}
+        }
+        .hero-img-v4 .spani4-v4 {
+          transform: scale(calc(216 / 445));
+        }
         .hero h1 {
           font-size: 2.8rem;
           letter-spacing: -1.5px;
         }
-        h2 { font-size: 2.7rem; }
-        .hero-greeting { font-size: 0.6rem; }
-        .contact-item { flex-direction: column; gap: 0.2rem; }
-        .contact-label { min-width: auto; }
+        h2 {
+          font-size: 2.7rem;
+        }
+        .hero-greeting {
+          font-size: 0.6rem;
+        }
+        .contact-item {
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+        .contact-label {
+          min-width: auto;
+        }
 
         /* Education */
-        .education-item { padding: 2.5rem; }
-        .education-school { font-size: 1.5rem; }
-        .education-course { font-size: 1rem; }
-        .ky-card-img { height: 250px; margin-top: 0px; }
+        .education-item {
+          padding: 2.5rem;
+        }
+        .education-school {
+          font-size: 1.5rem;
+        }
+        .education-course {
+          font-size: 1rem;
+        }
+        .ky-card-img {
+          height: 250px;
+          margin-top: 0px;
+        }
 
-/* 뒤 이미지 모두 숨김 */
+        /* 뒤 이미지 모두 숨김 */
         .ky-multi-back,
         .ky-multi-back-left,
-        .ky-multi-back-right { display: none;
-        opacity: 0; }
+        .ky-multi-back-right {
+          display: none;
+          opacity: 0;
+        }
 
         /* 03번 multi-row: 가로 flex, 양옆 잘리는 캐러셀 */
         .ky-issue-image.multi {
           padding-bottom: 0px;
           grid-column: 1 / 5;
         }
-.ky-issue-multi-row img.ky-multi-front:nth-child(3),
-.ky-issue-multi-row img.ky-multi-front:nth-child(5) {
-  opacity: 0.5;
-}
+        .ky-issue-multi-row img.ky-multi-front:nth-child(3),
+        .ky-issue-multi-row img.ky-multi-front:nth-child(5) {
+          opacity: 0.5;
+        }
         .ky-issue-multi-row {
           display: flex;
           flex-direction: row;
@@ -3001,25 +3058,34 @@ transform: scale(calc(216 / 445));}
           word-break: keep-all;
         }
 
-.sr-hover-compare {
+        .sr-hover-compare {
           gap: 1.5rem;
           padding: 2.5rem 5%;
         }
-        .sr-card--static { width: 160px; }
+        .sr-card--static {
+          width: 160px;
+        }
 
-.sr-inner { min-height: 380px; }
-        .sr-phone-img { width: 180px; }
-        .sr-desc { flex-direction: column; gap: 1rem; }
+        .sr-inner {
+          min-height: 380px;
+        }
+        .sr-phone-img {
+          width: 180px;
+        }
+        .sr-desc {
+          flex-direction: column;
+          gap: 1rem;
+        }
 
-.ky-floating-pumpkin {
+        .ky-floating-pumpkin {
           width: 80px;
           right: 4%;
           bottom: -59px;
         }
         .ky-floating-pumpkin-sm {
-                 width: 100px;
-        right: 4%;
-        bottom: 9px;
+          width: 100px;
+          right: 4%;
+          bottom: 9px;
         }
         .ky-floating-pumpkin-xs {
           width: 65px;
@@ -3027,41 +3093,45 @@ transform: scale(calc(216 / 445));}
           bottom: -32px;
         }
 
-.ky-about-intro {
+        .ky-about-intro {
           padding: 3.5rem 6%;
         }
         .ky-intro-body {
           grid-template-columns: 1fr;
           gap: 2rem;
         }
-  
       }
 
       @media (max-width: 700px) {
-.ky-color-groups {
+        .ky-color-groups {
           grid-template-columns: 1fr;
           gap: 1.5rem;
         }
         .vg-responsive-section {
-    flex-direction: column;}
-    .vg-responsive-item:nth-child(2) {
-    width: 60%;
-        margin-right: 35%;}
-    .vg-responsive-item:nth-child(3) {
-    width: 25%;margin-left: 50%;}
-    .vg-responsive-item:nth-child(1) {
-    width: 100%;}
+          flex-direction: column;
+        }
+        .vg-responsive-item:nth-child(2) {
+          width: 60%;
+          margin-right: 35%;
+        }
+        .vg-responsive-item:nth-child(3) {
+          width: 25%;
+          margin-left: 50%;
+        }
+        .vg-responsive-item:nth-child(1) {
+          width: 100%;
+        }
       }
 
       @media (max-width: 600px) {
-.st-styleguide-section {
+        .st-styleguide-section {
           padding: 3rem 5%;
         }
         .st-color-row {
           height: 150px;
         }
 
-.supplement-phone-gallery {
+        .supplement-phone-gallery {
           gap: 0.5rem;
         }
         .phone-mockup {
@@ -3069,12 +3139,12 @@ transform: scale(calc(216 / 445));}
           border-radius: 16px;
         }
 
-.project-supplement.style-story,
+        .project-supplement.style-story,
         .project-supplement.style-editorial {
           padding: 3rem 5%;
         }
 
-.project-left {
+        .project-left {
           min-height: 240px;
           padding: 2rem 5%;
         }
@@ -3102,16 +3172,18 @@ transform: scale(calc(216 / 445));}
           font-size: 0.82rem;
         }
 
-.ky-issue-block { padding: 3rem 5%; }
+        .ky-issue-block {
+          padding: 3rem 5%;
+        }
 
-.ky-font-grid {
+        .ky-font-grid {
           grid-template-columns: 1fr;
         }
         .ky-font-card {
           padding: 2.5rem 2rem 2rem;
         }
 
-.ky-brand-section {
+        .ky-brand-section {
           padding: 3rem 5%;
         }
         .ky-brand-favicon {
@@ -3132,11 +3204,11 @@ transform: scale(calc(216 / 445));}
           grid-row: 3;
         }
 
-.ky-goals-section {
+        .ky-goals-section {
           padding: 3rem 5%;
         }
 
-.project-supplement.st-direction-section {
+        .project-supplement.st-direction-section {
           padding: 3rem 5%;
         }
         .st-store-img {
@@ -3182,19 +3254,22 @@ transform: scale(calc(216 / 445));}
       }
 
       @media (max-width: 480px) {
-.selected-works-header {
+        .selected-works-header {
           padding: 2.5rem 5% 1.5rem !important;
           gap: 1rem;
         }
         .selected-works-links {
           gap: 0.7rem !important;
         }
-
-.st-shop-images {
-          gap: 0.8rem;
+        .st-shop-mob-wrap {
+          padding-top: 3.5rem;
         }
+        .st-shop-images {
+          display: block;
+        }
+
         .st-shop-frame.tab {
-          width: 58%;
+          width: 100%;
           aspect-ratio: 4 / 3;
         }
         .st-shop-frame.mob {
@@ -3202,12 +3277,15 @@ transform: scale(calc(216 / 445));}
           aspect-ratio: 9 / 19.5;
         }
 
-.hero-left-panel {
+        .hero-left-panel {
           flex-direction: column;
           padding: 5.5rem 5% 1.5rem;
           gap: 1.5rem;
         }
-        .hero-contact { flex-direction: column; gap: 0.8rem; }
+        .hero-contact {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
         .hero h1 {
           font-size: 2.2rem;
           letter-spacing: -1px;
@@ -3234,27 +3312,31 @@ transform: scale(calc(216 / 445));}
         .project-btn {
           padding: 0.6rem 1.2rem;
           font-size: 0.72rem;
-        }    .vg-responsive-section {
-        gap: 2rem;}
-    .vg-responsive-item:nth-child(1) {
-        width: 100%;
-    }
-    .vg-responsive-item:nth-child(2) {
-        width: 65%;
-margin-right: 35%;
-    }
-    .vg-responsive-item:nth-child(3) {
-        width: 40%;
-margin-left: 60%;
-    }
+        }
+        .vg-responsive-section {
+          gap: 2rem;
+        }
+        .vg-responsive-item:nth-child(1) {
+          width: 100%;
+          height: auto;
+        }
+        .vg-responsive-item:nth-child(2) {
+          width: 65%;
+          height: auto;
+          margin-right: 35%;
+        }
+        .vg-responsive-item:nth-child(3) {
+          width: 40%;
+          margin-left: 60%;
+        }
       }
 
       @media (max-width: 400px) {
-.st-store-img {
+        .st-store-img {
           width: 65%;
         }
       }
-        </style>
+    </style>
   </head>
   <body>
     <nav class="main-nav">
@@ -3342,7 +3424,11 @@ margin-left: 60%;
                 <span class="hero-kw">Figma</span>
                 <span class="hero-kw">Git</span>
               </div>
-              <p class="hero-bio">UI 재현을 넘어 실제 동작하는 기능 구현까지 도전하는 웹퍼블리셔입니다. 사용자 경험 중심의 반응형 제작과 JavaScript 인터랙션을 즐겨 작업합니다.</p>
+              <p class="hero-bio">
+                UI 재현을 넘어 실제 동작하는 기능 구현까지 도전하는
+                웹퍼블리셔입니다. 사용자 경험 중심의 반응형 제작과 JavaScript
+                인터랙션을 즐겨 작업합니다.
+              </p>
             </div>
           </div>
         </div>
@@ -3427,25 +3513,102 @@ margin-left: 60%;
 
     <section id="portplio">
       <!-- 섹션 헤더 -->
-      <div class="selected-works-header"
+      <div
+        class="selected-works-header"
         style="
-         padding: 5rem 8% 3rem;
-    border-top: 3px solid rgba(139, 115, 85, 0.12);
-    display: flex;
-    align-items: baseline;
-    gap: 4rem;
-    background: #ffffff;
+          padding: 5rem 8% 3rem;
+          border-top: 3px solid rgba(139, 115, 85, 0.12);
+          display: flex;
+          align-items: baseline;
+          gap: 4rem;
+          background: #ffffff;
         "
       >
-        <h2 class="selected-works-title" style="flex:1; margin-bottom: 0; text-align: left; flex-shrink: 0; color: #000000;">Selected Works</h2>
-        <div class="selected-works-links-wrap" style="display: flex;flex:1;padding: 0 110px 0 4%; flex-direction: column; gap: 0.8rem;">
-          <span style="font-size: 0.6rem; letter-spacing: 2.5px; text-transform: uppercase; color: #000000; opacity: 0.4;">— 04 Works</span>
-          <div class="selected-works-links" style="display: flex; gap: 2.5rem; flex-wrap: nowrap; width: 50%;">
-          <a href="#proj-01" style="font-size: 0.78rem; color: #000000; text-decoration: none; letter-spacing: 0.05em; opacity: 0.7; white-space: nowrap;">01 쿠사마야요이</a>
-          <a href="#proj-02" style="font-size: 0.78rem; color: #000000; text-decoration: none; letter-spacing: 0.05em; opacity: 0.7; white-space: nowrap;">02 세이투셰</a>
-          <a href="#proj-03" style="font-size: 0.78rem; color: #000000; text-decoration: none; letter-spacing: 0.05em; opacity: 0.7; white-space: nowrap;">03 보그</a>
-          <a href="#proj-04" style="font-size: 0.78rem; color: #000000; text-decoration: none; letter-spacing: 0.05em; opacity: 0.7; white-space: nowrap;">04 산리오</a>
-        </div>
+        <h2
+          class="selected-works-title"
+          style="
+            flex: 1;
+            margin-bottom: 0;
+            text-align: left;
+            flex-shrink: 0;
+            color: #000000;
+          "
+        >
+          Selected Works
+        </h2>
+        <div
+          class="selected-works-links-wrap"
+          style="
+            display: flex;
+            flex: 1;
+            padding: 0 110px 0 4%;
+            flex-direction: column;
+            gap: 0.8rem;
+          "
+        >
+          <span
+            style="
+              font-size: 0.6rem;
+              letter-spacing: 2.5px;
+              text-transform: uppercase;
+              color: #000000;
+              opacity: 0.4;
+            "
+            >— 04 Works</span
+          >
+          <div
+            class="selected-works-links"
+            style="display: flex; gap: 2.5rem; flex-wrap: nowrap; width: 50%"
+          >
+            <a
+              href="#proj-01"
+              style="
+                font-size: 0.78rem;
+                color: #000000;
+                text-decoration: none;
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                white-space: nowrap;
+              "
+              >01 쿠사마야요이</a
+            >
+            <a
+              href="#proj-02"
+              style="
+                font-size: 0.78rem;
+                color: #000000;
+                text-decoration: none;
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                white-space: nowrap;
+              "
+              >02 세이투셰</a
+            >
+            <a
+              href="#proj-03"
+              style="
+                font-size: 0.78rem;
+                color: #000000;
+                text-decoration: none;
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                white-space: nowrap;
+              "
+              >03 보그</a
+            >
+            <a
+              href="#proj-04"
+              style="
+                font-size: 0.78rem;
+                color: #000000;
+                text-decoration: none;
+                letter-spacing: 0.05em;
+                opacity: 0.7;
+                white-space: nowrap;
+              "
+              >04 산리오</a
+            >
+          </div>
         </div>
       </div>
 
@@ -3569,10 +3732,14 @@ margin-left: 60%;
               전무했습니다.
             </p>
           </div>
-         <div class="ky-issue-image" style="aspect-ratio: unset;">
-            <img src="./images/yaissue1.png" alt="Design UI/UX 문제점" style="width:100%; height:auto; object-fit:unset;" />
+          <div class="ky-issue-image" style="aspect-ratio: unset">
+            <img
+              src="./images/yaissue1.png"
+              alt="Design UI/UX 문제점"
+              style="width: 100%; height: auto; object-fit: unset"
+            />
           </div>
-          <div class="ky-issue-bottom-right" style="align-self: start;">
+          <div class="ky-issue-bottom-right" style="align-self: start">
             <span class="ky-issue-arrow">↳</span>
             <p>
               CSS Grid/Flexbox 기반 레이아웃 도입, 쿠사마의 물방울·호박·강렬한
@@ -3594,8 +3761,26 @@ margin-left: 60%;
               반응형 설계 자체가 없어 모바일 사용자 접근이 불가 수준이었습니다.
             </p>
           </div>
-          <div class="ky-issue-image" style="display:flex; justify-content:center; align-items:center; width:70%; justify-self:right;">
-            <img src="./images/yaissue2.png" alt="Mobile Experience 문제점" style="width:auto; max-width:100%; height:100%; object-fit:contain;" />
+          <div
+            class="ky-issue-image"
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 70%;
+              justify-self: right;
+            "
+          >
+            <img
+              src="./images/yaissue2.png"
+              alt="Mobile Experience 문제점"
+              style="
+                width: auto;
+                max-width: 100%;
+                height: 100%;
+                object-fit: contain;
+              "
+            />
           </div>
           <div class="ky-issue-bottom-right">
             <span class="ky-issue-arrow">↳</span>
@@ -3620,7 +3805,10 @@ margin-left: 60%;
             </p>
           </div>
           <!-- desc: grid-column 1/3 으로 전체 너비, 중앙 정렬 -->
-          <div class="ky-issue-multi-desc" style="grid-column:2/5; grid-row:2;">
+          <div
+            class="ky-issue-multi-desc"
+            style="grid-column: 2/5; grid-row: 2"
+          >
             <span class="ky-issue-arrow">↳</span>
             <p>
               Profile / Works / Museum / Exhibition / Contact 모든 정보를 한
@@ -3629,13 +3817,25 @@ margin-left: 60%;
             </p>
           </div>
           <!-- 이미지: grid-row 3 -->
-          <div class="ky-issue-image multi" style="grid-row:3;">
+          <div class="ky-issue-image multi" style="grid-row: 3">
             <div class="ky-issue-multi-row">
-              <img src="./images/yavi.png" alt="Visit" class="ky-multi-back ky-multi-back-left" />
-              <img src="./images/yapa.png" alt="Past"  class="ky-multi-back ky-multi-back-right" />
-              <img src="./images/yabo.png" alt="Book"       class="ky-multi-front" />
-              <img src="./images/yapr.png" alt="Profile"    class="ky-multi-front ky-multi-center" />
-              <img src="./images/yavi.png" alt="Visit"      class="ky-multi-front" />
+              <img
+                src="./images/yavi.png"
+                alt="Visit"
+                class="ky-multi-back ky-multi-back-left"
+              />
+              <img
+                src="./images/yapa.png"
+                alt="Past"
+                class="ky-multi-back ky-multi-back-right"
+              />
+              <img src="./images/yabo.png" alt="Book" class="ky-multi-front" />
+              <img
+                src="./images/yapr.png"
+                alt="Profile"
+                class="ky-multi-front ky-multi-center"
+              />
+              <img src="./images/yavi.png" alt="Visit" class="ky-multi-front" />
             </div>
           </div>
         </div>
@@ -4315,15 +4515,14 @@ margin-left: 60%;
 
       <!-- 보그 공통 카드 디자인 섹션 -->
       <div class="project-supplement vg-card-section">
-
         <!-- 텍스트 헤더 -->
         <div class="vg-card-header">
           <span class="supplement-label">Common Design</span>
           <p class="vg-card-headline">Unified Card System</p>
           <p class="vg-card-desc">
-            Beauty·Fashion·Must Read 등 전 섹션에 공통 카드 컴포넌트를 적용했습니다.
-            이미지 호버 줌, 카테고리 레이블, 제목·날짜·작성자 구조를
-            하나의 시스템으로 통일하여 일관된 읽기 경험을 구현했습니다.
+            Beauty·Fashion·Must Read 등 전 섹션에 공통 카드 컴포넌트를
+            적용했습니다. 이미지 호버 줌, 카테고리 레이블, 제목·날짜·작성자
+            구조를 하나의 시스템으로 통일하여 일관된 읽기 경험을 구현했습니다.
           </p>
         </div>
 
@@ -4335,12 +4534,13 @@ margin-left: 60%;
             </div>
             <div class="vg-card-content">
               <span class="vg-card-category">뷰티 화보</span>
-              <p class="vg-card-title">키스오브라이프의 쥴리와 나탈이 표현한 '본질적' 아름다움</p>
+              <p class="vg-card-title">
+                키스오브라이프의 쥴리와 나탈이 표현한 '본질적' 아름다움
+              </p>
               <p class="vg-card-meta">2025.10.30 &nbsp;|&nbsp; by 박채원</p>
             </div>
           </div>
         </div>
-
       </div>
 
       <!-- vg 지그재그 이미지 (섹션 바깥 full-width) -->
@@ -4435,14 +4635,18 @@ margin-left: 60%;
               구조 그대로 코드로 재현했습니다.
             </p>
             <p class="st-intro-sub">
-              산리오 공식 사이트를 기반으로 전체 레이아웃을 따라 만들고,
-              일부 구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.
+              산리오 공식 사이트를 기반으로 전체 레이아웃을 따라 만들고, 일부
+              구조와 UI 요소를 프로젝트 목적에 맞게 변형하여 구현했습니다.
               PC·태블릿·모바일 반응형 제작과 함께, 기존 사이트 분석을 통해
-              레이아웃 구조를 파악하고 이를 직접 코드로 재현하는 과정에서
-              구조적 사고를 키울 수 있었습니다.
+              레이아웃 구조를 파악하고 이를 직접 코드로 재현하는 과정에서 구조적
+              사고를 키울 수 있었습니다.
             </p>
           </div>
-          <img src="./images/contact_img.png" alt="산리오 로고" class="st-store-img" />
+          <img
+            src="./images/contact_img.png"
+            alt="산리오 로고"
+            class="st-store-img"
+          />
         </div>
         <div class="st-direction-right">
           <div class="st-item">
@@ -4463,7 +4667,8 @@ margin-left: 60%;
             <h4 class="st-title">Layout Reproduction</h4>
             <span class="st-sub">Structure Analysis</span>
             <p class="st-desc">
-              기존 사이트 구조를 분석하고 직접 코드로 재현하며 퍼블리싱 역량 강화
+              기존 사이트 구조를 분석하고 직접 코드로 재현하며 퍼블리싱 역량
+              강화
             </p>
           </div>
         </div>
@@ -4478,89 +4683,197 @@ margin-left: 60%;
           <div class="sr-cards-outer">
             <div class="sr-cards-track">
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt1.png" alt="헬로키티" /></div>
-                <figcaption><h3>헬로키티</h3><p class="title-en">HELLO KITTY</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt1.png" alt="헬로키티" />
+                </div>
+                <figcaption>
+                  <h3>헬로키티</h3>
+                  <p class="title-en">HELLO KITTY</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt2.png" alt="마이멜로디" /></div>
-                <figcaption><h3>마이멜로디</h3><p class="title-en">MY MELODY</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt2.png" alt="마이멜로디" />
+                </div>
+                <figcaption>
+                  <h3>마이멜로디</h3>
+                  <p class="title-en">MY MELODY</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt3.png" alt="쿠로미" /></div>
-                <figcaption><h3>쿠로미</h3><p class="title-en">KUROMI</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt3.png" alt="쿠로미" />
+                </div>
+                <figcaption>
+                  <h3>쿠로미</h3>
+                  <p class="title-en">KUROMI</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt4.png" alt="폼폼푸린" /></div>
-                <figcaption><h3>폼폼푸린</h3><p class="title-en">POMPOMPURIN</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt4.png" alt="폼폼푸린" />
+                </div>
+                <figcaption>
+                  <h3>폼폼푸린</h3>
+                  <p class="title-en">POMPOMPURIN</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt5.png" alt="시나모롤" /></div>
-                <figcaption><h3>시나모롤</h3><p class="title-en">CINNAMOROLL</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt5.png" alt="시나모롤" />
+                </div>
+                <figcaption>
+                  <h3>시나모롤</h3>
+                  <p class="title-en">CINNAMOROLL</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt6.png" alt="리틀트윈스타" /></div>
-                <figcaption><h3>리틀트윈스타</h3><p class="title-en">LittleTwinStars</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt6.png" alt="리틀트윈스타" />
+                </div>
+                <figcaption>
+                  <h3>리틀트윈스타</h3>
+                  <p class="title-en">LittleTwinStars</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt7.png" alt="포차코" /></div>
-                <figcaption><h3>포차코</h3><p class="title-en">POCHACCO</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt7.png" alt="포차코" />
+                </div>
+                <figcaption>
+                  <h3>포차코</h3>
+                  <p class="title-en">POCHACCO</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt8.png" alt="케로케로케로피" /></div>
-                <figcaption><h3>케로케로케로피</h3><p class="title-en">KEROKEROKEROPPI</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt8.png" alt="케로케로케로피" />
+                </div>
+                <figcaption>
+                  <h3>케로케로케로피</h3>
+                  <p class="title-en">KEROKEROKEROPPI</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt9.png" alt="구데타마" /></div>
-                <figcaption><h3>구데타마</h3><p class="title-en">GUDETAMA</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt9.png" alt="구데타마" />
+                </div>
+                <figcaption>
+                  <h3>구데타마</h3>
+                  <p class="title-en">GUDETAMA</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt10.png" alt="배드바츠마루" /></div>
-                <figcaption><h3>배드바츠마루</h3><p class="title-en">BAD BADTZ-MARU</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt10.png" alt="배드바츠마루" />
+                </div>
+                <figcaption>
+                  <h3>배드바츠마루</h3>
+                  <p class="title-en">BAD BADTZ-MARU</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt11.png" alt="턱시도샘" /></div>
-                <figcaption><h3>턱시도샘</h3><p class="title-en">TUXEDOSAM</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt11.png" alt="턱시도샘" />
+                </div>
+                <figcaption>
+                  <h3>턱시도샘</h3>
+                  <p class="title-en">TUXEDOSAM</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt12.png" alt="코기뮹" /></div>
-                <figcaption><h3>코기뮹</h3><p class="title-en">Cogimyun</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt12.png" alt="코기뮹" />
+                </div>
+                <figcaption>
+                  <h3>코기뮹</h3>
+                  <p class="title-en">Cogimyun</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt13.png" alt="딩구리데이즈" /></div>
-                <figcaption><h3>딩구리데이즈</h3><p class="title-en">Marumofubiyori</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt13.png" alt="딩구리데이즈" />
+                </div>
+                <figcaption>
+                  <h3>딩구리데이즈</h3>
+                  <p class="title-en">Marumofubiyori</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt14.png" alt="숲의요정 페어리루" /></div>
-                <figcaption><h3>숲의요정 페어리루</h3><p class="title-en">RILU RILU FAIRILU</p></figcaption>
+                <div class="img-part">
+                  <img
+                    src="./images/new_main_crt14.png"
+                    alt="숲의요정 페어리루"
+                  />
+                </div>
+                <figcaption>
+                  <h3>숲의요정 페어리루</h3>
+                  <p class="title-en">RILU RILU FAIRILU</p>
+                </figcaption>
               </figure>
               <!-- 무한루프 복제 -->
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt1.png" alt="헬로키티" /></div>
-                <figcaption><h3>헬로키티</h3><p class="title-en">HELLO KITTY</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt1.png" alt="헬로키티" />
+                </div>
+                <figcaption>
+                  <h3>헬로키티</h3>
+                  <p class="title-en">HELLO KITTY</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt2.png" alt="마이멜로디" /></div>
-                <figcaption><h3>마이멜로디</h3><p class="title-en">MY MELODY</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt2.png" alt="마이멜로디" />
+                </div>
+                <figcaption>
+                  <h3>마이멜로디</h3>
+                  <p class="title-en">MY MELODY</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt3.png" alt="쿠로미" /></div>
-                <figcaption><h3>쿠로미</h3><p class="title-en">KUROMI</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt3.png" alt="쿠로미" />
+                </div>
+                <figcaption>
+                  <h3>쿠로미</h3>
+                  <p class="title-en">KUROMI</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt4.png" alt="폼폼푸린" /></div>
-                <figcaption><h3>폼폼푸린</h3><p class="title-en">POMPOMPURIN</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt4.png" alt="폼폼푸린" />
+                </div>
+                <figcaption>
+                  <h3>폼폼푸린</h3>
+                  <p class="title-en">POMPOMPURIN</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt5.png" alt="시나모롤" /></div>
-                <figcaption><h3>시나모롤</h3><p class="title-en">CINNAMOROLL</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt5.png" alt="시나모롤" />
+                </div>
+                <figcaption>
+                  <h3>시나모롤</h3>
+                  <p class="title-en">CINNAMOROLL</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt6.png" alt="리틀트윈스타" /></div>
-                <figcaption><h3>리틀트윈스타</h3><p class="title-en">LittleTwinStars</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt6.png" alt="리틀트윈스타" />
+                </div>
+                <figcaption>
+                  <h3>리틀트윈스타</h3>
+                  <p class="title-en">LittleTwinStars</p>
+                </figcaption>
               </figure>
               <figure class="sr-card">
-                <div class="img-part"><img src="./images/new_main_crt7.png" alt="포차코" /></div>
-                <figcaption><h3>포차코</h3><p class="title-en">POCHACCO</p></figcaption>
+                <div class="img-part">
+                  <img src="./images/new_main_crt7.png" alt="포차코" />
+                </div>
+                <figcaption>
+                  <h3>포차코</h3>
+                  <p class="title-en">POCHACCO</p>
+                </figcaption>
               </figure>
             </div>
           </div>
@@ -4570,9 +4883,9 @@ margin-left: 60%;
         <div class="sr-desc">
           <p class="sr-desc-title">Various Characters</p>
           <p class="sr-desc-text">
-            산리오의 대표 캐릭터 16종을 JSON 데이터로 관리하고 JavaScript로 동적 렌더링했습니다.
-            각 캐릭터는 호버 시 이미지가 전환되며, 반응형 그리드로 PC·태블릿·모바일 환경에서
-            자연스럽게 배치됩니다.
+            산리오의 대표 캐릭터 16종을 JSON 데이터로 관리하고 JavaScript로 동적
+            렌더링했습니다. 각 캐릭터는 호버 시 이미지가 전환되며, 반응형
+            그리드로 PC·태블릿·모바일 환경에서 자연스럽게 배치됩니다.
           </p>
         </div>
 
@@ -4584,7 +4897,10 @@ margin-left: 60%;
               <div class="img-part">
                 <img src="./images/new_main_crt1.png" alt="헬로키티" />
               </div>
-              <figcaption><h3>헬로키티</h3><p class="title-en">HELLO KITTY</p></figcaption>
+              <figcaption>
+                <h3>헬로키티</h3>
+                <p class="title-en">HELLO KITTY</p>
+              </figcaption>
             </figure>
           </div>
           <div class="sr-hover-item">
@@ -4593,12 +4909,14 @@ margin-left: 60%;
               <div class="img-part">
                 <img src="./images/new_main_crt1_ov.png" alt="헬로키티 호버" />
               </div>
-              <figcaption><h3>헬로키티</h3><p class="title-en">HELLO KITTY</p></figcaption>
+              <figcaption>
+                <h3>헬로키티</h3>
+                <p class="title-en">HELLO KITTY</p>
+              </figcaption>
             </figure>
           </div>
         </div>
       </div>
-
     </section>
 
     <!-- DESIGN SECTION -->
@@ -4646,7 +4964,15 @@ margin-left: 60%;
       <div class="contact-info-row">
         <div class="contact-info-cell">
           <span class="ci-label">Email</span>
-          <a class="ci-value" href="mailto:jiheene00@naver.com" onclick="copyEmail(); return false;">jiheene00@naver.com</a>
+          <a
+            class="ci-value"
+            href="mailto:jiheene00@naver.com"
+            onclick="
+              copyEmail();
+              return false;
+            "
+            >jiheene00@naver.com</a
+          >
         </div>
         <div class="contact-info-cell" style="padding-left: 2rem">
           <span class="ci-label">Github</span>
@@ -4664,7 +4990,15 @@ margin-left: 60%;
       </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
@@ -4730,16 +5064,28 @@ margin-left: 60%;
         wrap.scrollLeft = scrollLeft - walk;
       });
       // 드래그 중이었으면 클릭 이벤트 차단
-      wrap.querySelectorAll(".design-card").forEach(card => {
-        card.addEventListener("click", (e) => {
-          if (didDrag) { e.stopPropagation(); e.preventDefault(); didDrag = false; }
-        }, true);
+      wrap.querySelectorAll(".design-card").forEach((card) => {
+        card.addEventListener(
+          "click",
+          (e) => {
+            if (didDrag) {
+              e.stopPropagation();
+              e.preventDefault();
+              didDrag = false;
+            }
+          },
+          true,
+        );
       });
       // 마우스 휠 → 가로 스크롤
-      wrap.addEventListener("wheel", (e) => {
-        e.preventDefault();
-        wrap.scrollLeft += e.deltaY * 1.2;
-      }, { passive: false });
+      wrap.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+          wrap.scrollLeft += e.deltaY * 1.2;
+        },
+        { passive: false },
+      );
 
       // 이메일 복사
       function copyEmail() {
@@ -4872,11 +5218,21 @@ margin-left: 60%;
         <span class="works-sidebar-num">04</span>
         <span class="works-sidebar-name">산리오</span>
       </a>
-      <hr class="works-sidebar-divider">
-      <a href="#design" class="works-sidebar-item works-sidebar-design" data-target="design">
+      <hr class="works-sidebar-divider" />
+      <a
+        href="#design"
+        class="works-sidebar-item works-sidebar-design"
+        data-target="design"
+      >
         <span class="works-sidebar-section-label">Design</span>
       </a>
-      <button class="sidebar-scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑</button>
+      <button
+        class="sidebar-scroll-top"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        aria-label="맨 위로"
+      >
+        ↑
+      </button>
     </nav>
 
     <style>
@@ -4915,21 +5271,31 @@ margin-left: 60%;
         text-decoration: none;
         transition: opacity 0.3s;
       }
-      .works-sidebar-section-label:hover { opacity: 1; color: var(--dark); }
+      .works-sidebar-section-label:hover {
+        opacity: 1;
+        color: var(--dark);
+      }
       .works-sidebar-divider {
         width: 100%;
         border: none;
-        border-top: 1px solid rgba(139,115,85,0.15);
+        border-top: 1px solid rgba(139, 115, 85, 0.15);
         margin: 0;
       }
       .works-sidebar-design {
-        padding-top: 0; width: 100%;
+        padding-top: 0;
+        width: 100%;
         justify-content: flex-end;
-        border: none; margin-top: 0;
+        border: none;
+        margin-top: 0;
       }
-      .works-sidebar-design.active { margin-top: 0; padding-top: 0; }
+      .works-sidebar-design.active {
+        margin-top: 0;
+        padding-top: 0;
+      }
       .works-sidebar-design .works-sidebar-section-label {
-        font-size: 0.72rem; opacity: 0.7; letter-spacing: 1.5px;
+        font-size: 0.72rem;
+        opacity: 0.7;
+        letter-spacing: 1.5px;
       }
       .works-sidebar-item {
         display: flex;
@@ -4941,37 +5307,62 @@ margin-left: 60%;
         position: relative;
       }
       .works-sidebar-num {
-        font-size: 0.6rem; letter-spacing: 2px;
-        color: var(--light-brown); transition: color 0.3s;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        color: var(--light-brown);
+        transition: color 0.3s;
       }
       .works-sidebar-name {
-        font-size: 0.72rem; color: var(--brown); opacity: 0.5;
+        font-size: 0.72rem;
+        color: var(--brown);
+        opacity: 0.5;
         letter-spacing: 0.05em;
-        transition: opacity 0.3s, color 0.3s;
+        transition:
+          opacity 0.3s,
+          color 0.3s;
         white-space: nowrap;
       }
       .works-sidebar-item:hover .works-sidebar-name,
-      .works-sidebar-item.active .works-sidebar-name { opacity: 1; color: var(--dark); }
-      .works-sidebar-item.active .works-sidebar-num { color: var(--brown); }
+      .works-sidebar-item.active .works-sidebar-name {
+        opacity: 1;
+        color: var(--dark);
+      }
+      .works-sidebar-item.active .works-sidebar-num {
+        color: var(--brown);
+      }
       .works-sidebar-item.active {
-        background: rgba(139,99,71,0.1);
+        background: rgba(139, 99, 71, 0.1);
         border-radius: 50px 0 0 50px;
         padding: 0.3rem 0.8rem 0.3rem 0.6rem;
       }
-      .works-sidebar-item.active .works-sidebar-name { opacity: 1; color: #6b3f22; }
-      .works-sidebar-item.active .works-sidebar-num { color: #a0714f; }
-      .works-sidebar-item.active::before { display: none; }
+      .works-sidebar-item.active .works-sidebar-name {
+        opacity: 1;
+        color: #6b3f22;
+      }
+      .works-sidebar-item.active .works-sidebar-num {
+        color: #a0714f;
+      }
+      .works-sidebar-item.active::before {
+        display: none;
+      }
 
       /* 맨위로 버튼 — 데스크탑에서 숨김 */
-      .sidebar-scroll-top { display: none; }
+      .sidebar-scroll-top {
+        display: none;
+      }
 
       /* ── 900px: 사이드바 숨김 ── */
       @media (max-width: 900px) {
-        .works-sidebar { display: none; }
+        .works-sidebar {
+          display: none;
+        }
         .project-editorial,
-        .project-meta-bar { margin-right: 0; }
+        .project-meta-bar {
+          margin-right: 0;
+        }
         .ky-card-img img {
-    width: 85%;}
+          width: 85%;
+        }
       }
 
       /* ── 768px: 하단 바 · 중앙정렬 · 화살표 오른쪽 ── */
@@ -4980,22 +5371,26 @@ margin-left: 60%;
           display: flex;
           flex-direction: row;
           align-items: center;
-          justify-content: center;      /* 아이템들 중앙 */
+          justify-content: center; /* 아이템들 중앙 */
           gap: 0;
-          top: auto; bottom: 0;
-          left: 0; right: 0;
+          top: auto;
+          bottom: 0;
+          left: 0;
+          right: 0;
           width: 100%;
           transform: none;
           padding: 0.45rem 0.5rem 0.45rem 0.5rem;
-          background: rgba(255,255,255,0.95);
+          background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
-          border-top: 1px solid rgba(139,115,85,0.15);
+          border-top: 1px solid rgba(139, 115, 85, 0.15);
           z-index: 99;
           box-sizing: border-box;
-          overflow: visible;           /* 스크롤 불필요 — 중앙정렬이니까 */
+          overflow: visible; /* 스크롤 불필요 — 중앙정렬이니까 */
         }
-        .works-sidebar-divider { display: none; }
+        .works-sidebar-divider {
+          display: none;
+        }
 
         /* 아이템 */
         .works-sidebar-item {
@@ -5010,20 +5405,30 @@ margin-left: 60%;
           border-radius: 20px;
           padding: 0.3rem 0.5rem;
         }
-        .works-sidebar-num  { font-size: 0.52rem; }
-        .works-sidebar-name { font-size: 0.62rem; }
+        .works-sidebar-num {
+          font-size: 0.52rem;
+        }
+        .works-sidebar-name {
+          font-size: 0.62rem;
+        }
         .works-sidebar-section-label {
-          font-size: 0.52rem; letter-spacing: 1.5px;
-          white-space: nowrap; flex-shrink: 0;
+          font-size: 0.52rem;
+          letter-spacing: 1.5px;
+          white-space: nowrap;
+          flex-shrink: 0;
         }
         .works-sidebar > .works-sidebar-section-label {
           padding: 0.3rem 0.4rem 0.3rem 0.5rem;
         }
         .works-sidebar-design {
-          width: auto; flex-shrink: 0; padding-top: 0;
+          width: auto;
+          flex-shrink: 0;
+          padding-top: 0;
           padding-right: 0;
         }
-        .works-sidebar-design .works-sidebar-section-label { font-size: 0.62rem; }
+        .works-sidebar-design .works-sidebar-section-label {
+          font-size: 0.62rem;
+        }
 
         /* 화살표 버튼: 오른쪽 끝 고정 */
         .sidebar-scroll-top {
@@ -5031,50 +5436,65 @@ margin-left: 60%;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          margin-left: auto;           /* 자동으로 오른쪽 밀어냄 */
+          margin-left: auto; /* 자동으로 오른쪽 밀어냄 */
           margin-right: 0.5rem;
-          width: 26px; height: 26px;
+          width: 26px;
+          height: 26px;
           border-radius: 50%;
-          border: 1px solid rgba(139,115,85,0.35);
+          border: 1px solid rgba(139, 115, 85, 0.35);
           background: transparent;
           color: var(--brown);
           font-size: 0.75rem;
           cursor: pointer;
-          padding: 0; line-height: 1;
+          padding: 0;
+          line-height: 1;
         }
       }
 
       /* ── 400px: 텍스트 숨기고 숫자/약어만 ── */
       @media (max-width: 400px) {
         .works-sidebar {
-          justify-content: flex-start;  /* 좁으니 왼쪽부터, 스크롤로 해소 */
+          justify-content: flex-start; /* 좁으니 왼쪽부터, 스크롤로 해소 */
           overflow-x: auto;
           overflow-y: visible;
           scrollbar-width: none;
           padding: 0.4rem 0.3rem;
         }
-        .works-sidebar::-webkit-scrollbar { display: none; }
+        .works-sidebar::-webkit-scrollbar {
+          display: none;
+        }
 
         /* 이름 텍스트 숨기고 번호만 */
-        .works-sidebar-name { display: none; }
+        .works-sidebar-name {
+          display: none;
+        }
         /* Works 레이블 짧게 */
         .works-sidebar > .works-sidebar-section-label {
-          font-size: 0.5rem; letter-spacing: 1px;
+          font-size: 0.5rem;
+          letter-spacing: 1px;
           padding: 0.3rem 0.3rem 0.3rem 0.4rem;
         }
         /* 01 02 03 04 번호만 */
         .works-sidebar-num {
-          font-size: 0.6rem; letter-spacing: 1px;
+          font-size: 0.6rem;
+          letter-spacing: 1px;
         }
-        .works-sidebar-item { padding: 0.3rem 0.35rem; gap: 0; }
-        .works-sidebar-item.active { padding: 0.3rem 0.35rem; }
+        .works-sidebar-item {
+          padding: 0.3rem 0.35rem;
+          gap: 0;
+        }
+        .works-sidebar-item.active {
+          padding: 0.3rem 0.35rem;
+        }
         /* Design 레이블 */
         .works-sidebar-design .works-sidebar-section-label {
-          font-size: 0.55rem; letter-spacing: 1px;
+          font-size: 0.55rem;
+          letter-spacing: 1px;
         }
         /* 화살표 버튼 */
         .sidebar-scroll-top {
-          width: 24px; height: 24px;
+          width: 24px;
+          height: 24px;
           font-size: 0.68rem;
           margin-right: 0.3rem;
         }
@@ -5082,11 +5502,11 @@ margin-left: 60%;
     </style>
 
     <script>
-      (function() {
-        const sidebar   = document.getElementById('worksSidebar');
-        const portfolio = document.getElementById('portplio');
-        const designSec = document.getElementById('design');
-        const targets   = ['proj-01','proj-02','proj-03','proj-04','design'];
+      (function () {
+        const sidebar = document.getElementById("worksSidebar");
+        const portfolio = document.getElementById("portplio");
+        const designSec = document.getElementById("design");
+        const targets = ["proj-01", "proj-02", "proj-03", "proj-04", "design"];
 
         function onScroll() {
           const pRect = portfolio.getBoundingClientRect();
@@ -5097,24 +5517,27 @@ margin-left: 60%;
           const beforeDesignEnd = dRect ? dRect.bottom > 0 : true;
 
           if (afterHeader && beforeDesignEnd) {
-            sidebar.classList.add('visible');
+            sidebar.classList.add("visible");
           } else {
-            sidebar.classList.remove('visible');
+            sidebar.classList.remove("visible");
           }
 
           // 현재 보이는 섹션 active 처리
-          let current = '';
-          targets.forEach(id => {
+          let current = "";
+          targets.forEach((id) => {
             const el = document.getElementById(id);
-            if (el && el.getBoundingClientRect().top < window.innerHeight * 0.5) {
+            if (
+              el &&
+              el.getBoundingClientRect().top < window.innerHeight * 0.5
+            ) {
               current = id;
             }
           });
-              document.querySelectorAll('.works-sidebar-item').forEach(item => {
-            item.classList.toggle('active', item.dataset.target === current);
+          document.querySelectorAll(".works-sidebar-item").forEach((item) => {
+            item.classList.toggle("active", item.dataset.target === current);
           });
         }
-        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener("scroll", onScroll, { passive: true });
         onScroll();
       })();
     </script>
