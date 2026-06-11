@@ -1913,12 +1913,11 @@
       /* PC: 가로 넓은 비율, 높이 기준 */
       .vg-responsive-item:nth-child(1) {
         width: 55%;
-        height: 380px;
       }
       /* 태블릿: PC보다 낮은 높이 */
       .vg-responsive-item:nth-child(2) {
         width: 24%;
-        height: 300px;
+        height: 450px;
         aspect-ratio: 4 / 5;
       }
       /* 모바일: 자연 비율 */
@@ -1928,7 +1927,6 @@
       }
       .vg-responsive-item img {
         width: 100%;
-        height: 100%;
         display: block;
         object-fit: cover;
         object-position: top;
@@ -3410,7 +3408,8 @@
             <div class="hero-right-text">
               <p class="hero-greeting">안녕하세요</p>
               <h1>
-                <span class="changing-text"></span><br />웹퍼블리셔
+                <span class="changing-text"></span><br />퍼블리싱 능력을 갖춘 <br>
+                웹디자이너
                 <span class="highlight">강지희</span> 입니다.
               </h1>
               <p class="subtitle">Web Publisher & Designer</p>
@@ -3426,7 +3425,7 @@
               </div>
               <p class="hero-bio">
                 UI 재현을 넘어 실제 동작하는 기능 구현까지 도전하는
-                웹퍼블리셔입니다. 사용자 경험 중심의 반응형 제작과 JavaScript
+                퍼블리싱 능력을 갖춘 웹디자이너입니다. 사용자 경험 중심의 반응형 제작과 JavaScript
                 인터랙션을 즐겨 작업합니다.
               </p>
             </div>
@@ -4943,6 +4942,49 @@
           >
             <img src="./images/design3.png" alt="Design 3" />
           </div>
+          <div
+            class="design-card"
+            onclick="openLightbox('./images/design4.png')"
+          >
+            <img src="./images/design4.png" alt="Design 4" />
+          </div>
+        </div>
+      </div>
+
+      <!-- 상세페이지 섹션 -->
+      <div style="padding:4rem 0 2rem;">
+        <span style="font-size:0.65rem; letter-spacing:3px; text-transform:uppercase; color:var(--brown); opacity:0.7; display:block; margin-bottom:2rem;">상세페이지</span>
+
+        <div
+          style="flex:0 0 320px; width:320px; aspect-ratio:3/4; border-radius:12px; overflow:hidden; position:relative; cursor:pointer; transition:transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseenter="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 16px 40px rgba(42,42,42,0.12)'; this.querySelector('.dhov').style.opacity=1;"
+          onmouseleave="this.style.transform=''; this.style.boxShadow=''; this.querySelector('.dhov').style.opacity=0;"
+          onclick="openDetailPopup()"
+        >
+          <img src="./images/detail.png" alt="상세페이지" style="width:100%; height:100%; object-fit:cover; display:block;" />
+          <div class="dhov" style="position:absolute; inset:0; background:rgba(42,42,42,0.55); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s;">
+            <span style="color:#fff; font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; border:1px solid rgba(255,255,255,0.6); padding:0.6rem 1.4rem;">View Detail</span>
+          </div>
+        </div>
+
+        <div style="margin-top:1.8rem; display:flex; align-items:center; gap:1rem;">
+          <span style="font-size:0.62rem; letter-spacing:2px; text-transform:uppercase; color:var(--dark); opacity:0.35;">Figma ↓</span>
+          <a
+            href="https://embed.figma.com/site/j0SuA41hk6nzJ0OAnGoCO2/Untitled?node-id=0-1&embed-host=share"
+            target="_blank"
+            style="display:inline-flex; align-items:center; gap:0.6rem; padding:0.75rem 1.8rem; font-size:0.8rem; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; color:var(--dark); border:1px solid rgba(139,115,85,0.5); background:transparent; transition:all 0.3s ease; font-family:'Outfit',sans-serif;"
+            onmouseenter="this.style.background='var(--brown)'; this.style.color='#fff'; this.style.borderColor='var(--brown)';"
+            onmouseleave="this.style.background='transparent'; this.style.color='var(--dark)'; this.style.borderColor='rgba(139,115,85,0.5)';"
+          >
+            <svg width="14" height="14" viewBox="0 0 38 57" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 28.5C19 25.98 20 23.56 21.78 21.78C23.56 20 25.98 19 28.5 19C31.02 19 33.44 20 35.22 21.78C37 23.56 38 25.98 38 28.5C38 31.02 37 33.44 35.22 35.22C33.44 37 31.02 38 28.5 38C25.98 38 23.56 37 21.78 35.22C20 33.44 19 31.02 19 28.5Z" fill="currentColor"/>
+              <path d="M0 47.5C0 44.98 1 42.56 2.78 40.78C4.56 39 6.98 38 9.5 38H19V47.5C19 50.02 18 52.44 16.22 54.22C14.44 56 12.02 57 9.5 57C6.98 57 4.56 56 2.78 54.22C1 52.44 0 50.02 0 47.5Z" fill="currentColor"/>
+              <path d="M19 0V19H28.5C31.02 19 33.44 18 35.22 16.22C37 14.44 38 12.02 38 9.5C38 6.98 37 4.56 35.22 2.78C33.44 1 31.02 0 28.5 0H19Z" fill="currentColor"/>
+              <path d="M0 9.5C0 12.02 1 14.44 2.78 16.22C4.56 18 6.98 19 9.5 19H19V0H9.5C6.98 0 4.56 1 2.78 2.78C1 4.56 0 6.98 0 9.5Z" fill="currentColor"/>
+              <path d="M0 28.5C0 31.02 1 33.44 2.78 35.22C4.56 37 6.98 38 9.5 38H19V19H9.5C6.98 19 4.56 20 2.78 21.78C1 23.56 0 25.98 0 28.5Z" fill="currentColor"/>
+            </svg>
+            View on Figma
+          </a>
         </div>
       </div>
     </section>
@@ -4953,6 +4995,35 @@
         >&#x2715;</span
       >
       <img src="" id="lightboxImg" alt="Design preview" />
+    </div>
+
+    <!-- 상세페이지 팝업 -->
+    <div
+      id="detailPopup"
+      style="display:none; position:fixed; inset:0; background:rgba(10,10,10,0.88); z-index:9999; align-items:center; justify-content:center; padding:2rem;"
+      onclick="if(event.target===this) closeDetailPopup()"
+    >
+      <div style="background:#fff; border-radius:8px; overflow:hidden; max-width:960px; width:100%; max-height:90vh; overflow-y:auto;">
+        <div style="padding:1.2rem 1.8rem; border-bottom:1px solid rgba(139,115,85,0.15); display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; background:#fff; z-index:1;">
+          <span style="font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--brown);">상세페이지 Preview</span>
+          <button
+            onclick="closeDetailPopup()"
+            style="background:none; border:none; cursor:pointer; font-size:1.6rem; font-weight:200; color:var(--dark); opacity:0.45; line-height:1; padding:0; transition:opacity 0.2s;"
+            onmouseenter="this.style.opacity=1"
+            onmouseleave="this.style.opacity=0.45"
+          >&#x2715;</button>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; padding:1.8rem;">
+          <div style="display:flex; flex-direction:column; gap:0.8rem;">
+            <img src="./images/Desktop.png" alt="Desktop" style="width:100%; height:auto; display:block; border:1px solid rgba(139,115,85,0.15); border-radius:4px;" />
+            <span style="font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--brown); opacity:0.7; text-align:center;">Desktop</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:0.8rem;">
+            <img src="./images/Mobile.png" alt="Mobile" style="width:100%; height:auto; display:block; border:1px solid rgba(139,115,85,0.15); border-radius:4px;" />
+            <span style="font-size:0.65rem; letter-spacing:2px; text-transform:uppercase; color:var(--brown); opacity:0.7; text-align:center;">Mobile</span>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div id="contact">
@@ -5033,8 +5104,17 @@
         document.getElementById("designLightbox").classList.remove("active");
         document.body.style.overflow = "";
       }
+      function openDetailPopup() {
+        const p = document.getElementById("detailPopup");
+        p.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+      function closeDetailPopup() {
+        const p = document.getElementById("detailPopup");
+        if (p) { p.style.display = "none"; document.body.style.overflow = ""; }
+      }
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeLightbox();
+        if (e.key === "Escape") { closeLightbox(); closeDetailPopup(); }
       });
 
       // Design 드래그 스크롤 (드래그 vs 클릭 구분)
@@ -5505,18 +5585,19 @@
       (function () {
         const sidebar = document.getElementById("worksSidebar");
         const portfolio = document.getElementById("portplio");
-        const designSec = document.getElementById("design");
+        const contactSec = document.getElementById("contact");
+        // design 섹션 안에 상세페이지가 포함되므로 숨김 기준을 contact로 변경
         const targets = ["proj-01", "proj-02", "proj-03", "proj-04", "design"];
 
         function onScroll() {
           const pRect = portfolio.getBoundingClientRect();
-          const dRect = designSec ? designSec.getBoundingClientRect() : null;
+          const cRect = contactSec ? contactSec.getBoundingClientRect() : null;
 
-          // Selected Works 헤더 벗어나면 표시, design 섹션 끝나면 숨김
+          // Selected Works 헤더 벗어나면 표시, contact 섹션 시작되면 숨김
           const afterHeader = pRect.top < 0;
-          const beforeDesignEnd = dRect ? dRect.bottom > 0 : true;
+          const beforeContact = cRect ? cRect.top > 0 : true;
 
-          if (afterHeader && beforeDesignEnd) {
+          if (afterHeader && beforeContact) {
             sidebar.classList.add("visible");
           } else {
             sidebar.classList.remove("visible");
