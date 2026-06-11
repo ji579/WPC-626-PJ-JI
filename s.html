@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강지희 이력서_디자이너</title>
+<style>
+    /* 폰트 설정 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #f4f5f7;
+        margin: 0;
+        padding: 40px 0;
+        color: #333;
+        line-height: 1.4;
+    }
+
+    /* A4 컨테이너 */
+    .resume-container {
+        width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 50px 60px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+    }
+
+    /* 헤더 */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 25px;
+    }
+
+    .profile-info h1 {
+        margin: 0 0 8px 0;
+        font-size: 32px;
+        color: #111;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .badge-newbie {
+        border: 1px solid #2563eb;
+        color: #2563eb;
+        font-size: 14px;
+        padding: 2px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .intro-text {
+        font-size: 15px;
+        color: #2563eb;
+        font-weight: 500;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+    }
+
+    .contact-info {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.8;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 150px;
+        background-color: #e5e7eb;
+        border-radius: 4px;
+        object-fit: cover;
+        border: 1px solid #ddd;
+    }
+
+    /* 요약 카드 */
+    .summary-cards {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 35px;
+    }
+
+    .card {
+        flex: 1;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 12px 10px;
+        background-color: #fafafa;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 11px;
+        font-weight: 700;
+        color: #888;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+    }
+
+    .card-content {
+        font-size: 14px;
+        font-weight: 700;
+        color: #111;
+    }
+
+    .card-sub {
+        font-size: 11px;
+        color: #888;
+        font-weight: 400;
+        margin-top: 4px;
+    }
+
+    /* 섹션 공통 */
+    .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #111;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        border-left: 4px solid #2563eb;
+    }
+
+    .section-line {
+        margin-bottom: 30px;
+    }
+
+    /* 스킬 섹션 */
+    .skill-group {
+        margin-bottom: 15px;
+    }
+
+    .skill-category {
+        font-size: 13px;
+        font-weight: 700;
+        color: #2563eb;
+        margin-bottom: 8px;
+    }
+
+    .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .skill-tag {
+        border: 1px solid #d1d5db;
+        color: #444;
+        padding: 3px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        background-color: #fff;
+    }
+
+    /* 타임라인 */
+    .timeline-item {
+        display: flex;
+        margin-bottom: 15px;
+    }
+
+    .timeline-date {
+        width: 160px;
+        font-size: 14px;
+        font-weight: 700;
+        color: #444;
+    }
+
+    .duration {
+        display: block;
+        font-size: 12px;
+        color: #888;
+        font-weight: 400;
+        margin-top: 2px;
+    }
+
+    .timeline-content {
+        flex: 1;
+    }
+
+    .timeline-title {
+        font-size: 15px;
+        font-weight: 700;
+        color: #111;
+    }
+
+    .timeline-title span {
+        font-weight: 400;
+        font-size: 14px;
+        color: #666;
+        margin-left: 8px;
+    }
+
+    .timeline-desc {
+        font-size: 13px;
+        color: #666;
+        margin-top: 4px;
+        line-height: 1.5;
+    }
+
+    .portfolio-link {
+        color: #2563eb;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    .portfolio-table {
+        width: 100%;
+        margin-top: 8px;
+        font-size: 13px;
+        border-collapse: collapse;
+    }
+    
+    .portfolio-table td {
+        padding: 4px 0;
+        vertical-align: top;
+    }
+
+    .portfolio-table .th {
+        width: 85px;
+        color: #888;
+        font-weight: 500;
+    }
+
+    /* 프린트 설정 */
+    @media print {
+        body { background-color: #fff; padding: 0; }
+        .resume-container { width: 100%; box-shadow: none; padding: 40px; }
+        .card { background-color: #fafafa !important; -webkit-print-color-adjust: exact; }
+    }
+</style>
+</head>
+<body>
+
+<div class="resume-container">
+    
+    <div class="header">
+        <div class="profile-info">
+            <div class="intro-text">"전문적인 시각 예술 경험을 바탕으로 사용자 중심의 가치를 설계하는 디자이너"</div>
+            <h1>강지희 <span class="badge-newbie">신입 지원</span></h1>
+            <div class="contact-info">
+                여, 1999년생 (26세) <br>
+                Email : kjh3193@naver.com &nbsp; | &nbsp; Mobile : 010-3193-3530<br>
+                Address : 서울특별시 강남구 도산대로72길 (06063)
+            </div>
+        </div>
+        <img src="명함.jpg" alt="증명사진" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <div class="profile-image" style="display:none; text-align:center; line-height:150px; color:#aaa; font-size:12px; background:#eee;">사진 영역</div>
+    </div>
+
+    <div class="summary-cards">
+        <div class="card">
+            <div class="card-title">EDUCATION</div>
+            <div class="card-content">경기대학교(수원)</div>
+            <div class="card-sub">한국화 전공 졸업</div>
+        </div>
+        <div class="card">
+            <div class="card-title">TRAINING</div>
+            <div class="card-content">UI/UX 디자인 수료</div>
+            <div class="card-sub">강남그린컴퓨터아카데미</div>
+        </div>
+        <div class="card">
+            <div class="card-title">CORE SKILL</div>
+            <div class="card-content">UI/UX & GUI</div>
+            <div class="card-sub">디자인 시스템 활용</div>
+        </div>
+        <div class="card">
+            <div class="card-title">PORTFOLIO</div>
+            <div class="card-content">
+                <a href="https://ji579.github.io/WPC-626-PJ-JI/portpolio/portpolio.html" class="portfolio-link" target="_blank" style="font-size: 12px;">Link</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-line">
+        <div class="section-title">기술 스택</div>
+        <div class="skill-group">
+            <div class="skill-category">[ Design Tools ]</div>
+            <div class="skills-list">
+                <span class="skill-tag">Figma</span>
+                <span class="skill-tag">Adobe Photoshop</span>
+                <span class="skill-tag">Adobe Illustrator</span>
+                <span class="skill-tag">UI/UX Design</span>
+                <span class="skill-tag">GUI Design</span>
+                <span class="skill-tag">한국화 (채색/드로잉)</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <div class="skill-category">[ Web Publishing ]</div>
+            <div class="skills-list">
+                <span class="skill-tag">HTML5 / CSS3</span>
+                <span class="skill-tag">JavaScript / jQuery</span>
+                <span class="skill-tag">반응형 웹 구현</span>
+                <span class="skill-tag">GitHub</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <div class="skill-category">[ Soft Skills ]</div>
+            <div class="skills-list">
+                <span class="skill-tag">원활한 커뮤니케이션</span>
+                <span class="skill-tag">디자인 의도 전달 능력</span>
+                <span class="skill-tag">성실함과 책임감</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-line">
+        <div class="section-title">학력</div>
+        <div class="timeline-item">
+            <div class="timeline-date">2019.03 ~ 2024.02</div>
+            <div class="timeline-content">
+                <div class="timeline-title">경기대학교(수원) <span>예술대학 한국화 전공 (졸업)</span></div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2015.03 ~ 2018.02</div>
+            <div class="timeline-content">
+                <div class="timeline-title">선화예술고등학교 <span>미술과 (졸업)</span></div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2012.03 ~ 2015.02</div>
+            <div class="timeline-content">
+                <div class="timeline-title">선화예술중학교 <span>미술과 (졸업)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-line">
+        <div class="section-title">경력사항</div>
+        <div class="timeline-item">
+            <div class="timeline-date">2024.02 ~ 현재<span class="duration">재직중</span></div>
+            <div class="timeline-content">
+                <div class="timeline-title">미술로생각하기 <span>학원강사</span></div>
+                <div class="timeline-desc">아동 미술 교육 프로그램 운영 및 시각 교구 활용 가이드 제작</div>
+            </div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2021.04 ~ 2023.12</div>
+            <div class="timeline-content">
+                <div class="timeline-title">에꼴음악미술학원 <span>학원강사</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-line">
+        <div class="section-title">직업 교육</div>
+        <div class="timeline-item">
+            <div class="timeline-date">2025.06 ~ 2025.11</div>
+            <div class="timeline-content">
+                <div class="timeline-title">강남그린컴퓨터아카데미</div>
+                <div class="timeline-desc">(디지털디자인) UI/UX 반응형 웹디자인 & 웹퍼블리셔(디자인&코딩) 양성 과정 수료</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-line">
+        <div class="section-title">포트폴리오</div>
+        <div class="timeline-item">
+            <div class="timeline-date">Design & Web</div>
+            <div class="timeline-content">
+                <div class="timeline-title">UI/UX Design Portfolio</div>
+                <div style="margin: 6px 0;">
+                    <a href="https://ji579.github.io/WPC-626-PJ-JI/portpolio/portpolio.html" class="portfolio-link" target="_blank">포트폴리오 보러가기 (Portfolio Link)</a>
+                </div>
+                <table class="portfolio-table">
+                    <tr>
+                        <td class="th">사용 툴</td>
+                        <td>Figma, Photoshop, Illustrator, HTML5, CSS3, JavaScript</td>
+                    </tr>
+                    <tr>
+                        <td class="th">핵심 역량</td>
+                        <td>사용자 경험 디자인, 인터페이스 설계, 반응형 웹 퍼블리싱</td>
+                    </tr>
+                    <tr>
+                        <td class="th">소개</td>
+                        <td>미술 전공을 통해 다져진 색채 감각과 조형 능력을 UI 디자인에 적용했습니다. 디자인에서 퍼블리싱까지 이어지는 프로세스를 이해하며, 실무 협업에 최적화된 결과물을 제작했습니다.</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
